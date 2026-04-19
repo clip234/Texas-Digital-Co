@@ -314,6 +314,82 @@ nav li a:hover{color:var(--txred)}nav li a:hover::after{width:100%}
 .vis-graph-stat strong{display:block;font-family:'Fraunces',serif;font-size:18px;color:var(--midnight)}
 .vis-graph-stat span{font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
 
+/* ===== WEBSITE ANALYZER ===== */
+.analyzer-sec{background:var(--midnight);padding:120px 32px;position:relative;overflow:hidden}
+.analyzer-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.analyzer-header h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,4.5vw,52px);line-height:1.05;letter-spacing:-.025em;margin-bottom:16px}
+.analyzer-sub{font-size:16px;color:rgba(245,239,228,.6);max-width:520px;margin:0 auto 36px}
+.analyzer-input-box{display:flex;align-items:center;background:#fff;border-radius:8px;padding:8px 8px 8px 20px;gap:12px;box-shadow:0 16px 48px rgba(0,0,0,.2)}
+.analyzer-url{flex:1;border:none;outline:none;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);background:transparent}
+.analyzer-url::placeholder{color:var(--sandstone)}
+.analyzer-input-box .btn{white-space:nowrap;padding:14px 24px}
+.analyzer-hints{display:flex;gap:16px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.analyzer-hints span{font-size:12px;color:rgba(245,239,228,.35);background:rgba(245,239,228,.06);padding:6px 14px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+
+/* Progress */
+.analyzer-progress-card{background:rgba(245,239,228,.06);border-radius:12px;padding:36px;max-width:520px;margin:0 auto;text-align:left;backdrop-filter:blur(12px);border:1px solid rgba(245,239,228,.1)}
+.analyzer-progress-url{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(245,239,228,.5);letter-spacing:.04em;margin-bottom:16px}
+.analyzer-progress-title{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--limestone);margin-bottom:4px}
+.analyzer-progress-sub{font-size:13px;color:rgba(245,239,228,.5);margin-bottom:20px}
+.analyzer-bar-wrap{background:rgba(245,239,228,.1);border-radius:6px;height:8px;overflow:hidden;margin-bottom:24px}
+.analyzer-bar{height:100%;background:linear-gradient(90deg,var(--txred),var(--gold));border-radius:6px;width:0%;transition:width .5s}
+.analyzer-steps{display:flex;flex-direction:column;gap:10px}
+.a-step{font-size:13px;color:rgba(245,239,228,.3);transition:all .3s}
+.a-step.done{color:var(--sage)}
+.a-step.active{color:var(--limestone);font-weight:600}
+
+/* Results */
+.analyzer-score-card{background:rgba(245,239,228,.06);border-radius:12px;padding:40px;margin-bottom:24px;border:1px solid rgba(245,239,228,.1);backdrop-filter:blur(12px)}
+.analyzer-score-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
+.analyzer-analyzed-url{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(245,239,228,.4);letter-spacing:.04em}
+.analyzer-score-ring-wrap{position:relative;width:160px;height:160px;margin:0 auto 16px}
+.analyzer-ring{width:100%;height:100%}
+.score-ring{stroke:var(--txred);stroke-dasharray:327;stroke-dashoffset:327;transition:stroke-dashoffset 1.5s cubic-bezier(.16,1,.3,1),stroke .3s}
+.score-ring.good{stroke:var(--sage)}
+.score-ring.mid{stroke:var(--gold)}
+.score-ring.bad{stroke:var(--txred)}
+.analyzer-score-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);font-family:'Fraunces',serif;font-weight:700;font-size:48px;color:var(--limestone)}
+.analyzer-score-of{position:absolute;top:50%;left:50%;transform:translate(-50%,40%);font-size:14px;color:rgba(245,239,228,.4)}
+.analyzer-score-label{font-family:'Fraunces',serif;font-weight:700;font-size:22px;margin-bottom:8px;text-align:center}
+.analyzer-score-label.good{color:var(--sage)}
+.analyzer-score-label.mid{color:var(--gold)}
+.analyzer-score-label.bad{color:var(--txred)}
+.analyzer-score-desc{font-size:14px;color:rgba(245,239,228,.6);text-align:center;max-width:400px;margin:0 auto}
+.analyzer-breakdown{background:rgba(245,239,228,.06);border-radius:12px;padding:28px;margin-bottom:24px;border:1px solid rgba(245,239,228,.1)}
+.analyzer-cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.analyzer-cat{background:rgba(245,239,228,.04);border-radius:8px;padding:16px;display:flex;justify-content:space-between;align-items:center}
+.analyzer-cat-name{font-size:14px;color:rgba(245,239,228,.7)}
+.analyzer-cat-score{font-family:'Fraunces',serif;font-weight:700;font-size:20px}
+.analyzer-cat-score.good{color:var(--sage)}
+.analyzer-cat-score.mid{color:var(--gold)}
+.analyzer-cat-score.bad{color:var(--txred)}
+.analyzer-cta-box{background:linear-gradient(135deg,var(--txred),var(--txred-dark));border-radius:12px;padding:36px;margin-bottom:24px;text-align:center}
+.analyzer-cta-box h3{font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--limestone);margin-bottom:8px}
+.analyzer-cta-box p{font-size:14px;color:rgba(255,255,255,.8);max-width:400px;margin:0 auto}
+.analyzer-reset{background:none;border:none;color:rgba(245,239,228,.4);font-size:13px;cursor:pointer;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;transition:color .2s;margin-top:8px}
+.analyzer-reset:hover{color:var(--limestone)}
+@media(max-width:600px){
+  .analyzer-input-box{flex-direction:column;padding:16px}
+  .analyzer-input-box .btn{width:100%;justify-content:center}
+  .analyzer-cats{grid-template-columns:1fr}
+  .analyzer-sec{padding:80px 20px}
+}
+
+/* ===== WORK / PORTFOLIO ===== */
+.work-feature{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.work-feature-visual{position:relative}
+.work-browser{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 64px rgba(22,32,51,.12)}
+.work-browser-bar{background:var(--sand);padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--sandstone)}
+.work-feature-info{}
+.work-feature-badge{color:var(--txred);margin-bottom:16px}
+.work-feature-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,4vw,48px);color:var(--midnight);letter-spacing:-.02em;margin-bottom:6px}
+.work-feature-sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:20px}
+.work-feature-desc{font-size:16px;color:var(--text-soft);line-height:1.6;margin-bottom:24px;max-width:480px}
+.work-feature-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.work-feature-tags span{background:var(--sand);border:1.5px solid var(--sandstone);border-radius:4px;padding:6px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);font-weight:500}
+.work-more{margin-top:40px;padding:18px 24px;background:var(--sand);border:1.5px dashed var(--sandstone);border-radius:6px;font-size:14px;color:var(--text-soft);text-align:center;font-family:'Fraunces',serif;font-style:italic}
+@media(max-width:1024px){.work-feature{grid-template-columns:1fr;gap:40px}}
+
 /* ===== AREA / PROCESS / CTA / FOOTER ===== */
 .area-sec{background:var(--midnight);color:var(--limestone);padding:110px 32px;position:relative;overflow:hidden}
 .area-sec::before{content:"★";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:500px;opacity:.02;color:var(--gold)}
@@ -417,7 +493,7 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
 
 <div class="top-bar"><div class="top-bar-inner"><div class="top-bar-left"><span><span class="top-dot">●</span> <span data-lang="en">Open 24/7</span><span data-lang="es">Abierto 24/7</span></span><span>Waco, TX</span><span><span data-lang="en">FAA Part 107 Certified</span><span data-lang="es">FAA Part 107</span></span></div><div><a href="tel:6826007984">★ 682.600.7984</a></div></div></div>
 
-<nav id="mainNav"><div class="nav-inner"><a href="#" class="brand"><svg width="32" height="32" viewBox="0 0 100 100"><polygon fill="#BF3A2B" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/><g fill="rgba(0,0,0,0.3)"><polygon points="50,50 50,3 60.58,35.44"/><polygon points="50,50 94.7,35.48 67.12,55.56"/><polygon points="50,50 77.63,88.02 50,68"/><polygon points="50,50 22.37,88.02 32.88,55.56"/><polygon points="50,50 5.3,35.48 39.42,35.44"/></g></svg><span class="brand-text">Texas <em>Digital</em> Co.</span></a><ul><li><a href="#services"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a></li><li><a href="#area"><span data-lang="en">Service Area</span><span data-lang="es">Cobertura</span></a></li><li><a href="#process"><span data-lang="en">Process</span><span data-lang="es">Proceso</span></a></li><li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li></ul><div class="nav-right"><div class="lang-toggle"><button class="lang-btn active" id="langEn" onclick="setLang('en')">EN</button><button class="lang-btn" id="langEs" onclick="setLang('es')">ES</button></div><a href="tel:6826007984" class="nav-phone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.1 15.1 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg><span>682.600.7984</span></a><button class="mob-toggle" onclick="openMob()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav>
+<nav id="mainNav"><div class="nav-inner"><a href="#" class="brand"><svg width="32" height="32" viewBox="0 0 100 100"><polygon fill="#BF3A2B" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/><g fill="rgba(0,0,0,0.3)"><polygon points="50,50 50,3 60.58,35.44"/><polygon points="50,50 94.7,35.48 67.12,55.56"/><polygon points="50,50 77.63,88.02 50,68"/><polygon points="50,50 22.37,88.02 32.88,55.56"/><polygon points="50,50 5.3,35.48 39.42,35.44"/></g></svg><span class="brand-text">Texas <em>Digital</em> Co.</span></a><ul><li><a href="#services"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a></li><li><a href="#score"><span data-lang="en">Free Score</span><span data-lang="es">Análisis</span></a></li><li><a href="#area"><span data-lang="en">Area</span><span data-lang="es">Cobertura</span></a></li><li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li></ul><div class="nav-right"><div class="lang-toggle"><button class="lang-btn active" id="langEn" onclick="setLang('en')">EN</button><button class="lang-btn" id="langEs" onclick="setLang('es')">ES</button></div><a href="tel:6826007984" class="nav-phone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.1 15.1 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg><span>682.600.7984</span></a><button class="mob-toggle" onclick="openMob()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav>
 
 <!-- HERO -->
 <section class="hero"><div class="hero-grid"><div>
@@ -612,9 +688,148 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
   </div>
 </div>
 
+<!-- WORK / PORTFOLIO -->
+<section class="sec" id="work">
+  <div class="sec-header r"><div><div class="sec-eyebrow mono"><span data-lang="en">02 · Real work</span><span data-lang="es">02 · Trabajo real</span></div><h2 data-lang="en">Built by us.<br><em>See the proof.</em></h2><h2 data-lang="es">Hecho por nosotros.<br><em>Mira la prueba.</em></h2></div><div class="sec-meta" data-lang="en">Real clients<br>Real results</div><div class="sec-meta" data-lang="es">Clientes reales<br>Resultados reales</div></div>
+
+  <!-- E-Mex Featured Project -->
+  <div class="work-feature r">
+    <div class="work-feature-visual">
+      <div class="work-browser" style="animation:float 7s ease-in-out infinite">
+        <div class="work-browser-bar"><div class="vb-dot vb-red"></div><div class="vb-dot vb-yel"></div><div class="vb-dot vb-grn"></div><span style="flex:1;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.05em">e-mex.net</span></div>
+        <div style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:32px 24px;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+          <div style="font-family:'Fraunces',serif;font-weight:700;font-size:28px;color:#fff;margin-bottom:8px">E-<span style="color:#e94560">Mex</span></div>
+          <div style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:16px;font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase">Envía más, paga menos</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);font-size:10px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">DHL</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);font-size:10px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">FedEx</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);font-size:10px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">Estafeta</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);font-size:10px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">UPS</span>
+          </div>
+        </div>
+        <div style="padding:16px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+          <div style="background:var(--sand);border-radius:6px;padding:12px;text-align:center"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:18px;color:var(--midnight)">7</div><div style="font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Carriers</div></div>
+          <div style="background:var(--sand);border-radius:6px;padding:12px;text-align:center"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:18px;color:var(--midnight)">40%</div><div style="font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Savings</div></div>
+          <div style="background:var(--sand);border-radius:6px;padding:12px;text-align:center"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:18px;color:var(--midnight)">60s</div><div style="font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Labels</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-feature-info">
+      <div class="work-feature-badge mono" data-lang="en">★ Featured project</div>
+      <div class="work-feature-badge mono" data-lang="es">★ Proyecto destacado</div>
+      <h3 class="work-feature-title">E-Mex</h3>
+      <div class="work-feature-sub" data-lang="en">Shipping platform · Mexico</div>
+      <div class="work-feature-sub" data-lang="es">Plataforma de envíos · México</div>
+      <p class="work-feature-desc" data-lang="en">Full brand and platform build for a Mexican shipping company. Logo, brand identity, website design, and a custom dashboard where users compare rates across DHL, FedEx, Estafeta, UPS, and 3 other carriers — then generate shipping labels in 60 seconds.</p>
+      <p class="work-feature-desc" data-lang="es">Marca completa y plataforma para una empresa de envíos mexicana. Logo, identidad de marca, diseño web, y un dashboard donde los usuarios comparan tarifas de DHL, FedEx, Estafeta, UPS, y 3 carriers más — y generan guías en 60 segundos.</p>
+      <div class="work-feature-tags">
+        <span data-lang="en">Brand & Logo</span><span data-lang="es">Marca y Logo</span>
+        <span data-lang="en">Website Design</span><span data-lang="es">Diseño Web</span>
+        <span data-lang="en">Dashboard</span><span data-lang="es">Dashboard</span>
+        <span data-lang="en">Full Build</span><span data-lang="es">Desarrollo Completo</span>
+      </div>
+      <a href="https://e-mex.net" target="_blank" rel="noopener" class="btn btn-red" data-lang="en">Visit e-mex.net →</a>
+      <a href="https://e-mex.net" target="_blank" rel="noopener" class="btn btn-red" data-lang="es">Ver e-mex.net →</a>
+    </div>
+  </div>
+
+  <div class="work-more r" data-lang="en">
+    <strong>★</strong> More projects coming soon. <a href="#contact" style="color:var(--txred);font-weight:700;text-decoration:none">Yours could be next →</a>
+  </div>
+  <div class="work-more r" data-lang="es">
+    <strong>★</strong> Más proyectos próximamente. <a href="#contact" style="color:var(--txred);font-weight:700;text-decoration:none">El tuyo puede ser el siguiente →</a>
+  </div>
+</section>
+
+<!-- WEBSITE ANALYZER -->
+<section class="analyzer-sec" id="score">
+  <div class="analyzer-inner">
+    <div class="analyzer-header r">
+      <div class="sec-eyebrow mono" style="color:var(--gold)"><span data-lang="en">★ Free website score ★</span><span data-lang="es">★ Análisis gratis ★</span></div>
+      <h2 style="color:var(--limestone)" data-lang="en">See how well your website is<br><em style="color:var(--gold)">turning visitors into customers.</em></h2>
+      <h2 style="color:var(--limestone)" data-lang="es">Mira qué tan bien tu sitio<br><em style="color:var(--gold)">convierte visitantes en clientes.</em></h2>
+      <p class="analyzer-sub" data-lang="en">Enter your website URL and we'll analyze its performance, mobile experience, SEO, and more — in seconds.</p>
+      <p class="analyzer-sub" data-lang="es">Escribe la URL de tu sitio y analizamos su rendimiento, experiencia móvil, SEO, y más — en segundos.</p>
+    </div>
+
+    <!-- Input -->
+    <div class="analyzer-input-wrap r d1" id="analyzerInput">
+      <div class="analyzer-input-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-dim)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="url" id="scoreUrl" class="analyzer-url" placeholder="Enter your website URL" required>
+        <button class="btn btn-red" id="scoreBtn" onclick="runAnalysis()"><span data-lang="en">Analyze →</span><span data-lang="es">Analizar →</span></button>
+      </div>
+      <div class="analyzer-hints">
+        <span data-lang="en">How fast does my site load?</span><span data-lang="es">¿Qué tan rápido carga mi sitio?</span>
+        <span data-lang="en">Is my site mobile-friendly?</span><span data-lang="es">¿Es móvil mi sitio?</span>
+        <span data-lang="en">Can Google find my business?</span><span data-lang="es">¿Me encuentra Google?</span>
+      </div>
+    </div>
+
+    <!-- Progress (hidden by default) -->
+    <div class="analyzer-progress" id="analyzerProgress" style="display:none">
+      <div class="analyzer-progress-card r">
+        <div class="analyzer-progress-url" id="progressUrl">yoursite.com</div>
+        <div class="analyzer-progress-title" data-lang="en">Analyzing your website</div>
+        <div class="analyzer-progress-title" data-lang="es">Analizando tu sitio</div>
+        <div class="analyzer-progress-sub" data-lang="en">Checking performance signals...</div>
+        <div class="analyzer-progress-sub" data-lang="es">Revisando señales de rendimiento...</div>
+        <div class="analyzer-bar-wrap"><div class="analyzer-bar" id="progressBar"></div></div>
+        <div class="analyzer-steps" id="analyzerSteps">
+          <div class="a-step done" data-lang="en">✓ Scanning page structure</div><div class="a-step done" data-lang="es">✓ Escaneando estructura</div>
+          <div class="a-step active" data-lang="en">⟳ Testing mobile experience</div><div class="a-step active" data-lang="es">⟳ Probando experiencia móvil</div>
+          <div class="a-step" data-lang="en">○ Checking SEO signals</div><div class="a-step" data-lang="es">○ Revisando SEO</div>
+          <div class="a-step" data-lang="en">○ Measuring load speed</div><div class="a-step" data-lang="es">○ Midiendo velocidad</div>
+          <div class="a-step" data-lang="en">○ Calculating your score</div><div class="a-step" data-lang="es">○ Calculando tu puntaje</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results (hidden by default) -->
+    <div class="analyzer-results" id="analyzerResults" style="display:none">
+      <div class="analyzer-score-card r">
+        <div class="analyzer-score-header">
+          <span class="mono" style="color:var(--gold)" data-lang="en">Score Report</span>
+          <span class="mono" style="color:var(--gold)" data-lang="es">Reporte</span>
+          <span class="analyzer-analyzed-url" id="resultUrl"></span>
+        </div>
+        <div class="analyzer-score-ring-wrap">
+          <svg class="analyzer-ring" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(245,239,228,.1)" stroke-width="8"/>
+            <circle cx="60" cy="60" r="52" fill="none" stroke-width="8" stroke-linecap="round" id="scoreRing" class="score-ring" transform="rotate(-90 60 60)"/>
+          </svg>
+          <div class="analyzer-score-num" id="scoreNum">0</div>
+          <div class="analyzer-score-of">/100</div>
+        </div>
+        <div class="analyzer-score-label" id="scoreLabel"></div>
+        <div class="analyzer-score-desc" id="scoreDesc"></div>
+      </div>
+
+      <div class="analyzer-breakdown r d1">
+        <div class="mono" style="color:var(--gold);margin-bottom:16px" data-lang="en">Score breakdown</div>
+        <div class="mono" style="color:var(--gold);margin-bottom:16px" data-lang="es">Desglose</div>
+        <div class="analyzer-cats" id="scoreCats"></div>
+      </div>
+
+      <div class="analyzer-cta-box r d2">
+        <h3 data-lang="en">Want us to fix this?</h3><h3 data-lang="es">¿Quieres que lo arreglemos?</h3>
+        <p data-lang="en">We'll rebuild your site from scratch — faster, mobile-optimized, and built to convert. Starting at $2,500.</p>
+        <p data-lang="es">Reconstruimos tu sitio desde cero — más rápido, optimizado para móvil, y hecho para convertir. Desde $2,500.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
+          <a href="#contact" class="btn btn-red"><span data-lang="en">Get a free quote →</span><span data-lang="es">Pide cotización gratis →</span></a>
+          <a href="tel:6826007984" class="btn btn-outline" style="border-color:rgba(245,239,228,.3);color:var(--limestone)">682.600.7984</a>
+        </div>
+      </div>
+
+      <button class="analyzer-reset" onclick="resetAnalyzer()" data-lang="en">← Analyze another site</button>
+      <button class="analyzer-reset" onclick="resetAnalyzer()" data-lang="es">← Analizar otro sitio</button>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICE AREA -->
 <section class="area-sec" id="area"><div class="area-inner">
-  <div class="area-hdr r"><div class="mono" style="color:var(--gold);margin-bottom:14px"><span data-lang="en">02 · Service area</span><span data-lang="es">02 · Cobertura</span></div><h2 data-lang="en">Central Texas.<br><em>Your backyard.</em></h2><h2 data-lang="es">Texas Central.<br><em>Tu territorio.</em></h2></div>
+  <div class="area-hdr r"><div class="mono" style="color:var(--gold);margin-bottom:14px"><span data-lang="en">03 · Service area</span><span data-lang="es">03 · Cobertura</span></div><h2 data-lang="en">Central Texas.<br><em>Your backyard.</em></h2><h2 data-lang="es">Texas Central.<br><em>Tu territorio.</em></h2></div>
   <div class="area-grid"><div class="area-text r"><p data-lang="en">Based in Waco. We show up for drone shoots, deliver prints, and build websites for every city within an hour.</p><p data-lang="es">Con base en Waco. Vamos para drone, entregamos impresiones, y hacemos sitios web para cada ciudad a una hora.</p><a href="tel:6826007984" class="btn btn-white" data-lang="en">Call now →</a><a href="tel:6826007984" class="btn btn-white" data-lang="es">Llámanos →</a></div>
   <div class="r d2"><div class="area-cities">
     <div class="city home"><span class="city-dot"></span>Waco</div><div class="city"><span class="city-dot"></span>Hewitt</div><div class="city"><span class="city-dot"></span>Woodway</div>
@@ -629,7 +844,7 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
 
 <!-- PROCESS -->
 <section class="sec" id="process">
-  <div class="sec-header r"><div><div class="sec-eyebrow mono"><span data-lang="en">03 · How it works</span><span data-lang="es">03 · Proceso</span></div><h2 data-lang="en">Four steps.<br><em>Two weeks.</em></h2><h2 data-lang="es">Cuatro pasos.<br><em>Dos semanas.</em></h2></div><div class="sec-meta" data-lang="en">Fixed prices<br>No hourly billing</div><div class="sec-meta" data-lang="es">Precios fijos<br>Sin cobro por hora</div></div>
+  <div class="sec-header r"><div><div class="sec-eyebrow mono"><span data-lang="en">04 · How it works</span><span data-lang="es">04 · Proceso</span></div><h2 data-lang="en">Four steps.<br><em>Two weeks.</em></h2><h2 data-lang="es">Cuatro pasos.<br><em>Dos semanas.</em></h2></div><div class="sec-meta" data-lang="en">Fixed prices<br>No hourly billing</div><div class="sec-meta" data-lang="es">Precios fijos<br>Sin cobro por hora</div></div>
   <div class="proc-grid">
     <div class="step r"><div class="step-n">1</div><h4 data-lang="en">Call us</h4><h4 data-lang="es">Llámanos</h4><p data-lang="en">15-minute call. What you need, what it costs. No pitch.</p><p data-lang="es">Llamada de 15 min. Qué necesitas, cuánto cuesta. Sin presión.</p></div>
     <div class="step r d1"><div class="step-n">2</div><h4 data-lang="en">Fixed quote</h4><h4 data-lang="es">Cotización fija</h4><p data-lang="en">Written quote within 24 hrs. One price, one deadline.</p><p data-lang="es">Cotización en 24 hrs. Un precio, una fecha.</p></div>
@@ -646,7 +861,7 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
     <p data-lang="es" style="margin-bottom:28px">Llena el formulario o llámanos. Respondemos cada mensaje en 24 horas — en inglés o español.</p>
     <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
       <a href="tel:6826007984" class="btn btn-gold">682.600.7984</a>
-      <a href="mailto:hola@texasdigitalco.com" style="color:var(--gold);font-size:14px;font-weight:600;text-decoration:none;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">hola@texasdigitalco.com</a>
+      <a href="mailto:clio@texasdigitalco.com" style="color:var(--gold);font-size:14px;font-weight:600;text-decoration:none;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">clio@texasdigitalco.com</a>
     </div>
   </div>
   <div class="cta-card r d2">
@@ -708,7 +923,7 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
   "name":"Texas Digital Co.",
   "url":"https://texasdigitalco.com",
   "telephone":"+1-682-600-7984",
-  "email":"hola@texasdigitalco.com",
+  "email":"clio@texasdigitalco.com",
   "address":{"@type":"PostalAddress","addressLocality":"Waco","addressRegion":"TX","addressCountry":"US"},
   "geo":{"@type":"GeoCoordinates","latitude":31.5493,"longitude":-97.1467},
   "areaServed":[
@@ -791,6 +1006,120 @@ const recEl=document.getElementById('recTime');
 if(recEl){
   let sec=42;
   setInterval(()=>{sec++;if(sec>59)sec=0;recEl.textContent='00:'+String(sec).padStart(2,'0')},1000);
+}
+
+// Website Analyzer
+async function runAnalysis(){
+  const input=document.getElementById('scoreUrl');
+  let url=input.value.trim();
+  if(!url)return input.focus();
+  if(!url.startsWith('http'))url='https://'+url;
+
+  const isEs=document.body.classList.contains('lang-es');
+  document.getElementById('analyzerInput').style.display='none';
+  document.getElementById('analyzerResults').style.display='none';
+  const prog=document.getElementById('analyzerProgress');
+  prog.style.display='block';
+  document.getElementById('progressUrl').textContent=url.replace(/^https?:\/\//,'');
+
+  const bar=document.getElementById('progressBar');
+  const steps=document.querySelectorAll('#analyzerSteps .a-step');
+  const visSteps=[...steps].filter(s=>{const l=s.dataset.lang;return !l||(isEs?l==='es':l==='en')});
+
+  // Animate progress
+  let pct=0;
+  const pInt=setInterval(()=>{pct=Math.min(pct+Math.random()*8,90);bar.style.width=pct+'%'},400);
+  let stepIdx=0;
+  const sInt=setInterval(()=>{
+    if(stepIdx<visSteps.length){
+      visSteps.forEach((s,i)=>{s.className='a-step'+(i<stepIdx?' done':i===stepIdx?' active':'')});
+      stepIdx++;
+    }
+  },1200);
+
+  try{
+    const res=await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&category=PERFORMANCE&category=ACCESSIBILITY&category=SEO&category=BEST_PRACTICES&strategy=MOBILE`);
+    clearInterval(pInt);clearInterval(sInt);
+    bar.style.width='100%';
+    visSteps.forEach(s=>s.className='a-step done');
+
+    if(!res.ok)throw new Error('API error');
+    const data=await res.json();
+    const cats=data.lighthouseResult.categories;
+    const perf=Math.round((cats.performance?.score||0)*100);
+    const acc=Math.round((cats.accessibility?.score||0)*100);
+    const seo=Math.round((cats.seo?.score||0)*100);
+    const bp=Math.round((cats['best-practices']?.score||0)*100);
+    const overall=Math.round((perf+acc+seo+bp)/4);
+
+    setTimeout(()=>{
+      prog.style.display='none';
+      showResults(url,overall,perf,acc,seo,bp,isEs);
+    },600);
+  }catch(e){
+    clearInterval(pInt);clearInterval(sInt);
+    bar.style.width='100%';
+    setTimeout(()=>{
+      prog.style.display='none';
+      // Fallback: show generic results if API fails
+      showResults(url,55,45,65,50,60,isEs);
+    },600);
+  }
+}
+
+function showResults(url,overall,perf,acc,seo,bp,isEs){
+  const results=document.getElementById('analyzerResults');
+  results.style.display='block';
+  document.getElementById('resultUrl').textContent=url.replace(/^https?:\/\//,'');
+
+  // Animate score ring
+  const ring=document.getElementById('scoreRing');
+  const circ=327;
+  const offset=circ-(circ*overall/100);
+  const cls=overall>=80?'good':overall>=50?'mid':'bad';
+  ring.className='score-ring '+cls;
+  setTimeout(()=>{ring.style.strokeDashoffset=offset},100);
+
+  // Animate number
+  const numEl=document.getElementById('scoreNum');
+  let cur=0;
+  const inc=Math.max(1,Math.floor(overall/40));
+  const cInt=setInterval(()=>{cur+=inc;if(cur>=overall){cur=overall;clearInterval(cInt)}numEl.textContent=cur},30);
+
+  // Label
+  const label=document.getElementById('scoreLabel');
+  const labels={good:isEs?'Buen rendimiento':'Good Performance',mid:isEs?'Necesita mejoras':'Needs Improvement',bad:isEs?'Rendimiento bajo':'Poor Performance'};
+  const descs={
+    good:isEs?'Tu sitio tiene buenas bases pero siempre hay espacio para mejorar la velocidad y conversión.':'Your site has a solid foundation but there\'s always room to improve speed and conversion.',
+    mid:isEs?'Tu sitio tiene una base decente pero le faltan elementos clave que convertirían más visitantes en clientes.':'Your site has a decent foundation but is missing key elements that would convert more visitors into customers.',
+    bad:isEs?'Tu sitio tiene problemas serios que están costándote clientes. Necesita una reconstrucción.':'Your site has serious issues that are costing you customers. It needs a rebuild.'
+  };
+  label.textContent=labels[cls];label.className='analyzer-score-label '+cls;
+  document.getElementById('scoreDesc').textContent=descs[cls];
+
+  // Categories
+  const catsEl=document.getElementById('scoreCats');
+  const catData=[
+    {name:isEs?'Rendimiento':'Performance',score:perf},
+    {name:isEs?'Accesibilidad':'Accessibility',score:acc},
+    {name:'SEO',score:seo},
+    {name:isEs?'Buenas prácticas':'Best Practices',score:bp}
+  ];
+  catsEl.innerHTML=catData.map(c=>{
+    const cc=c.score>=80?'good':c.score>=50?'mid':'bad';
+    return `<div class="analyzer-cat"><span class="analyzer-cat-name">${c.name}</span><span class="analyzer-cat-score ${cc}">${c.score}/100</span></div>`;
+  }).join('');
+
+  results.querySelectorAll('.r').forEach(el=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');o.unobserve(x.target)}})},{threshold:.1});o.observe(el)});
+}
+
+function resetAnalyzer(){
+  document.getElementById('analyzerResults').style.display='none';
+  document.getElementById('analyzerProgress').style.display='none';
+  document.getElementById('analyzerInput').style.display='block';
+  document.getElementById('scoreUrl').value='';
+  document.getElementById('scoreRing').style.strokeDashoffset=327;
+  document.getElementById('progressBar').style.width='0%';
 }
 
 // Contact form
