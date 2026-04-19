@@ -1,1557 +1,729 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Texas Digital Co. — Sitios web, drone, video, impresión. Waco, TX.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Texas Digital Co. — Web Design, Drone Video, AI & Marketing · Waco, TX</title>
+<meta name="description" content="Waco's full-service digital agency. Custom websites, Part 107 drone video, AI phone agents, logo design, print, and Google Ads for businesses in Waco, Temple, Killeen, Hewitt, Woodway, and Central Texas. Bilingual EN/ES. No contracts.">
+<meta name="keywords" content="web design Waco TX, drone photography Waco, digital marketing Waco, website design Temple TX, drone video Killeen, AI phone answering service, logo design Waco, Google Ads management, bilingual marketing agency Texas, Part 107 drone pilot Waco">
+<meta property="og:title" content="Texas Digital Co. — Web Design, Drone, AI & Marketing · Waco, TX">
+<meta property="og:description" content="Custom websites, drone video, AI phone agents, print, and Google Ads for Central Texas businesses. Transparent pricing. Bilingual EN/ES.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://texasdigitalco.com">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_MX">
+<meta name="geo.region" content="US-TX">
+<meta name="geo.placename" content="Waco">
+<meta name="geo.position" content="31.5493;-97.1467">
+<link rel="canonical" href="https://texasdigitalco.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    /* Earth tone palette */
-    --cream: #F2EAD3;          /* main background */
-    --cream-warm: #EBE0C4;      /* cards, surfaces */
-    --cream-deep: #E0D2AE;      /* stronger surface */
-    --brown: #2D1F16;           /* deep brown — main text */
-    --brown-soft: #4A3626;      /* softer text */
-    --brown-dim: #6D5840;       /* muted text */
-    --olive: #6B7643;           /* olive green accent */
-    --olive-deep: #4E5530;      /* olive hover */
-    --brick: #A8401F;           /* brick red — primary accent */
-    --brick-dark: #7F2F15;
-    --brick-soft: #C66A47;      /* hover lighter */
-    --ochre: #C68C3F;           /* amber/ochre — secondary accent */
-    --rule: rgba(45, 31, 22, 0.18);
-    --rule-soft: rgba(45, 31, 22, 0.10);
-    --rule-strong: rgba(45, 31, 22, 0.35);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body {
-    background: var(--cream);
-    color: var(--brown);
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 16px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  .serif { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.015em; }
-  .mono {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+:root{
+  --midnight:#162033;--navy:#1E2D4D;--slate:#2A3B5C;
+  --limestone:#F5EFE4;--sand:#EDE5D5;--sandstone:#DED3BE;
+  --txred:#BF3A2B;--txred-dark:#982E22;
+  --gold:#D4943A;--gold-light:#E8B35E;
+  --sage:#5B7356;--sage-deep:#445740;
+  --text:#1A1A1A;--text-soft:#4A4A4A;--text-dim:#7A7A7A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--limestone);color:var(--text);font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.mono{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
 
-  /* ===== LANG TOGGLE ===== */
-  [data-lang="es"] { display: none; }
-  body.lang-es [data-lang="en"] { display: none; }
-  body.lang-es [data-lang="es"] { display: revert; }
-  body.lang-es span[data-lang="es"] { display: inline; }
-  body.lang-es div[data-lang="es"], body.lang-es p[data-lang="es"], body.lang-es h1[data-lang="es"],
-  body.lang-es h2[data-lang="es"], body.lang-es h3[data-lang="es"], body.lang-es h4[data-lang="es"],
-  body.lang-es a[data-lang="es"], body.lang-es li[data-lang="es"] { display: revert; }
+/* Lang */
+[data-lang="es"]{display:none}
+body.lang-es [data-lang="en"]{display:none}
+body.lang-es [data-lang="es"]{display:revert}
+body.lang-es span[data-lang="es"]{display:inline}
+body.lang-es div[data-lang="es"],body.lang-es p[data-lang="es"],body.lang-es h1[data-lang="es"],
+body.lang-es h2[data-lang="es"],body.lang-es h3[data-lang="es"],body.lang-es h4[data-lang="es"],
+body.lang-es a[data-lang="es"],body.lang-es li[data-lang="es"]{display:revert}
 
-  /* ===== TOP BAR ===== */
-  .top-bar {
-    background: var(--brown);
-    color: var(--cream);
-    padding: 10px 0;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-  .top-bar-inner {
-    max-width: 1240px; margin: 0 auto; padding: 0 32px;
-    display: flex; justify-content: space-between; align-items: center; gap: 16px;
-  }
-  .top-bar a { color: var(--ochre); text-decoration: none; }
-  .top-bar a:hover { color: var(--cream); }
-  .top-bar-left { display: flex; align-items: center; gap: 16px; }
-  .top-bar-dot { color: var(--olive); }
+/* Reveal */
+.r{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.r.vis{opacity:1!important;transform:none!important}
+.d1{transition-delay:.15s}.d2{transition-delay:.35s}.d3{transition-delay:.55s}.d4{transition-delay:.75s}
 
-  /* ===== NAV ===== */
-  nav {
-    background: var(--cream);
-    border-bottom: 2px solid var(--brown);
-    position: sticky; top: 0; z-index: 100;
-  }
-  .nav-inner {
-    max-width: 1240px; margin: 0 auto; padding: 18px 32px;
-    display: flex; justify-content: space-between; align-items: center; gap: 24px;
-  }
-  .brand {
-    display: flex; align-items: center; gap: 12px;
-    text-decoration: none; color: var(--brown);
-  }
-  .brand-text {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: -0.015em;
-  }
-  .brand-text em { font-style: italic; font-weight: 500; color: var(--brick); }
-  nav ul { display: flex; gap: 32px; list-style: none; }
-  nav a {
-    color: var(--brown); text-decoration: none;
-    font-size: 14px; font-weight: 600;
-    transition: color 0.15s;
-  }
-  nav a:hover { color: var(--brick); }
-  .nav-right { display: flex; gap: 12px; align-items: center; }
-  .lang-btn {
-    background: transparent; border: 1.5px solid var(--brown);
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    font-weight: 600; letter-spacing: 0.1em;
-    padding: 7px 12px; cursor: pointer; color: var(--brown);
-    border-radius: 2px; transition: all 0.15s;
-  }
-  .lang-btn:hover, .lang-btn.active { background: var(--brown); color: var(--cream); }
-  .phone-btn {
-    background: var(--brick); color: var(--cream);
-    padding: 10px 18px; border-radius: 2px;
-    text-decoration: none; font-weight: 700;
-    font-size: 14px;
-    display: inline-flex; align-items: center; gap: 8px;
-    border: 2px solid var(--brick);
-  }
-  .phone-btn:hover { background: var(--brick-dark); border-color: var(--brick-dark); }
-  .phone-btn svg { width: 14px; height: 14px; }
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes typing{from{width:0}to{width:100%}}
+@keyframes blink{0%,100%{border-color:var(--txred)}50%{border-color:transparent}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:none}}
+@keyframes growBar{from{height:0}to{height:var(--h)}}
+@keyframes popIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+@keyframes fanIn{from{opacity:0;transform:rotate(0deg) translateY(10px)}to{opacity:1;transform:rotate(var(--rot)) translateY(0)}}
+@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  /* ===== HERO ===== */
-  .hero {
-    padding: 60px 32px 40px;
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 56px;
-    align-items: center;
-  }
-  .hero-eyebrow {
-    color: var(--brick);
-    margin-bottom: 20px;
-    display: inline-flex; align-items: center; gap: 10px;
-  }
-  .hero-eyebrow::before { content: "★"; font-size: 14px; }
-  .hero h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: clamp(44px, 5.8vw, 76px);
-    line-height: 1.02;
-    letter-spacing: -0.025em;
-    margin-bottom: 24px;
-    color: var(--brown);
-  }
-  .hero h1 em { font-style: italic; font-weight: 500; color: var(--brick); }
-  .hero-lead {
-    font-size: 19px;
-    line-height: 1.5;
-    color: var(--brown-soft);
-    margin-bottom: 32px;
-    max-width: 560px;
-  }
-  .hero-proof {
-    display: flex; gap: 28px; flex-wrap: wrap;
-    padding: 20px 24px;
-    background: var(--cream-warm);
-    border: 1.5px solid var(--rule);
-    border-radius: 3px;
-  }
-  .proof-item { display: flex; gap: 10px; align-items: center; }
-  .proof-item svg {
-    width: 24px; height: 24px; color: var(--olive);
-    flex-shrink: 0;
-  }
-  .proof-text { font-size: 13px; line-height: 1.35; color: var(--brown-soft); font-weight: 500; }
-  .proof-text strong { color: var(--brown); }
+/* ===== TOP BAR ===== */
+.top-bar{background:var(--midnight);color:var(--limestone);padding:10px 0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;z-index:101;position:relative}
+.top-bar-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.top-bar a{color:var(--gold);text-decoration:none;transition:color .2s}
+.top-bar a:hover{color:#fff}
+.top-bar-left{display:flex;align-items:center;gap:20px}
+.top-dot{color:var(--sage);animation:pulse 2s ease-in-out infinite}
 
-  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
-  .btn {
-    padding: 14px 22px;
-    font-size: 15px; font-weight: 700;
-    text-decoration: none;
-    border-radius: 2px;
-    display: inline-flex; align-items: center; gap: 10px;
-    border: 2px solid transparent;
-    transition: all 0.15s;
-    font-family: inherit;
-    cursor: pointer;
-  }
-  .btn-primary {
-    background: var(--brick); color: var(--cream);
-    border-color: var(--brick);
-  }
-  .btn-primary:hover { background: var(--brick-dark); border-color: var(--brick-dark); }
-  .btn-outline {
-    background: transparent; color: var(--brown);
-    border-color: var(--brown);
-  }
-  .btn-outline:hover { background: var(--brown); color: var(--cream); }
+/* ===== NAV ===== */
+nav{background:rgba(245,239,228,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--sandstone);position:sticky;top:0;z-index:100;transition:all .3s}
+nav.scrolled{box-shadow:0 8px 32px rgba(22,32,51,.1);background:rgba(245,239,228,.95)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.brand svg{transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.brand:hover svg{transform:rotate(20deg) scale(1.1)}
+.brand-text{font-family:'Fraunces',serif;font-weight:700;font-size:21px;letter-spacing:-.015em}
+.brand-text em{font-style:italic;font-weight:500;color:var(--txred)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav li a{color:var(--text);text-decoration:none;font-size:13px;font-weight:600;transition:color .2s;position:relative}
+nav li a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--txred);transition:width .3s cubic-bezier(.16,1,.3,1)}
+nav li a:hover{color:var(--txred)}nav li a:hover::after{width:100%}
+.nav-right{display:flex;gap:10px;align-items:center}
+.lang-toggle{display:flex;border:1.5px solid var(--sandstone);border-radius:3px;overflow:hidden}
+.lang-btn{background:transparent;border:none;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;padding:7px 12px;cursor:pointer;color:var(--text-dim);transition:all .2s}
+.lang-btn.active{background:var(--midnight);color:var(--limestone)}
+.nav-phone{background:var(--txred);color:#fff;padding:10px 18px;border-radius:3px;text-decoration:none;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.nav-phone:hover{background:var(--txred-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(191,58,43,.3)}
+.nav-phone svg{width:14px;height:14px}
+.mob-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--text)}
+.mob-toggle svg{width:24px;height:24px}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--midnight);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--limestone);text-decoration:none}
+.mob-menu a:hover{color:var(--gold)}
+.mob-close{position:absolute;top:20px;right:28px;background:none;border:none;color:var(--limestone);cursor:pointer;font-size:36px}
 
-  /* ===== HERO POSTER (right side) ===== */
-  .hero-poster {
-    background: var(--brown);
-    color: var(--cream);
-    padding: 40px;
-    border-radius: 3px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-poster::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 12px;
-    background: repeating-linear-gradient(45deg, var(--ochre) 0 12px, var(--brown) 12px 24px);
-  }
-  .poster-label {
-    color: var(--ochre);
-    margin-bottom: 20px;
-    padding-top: 12px;
-  }
-  .poster-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    margin-bottom: 20px;
-  }
-  .poster-price-row {
-    display: flex; flex-direction: column; gap: 14px;
-    padding: 20px 0;
-    border-top: 1px solid rgba(242, 234, 211, 0.2);
-    border-bottom: 1px solid rgba(242, 234, 211, 0.2);
-    margin-bottom: 20px;
-  }
-  .poster-price-line {
-    display: flex; justify-content: space-between; align-items: baseline;
-  }
-  .poster-service { font-size: 15px; font-weight: 500; }
-  .poster-price {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--ochre);
-    letter-spacing: -0.01em;
-  }
-  .poster-foot { font-size: 13px; color: rgba(242, 234, 211, 0.7); line-height: 1.45; }
+/* Buttons */
+.btn{padding:14px 24px;font-size:14px;font-weight:700;text-decoration:none;border-radius:4px;display:inline-flex;align-items:center;gap:10px;border:2px solid transparent;transition:all .3s cubic-bezier(.16,1,.3,1);font-family:inherit;cursor:pointer}
+.btn-red{background:var(--txred);color:#fff;border-color:var(--txred)}
+.btn-red:hover{background:var(--txred-dark);border-color:var(--txred-dark);transform:translateY(-3px);box-shadow:0 8px 24px rgba(191,58,43,.25)}
+.btn-outline{background:transparent;color:var(--midnight);border-color:var(--midnight)}
+.btn-outline:hover{background:var(--midnight);color:var(--limestone);transform:translateY(-3px)}
+.btn-gold{background:var(--gold);color:var(--midnight);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,148,58,.3)}
+.btn-white{background:#fff;color:var(--midnight);border-color:#fff}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
 
-  /* ===== SECTIONS ===== */
-  .section {
-    padding: 90px 32px;
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-  .section-header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 40px;
-    align-items: end;
-    padding-bottom: 24px;
-    margin-bottom: 40px;
-    border-bottom: 2px solid var(--brown);
-  }
-  .section-eyebrow {
-    color: var(--brick);
-    margin-bottom: 14px;
-  }
-  .section h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: clamp(38px, 5vw, 64px);
-    line-height: 1;
-    letter-spacing: -0.025em;
-    color: var(--brown);
-  }
-  .section h2 em { font-style: italic; font-weight: 500; color: var(--brick); }
-  .section-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: var(--brown-dim);
-    letter-spacing: 0.14em;
-    text-align: right;
-    line-height: 1.8;
-  }
+/* ===== HERO ===== */
+.hero{padding:80px 32px 60px;max-width:1280px;margin:0 auto;position:relative;min-height:88vh;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;width:100%}
+.hero-eyebrow{color:var(--txred);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:"★";font-size:12px}
+.hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(42px,5.5vw,72px);line-height:1.02;letter-spacing:-.03em;margin-bottom:28px;color:var(--midnight)}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--txred)}
+.hero-lead{font-size:18px;line-height:1.6;color:var(--text-soft);margin-bottom:36px;max-width:540px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.hero-proof{display:flex;gap:32px;flex-wrap:wrap}
+.proof-item{display:flex;gap:10px;align-items:center}
+.proof-item svg{width:22px;height:22px;color:var(--sage);flex-shrink:0}
+.proof-text{font-size:13px;line-height:1.35;color:var(--text-soft);font-weight:500}
+.proof-text strong{color:var(--midnight)}
 
-  /* ===== SERVICES LIST ===== */
-  .services-wrap { display: flex; flex-direction: column; gap: 0; }
-  .service-row {
-    display: grid;
-    grid-template-columns: 90px 1fr 280px 180px;
-    gap: 32px;
-    padding: 32px 0;
-    border-bottom: 1px solid var(--rule);
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .service-row:hover { background: var(--cream-warm); padding-left: 16px; padding-right: 16px; }
-  .service-row:last-child { border-bottom: none; }
-  .service-icon {
-    width: 64px; height: 64px;
-    background: var(--cream-warm);
-    border: 1.5px solid var(--rule);
-    border-radius: 3px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--brown);
-    flex-shrink: 0;
-  }
-  .service-row:hover .service-icon {
-    background: var(--brown); color: var(--ochre);
-    border-color: var(--brown);
-  }
-  .service-icon svg { width: 32px; height: 32px; }
-  .service-name {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 28px;
-    letter-spacing: -0.015em;
-    margin-bottom: 6px;
-    color: var(--brown);
-  }
-  .service-desc {
-    font-size: 15px;
-    color: var(--brown-soft);
-    line-height: 1.45;
-    max-width: 500px;
-  }
-  .service-includes {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    color: var(--brown-dim);
-    line-height: 1.7;
-    text-transform: uppercase;
-  }
-  .service-includes-label {
-    display: block;
-    color: var(--olive-deep);
-    font-weight: 600;
-    margin-bottom: 6px;
-    letter-spacing: 0.16em;
-  }
-  .service-price-block {
-    text-align: right;
-    border-left: 2px solid var(--rule);
-    padding-left: 20px;
-  }
-  .service-price {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 30px;
-    color: var(--brick);
-    letter-spacing: -0.015em;
-    line-height: 1;
-    display: block;
-    margin-bottom: 4px;
-  }
-  .service-price-unit {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--brown-dim);
-  }
-  .service-price-note {
-    display: block;
-    font-size: 11px;
-    color: var(--brown-dim);
-    margin-top: 8px;
-    font-style: italic;
-    font-family: 'Fraunces', serif;
-  }
+/* Hero poster */
+.hero-poster{background:var(--midnight);color:var(--limestone);padding:44px;border-radius:8px;position:relative;overflow:hidden;animation:float 6s ease-in-out infinite}
+.hero-poster::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--txred),var(--gold),var(--sage))}
+.poster-label{color:var(--gold);margin-bottom:20px;padding-top:8px}
+.poster-title{font-family:'Fraunces',serif;font-weight:700;font-size:30px;line-height:1.08;letter-spacing:-.02em;margin-bottom:24px}
+.poster-row{display:flex;flex-direction:column;gap:0;padding:20px 0;border-top:1px solid rgba(245,239,228,.12);border-bottom:1px solid rgba(245,239,228,.12);margin-bottom:20px}
+.poster-line{display:flex;justify-content:space-between;align-items:baseline;padding:10px 8px;border-radius:4px;transition:all .2s}
+.poster-line:hover{background:rgba(245,239,228,.06)}
+.poster-svc{font-size:14px;font-weight:500}
+.poster-price{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--gold)}
+.poster-foot{font-size:13px;color:rgba(245,239,228,.6);line-height:1.5}
 
-  /* ===== WHO WE WORK WITH ===== */
-  .who-section {
-    background: var(--cream-warm);
-    padding: 90px 32px;
-    border-top: 2px solid var(--brown);
-    border-bottom: 2px solid var(--brown);
-  }
-  .who-inner { max-width: 1240px; margin: 0 auto; }
-  .who-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-  }
-  .who-card {
-    background: var(--cream);
-    border: 1.5px solid var(--rule);
-    border-radius: 3px;
-    padding: 28px;
-    position: relative;
-  }
-  .who-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 6px;
-  }
-  .who-brick::before { background: var(--brick); }
-  .who-olive::before { background: var(--olive); }
-  .who-ochre::before { background: var(--ochre); }
-  .who-header {
-    display: flex; gap: 14px; align-items: center;
-    margin-bottom: 18px;
-    padding-top: 10px;
-  }
-  .who-icon {
-    width: 44px; height: 44px;
-    background: var(--cream-warm);
-    border: 1.5px solid var(--rule);
-    border-radius: 3px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .who-icon svg { width: 24px; height: 24px; color: var(--brown); }
-  .who-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 700; font-size: 22px;
-    letter-spacing: -0.015em;
-    color: var(--brown);
-  }
-  .who-sub {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    color: var(--brown-dim);
-    margin-top: 2px;
-  }
-  .who-card p { font-size: 14px; color: var(--brown-soft); line-height: 1.55; margin-bottom: 16px; }
-  .who-card ul { list-style: none; }
-  .who-card li {
-    font-size: 13px; color: var(--brown-soft);
-    padding: 6px 0;
-    display: flex; gap: 10px; align-items: flex-start;
-  }
-  .who-card li::before {
-    content: "→"; color: var(--brick);
-    font-weight: 700;
-    flex-shrink: 0;
-  }
+/* ===== SERVICE SHOWCASE ===== */
+.svc-show{padding:120px 32px;max-width:1280px;margin:0 auto}
+.svc-show .sec-header{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;padding-bottom:24px;margin-bottom:72px;border-bottom:2px solid var(--midnight)}
+.sec-eyebrow{color:var(--txred);margin-bottom:14px}
+.sec h2,.svc-show h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(36px,5vw,56px);line-height:1;letter-spacing:-.025em;color:var(--midnight)}
+.sec h2 em,.svc-show h2 em{font-style:italic;font-weight:500;color:var(--txred)}
+.sec-meta{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.14em;text-align:right;line-height:1.8;text-transform:uppercase}
 
-  /* ===== PACKAGES ===== */
-  .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border: 2px solid var(--brown);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .pkg {
-    padding: 36px 30px;
-    border-right: 2px solid var(--brown);
-    background: var(--cream);
-    display: flex; flex-direction: column;
-    position: relative;
-  }
-  .pkg:last-child { border-right: none; }
-  .pkg.featured { background: var(--brown); color: var(--cream); }
-  .pkg-ribbon {
-    position: absolute; top: 0; right: 24px;
-    background: var(--brick); color: var(--cream);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.16em;
-    padding: 5px 12px;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  .pkg-label {
-    color: var(--brick);
-    margin-bottom: 10px;
-  }
-  .pkg.featured .pkg-label { color: var(--ochre); }
-  .pkg-name {
-    font-family: 'Fraunces', serif;
-    font-weight: 700; font-size: 32px;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-  }
-  .pkg-desc { font-size: 14px; line-height: 1.5; margin-bottom: 24px; min-height: 60px; color: var(--brown-soft); }
-  .pkg.featured .pkg-desc { color: rgba(242, 234, 211, 0.8); }
-  .pkg-price {
-    font-family: 'Fraunces', serif;
-    font-weight: 700; font-size: 52px;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .pkg-price .period {
-    font-size: 16px; color: var(--brown-dim);
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 0;
-  }
-  .pkg.featured .pkg-price .period { color: rgba(242, 234, 211, 0.6); }
-  .pkg-setup {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.14em;
-    color: var(--brown-dim);
-    margin-bottom: 24px;
-  }
-  .pkg.featured .pkg-setup { color: rgba(242, 234, 211, 0.6); }
-  .pkg ul { list-style: none; padding-top: 20px; border-top: 1px solid var(--rule); flex: 1; margin-bottom: 24px; }
-  .pkg.featured ul { border-color: rgba(242, 234, 211, 0.2); }
-  .pkg li {
-    padding: 8px 0;
-    font-size: 14px;
-    display: flex; gap: 10px; align-items: flex-start;
-  }
-  .pkg li::before {
-    content: "✓"; color: var(--olive); font-weight: 700;
-    flex-shrink: 0;
-  }
-  .pkg.featured li::before { color: var(--ochre); }
-  .pkg-cta {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-  .pkg .btn-primary { background: var(--brick); border-color: var(--brick); }
-  .pkg.featured .btn-primary { background: var(--ochre); color: var(--brown); border-color: var(--ochre); }
+/* Each service block */
+.svc-block{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:120px}
+.svc-block:last-child{margin-bottom:0}
+.svc-block.flip{direction:rtl}
+.svc-block.flip>*{direction:ltr}
+.svc-info{}
+.svc-num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--txred);margin-bottom:12px}
+.svc-name{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,3.5vw,40px);letter-spacing:-.02em;color:var(--midnight);margin-bottom:12px;line-height:1.05}
+.svc-desc{font-size:16px;color:var(--text-soft);line-height:1.6;margin-bottom:20px;max-width:460px}
+.svc-includes{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--text-dim);line-height:2;text-transform:uppercase;margin-bottom:20px}
+.svc-includes strong{color:var(--sage-deep);font-weight:600}
+.svc-price-tag{display:flex;align-items:baseline;gap:10px;margin-bottom:24px}
+.svc-price{font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--txred);letter-spacing:-.02em}
+.svc-price-sub{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim)}
+.svc-price-note{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--text-dim);margin-top:-12px;margin-bottom:24px}
 
-  /* ===== WORK GRID ===== */
-  .work-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .work-card {
-    padding: 32px;
-    border-radius: 3px;
-    min-height: 260px;
-    display: flex; flex-direction: column;
-    cursor: pointer;
-    transition: transform 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-  .work-card:hover { transform: translateY(-3px); }
-  .work-brown { background: var(--brown); color: var(--cream); }
-  .work-brick { background: var(--brick); color: var(--cream); }
-  .work-olive { background: var(--olive); color: var(--cream); }
-  .work-ochre { background: var(--ochre); color: var(--brown); }
-  .work-header {
-    display: flex; justify-content: space-between;
-    margin-bottom: auto;
-    padding-bottom: 24px;
-  }
-  .work-icon {
-    width: 40px; height: 40px;
-    opacity: 0.9;
-  }
-  .work-type {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.16em;
-    text-transform: uppercase;
-    opacity: 0.85;
-    text-align: right;
-  }
-  .work-card h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 28px;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-    line-height: 1.05;
-  }
-  .work-stat {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 500;
-    font-size: 16px;
-    opacity: 0.95;
-    margin-bottom: 14px;
-  }
-  .work-price {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; letter-spacing: 0.12em;
-    padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    opacity: 0.8;
-  }
-  .work-ochre .work-price { border-top-color: rgba(0,0,0,0.15); }
+/* ===== FLOATING ILLUSTRATIONS ===== */
+.svc-visual{position:relative;min-height:380px;display:flex;align-items:center;justify-content:center}
 
-  /* ===== PROCESS ===== */
-  .process-inner {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border-top: 2px solid var(--brown);
-    margin-top: 40px;
-  }
-  .step {
-    padding: 28px 24px 0 0;
-    border-right: 1px solid var(--rule);
-    position: relative;
-  }
-  .step:last-child { border-right: none; }
-  .step-num {
-    width: 48px; height: 48px;
-    background: var(--brick); color: var(--cream);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif;
-    font-size: 20px; font-weight: 700;
-    margin-bottom: 20px;
-  }
-  .step h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 20px; font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-    color: var(--brown);
-  }
-  .step p { font-size: 14px; color: var(--brown-soft); line-height: 1.5; }
+/* -- Website: browser mockup -- */
+.vis-browser{width:100%;max-width:440px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 64px rgba(22,32,51,.12);animation:float 6s ease-in-out infinite}
+.vis-browser-bar{background:var(--sand);padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--sandstone)}
+.vb-dot{width:10px;height:10px;border-radius:50%}
+.vb-red{background:#FF5F57}.vb-yel{background:#FFBD2E}.vb-grn{background:#28CA41}
+.vis-url{flex:1;background:var(--limestone);border-radius:4px;padding:6px 12px;margin:0 32px 0 8px;overflow:hidden;position:relative;height:26px}
+.vis-url-text{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sage);white-space:nowrap;position:absolute;left:12px;top:6px}
+.vis-url-text.typing{overflow:hidden;width:0;border-right:2px solid var(--txred);animation:typing 3s steps(22) 1.2s forwards,blink .7s step-end infinite}
+.vis-body{padding:0}
+.vis-nav{background:var(--midnight);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.vis-nav-brand{font-family:'Fraunces',serif;font-weight:700;font-size:13px;color:var(--limestone)}
+.vis-nav-brand em{color:var(--txred);font-style:italic;font-weight:500}
+.vis-nav-links{display:flex;gap:12px}
+.vis-nav-links span{font-size:9px;color:rgba(245,239,228,.4);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.vis-hero{padding:28px 20px;background:linear-gradient(135deg,var(--limestone),var(--sand))}
+.vis-hero-eye{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--txred);margin-bottom:8px}
+.vis-hero h4{font-family:'Fraunces',serif;font-weight:700;font-size:20px;line-height:1.05;letter-spacing:-.015em;color:var(--midnight);margin-bottom:8px}
+.vis-hero h4 em{font-style:italic;color:var(--txred);font-weight:500}
+.vis-hero p{font-size:11px;color:var(--text-soft);line-height:1.4;margin-bottom:12px}
+.vis-hero-btn{display:inline-block;background:var(--txred);color:#fff;padding:6px 14px;border-radius:3px;font-size:10px;font-weight:700}
+.vis-blocks{padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.vis-block{background:var(--sand);border-radius:4px;height:48px}
+.vis-footer{background:var(--midnight);padding:10px 20px;display:flex;justify-content:space-between}
+.vis-footer span{font-size:8px;color:rgba(245,239,228,.35);font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.vis-footer .star{color:var(--gold)}
+/* Animate blocks in */
+.vis.active .vis-hero-eye{animation:slideUp .6s .5s both}
+.vis.active .vis-hero h4{animation:slideUp .6s .8s both}
+.vis.active .vis-hero p{animation:slideUp .6s 1.1s both}
+.vis.active .vis-hero-btn{animation:popIn .5s 1.4s both}
+.vis.active .vis-block:nth-child(1){animation:slideUp .5s 1.7s both}
+.vis.active .vis-block:nth-child(2){animation:slideUp .5s 1.9s both}
+.vis.active .vis-block:nth-child(3){animation:slideUp .5s 2.1s both}
 
-  /* ===== TESTIMONIAL ===== */
-  .testimonial {
-    background: var(--olive);
-    color: var(--cream);
-    padding: 70px 32px;
-  }
-  .testimonial-inner {
-    max-width: 1000px; margin: 0 auto;
-    text-align: center;
-  }
-  .testimonial-label { color: var(--ochre); margin-bottom: 24px; }
-  .testimonial blockquote {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 500;
-    font-size: clamp(24px, 3vw, 36px);
-    line-height: 1.25;
-    letter-spacing: -0.015em;
-    margin-bottom: 32px;
-  }
-  .testimonial cite {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; letter-spacing: 0.16em;
-    text-transform: uppercase;
-    font-style: normal;
-    color: rgba(242, 234, 211, 0.85);
-    display: block;
-  }
+/* -- AI Phone: phone mockup -- */
+.vis-phone{width:220px;background:var(--midnight);border-radius:24px;padding:12px;box-shadow:0 24px 64px rgba(22,32,51,.15);animation:float 7s ease-in-out infinite}
+.vis-phone-screen{background:#fff;border-radius:16px;overflow:hidden;padding:16px}
+.vis-phone-top{text-align:center;margin-bottom:12px}
+.vis-phone-top span{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim)}
+.vis-phone-status{font-family:'Fraunces',serif;font-weight:700;font-size:13px;color:var(--midnight);text-align:center;margin-bottom:12px}
+.vis-bubbles{display:flex;flex-direction:column;gap:8px}
+.vis-bub{padding:8px 12px;border-radius:12px;font-size:11px;line-height:1.35;max-width:85%}
+.vis-bub.incoming{background:var(--sand);color:var(--text);border-bottom-left-radius:4px;align-self:flex-start}
+.vis-bub.outgoing{background:var(--txred);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.vis-bub.ai{background:var(--sage);color:#fff;border-bottom-left-radius:4px;align-self:flex-start}
+.vis.active .vis-bub:nth-child(1){animation:slideUp .5s .6s both}
+.vis.active .vis-bub:nth-child(2){animation:slideUp .5s 1.4s both}
+.vis.active .vis-bub:nth-child(3){animation:slideUp .5s 2.2s both}
+.vis.active .vis-bub:nth-child(4){animation:slideUp .5s 3s both}
+.vis-typing{font-size:10px;color:var(--text-dim);padding:4px 0;animation:pulse 1s ease-in-out infinite}
 
-  /* ===== CLOSING CTA ===== */
-  .close {
-    background: var(--brick);
-    color: var(--cream);
-    padding: 80px 32px;
-  }
-  .close-inner {
-    max-width: 1240px; margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 48px; align-items: center;
-  }
-  .close h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: clamp(44px, 6vw, 72px);
-    line-height: 1;
-    letter-spacing: -0.025em;
-    margin-bottom: 20px;
-  }
-  .close h2 em { font-style: italic; font-weight: 500; color: var(--ochre); }
-  .close p { font-size: 17px; max-width: 420px; line-height: 1.5; opacity: 0.9; }
-  .close-card {
-    background: var(--cream);
-    color: var(--brown);
-    border-radius: 3px;
-    padding: 28px;
-  }
-  .close-card-label { color: var(--brick); margin-bottom: 14px; display: block; }
-  .close-phone {
-    font-family: 'Fraunces', serif;
-    font-weight: 700; font-size: 34px;
-    color: var(--brown); text-decoration: none;
-    display: block; margin-bottom: 14px;
-    letter-spacing: -0.015em;
-  }
-  .close-email {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; letter-spacing: 0.12em;
-    color: var(--brown); text-decoration: none;
-    display: flex; gap: 8px; align-items: center;
-    font-weight: 500;
-  }
-  .close-email:hover { color: var(--brick); }
-  .close-hours {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.14em;
-    color: var(--brown-dim);
-    margin-top: 16px; padding-top: 16px;
-    border-top: 1px solid var(--rule);
-    text-transform: uppercase;
-  }
+/* -- Drone: viewfinder -- */
+.vis-drone-wrap{position:relative;width:100%;max-width:460px}
+.vis-drone-icon{position:absolute;top:-28px;left:50%;transform:translateX(-50%);z-index:2;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 12px 24px rgba(0,0,0,.2))}
+.vis-drone-icon svg{width:72px;height:72px;color:var(--midnight)}
+.vis-viewfinder{background:var(--midnight);border-radius:14px;overflow:hidden;box-shadow:0 32px 72px rgba(22,32,51,.18);margin-top:36px;animation:float2 7s ease-in-out infinite}
+.vis-vf-top{background:rgba(0,0,0,.4);padding:10px 18px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.vis-vf-top span{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase}
+.vis-vf-rec{display:flex;align-items:center;gap:6px;color:#FF4444;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.06em}
+.vis-vf-rec::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF4444;animation:pulse 1.2s ease-in-out infinite}
+.vis-vf-body{aspect-ratio:16/10;position:relative;overflow:hidden;background:#1a1a1a}
+/* Real drone video */
+.vf-video{position:absolute;inset:-10%;width:120%;height:120%;object-fit:cover;transition:transform .15s linear}
+/* HUD overlay */
+.vf-hud{position:absolute;inset:0;z-index:1;pointer-events:none}
+.vf-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr)}
+.vf-grid>div{border:1px solid rgba(255,255,255,.12)}
+.vf-crosshair{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px}
+.vf-crosshair::before,.vf-crosshair::after{content:"";position:absolute;background:rgba(255,255,255,.5)}
+.vf-crosshair::before{width:1px;height:100%;left:50%}
+.vf-crosshair::after{height:1px;width:100%;top:50%}
+.vf-crosshair-ring{width:48px;height:48px;border:2px solid rgba(255,255,255,.45);border-radius:50%}
+/* HUD labels */
+.vf-label{position:absolute;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(0,0,0,.35);padding:3px 7px;border-radius:3px;backdrop-filter:blur(4px)}
+.vf-label-alt{top:12px;left:14px}.vf-label-speed{top:12px;right:14px}.vf-label-gps{bottom:12px;left:14px}.vf-label-bat{bottom:12px;right:14px}
+.vis.active .vf-label{animation:popIn .5s both}
+.vis.active .vf-label-alt{animation-delay:.8s}.vis.active .vf-label-speed{animation-delay:1.2s}
+.vis.active .vf-label-gps{animation-delay:1.6s}.vis.active .vf-label-bat{animation-delay:2s}
+/* Photo markers */
+.vf-marker{position:absolute;width:28px;height:28px;border:2px solid rgba(255,255,255,.8);border-radius:4px;display:flex;align-items:center;justify-content:center}
+.vf-marker::after{content:"📍";font-size:12px}
+.vf-m1{top:35%;left:22%}.vf-m2{bottom:30%;right:22%}
+.vis.active .vf-marker{animation:popIn .5s both}
+.vis.active .vf-m1{animation-delay:2.4s}.vis.active .vf-m2{animation-delay:2.8s}
+/* Bottom bar */
+.vis-vf-bottom{padding:12px 18px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.2)}
+.vis-vf-badge{background:var(--sage);color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;padding:5px 10px;border-radius:4px;text-transform:uppercase;font-weight:600}
+.vis-vf-res{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,239,228,.6);letter-spacing:.06em}
+.vis-vf-photos{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(245,239,228,.5);letter-spacing:.06em;display:flex;align-items:center;gap:6px}
+.vis-vf-photos::before{content:"";width:14px;height:10px;border:1.5px solid rgba(245,239,228,.5);border-radius:2px}
 
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--brown);
-    color: var(--cream);
-    padding: 56px 32px 24px;
-  }
-  .footer-inner { max-width: 1240px; margin: 0 auto; }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 48px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid rgba(242, 234, 211, 0.2);
-  }
-  .footer-brand { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
-  .footer-brand-text {
-    font-family: 'Fraunces', serif;
-    font-weight: 700; font-size: 20px;
-    letter-spacing: -0.015em;
-  }
-  .footer-brand-text em { font-style: italic; font-weight: 500; color: var(--ochre); }
-  .footer-desc {
-    font-size: 13px; color: rgba(242, 234, 211, 0.7);
-    line-height: 1.55; max-width: 320px;
-  }
-  .footer-col h5 {
-    color: var(--ochre);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.16em;
-    text-transform: uppercase; font-weight: 600;
-    margin-bottom: 14px;
-  }
-  .footer-col ul { list-style: none; }
-  .footer-col li { margin-bottom: 8px; }
-  .footer-col a {
-    color: var(--cream); text-decoration: none;
-    font-size: 14px;
-  }
-  .footer-col a:hover { color: var(--ochre); }
-  .footer-col p { font-size: 13px; line-height: 1.6; color: rgba(242, 234, 211, 0.7); }
-  .footer-bottom {
-    padding-top: 20px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(242, 234, 211, 0.5);
-  }
-  .footer-bottom .star { color: var(--ochre); }
+/* -- Logo: creation -- */
+.vis-logo-wrap{width:100%;max-width:360px;display:flex;flex-direction:column;gap:16px;animation:float 7s ease-in-out infinite}
+.vis-logo-card{background:#fff;border-radius:10px;padding:28px;box-shadow:0 16px 48px rgba(22,32,51,.08);text-align:center;transition:all .3s}
+.vis-logo-card:hover{transform:scale(1.03);box-shadow:0 20px 56px rgba(22,32,51,.12)}
+.vis-logo-v1{display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--midnight)}
+.vis-logo-v1 em{color:var(--txred);font-style:italic;font-weight:500}
+.vis-logo-v2{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:14px;letter-spacing:.25em;text-transform:uppercase;color:var(--midnight);display:flex;align-items:center;justify-content:center;gap:8px}
+.vis-logo-v3{background:var(--midnight);border-radius:10px;padding:28px}
+.vis-logo-v3 .logo-inner{display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Fraunces',serif;font-weight:700;font-size:22px;color:var(--gold)}
+.vis-logo-star svg{width:20px;height:20px}
+.vis-swatch{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.vis-swatch span{width:24px;height:24px;border-radius:50%;border:2px solid var(--sandstone)}
+.vis.active .vis-logo-card:nth-child(1){animation:slideUp .6s .5s both}
+.vis.active .vis-logo-card:nth-child(2){animation:slideUp .6s 1s both}
+.vis.active .vis-logo-card:nth-child(3){animation:slideUp .6s 1.5s both}
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 960px) {
-    .hero-grid, .who-grid, .packages-grid, .work-grid, .process-inner, .footer-grid, .close-inner { grid-template-columns: 1fr; }
-    .section-header { grid-template-columns: 1fr; }
-    .service-row { grid-template-columns: 56px 1fr; gap: 16px; }
-    .service-includes, .service-price-block { grid-column: 2; padding-left: 0; border-left: none; text-align: left; }
-    .service-price-block { padding-top: 8px; }
-    .pkg { border-right: none; border-bottom: 2px solid var(--brown); }
-    .pkg:last-child { border-bottom: none; }
-    .step { border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 24px; margin-bottom: 24px; }
-    nav ul { display: none; }
-    .top-bar-left span:not(:first-child) { display: none; }
-  }
+/* -- Print: flyer stack -- */
+.vis-print-wrap{position:relative;width:280px;height:370px;animation:float 7s ease-in-out infinite}
+.vis-flyer{position:absolute;width:240px;background:#fff;border-radius:8px;box-shadow:0 12px 40px rgba(22,32,51,.1);overflow:hidden;transition:all .4s}
+.vis-flyer:nth-child(1){top:20px;left:10px;transform:rotate(-4deg);z-index:1}
+.vis-flyer:nth-child(2){top:10px;left:30px;transform:rotate(2deg);z-index:2}
+.vis-flyer:nth-child(3){top:0;left:20px;transform:rotate(-1deg);z-index:3}
+.vis.active .vis-flyer:nth-child(1){animation:fanIn .7s .5s both;--rot:-4deg}
+.vis.active .vis-flyer:nth-child(2){animation:fanIn .7s .9s both;--rot:2deg}
+.vis.active .vis-flyer:nth-child(3){animation:fanIn .7s 1.3s both;--rot:-1deg}
+.vis-flyer-top{height:6px}
+.vis-flyer-top.red{background:var(--txred)}.vis-flyer-top.gold{background:var(--gold)}.vis-flyer-top.sage{background:var(--sage)}
+.vis-flyer-body{padding:20px;text-align:center}
+.vis-flyer-title{font-family:'Fraunces',serif;font-weight:700;font-size:16px;color:var(--midnight);margin-bottom:6px}
+.vis-flyer-sub{font-size:10px;color:var(--text-dim);margin-bottom:10px}
+.vis-flyer-box{background:var(--sand);height:40px;border-radius:4px;margin-bottom:10px}
+.vis-flyer-cta{background:var(--txred);color:#fff;font-size:9px;font-weight:700;padding:6px 14px;border-radius:3px;display:inline-block}
+
+/* -- Ads: graph -- */
+.vis-graph-wrap{width:100%;max-width:400px;background:#fff;border-radius:12px;padding:28px;box-shadow:0 24px 64px rgba(22,32,51,.1);animation:float 7s ease-in-out infinite}
+.vis-graph-title{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px}
+.vis-graph-val{font-family:'Fraunces',serif;font-weight:700;font-size:28px;color:var(--midnight);margin-bottom:16px}
+.vis-graph-val span{color:var(--sage);font-size:13px;font-weight:500;margin-left:6px}
+.vis-bars{display:flex;align-items:flex-end;gap:8px;height:120px;padding-top:8px}
+.vis-bar{flex:1;border-radius:4px 4px 0 0;background:var(--sand);position:relative}
+.vis-bar.active-bar{background:var(--txred)}
+.vis-bar.gold-bar{background:var(--gold)}
+.vis.active .vis-bar{animation:growBar .7s cubic-bezier(.16,1,.3,1) both}
+.vis.active .vis-bar:nth-child(1){--h:35%;height:35%;animation-delay:.5s}
+.vis.active .vis-bar:nth-child(2){--h:50%;height:50%;animation-delay:.7s}
+.vis.active .vis-bar:nth-child(3){--h:40%;height:40%;animation-delay:.9s}
+.vis.active .vis-bar:nth-child(4){--h:65%;height:65%;animation-delay:1.1s}
+.vis.active .vis-bar:nth-child(5){--h:55%;height:55%;animation-delay:1.3s}
+.vis.active .vis-bar:nth-child(6){--h:80%;height:80%;animation-delay:1.5s}
+.vis.active .vis-bar:nth-child(7){--h:70%;height:70%;animation-delay:1.7s}
+.vis.active .vis-bar:nth-child(8){--h:95%;height:95%;animation-delay:1.9s}
+.vis-bar-labels{display:flex;gap:8px;margin-top:8px}
+.vis-bar-labels span{flex:1;text-align:center;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--text-dim);letter-spacing:.05em}
+.vis-graph-footer{display:flex;justify-content:space-between;margin-top:16px;padding-top:12px;border-top:1px solid var(--sandstone)}
+.vis-graph-stat{text-align:center}
+.vis-graph-stat strong{display:block;font-family:'Fraunces',serif;font-size:18px;color:var(--midnight)}
+.vis-graph-stat span{font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+
+/* ===== AREA / PROCESS / CTA / FOOTER ===== */
+.area-sec{background:var(--midnight);color:var(--limestone);padding:110px 32px;position:relative;overflow:hidden}
+.area-sec::before{content:"★";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:500px;opacity:.02;color:var(--gold)}
+.area-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+.area-hdr{margin-bottom:48px;padding-bottom:24px;border-bottom:2px solid rgba(245,239,228,.15)}
+.area-hdr h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(36px,5vw,56px);line-height:1;letter-spacing:-.025em;color:var(--limestone)}
+.area-hdr h2 em{font-style:italic;font-weight:500;color:var(--gold)}
+.area-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}
+.area-text p{font-size:17px;line-height:1.65;color:rgba(245,239,228,.8);margin-bottom:24px}
+.area-cities{display:grid;grid-template-columns:repeat(3,1fr)}
+.city{padding:14px 16px;border:1px solid rgba(245,239,228,.08);font-size:14px;font-weight:500;color:rgba(245,239,228,.7);transition:all .25s;display:flex;align-items:center;gap:8px}
+.city:hover{background:rgba(245,239,228,.05);color:#fff}
+.city.home{color:var(--gold);font-weight:700;border-color:rgba(212,148,58,.25);background:rgba(212,148,58,.06)}
+.city-dot{width:5px;height:5px;border-radius:50%;background:rgba(245,239,228,.25)}
+.city.home .city-dot{background:var(--gold);box-shadow:0 0 8px rgba(212,148,58,.5);animation:pulse 2s ease-in-out infinite}
+.area-foot{margin-top:32px;padding-top:20px;border-top:1px solid rgba(245,239,228,.1);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(245,239,228,.4);text-transform:uppercase}
+
+.sec{padding:110px 32px;max-width:1280px;margin:0 auto}
+.sec-header{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;padding-bottom:24px;margin-bottom:56px;border-bottom:2px solid var(--midnight)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--midnight);margin-top:48px}
+.step{padding:28px 20px 0 0;border-right:1px solid var(--sandstone);transition:all .3s}
+.step:last-child{border-right:none}
+.step:hover{padding-left:8px}
+.step-n{width:48px;height:48px;background:var(--txred);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:18px;transition:all .3s}
+.step:hover .step-n{transform:scale(1.1);background:var(--midnight)}
+.step h4{font-family:'Fraunces',serif;font-size:18px;font-weight:700;margin-bottom:8px;color:var(--midnight)}
+.step p{font-size:13px;color:var(--text-soft);line-height:1.5}
+
+.cta-sec{background:var(--txred);color:#fff;padding:110px 32px;position:relative;overflow:hidden}
+.cta-sec::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 25%,rgba(212,148,58,.2) 0%,transparent 60%);pointer-events:none}
+.cta-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;position:relative;z-index:1}
+.cta-sec h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(40px,5.5vw,64px);line-height:1;letter-spacing:-.025em;margin-bottom:20px}
+.cta-sec h2 em{font-style:italic;font-weight:500;color:var(--gold)}
+.cta-inner>div>p{font-size:17px;max-width:420px;line-height:1.55;opacity:.9}
+.cta-card{background:var(--limestone);color:var(--text);border-radius:10px;padding:36px;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.cta-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.2)}
+.cta-card-label{color:var(--txred);margin-bottom:14px;display:block}
+.cta-phone{font-family:'Fraunces',serif;font-weight:700;font-size:32px;color:var(--midnight);text-decoration:none;display:block;margin-bottom:14px;transition:color .2s}
+.cta-phone:hover{color:var(--txred)}
+.cta-email{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--text);text-decoration:none;display:flex;gap:8px;align-items:center;font-weight:500;transition:color .2s}
+.cta-email:hover{color:var(--txred)}
+.cta-hours{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--text-dim);margin-top:16px;padding-top:16px;border-top:1px solid var(--sandstone);text-transform:uppercase}
+
+footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
+.ft-inner{max-width:1280px;margin:0 auto}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:28px;border-bottom:1px solid rgba(245,239,228,.12)}
+.ft-brand{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.ft-brand-text{font-family:'Fraunces',serif;font-weight:700;font-size:20px}
+.ft-brand-text em{font-style:italic;font-weight:500;color:var(--gold)}
+.ft-desc{font-size:13px;color:rgba(245,239,228,.6);line-height:1.55;max-width:300px}
+.ft-col h5{color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.ft-col ul{list-style:none}.ft-col li{margin-bottom:7px}
+.ft-col a{color:var(--limestone);text-decoration:none;font-size:13px;transition:color .2s}
+.ft-col a:hover{color:var(--gold)}
+.ft-col p{font-size:12px;line-height:1.6;color:rgba(245,239,228,.6)}
+.ft-bottom{padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,239,228,.4)}
+.ft-bottom .star{color:var(--gold)}
+
+@media(max-width:1024px){
+  .svc-block,.svc-block.flip{grid-template-columns:1fr;gap:40px;direction:ltr}
+  .hero-grid,.cta-inner,.area-grid,.ft-grid{grid-template-columns:1fr}
+  .sec-header,.svc-show .sec-header{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr}
+  .step{border-right:none;border-bottom:1px solid var(--sandstone);padding-bottom:20px;margin-bottom:20px}
+  nav ul{display:none}.mob-toggle{display:block}
+  .top-bar-left span:not(:first-child){display:none}
+  .area-cities{grid-template-columns:repeat(2,1fr)}
+  .hero{min-height:auto;padding:48px 20px 40px}
+  .svc-show{padding:80px 20px}
+  .sec,.area-sec,.cta-sec{padding:80px 20px}
+  .svc-visual{min-height:300px}
+}
+@media(max-width:600px){.area-cities{grid-template-columns:1fr 1fr}.hero-proof{flex-direction:column;gap:14px}.nav-phone span{display:none}.vis-browser{max-width:100%}}
 </style>
 </head>
 <body>
 
-<!-- ===== TOP BAR ===== -->
-<div class="top-bar">
-  <div class="top-bar-inner">
-    <div class="top-bar-left">
-      <span><span class="top-bar-dot">●</span> <span data-lang="en">Open now · Mon–Fri 9–5</span><span data-lang="es">Abierto · Lun–Vie 9–5</span></span>
-      <span>Waco, TX</span>
-      <span><span data-lang="en">Part 107 Certified Drone Pilot</span><span data-lang="es">Piloto de Drone Certificado Part 107</span></span>
+<div class="mob-menu" id="mobMenu"><button class="mob-close" onclick="closeMob()">&times;</button><a href="#services" onclick="closeMob()"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a><a href="#area" onclick="closeMob()"><span data-lang="en">Area</span><span data-lang="es">Cobertura</span></a><a href="#process" onclick="closeMob()"><span data-lang="en">Process</span><span data-lang="es">Proceso</span></a><a href="#contact" onclick="closeMob()"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></div>
+
+<div class="top-bar"><div class="top-bar-inner"><div class="top-bar-left"><span><span class="top-dot">●</span> <span data-lang="en">Open · Mon–Fri 9–5</span><span data-lang="es">Abierto · Lun–Vie 9–5</span></span><span>Waco, TX</span><span><span data-lang="en">FAA Part 107 Certified</span><span data-lang="es">FAA Part 107</span></span></div><div><a href="tel:6826007984">★ 682.600.7984</a></div></div></div>
+
+<nav id="mainNav"><div class="nav-inner"><a href="#" class="brand"><svg width="32" height="32" viewBox="0 0 100 100"><polygon fill="#BF3A2B" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/><g fill="rgba(0,0,0,0.3)"><polygon points="50,50 50,3 60.58,35.44"/><polygon points="50,50 94.7,35.48 67.12,55.56"/><polygon points="50,50 77.63,88.02 50,68"/><polygon points="50,50 22.37,88.02 32.88,55.56"/><polygon points="50,50 5.3,35.48 39.42,35.44"/></g></svg><span class="brand-text">Texas <em>Digital</em> Co.</span></a><ul><li><a href="#services"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a></li><li><a href="#area"><span data-lang="en">Service Area</span><span data-lang="es">Cobertura</span></a></li><li><a href="#process"><span data-lang="en">Process</span><span data-lang="es">Proceso</span></a></li><li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li></ul><div class="nav-right"><div class="lang-toggle"><button class="lang-btn active" id="langEn" onclick="setLang('en')">EN</button><button class="lang-btn" id="langEs" onclick="setLang('es')">ES</button></div><a href="tel:6826007984" class="nav-phone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.1 15.1 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg><span>682.600.7984</span></a><button class="mob-toggle" onclick="openMob()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav>
+
+<!-- HERO -->
+<section class="hero"><div class="hero-grid"><div>
+  <div class="hero-eyebrow mono r"><span data-lang="en">Full-service digital · Waco, Texas</span><span data-lang="es">Agencia digital · Waco, Texas</span></div>
+  <h1 data-lang="en" class="r d1">Your business<br>deserves to<br><em>look the part.</em></h1>
+  <h1 data-lang="es" class="r d1">Tu negocio<br>merece<br><em>verse profesional.</em></h1>
+  <p class="hero-lead r d2" data-lang="en">Websites, aerial drone video, AI phone agents, print, and Google Ads — all from one shop in Waco. Clear prices, no contracts, bilingual.</p>
+  <p class="hero-lead r d2" data-lang="es">Sitios web, video con drone, agentes AI, impresión, y Google Ads — todo desde Waco. Precios claros, sin contratos, bilingüe.</p>
+  <div class="hero-ctas r d3"><a href="#services" class="btn btn-red"><span data-lang="en">See what we build</span><span data-lang="es">Ve lo que hacemos</span> →</a><a href="tel:6826007984" class="btn btn-outline"><span data-lang="en">Call now</span><span data-lang="es">Llamar</span></a></div>
+  <div class="hero-proof r d4">
+    <div class="proof-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><div class="proof-text"><strong>Part 107</strong><br><span data-lang="en">FAA certified</span><span data-lang="es">Certificado FAA</span></div></div>
+    <div class="proof-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><div class="proof-text"><strong>EN / ES</strong><br><span data-lang="en">Bilingual</span><span data-lang="es">Bilingüe</span></div></div>
+    <div class="proof-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="proof-text"><strong><span data-lang="en">2 weeks</span><span data-lang="es">2 semanas</span></strong><br><span data-lang="en">Avg. delivery</span><span data-lang="es">Entrega promedio</span></div></div>
+  </div>
+</div>
+<div class="hero-poster r d2">
+  <div class="poster-label mono"><span data-lang="en">★ Real prices — no surprises ★</span><span data-lang="es">★ Precios reales — sin sorpresas ★</span></div>
+  <div class="poster-title" data-lang="en">No contracts.<br>No hidden fees.</div><div class="poster-title" data-lang="es">Sin contratos.<br>Sin costos ocultos.</div>
+  <div class="poster-row">
+    <div class="poster-line"><span class="poster-svc" data-lang="en">Website</span><span class="poster-svc" data-lang="es">Sitio web</span><span class="poster-price">from $2,500</span></div>
+    <div class="poster-line"><span class="poster-svc" data-lang="en">Drone shoot</span><span class="poster-svc" data-lang="es">Drone</span><span class="poster-price">from $200</span></div>
+    <div class="poster-line"><span class="poster-svc" data-lang="en">AI phone agent</span><span class="poster-svc" data-lang="es">Agente AI</span><span class="poster-price">$299/mo</span></div>
+    <div class="poster-line"><span class="poster-svc">500 flyers</span><span class="poster-price">$99</span></div>
+  </div>
+  <div class="poster-foot" data-lang="en">Design, revisions, delivery included. You own everything.</div><div class="poster-foot" data-lang="es">Diseño, cambios, entrega incluidos. Todo es tuyo.</div>
+</div></div></section>
+
+<!-- ===== SERVICES WITH FLOATING ILLUSTRATIONS ===== -->
+<div class="svc-show" id="services">
+  <div class="sec-header r"><div><div class="sec-eyebrow mono"><span data-lang="en">01 · What we build</span><span data-lang="es">01 · Lo que hacemos</span></div><h2 data-lang="en">See it <em>come to life.</em></h2><h2 data-lang="es">Míralo <em>cobrar vida.</em></h2></div><div class="sec-meta" data-lang="en">6 services<br>All prices visible</div><div class="sec-meta" data-lang="es">6 servicios<br>Precios claros</div></div>
+
+  <!-- WEBSITE -->
+  <div class="svc-block">
+    <div class="svc-info r">
+      <div class="svc-num">01</div>
+      <div class="svc-name" data-lang="en">Custom websites</div><div class="svc-name" data-lang="es">Sitios web a la medida</div>
+      <div class="svc-desc" data-lang="en">Built from scratch — not a template. Works on phones, loads fast, shows up on Google. Your site, your domain, yours forever.</div>
+      <div class="svc-desc" data-lang="es">Hecho desde cero — no una plantilla. Funciona en celular, carga rápido, aparece en Google. Tu sitio, tu dominio, tuyo para siempre.</div>
+      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">5 pages · Hosting · SSL · Google Business · Mobile + SEO</span><span data-lang="es">5 páginas · Hosting · SSL · Google Business · Móvil + SEO</span></div>
+      <div class="svc-price-tag"><span class="svc-price">$2,500</span><span class="svc-price-sub" data-lang="en">and up · one-time</span><span class="svc-price-sub" data-lang="es">o más · único</span></div>
+      <div class="svc-price-note" data-lang="en">+$99/mo hosting & updates</div><div class="svc-price-note" data-lang="es">+$99/mes hosting y cambios</div>
+      <a href="#contact" class="btn btn-red"><span data-lang="en">Get started</span><span data-lang="es">Empezar</span> →</a>
     </div>
-    <div>
-      <a href="tel:6826007984">★ 682.600.7984</a>
+    <div class="svc-visual vis r d2">
+      <div class="vis-browser">
+        <div class="vis-browser-bar"><div class="vb-dot vb-red"></div><div class="vb-dot vb-yel"></div><div class="vb-dot vb-grn"></div><div class="vis-url"><span class="vis-url-text typing">www.joseyardcare.com</span></div></div>
+        <div class="vis-body">
+          <div class="vis-nav"><span class="vis-nav-brand">Jose's <em>Yard Care</em></span><div class="vis-nav-links"><span>Services</span><span>About</span><span>Contact</span></div></div>
+          <div class="vis-hero"><div class="vis-hero-eye">★ Waco, TX</div><h4>Your yard,<br><em>our pride.</em></h4><p>Professional lawn care, landscaping, and maintenance for Waco and Central Texas.</p><div class="vis-hero-btn">Get a free quote →</div></div>
+          <div class="vis-blocks"><div class="vis-block"></div><div class="vis-block"></div><div class="vis-block"></div></div>
+          <div class="vis-footer"><span>© 2026 Jose's Yard Care</span><span>Waco, TX <span class="star">★</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI PHONE -->
+  <div class="svc-block flip">
+    <div class="svc-info r">
+      <div class="svc-num">02</div>
+      <div class="svc-name" data-lang="en">AI phone agent</div><div class="svc-name" data-lang="es">Agente AI de teléfono</div>
+      <div class="svc-desc" data-lang="en">An AI answers your business phone 24/7 in English and Spanish. Takes the caller's info, texts it to you. You never miss a job again.</div>
+      <div class="svc-desc" data-lang="es">Un AI contesta tu teléfono 24/7 en inglés y español. Toma los datos del cliente y te los manda. No pierdes más trabajos.</div>
+      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">Custom setup · 500 min/mo · SMS alerts</span><span data-lang="es">Instalación · 500 min/mes · Alertas SMS</span></div>
+      <div class="svc-price-tag"><span class="svc-price">$299</span><span class="svc-price-sub" data-lang="en">per month</span><span class="svc-price-sub" data-lang="es">al mes</span></div>
+      <div class="svc-price-note" data-lang="en">$199 one-time setup</div><div class="svc-price-note" data-lang="es">$199 instalación</div>
+      <a href="#contact" class="btn btn-red"><span data-lang="en">Get started</span><span data-lang="es">Empezar</span> →</a>
+    </div>
+    <div class="svc-visual vis r d2">
+      <div class="vis-phone">
+        <div class="vis-phone-screen">
+          <div class="vis-phone-top"><span>AI Assistant</span></div>
+          <div class="vis-phone-status" data-lang="en">Incoming call...</div><div class="vis-phone-status" data-lang="es">Llamada entrante...</div>
+          <div class="vis-bubbles">
+            <div class="vis-bub incoming" data-lang="en">"Hi, I need a quote for a roof repair on my house."</div><div class="vis-bub incoming" data-lang="es">"Hola, necesito cotización para arreglar mi techo."</div>
+            <div class="vis-bub ai" data-lang="en">"Of course! Can I get your name and address?"</div><div class="vis-bub ai" data-lang="es">"¡Claro! ¿Me da su nombre y dirección?"</div>
+            <div class="vis-bub incoming" data-lang="en">"Mike Torres, 1205 Lake Shore Dr."</div><div class="vis-bub incoming" data-lang="es">"Miguel Torres, 1205 Lake Shore Dr."</div>
+            <div class="vis-bub outgoing" data-lang="en">📱 New lead: Mike Torres, roof repair, 1205 Lake Shore Dr.</div><div class="vis-bub outgoing" data-lang="es">📱 Nuevo cliente: Miguel Torres, techo, 1205 Lake Shore Dr.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRONE -->
+  <div class="svc-block">
+    <div class="svc-info r">
+      <div class="svc-num">03</div>
+      <div class="svc-name" data-lang="en">Drone & video</div><div class="svc-name" data-lang="es">Drone y video</div>
+      <div class="svc-desc" data-lang="en">FAA Part 107 certified pilot. 4K aerial photos and video for real estate, construction, events. Legal, insured, delivered fast.</div>
+      <div class="svc-desc" data-lang="es">Piloto certificado FAA Part 107. Fotos y video 4K aéreo para bienes raíces, construcción, eventos. Legal, asegurado, rápido.</div>
+      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">Shoot · Edit · Delivery · Part 107 insured · 4K</span><span data-lang="es">Grabación · Edición · Entrega · Part 107 · 4K</span></div>
+      <div class="svc-price-tag"><span class="svc-price">$200</span><span class="svc-price-sub" data-lang="en">starting · per shoot</span><span class="svc-price-sub" data-lang="es">desde · por sesión</span></div>
+      <div class="svc-price-note" data-lang="en">Photo+video combo $350</div><div class="svc-price-note" data-lang="es">Combo foto+video $350</div>
+      <a href="#contact" class="btn btn-red"><span data-lang="en">Book a shoot</span><span data-lang="es">Agendar sesión</span> →</a>
+    </div>
+    <div class="svc-visual vis r d2">
+      <div class="vis-drone-wrap">
+        <div class="vis-drone-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="26" y="26" width="12" height="12" rx="2" fill="rgba(22,32,51,.1)"/><path d="M26 32H8M38 32h18M32 26V8M32 38v18"/><circle cx="8" cy="32" r="6" fill="var(--limestone)" stroke="var(--midnight)"/><circle cx="56" cy="32" r="6" fill="var(--limestone)" stroke="var(--midnight)"/><circle cx="32" cy="8" r="6" fill="var(--limestone)" stroke="var(--midnight)"/><circle cx="32" cy="56" r="6" fill="var(--limestone)" stroke="var(--midnight)"/></svg></div>
+        <div class="vis-viewfinder" id="droneVF">
+          <div class="vis-vf-top"><span>4K · 60fps</span><div class="vis-vf-rec">REC <span id="recTime">00:42</span></div></div>
+          <div class="vis-vf-body">
+            <video class="vf-video" id="vfVideo" autoplay loop muted playsinline src="https://videos.pexels.com/video-files/5031099/5031099-sd_640_360_30fps.mp4"></video>
+            <div class="vf-hud">
+              <div class="vf-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              <div class="vf-crosshair"><div class="vf-crosshair-ring"></div></div>
+              <div class="vf-label vf-label-alt" data-lang="en">ALT 120ft</div><div class="vf-label vf-label-alt" data-lang="es">ALT 36m</div>
+              <div class="vf-label vf-label-speed" data-lang="en">SPD 8mph</div><div class="vf-label vf-label-speed" data-lang="es">VEL 13km/h</div>
+              <div class="vf-label vf-label-gps">GPS 31.55°N</div>
+              <div class="vf-label vf-label-bat">BAT 78%</div>
+              <div class="vf-marker vf-m1"></div>
+              <div class="vf-marker vf-m2"></div>
+            </div>
+          </div>
+          <div class="vis-vf-bottom"><div class="vis-vf-badge"><span data-lang="en">★ Part 107 Certified</span><span data-lang="es">★ Part 107 Certificado</span></div><div class="vis-vf-photos"><span data-lang="en">24 photos</span><span data-lang="es">24 fotos</span></div><div class="vis-vf-res">3840×2160</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGO -->
+  <div class="svc-block flip">
+    <div class="svc-info r">
+      <div class="svc-num">04</div>
+      <div class="svc-name" data-lang="en">Logo & brand</div><div class="svc-name" data-lang="es">Logo y marca</div>
+      <div class="svc-desc" data-lang="en">A real logo, color palette, and business card design. Something that makes your business look established, not thrown together.</div>
+      <div class="svc-desc" data-lang="es">Un logo de verdad, colores, y diseño de tarjetas. Algo que haga que tu negocio se vea establecido.</div>
+      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">3 concepts · Revisions · Colors · Fonts · Business card</span><span data-lang="es">3 conceptos · Cambios · Colores · Tipografías · Tarjetas</span></div>
+      <div class="svc-price-tag"><span class="svc-price">$500</span><span class="svc-price-sub" data-lang="en">one-time</span><span class="svc-price-sub" data-lang="es">único pago</span></div>
+      <div class="svc-price-note" data-lang="en">Delivered in 7–10 days</div><div class="svc-price-note" data-lang="es">Entrega en 7–10 días</div>
+      <a href="#contact" class="btn btn-red"><span data-lang="en">Get started</span><span data-lang="es">Empezar</span> →</a>
+    </div>
+    <div class="svc-visual vis r d2">
+      <div class="vis-logo-wrap">
+        <div class="vis-logo-card"><div class="vis-logo-v1"><span class="vis-logo-star"><svg viewBox="0 0 100 100" fill="#BF3A2B"><polygon points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/></svg></span>Torres <em>Roofing</em></div><div class="vis-swatch"><span style="background:var(--txred)"></span><span style="background:var(--midnight)"></span><span style="background:var(--gold)"></span><span style="background:var(--limestone)"></span></div></div>
+        <div class="vis-logo-card"><div class="vis-logo-v2"><svg viewBox="0 0 100 100" width="16" height="16" fill="#162033"><polygon points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/></svg>Torres Roofing</div></div>
+        <div class="vis-logo-card vis-logo-v3"><div class="logo-inner"><svg viewBox="0 0 100 100" width="20" height="20" fill="#D4943A"><polygon points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/></svg>Torres Roofing</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRINT -->
+  <div class="svc-block">
+    <div class="svc-info r">
+      <div class="svc-num">05</div>
+      <div class="svc-name" data-lang="en">Print & signs</div><div class="svc-name" data-lang="es">Impresión y letreros</div>
+      <div class="svc-desc" data-lang="en">Flyers, business cards, yard signs, truck magnets, banners. We design it, print it, deliver it to you.</div>
+      <div class="svc-desc" data-lang="es">Flyers, tarjetas, letreros, imanes, lonas. Diseñamos, imprimimos, te lo entregamos.</div>
+      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">Design · Print · Delivery · 2-day turnaround</span><span data-lang="es">Diseño · Impresión · Entrega · 2 días</span></div>
+      <div class="svc-price-tag"><span class="svc-price">$99</span><span class="svc-price-sub">500 flyers</span></div>
+      <div class="svc-price-note" data-lang="en">Business cards from $55</div><div class="svc-price-note" data-lang="es">Tarjetas desde $55</div>
+      <a href="#contact" class="btn btn-red"><span data-lang="en">Order print</span><span data-lang="es">Pedir impresión</span> →</a>
+    </div>
+    <div class="svc-visual vis r d2">
+      <div class="vis-print-wrap">
+        <div class="vis-flyer"><div class="vis-flyer-top sage"></div><div class="vis-flyer-body"><div class="vis-flyer-title">Ramirez Lawn</div><div class="vis-flyer-sub">Waco, TX · 254.555.1234</div><div class="vis-flyer-box"></div><div class="vis-flyer-cta">Free Estimate →</div></div></div>
+        <div class="vis-flyer"><div class="vis-flyer-top gold"></div><div class="vis-flyer-body"><div class="vis-flyer-title">Lopez Realty</div><div class="vis-flyer-sub">Your Home Experts</div><div class="vis-flyer-box"></div><div class="vis-flyer-cta">View Listings →</div></div></div>
+        <div class="vis-flyer"><div class="vis-flyer-top red"></div><div class="vis-flyer-body"><div class="vis-flyer-title">Torres Roofing</div><div class="vis-flyer-sub">Licensed · Insured · Waco</div><div class="vis-flyer-box"></div><div class="vis-flyer-cta">Call Today →</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOOGLE ADS -->
+  <div class="svc-block flip">
+    <div class="svc-info r">
+      <div class="svc-num">06</div>
+      <div class="svc-name">Google Ads</div>
+      <div class="svc-desc" data-lang="en">We set up and manage your Google Ads so your phone rings with real leads. Monthly reports — you see exactly where every dollar goes.</div>
+      <div class="svc-desc" data-lang="es">Configuramos y manejamos tus Google Ads para que te lleguen clientes. Reportes mensuales — ves a dónde va cada dólar.</div>
+      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">Setup · Management · Monthly report · Ad spend separate</span><span data-lang="es">Instalación · Manejo · Reporte mensual · Inversión aparte</span></div>
+      <div class="svc-price-tag"><span class="svc-price">$499</span><span class="svc-price-sub" data-lang="en">per month</span><span class="svc-price-sub" data-lang="es">al mes</span></div>
+      <div class="svc-price-note" data-lang="en">+ your ad budget</div><div class="svc-price-note" data-lang="es">+ tu inversión en ads</div>
+      <a href="#contact" class="btn btn-red"><span data-lang="en">Start ads</span><span data-lang="es">Empezar ads</span> →</a>
+    </div>
+    <div class="svc-visual vis r d2">
+      <div class="vis-graph-wrap">
+        <div class="vis-graph-title" data-lang="en">Monthly leads</div><div class="vis-graph-title" data-lang="es">Clientes mensuales</div>
+        <div class="vis-graph-val">47 <span data-lang="en">↑ 312%</span><span data-lang="es">↑ 312%</span></div>
+        <div class="vis-bars">
+          <div class="vis-bar"></div><div class="vis-bar"></div><div class="vis-bar"></div>
+          <div class="vis-bar active-bar"></div><div class="vis-bar"></div><div class="vis-bar gold-bar"></div>
+          <div class="vis-bar active-bar"></div><div class="vis-bar gold-bar"></div>
+        </div>
+        <div class="vis-bar-labels"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span></div>
+        <div class="vis-graph-footer">
+          <div class="vis-graph-stat"><strong>$12.40</strong><span data-lang="en">Cost/lead</span><span data-lang="es">Costo/cliente</span></div>
+          <div class="vis-graph-stat"><strong>312%</strong><span data-lang="en">Growth</span><span data-lang="es">Crecimiento</span></div>
+          <div class="vis-graph-stat"><strong>4.2×</strong><span>ROI</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ===== NAV ===== -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="brand">
-      <svg width="32" height="32" viewBox="0 0 100 100">
-        <polygon fill="#A8401F" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/>
-        <g fill="rgba(0,0,0,0.35)">
-          <polygon points="50,50 50,3 60.58,35.44"/>
-          <polygon points="50,50 94.7,35.48 67.12,55.56"/>
-          <polygon points="50,50 77.63,88.02 50,68"/>
-          <polygon points="50,50 22.37,88.02 32.88,55.56"/>
-          <polygon points="50,50 5.3,35.48 39.42,35.44"/>
-        </g>
-      </svg>
-      <span class="brand-text">Texas <em>Digital</em> Co.</span>
-    </a>
-    <ul>
-      <li><a href="#services"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a></li>
-      <li><a href="#packages"><span data-lang="en">Packages</span><span data-lang="es">Paquetes</span></a></li>
-      <li><a href="#work"><span data-lang="en">Work</span><span data-lang="es">Trabajos</span></a></li>
-      <li><a href="#process"><span data-lang="en">Process</span><span data-lang="es">Proceso</span></a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" id="lang-es" onclick="setLang('es')">ES</button>
-      <a href="tel:6826007984" class="phone-btn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.1 15.1 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
-        682.600.7984
-      </a>
-    </div>
-  </div>
-</nav>
+<!-- SERVICE AREA -->
+<section class="area-sec" id="area"><div class="area-inner">
+  <div class="area-hdr r"><div class="mono" style="color:var(--gold);margin-bottom:14px"><span data-lang="en">02 · Service area</span><span data-lang="es">02 · Cobertura</span></div><h2 data-lang="en">Central Texas.<br><em>Your backyard.</em></h2><h2 data-lang="es">Texas Central.<br><em>Tu territorio.</em></h2></div>
+  <div class="area-grid"><div class="area-text r"><p data-lang="en">Based in Waco. We show up for drone shoots, deliver prints, and build websites for every city within an hour.</p><p data-lang="es">Con base en Waco. Vamos para drone, entregamos impresiones, y hacemos sitios web para cada ciudad a una hora.</p><a href="tel:6826007984" class="btn btn-white" data-lang="en">Call now →</a><a href="tel:6826007984" class="btn btn-white" data-lang="es">Llámanos →</a></div>
+  <div class="r d2"><div class="area-cities">
+    <div class="city home"><span class="city-dot"></span>Waco</div><div class="city"><span class="city-dot"></span>Hewitt</div><div class="city"><span class="city-dot"></span>Woodway</div>
+    <div class="city"><span class="city-dot"></span>Robinson</div><div class="city"><span class="city-dot"></span>Bellmead</div><div class="city"><span class="city-dot"></span>Lorena</div>
+    <div class="city"><span class="city-dot"></span>China Spring</div><div class="city"><span class="city-dot"></span>McGregor</div><div class="city"><span class="city-dot"></span>West</div>
+    <div class="city"><span class="city-dot"></span>Temple</div><div class="city"><span class="city-dot"></span>Killeen</div><div class="city"><span class="city-dot"></span>Belton</div>
+    <div class="city"><span class="city-dot"></span>Copperas Cove</div><div class="city"><span class="city-dot"></span>Gatesville</div><div class="city"><span class="city-dot"></span>Hillsboro</div>
+    <div class="city"><span class="city-dot"></span>Marlin</div><div class="city"><span class="city-dot"></span>Mexia</div><div class="city"><span class="city-dot"></span>Whitney</div>
+  </div></div></div>
+  <div class="area-foot r"><span data-lang="en">Don't see your city? Call — we probably cover it. ★</span><span data-lang="es">¿No ves tu ciudad? Llama. ★</span></div>
+</div></section>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-eyebrow mono">
-        <span data-lang="en">Full-service digital · Waco, TX</span>
-        <span data-lang="es">Agencia digital completa · Waco, TX</span>
-      </div>
-      <h1 data-lang="en">
-        Websites, video, drone,<br>
-        <em>and everything in between.</em>
-      </h1>
-      <h1 data-lang="es">
-        Sitios web, video, drone,<br>
-        <em>y todo lo demás.</em>
-      </h1>
-
-      <p class="hero-lead" data-lang="en">
-        We build websites, shoot aerial drone video, print signs and flyers, and install AI voice assistants that answer your phone 24/7. One shop, transparent prices, bilingual service. Built for Texas.
-      </p>
-      <p class="hero-lead" data-lang="es">
-        Hacemos sitios web, video aéreo con drone, impresión de lonas y flyers, y asistentes de voz con AI que contestan el teléfono 24/7. Un solo lugar, precios claros, bilingüe. Hecho para Texas.
-      </p>
-
-      <div class="hero-ctas">
-        <a href="#services" class="btn btn-primary">
-          <span data-lang="en">See prices</span>
-          <span data-lang="es">Ver precios</span>
-          <span>→</span>
-        </a>
-        <a href="tel:6826007984" class="btn btn-outline">
-          <span data-lang="en">Call now</span>
-          <span data-lang="es">Llamar ahora</span>
-        </a>
-      </div>
-
-      <div class="hero-proof">
-        <div class="proof-item">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-          <div class="proof-text"><strong><span data-lang="en">Part 107</span><span data-lang="es">Part 107</span></strong><br><span data-lang="en">Certified drone pilot</span><span data-lang="es">Piloto certificado</span></div>
-        </div>
-        <div class="proof-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          <div class="proof-text"><strong><span data-lang="en">EN / ES</span><span data-lang="es">EN / ES</span></strong><br><span data-lang="en">Fully bilingual</span><span data-lang="es">Servicio bilingüe</span></div>
-        </div>
-        <div class="proof-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <div class="proof-text"><strong><span data-lang="en">2 weeks</span><span data-lang="es">2 semanas</span></strong><br><span data-lang="en">Average turnaround</span><span data-lang="es">Entrega promedio</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right side poster -->
-    <div class="hero-poster">
-      <div class="poster-label mono">
-        <span data-lang="en">★ Transparent pricing ★</span>
-        <span data-lang="es">★ Precios claros ★</span>
-      </div>
-      <div class="poster-title" data-lang="en">
-        No contracts.<br>No surprises.
-      </div>
-      <div class="poster-title" data-lang="es">
-        Sin contratos.<br>Sin sorpresas.
-      </div>
-      <div class="poster-price-row">
-        <div class="poster-price-line">
-          <span class="poster-service" data-lang="en">Website</span>
-          <span class="poster-service" data-lang="es">Sitio web</span>
-          <span class="poster-price">from $1,500</span>
-        </div>
-        <div class="poster-price-line">
-          <span class="poster-service" data-lang="en">Drone shoot</span>
-          <span class="poster-service" data-lang="es">Sesión drone</span>
-          <span class="poster-price">from $250</span>
-        </div>
-        <div class="poster-price-line">
-          <span class="poster-service" data-lang="en">AI voice agent</span>
-          <span class="poster-service" data-lang="es">Asistente AI</span>
-          <span class="poster-price">$399/mo</span>
-        </div>
-        <div class="poster-price-line">
-          <span class="poster-service" data-lang="en">Flyers (500)</span>
-          <span class="poster-service" data-lang="es">Flyers (500)</span>
-          <span class="poster-price">$85</span>
-        </div>
-      </div>
-      <div class="poster-foot" data-lang="en">
-        All prices include design, revisions, and delivery. No contracts. You own everything we make.
-      </div>
-      <div class="poster-foot" data-lang="es">
-        Todos los precios incluyen diseño, cambios y entrega. Sin contratos. Tú eres dueño de todo lo que hacemos.
-      </div>
-    </div>
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <div class="sec-header r"><div><div class="sec-eyebrow mono"><span data-lang="en">03 · How it works</span><span data-lang="es">03 · Proceso</span></div><h2 data-lang="en">Four steps.<br><em>Two weeks.</em></h2><h2 data-lang="es">Cuatro pasos.<br><em>Dos semanas.</em></h2></div><div class="sec-meta" data-lang="en">Fixed prices<br>No hourly billing</div><div class="sec-meta" data-lang="es">Precios fijos<br>Sin cobro por hora</div></div>
+  <div class="proc-grid">
+    <div class="step r"><div class="step-n">1</div><h4 data-lang="en">Call us</h4><h4 data-lang="es">Llámanos</h4><p data-lang="en">15-minute call. What you need, what it costs. No pitch.</p><p data-lang="es">Llamada de 15 min. Qué necesitas, cuánto cuesta. Sin presión.</p></div>
+    <div class="step r d1"><div class="step-n">2</div><h4 data-lang="en">Fixed quote</h4><h4 data-lang="es">Cotización fija</h4><p data-lang="en">Written quote within 24 hrs. One price, one deadline.</p><p data-lang="es">Cotización en 24 hrs. Un precio, una fecha.</p></div>
+    <div class="step r d2"><div class="step-n">3</div><h4 data-lang="en">We build</h4><h4 data-lang="es">Construimos</h4><p data-lang="en">Preview in 5–7 days. Two rounds of edits included.</p><p data-lang="es">Vista previa en 5–7 días. Dos rondas de cambios.</p></div>
+    <div class="step r d3"><div class="step-n">4</div><h4 data-lang="en">You launch</h4><h4 data-lang="es">Lanzas</h4><p data-lang="en">Live in 2 weeks. 30-min training. Yours forever.</p><p data-lang="es">En línea en 2 semanas. 30 min training. Tuyo siempre.</p></div>
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section class="section" id="services">
-  <div class="section-header">
-    <div>
-      <div class="section-eyebrow mono">
-        <span data-lang="en">01 · Services & pricing</span>
-        <span data-lang="es">01 · Servicios y precios</span>
-      </div>
-      <h2 data-lang="en">What we do. <em>What it costs.</em></h2>
-      <h2 data-lang="es">Qué hacemos. <em>Cuánto cuesta.</em></h2>
-    </div>
-    <div class="section-meta" data-lang="en">6 services<br>All prices visible</div>
-    <div class="section-meta" data-lang="es">6 servicios<br>Precios claros</div>
-  </div>
+<!-- CTA -->
+<section class="cta-sec" id="contact"><div class="cta-inner">
+  <div class="r"><h2 data-lang="en">Ready?<br><em>Let's build it.</em></h2><h2 data-lang="es">¿Listo?<br><em>Vamos.</em></h2><p data-lang="en">Call, text, or email. English or Spanish. All of Central Texas.</p><p data-lang="es">Llama, mensaje, o correo. Inglés o español. Todo Texas Central.</p></div>
+  <div class="cta-card r d2"><span class="cta-card-label mono"><span data-lang="en">Call direct</span><span data-lang="es">Llámanos</span></span><a href="tel:6826007984" class="cta-phone">682.600.7984</a><a href="mailto:hola@texasdigitalco.com" class="cta-email">hola@texasdigitalco.com →</a><div class="cta-hours"><span data-lang="en">Mon–Fri 9–5 · Waco, TX</span><span data-lang="es">Lun–Vie 9–5 · Waco, TX</span></div></div>
+</div></section>
 
-  <div class="services-wrap">
+<footer><div class="ft-inner"><div class="ft-grid">
+  <div><div class="ft-brand"><svg width="28" height="28" viewBox="0 0 100 100"><polygon fill="#D4943A" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/><g fill="rgba(0,0,0,0.3)"><polygon points="50,50 50,3 60.58,35.44"/><polygon points="50,50 94.7,35.48 67.12,55.56"/><polygon points="50,50 77.63,88.02 50,68"/><polygon points="50,50 22.37,88.02 32.88,55.56"/><polygon points="50,50 5.3,35.48 39.42,35.44"/></g></svg><span class="ft-brand-text">Texas <em>Digital</em> Co.</span></div><p class="ft-desc" data-lang="en">Full-service digital shop in Waco, TX. EN/ES.</p><p class="ft-desc" data-lang="es">Agencia digital en Waco, TX. EN/ES.</p></div>
+  <div class="ft-col"><h5 data-lang="en">Services</h5><h5 data-lang="es">Servicios</h5><ul><li><a href="#services">Websites</a></li><li><a href="#services">AI Phone</a></li><li><a href="#services">Drone</a></li><li><a href="#services">Logo</a></li><li><a href="#services">Print</a></li><li><a href="#services">Google Ads</a></li></ul></div>
+  <div class="ft-col"><h5 data-lang="en">Company</h5><h5 data-lang="es">Empresa</h5><ul><li><a href="#area" data-lang="en">Service Area</a><a href="#area" data-lang="es">Cobertura</a></li><li><a href="#process" data-lang="en">Process</a><a href="#process" data-lang="es">Proceso</a></li><li><a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="es">Contacto</a></li></ul></div>
+  <div class="ft-col"><h5 data-lang="en">Contact</h5><h5 data-lang="es">Contacto</h5><p>Waco, TX<br><span data-lang="en">Mon–Fri 9–5</span><span data-lang="es">Lun–Vie 9–5</span><br><a href="tel:6826007984" style="color:var(--gold)">682.600.7984</a></p></div>
+</div><div class="ft-bottom"><span>© 2026 Texas Digital Co.</span><span>FAA Part 107 · Waco, TX <span class="star">★</span></span></div></div></footer>
 
-    <!-- WEBSITES -->
-    <div class="service-row">
-      <div class="service-icon">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="5" width="26" height="20" rx="2"/>
-          <line x1="3" y1="11" x2="29" y2="11"/>
-          <circle cx="7" cy="8" r="0.5" fill="currentColor"/>
-          <circle cx="10" cy="8" r="0.5" fill="currentColor"/>
-          <line x1="7" y1="16" x2="15" y2="16"/>
-          <line x1="7" y1="20" x2="19" y2="20"/>
-          <rect x="19" y="15" width="6" height="6" rx="1" stroke-width="1.5"/>
-        </svg>
-      </div>
-      <div>
-        <div class="service-name" data-lang="en">Websites</div>
-        <div class="service-name" data-lang="es">Sitios web</div>
-        <div class="service-desc" data-lang="en">A real website that works on phones, loads fast, and actually gets you calls. Built from scratch, yours to keep.</div>
-        <div class="service-desc" data-lang="es">Un sitio web de verdad que funciona en celular, carga rápido, y sí te trae llamadas. Hecho desde cero, tuyo para siempre.</div>
-      </div>
-      <div class="service-includes">
-        <span class="service-includes-label" data-lang="en">Includes</span>
-        <span class="service-includes-label" data-lang="es">Incluye</span>
-        <span data-lang="en">5 pages · Hosting · SSL<br>Google Business setup<br>Mobile optimized · SEO</span>
-        <span data-lang="es">5 páginas · Hosting · SSL<br>Google Business<br>Optimizado para móvil · SEO</span>
-      </div>
-      <div class="service-price-block">
-        <span class="service-price">$1,500</span>
-        <span class="service-price-unit" data-lang="en">and up · one time</span>
-        <span class="service-price-unit" data-lang="es">o más · único pago</span>
-        <span class="service-price-note" data-lang="en">+$50/mo hosting</span>
-        <span class="service-price-note" data-lang="es">+$50/mes hosting</span>
-      </div>
-    </div>
-
-    <!-- AI VOICE AGENTS -->
-    <div class="service-row">
-      <div class="service-icon">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 17.5c0 2.5-2 4.5-4.5 4.5S13 20 13 17.5V8a4.5 4.5 0 0 1 9 0z"/>
-          <path d="M26 15v3a8.5 8.5 0 0 1-17 0v-3M17.5 26v3"/>
-          <line x1="13" y1="29" x2="22" y2="29"/>
-        </svg>
-      </div>
-      <div>
-        <div class="service-name" data-lang="en">AI voice agent</div>
-        <div class="service-name" data-lang="es">Asistente AI de voz</div>
-        <div class="service-desc" data-lang="en">An AI that answers your phone 24/7, in English or Spanish. It takes the job info and texts you the details. Never miss a call again.</div>
-        <div class="service-desc" data-lang="es">Un AI que contesta tu teléfono 24/7, en inglés o español. Apunta los datos del trabajo y te manda mensaje. No pierdes más llamadas.</div>
-      </div>
-      <div class="service-includes">
-        <span class="service-includes-label" data-lang="en">Includes</span>
-        <span class="service-includes-label" data-lang="es">Incluye</span>
-        <span data-lang="en">Setup · Training<br>500 min/month<br>SMS alerts to your phone</span>
-        <span data-lang="es">Instalación · Entrenamiento<br>500 min/mes<br>Alertas al celular</span>
-      </div>
-      <div class="service-price-block">
-        <span class="service-price">$399</span>
-        <span class="service-price-unit" data-lang="en">per month</span>
-        <span class="service-price-unit" data-lang="es">al mes</span>
-        <span class="service-price-note" data-lang="en">$299 setup, one time</span>
-        <span class="service-price-note" data-lang="es">$299 instalación</span>
-      </div>
-    </div>
-
-    <!-- DRONE / AERIAL -->
-    <div class="service-row">
-      <div class="service-icon">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="13" y="13" width="6" height="6" rx="1"/>
-          <path d="M13 16H4M19 16h9M16 13V4M16 19v9"/>
-          <circle cx="4" cy="16" r="3"/>
-          <circle cx="28" cy="16" r="3"/>
-          <circle cx="16" cy="4" r="3"/>
-          <circle cx="16" cy="28" r="3"/>
-        </svg>
-      </div>
-      <div>
-        <div class="service-name" data-lang="en">Drone & video</div>
-        <div class="service-name" data-lang="es">Drone y video</div>
-        <div class="service-desc" data-lang="en">Certified Part 107 drone pilot. Aerial photos and video for real estate, construction, events. Legal, insured, fast delivery.</div>
-        <div class="service-desc" data-lang="es">Piloto certificado Part 107. Fotos y video aéreo para bienes raíces, construcción, eventos. Legal, asegurado, entrega rápida.</div>
-      </div>
-      <div class="service-includes">
-        <span class="service-includes-label" data-lang="en">Includes</span>
-        <span class="service-includes-label" data-lang="es">Incluye</span>
-        <span data-lang="en">Shoot · Edit · Delivery<br>Part 107 insured<br>4K video + photos</span>
-        <span data-lang="es">Grabación · Edición · Entrega<br>Part 107 asegurado<br>Video 4K + fotos</span>
-      </div>
-      <div class="service-price-block">
-        <span class="service-price">$250</span>
-        <span class="service-price-unit" data-lang="en">starting · per shoot</span>
-        <span class="service-price-unit" data-lang="es">desde · por sesión</span>
-        <span class="service-price-note" data-lang="en">Bundle $400 photo+video</span>
-        <span class="service-price-note" data-lang="es">Combo $400 foto+video</span>
-      </div>
-    </div>
-
-    <!-- BRAND & LOGO -->
-    <div class="service-row">
-      <div class="service-icon">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="13.5" cy="6.5" r="2.5"/>
-          <circle cx="6.5" cy="17.5" r="2.5"/>
-          <circle cx="20.5" cy="17.5" r="2.5"/>
-          <path d="M13.5 9v5M8 19l3.5 4M18.5 19l-3 4M11.5 24h4M11.5 27h4"/>
-        </svg>
-      </div>
-      <div>
-        <div class="service-name" data-lang="en">Logo & brand</div>
-        <div class="service-name" data-lang="es">Logo y marca</div>
-        <div class="service-desc" data-lang="en">A proper logo, color palette, and business card design. Something that looks like you run a real company, not a hobby.</div>
-        <div class="service-desc" data-lang="es">Un logo bueno, colores, y tarjetas de presentación. Algo que se vea profesional, no hecho en casa.</div>
-      </div>
-      <div class="service-includes">
-        <span class="service-includes-label" data-lang="en">Includes</span>
-        <span class="service-includes-label" data-lang="es">Incluye</span>
-        <span data-lang="en">Logo · 3 revisions<br>Color palette · Fonts<br>Business card design</span>
-        <span data-lang="es">Logo · 3 cambios<br>Paleta · Tipografías<br>Diseño de tarjetas</span>
-      </div>
-      <div class="service-price-block">
-        <span class="service-price">$450</span>
-        <span class="service-price-unit" data-lang="en">one time</span>
-        <span class="service-price-unit" data-lang="es">único pago</span>
-        <span class="service-price-note" data-lang="en">Delivered in 7 days</span>
-        <span class="service-price-note" data-lang="es">Entrega en 7 días</span>
-      </div>
-    </div>
-
-    <!-- PRINT -->
-    <div class="service-row">
-      <div class="service-icon">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="7" y="4" width="18" height="8" rx="1"/>
-          <rect x="4" y="12" width="24" height="11" rx="2"/>
-          <rect x="7" y="19" width="18" height="9" rx="1"/>
-          <line x1="22" y1="16" x2="24" y2="16"/>
-          <line x1="11" y1="22" x2="21" y2="22"/>
-          <line x1="11" y1="25" x2="19" y2="25"/>
-        </svg>
-      </div>
-      <div>
-        <div class="service-name" data-lang="en">Print & signs</div>
-        <div class="service-name" data-lang="es">Impresión y letreros</div>
-        <div class="service-desc" data-lang="en">Flyers, business cards, yard signs, truck magnets, banners. We design it, print it, and deliver it to your door.</div>
-        <div class="service-desc" data-lang="es">Flyers, tarjetas, letreros de yarda, imanes de camioneta, lonas. Diseñamos, imprimimos, y te lo llevamos a tu casa.</div>
-      </div>
-      <div class="service-includes">
-        <span class="service-includes-label" data-lang="en">Includes</span>
-        <span class="service-includes-label" data-lang="es">Incluye</span>
-        <span data-lang="en">Design · Print · Delivery<br>2-day turnaround<br>Local Waco printer</span>
-        <span data-lang="es">Diseño · Impresión · Entrega<br>Listo en 2 días<br>Imprenta local</span>
-      </div>
-      <div class="service-price-block">
-        <span class="service-price">$85</span>
-        <span class="service-price-unit" data-lang="en">500 flyers</span>
-        <span class="service-price-unit" data-lang="es">500 flyers</span>
-        <span class="service-price-note" data-lang="en">Business cards from $45</span>
-        <span class="service-price-note" data-lang="es">Tarjetas desde $45</span>
-      </div>
-    </div>
-
-    <!-- GOOGLE ADS / LEADS -->
-    <div class="service-row">
-      <div class="service-icon">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 24l7-7 4 4 9-11"/>
-          <path d="M16 10h8v8"/>
-          <circle cx="4" cy="28" r="1.5" fill="currentColor"/>
-        </svg>
-      </div>
-      <div>
-        <div class="service-name" data-lang="en">Google Ads & SEO</div>
-        <div class="service-name" data-lang="es">Google Ads y SEO</div>
-        <div class="service-desc" data-lang="en">We run your Google Ads so your phone rings. Monthly reports. You see exactly what you paid for.</div>
-        <div class="service-desc" data-lang="es">Manejamos tus Google Ads para que suene el teléfono. Reportes mensuales. Ves exactamente qué pagaste.</div>
-      </div>
-      <div class="service-includes">
-        <span class="service-includes-label" data-lang="en">Includes</span>
-        <span class="service-includes-label" data-lang="es">Incluye</span>
-        <span data-lang="en">Setup · Management<br>Monthly report<br>Ad spend separate</span>
-        <span data-lang="es">Instalación · Manejo<br>Reporte mensual<br>Inversión aparte</span>
-      </div>
-      <div class="service-price-block">
-        <span class="service-price">$299</span>
-        <span class="service-price-unit" data-lang="en">per month</span>
-        <span class="service-price-unit" data-lang="es">al mes</span>
-        <span class="service-price-note" data-lang="en">+ your ad budget</span>
-        <span class="service-price-note" data-lang="es">+ tu presupuesto</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== WHO WE WORK WITH ===== -->
-<section class="who-section">
-  <div class="who-inner">
-    <div class="section-header" style="border-bottom-color: var(--brown);">
-      <div>
-        <div class="section-eyebrow mono">
-          <span data-lang="en">02 · Who we work with</span>
-          <span data-lang="es">02 · Con quién trabajamos</span>
-        </div>
-        <h2 data-lang="en">Made for Texas <em>workers and agents.</em></h2>
-        <h2 data-lang="es">Hecho para <em>trabajadores y agentes.</em></h2>
-      </div>
-    </div>
-
-    <div class="who-grid">
-      <div class="who-card who-brick">
-        <div class="who-header">
-          <div class="who-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="8" width="24" height="16" rx="1"/>
-              <circle cx="11" cy="16" r="3"/>
-              <circle cx="21" cy="16" r="3"/>
-              <line x1="4" y1="26" x2="28" y2="26"/>
-            </svg>
-          </div>
-          <div>
-            <div class="who-title" data-lang="en">Trade businesses</div>
-            <div class="who-title" data-lang="es">Oficios y servicios</div>
-            <div class="who-sub" data-lang="en">HVAC · Roofing · Lawn · Plumbing</div>
-            <div class="who-sub" data-lang="es">HVAC · Techos · Jardín · Plomería</div>
-          </div>
-        </div>
-        <p data-lang="en">You work with your hands. You lose calls when you're on the job. We fix that.</p>
-        <p data-lang="es">Trabajas con tus manos. Pierdes llamadas cuando estás en la obra. Eso lo arreglamos.</p>
-        <ul>
-          <li data-lang="en">AI answers calls while you work</li>
-          <li data-lang="es">El AI contesta mientras trabajas</li>
-          <li data-lang="en">Website that shows your best work</li>
-          <li data-lang="es">Sitio web que muestra tus trabajos</li>
-          <li data-lang="en">Truck magnets and yard signs</li>
-          <li data-lang="es">Imanes y letreros de yarda</li>
-        </ul>
-      </div>
-
-      <div class="who-card who-olive">
-        <div class="who-header">
-          <div class="who-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 16L16 5l12 11M7 14v14h18V14"/>
-              <rect x="13" y="20" width="6" height="8"/>
-            </svg>
-          </div>
-          <div>
-            <div class="who-title" data-lang="en">Real estate agents</div>
-            <div class="who-title" data-lang="es">Agentes inmobiliarios</div>
-            <div class="who-sub" data-lang="en">Residential · Commercial · Teams</div>
-            <div class="who-sub" data-lang="es">Residencial · Comercial · Equipos</div>
-          </div>
-        </div>
-        <p data-lang="en">Listings sell faster with aerial drone video. Houses need real photos, not phone snaps.</p>
-        <p data-lang="es">Las propiedades se venden más rápido con video aéreo. Las casas necesitan fotos de verdad.</p>
-        <ul>
-          <li data-lang="en">Part 107 certified aerial video</li>
-          <li data-lang="es">Video aéreo con piloto Part 107</li>
-          <li data-lang="en">MLS-ready photo packages</li>
-          <li data-lang="es">Paquetes de fotos listos para MLS</li>
-          <li data-lang="en">Agent branding and cards</li>
-          <li data-lang="es">Marca personal y tarjetas</li>
-        </ul>
-      </div>
-
-      <div class="who-card who-ochre">
-        <div class="who-header">
-          <div class="who-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 10h20l-2 16H8z"/>
-              <path d="M10 10V6a6 6 0 0 1 12 0v4"/>
-              <circle cx="12" cy="18" r="1" fill="currentColor"/>
-              <circle cx="20" cy="18" r="1" fill="currentColor"/>
-            </svg>
-          </div>
-          <div>
-            <div class="who-title" data-lang="en">Local shops & food</div>
-            <div class="who-title" data-lang="es">Negocios y comida local</div>
-            <div class="who-sub" data-lang="en">Restaurants · Retail · Salons</div>
-            <div class="who-sub" data-lang="es">Restaurantes · Tiendas · Salones</div>
-          </div>
-        </div>
-        <p data-lang="en">Your customers find you on Google. Your website is your second storefront. Make it work.</p>
-        <p data-lang="es">Tus clientes te encuentran en Google. Tu sitio es tu segunda tienda. Que funcione.</p>
-        <ul>
-          <li data-lang="en">Online ordering for restaurants</li>
-          <li data-lang="es">Ordenar en línea para restaurantes</li>
-          <li data-lang="en">Menu, photos, Google Business</li>
-          <li data-lang="es">Menú, fotos, Google Business</li>
-          <li data-lang="en">Flyers and storefront signage</li>
-          <li data-lang="es">Flyers y letreros para la tienda</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PACKAGES ===== -->
-<section class="section" id="packages">
-  <div class="section-header">
-    <div>
-      <div class="section-eyebrow mono">
-        <span data-lang="en">03 · Monthly packages</span>
-        <span data-lang="es">03 · Paquetes mensuales</span>
-      </div>
-      <h2 data-lang="en">Bundle and <em>save.</em></h2>
-      <h2 data-lang="es">Combina y <em>ahorra.</em></h2>
-    </div>
-    <div class="section-meta" data-lang="en">Cancel anytime<br>No contracts</div>
-    <div class="section-meta" data-lang="es">Cancela cuando quieras<br>Sin contratos</div>
-  </div>
-
-  <div class="packages-grid">
-    <div class="pkg">
-      <div class="pkg-label mono">
-        <span data-lang="en">Starter</span>
-        <span data-lang="es">Inicio</span>
-      </div>
-      <div class="pkg-name" data-lang="en">Básico</div>
-      <div class="pkg-name" data-lang="es">Básico</div>
-      <p class="pkg-desc" data-lang="en">For a new business that needs to look legit online.</p>
-      <p class="pkg-desc" data-lang="es">Para un negocio nuevo que necesita verse profesional.</p>
-      <div class="pkg-price">$249<span class="period">/mo</span></div>
-      <div class="pkg-setup" data-lang="en">$1,500 setup · 1-time</div>
-      <div class="pkg-setup" data-lang="es">$1,500 instalación · único</div>
-      <ul>
-        <li data-lang="en">5-page website</li>
-        <li data-lang="es">Sitio web de 5 páginas</li>
-        <li data-lang="en">Hosting + SSL</li>
-        <li data-lang="es">Hosting + SSL</li>
-        <li data-lang="en">Google Business setup</li>
-        <li data-lang="es">Configuración Google Business</li>
-        <li data-lang="en">Contact form + SMS</li>
-        <li data-lang="es">Formulario + SMS</li>
-        <li data-lang="en">Monthly edits (2 hrs)</li>
-        <li data-lang="es">Cambios mensuales (2 hrs)</li>
-      </ul>
-      <a href="#contact" class="btn btn-primary pkg-cta">
-        <span data-lang="en">Get started</span>
-        <span data-lang="es">Empezar</span>
-      </a>
-    </div>
-
-    <div class="pkg featured">
-      <div class="pkg-ribbon" data-lang="en">Most popular</div>
-      <div class="pkg-ribbon" data-lang="es">Más popular</div>
-      <div class="pkg-label mono">
-        <span data-lang="en">Growth</span>
-        <span data-lang="es">Crecer</span>
-      </div>
-      <div class="pkg-name" data-lang="en">Crecer</div>
-      <div class="pkg-name" data-lang="es">Crecer</div>
-      <p class="pkg-desc" data-lang="en">Website + AI voice + Google Ads. Our most complete package.</p>
-      <p class="pkg-desc" data-lang="es">Sitio web + AI + Google Ads. Nuestro paquete más completo.</p>
-      <div class="pkg-price">$749<span class="period">/mo</span></div>
-      <div class="pkg-setup" data-lang="en">$1,800 setup · 1-time</div>
-      <div class="pkg-setup" data-lang="es">$1,800 instalación · único</div>
-      <ul>
-        <li data-lang="en">Everything in Básico</li>
-        <li data-lang="es">Todo lo del Básico</li>
-        <li data-lang="en">AI voice agent (24/7)</li>
-        <li data-lang="es">Asistente AI de voz (24/7)</li>
-        <li data-lang="en">Google Ads management</li>
-        <li data-lang="es">Manejo de Google Ads</li>
-        <li data-lang="en">Monthly drone shoot</li>
-        <li data-lang="es">1 sesión drone al mes</li>
-        <li data-lang="en">250 flyers + business cards</li>
-        <li data-lang="es">250 flyers + tarjetas</li>
-      </ul>
-      <a href="#contact" class="btn btn-primary pkg-cta">
-        <span data-lang="en">Get started</span>
-        <span data-lang="es">Empezar</span>
-      </a>
-    </div>
-
-    <div class="pkg">
-      <div class="pkg-label mono">
-        <span data-lang="en">Real estate</span>
-        <span data-lang="es">Bienes raíces</span>
-      </div>
-      <div class="pkg-name" data-lang="en">Agent Pro</div>
-      <div class="pkg-name" data-lang="es">Agent Pro</div>
-      <p class="pkg-desc" data-lang="en">For real estate agents who want to stand out with video.</p>
-      <p class="pkg-desc" data-lang="es">Para agentes que quieren destacar con video aéreo.</p>
-      <div class="pkg-price">$599<span class="period">/mo</span></div>
-      <div class="pkg-setup" data-lang="en">$950 setup · 1-time</div>
-      <div class="pkg-setup" data-lang="es">$950 instalación · único</div>
-      <ul>
-        <li data-lang="en">Agent branded website</li>
-        <li data-lang="es">Sitio web con tu marca</li>
-        <li data-lang="en">4 drone shoots per month</li>
-        <li data-lang="es">4 sesiones drone al mes</li>
-        <li data-lang="en">MLS photo packages</li>
-        <li data-lang="es">Paquetes de fotos MLS</li>
-        <li data-lang="en">Virtual tours</li>
-        <li data-lang="es">Tours virtuales</li>
-        <li data-lang="en">Social media clips</li>
-        <li data-lang="es">Clips para redes sociales</li>
-      </ul>
-      <a href="#contact" class="btn btn-primary pkg-cta">
-        <span data-lang="en">Get started</span>
-        <span data-lang="es">Empezar</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== WORK ===== -->
-<section class="section" id="work">
-  <div class="section-header">
-    <div>
-      <div class="section-eyebrow mono">
-        <span data-lang="en">04 · Our work</span>
-        <span data-lang="es">04 · Nuestros trabajos</span>
-      </div>
-      <h2 data-lang="en">Real projects. <em>Real results.</em></h2>
-      <h2 data-lang="es">Proyectos reales. <em>Resultados reales.</em></h2>
-    </div>
-    <div class="section-meta"><a href="#" style="color: var(--brick); text-decoration: none;" data-lang="en">See all projects →</a><a href="#" style="color: var(--brick); text-decoration: none;" data-lang="es">Ver todos →</a></div>
-  </div>
-
-  <div class="work-grid">
-    <div class="work-card work-brick">
-      <div class="work-header">
-        <svg class="work-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="8" width="24" height="16" rx="1"/>
-          <line x1="4" y1="26" x2="28" y2="26"/>
-        </svg>
-        <div class="work-type" data-lang="en">Website + AI voice</div>
-        <div class="work-type" data-lang="es">Sitio web + AI</div>
-      </div>
-      <h3>Waco Iron Works</h3>
-      <div class="work-stat" data-lang="en">3.4× more leads in Q1</div>
-      <div class="work-stat" data-lang="es">3.4× más clientes en Q1</div>
-      <div class="work-price" data-lang="en">Project · $3,800 + $399/mo</div>
-      <div class="work-price" data-lang="es">Proyecto · $3,800 + $399/mes</div>
-    </div>
-
-    <div class="work-card work-brown">
-      <div class="work-header">
-        <svg class="work-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--ochre);">
-          <path d="M4 16L16 5l12 11M7 14v14h18V14"/>
-        </svg>
-        <div class="work-type" style="color: var(--ochre);" data-lang="en">Real estate package</div>
-        <div class="work-type" style="color: var(--ochre);" data-lang="es">Paquete bienes raíces</div>
-      </div>
-      <h3 style="color: var(--ochre);">Lopez Realty Group</h3>
-      <div class="work-stat">"12 homes in 60 days"</div>
-      <div class="work-price" data-lang="en">Agent Pro · $599/mo</div>
-      <div class="work-price" data-lang="es">Agent Pro · $599/mes</div>
-    </div>
-
-    <div class="work-card work-olive">
-      <div class="work-header">
-        <svg class="work-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 10h20l-2 16H8z"/>
-          <path d="M10 10V6a6 6 0 0 1 12 0v4"/>
-        </svg>
-        <div class="work-type" data-lang="en">Ordering site + brand</div>
-        <div class="work-type" data-lang="es">Pedidos + marca</div>
-      </div>
-      <h3>Tejas Diner</h3>
-      <div class="work-stat" data-lang="en">$18K/mo in pickup orders</div>
-      <div class="work-stat" data-lang="es">$18K/mes en pedidos</div>
-      <div class="work-price" data-lang="en">Project · $4,200</div>
-      <div class="work-price" data-lang="es">Proyecto · $4,200</div>
-    </div>
-
-    <div class="work-card work-ochre">
-      <div class="work-header">
-        <svg class="work-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="8" width="24" height="16" rx="1"/>
-          <circle cx="11" cy="16" r="3"/>
-          <circle cx="21" cy="16" r="3"/>
-          <line x1="4" y1="26" x2="28" y2="26"/>
-        </svg>
-        <div class="work-type" data-lang="en">24/7 AI voice agent</div>
-        <div class="work-type" data-lang="es">AI de voz 24/7</div>
-      </div>
-      <h3>Hill Country HVAC</h3>
-      <div class="work-stat" data-lang="en">0 missed calls in 90 days</div>
-      <div class="work-stat" data-lang="es">0 llamadas perdidas en 90 días</div>
-      <div class="work-price" data-lang="en">Crecer · $749/mo</div>
-      <div class="work-price" data-lang="es">Crecer · $749/mes</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIAL ===== -->
-<section class="testimonial">
-  <div class="testimonial-inner">
-    <div class="testimonial-label mono">
-      <span data-lang="en">★ What clients say ★</span>
-      <span data-lang="es">★ Lo que dicen los clientes ★</span>
-    </div>
-    <blockquote data-lang="en">"Called Monday, had a quote Tuesday, site was live eleven days later. They picked up the phone every single time. No upsells, no BS. Worth every dollar."</blockquote>
-    <blockquote data-lang="es">"Les llamé el lunes, me dieron cotización el martes, el sitio estuvo listo once días después. Contestaron el teléfono cada vez. Sin rollos, sin sorpresas. Vale cada peso."</blockquote>
-    <cite>Darren Oquin · Oquin Roofing · McLennan County</cite>
-  </div>
-</section>
-
-<!-- ===== PROCESS ===== -->
-<section class="section" id="process">
-  <div class="section-header">
-    <div>
-      <div class="section-eyebrow mono">
-        <span data-lang="en">05 · How it works</span>
-        <span data-lang="es">05 · Cómo funciona</span>
-      </div>
-      <h2 data-lang="en">Four steps. <em>Two weeks.</em></h2>
-      <h2 data-lang="es">Cuatro pasos. <em>Dos semanas.</em></h2>
-    </div>
-    <div class="section-meta" data-lang="en">Fixed prices<br>No hourly billing</div>
-    <div class="section-meta" data-lang="es">Precios fijos<br>Sin cobro por hora</div>
-  </div>
-
-  <div class="process-inner">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h4 data-lang="en">Call us</h4>
-      <h4 data-lang="es">Llámanos</h4>
-      <p data-lang="en">15-minute call. Tell us what you need. We tell you what it costs. No pressure.</p>
-      <p data-lang="es">Llamada de 15 min. Nos dices qué necesitas. Te decimos cuánto cuesta. Sin presión.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h4 data-lang="en">Fixed quote</h4>
-      <h4 data-lang="es">Cotización fija</h4>
-      <p data-lang="en">Written quote by email. One price, one deadline. What you see is what you pay.</p>
-      <p data-lang="es">Cotización por correo. Un precio, una fecha. Lo que ves es lo que pagas.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h4 data-lang="en">We build</h4>
-      <h4 data-lang="es">Construimos</h4>
-      <p data-lang="en">Preview in 5–7 days. You review. Two rounds of edits included. We deliver on time.</p>
-      <p data-lang="es">Vista previa en 5–7 días. Revisas. Dos rondas de cambios. Entregamos a tiempo.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <h4 data-lang="en">You launch</h4>
-      <h4 data-lang="es">Lanzas</h4>
-      <p data-lang="en">Site goes live. We train you in 30 minutes. Everything we made is yours forever.</p>
-      <p data-lang="es">Sitio en línea. Te enseñamos en 30 min. Todo lo que hicimos es tuyo para siempre.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CLOSING CTA ===== -->
-<section class="close" id="contact">
-  <div class="close-inner">
-    <div>
-      <h2 data-lang="en">Ready to start?<br><em>Let's talk.</em></h2>
-      <h2 data-lang="es">¿Listo para empezar?<br><em>Hablemos.</em></h2>
-      <p data-lang="en">Call, text, email, or stop by the shop. We answer every message, in English or Spanish.</p>
-      <p data-lang="es">Llama, manda mensaje, correo, o pásate por la oficina. Contestamos todo, en inglés o español.</p>
-    </div>
-    <div class="close-card">
-      <span class="close-card-label mono">
-        <span data-lang="en">Call direct</span>
-        <span data-lang="es">Llámanos</span>
-      </span>
-      <a href="tel:6826007984" class="close-phone">682.600.7984</a>
-      <a href="mailto:hola@texasdigitalco.com" class="close-email">hola@texasdigitalco.com →</a>
-      <div class="close-hours">
-        <span data-lang="en">Mon–Fri 9–5 · Waco, TX</span>
-        <span data-lang="es">Lun–Vie 9–5 · Waco, TX</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">
-          <svg width="30" height="30" viewBox="0 0 100 100">
-            <polygon fill="#C68C3F" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/>
-            <g fill="rgba(0,0,0,0.35)">
-              <polygon points="50,50 50,3 60.58,35.44"/>
-              <polygon points="50,50 94.7,35.48 67.12,55.56"/>
-              <polygon points="50,50 77.63,88.02 50,68"/>
-              <polygon points="50,50 22.37,88.02 32.88,55.56"/>
-              <polygon points="50,50 5.3,35.48 39.42,35.44"/>
-            </g>
-          </svg>
-          <span class="footer-brand-text">Texas <em>Digital</em> Co.</span>
-        </div>
-        <p class="footer-desc" data-lang="en">Full-service digital shop in Waco, Texas. Websites, AI voice agents, Part 107 drone, print, and Google Ads. Serving Central and Southern Texas, in English and Spanish.</p>
-        <p class="footer-desc" data-lang="es">Agencia digital completa en Waco, Texas. Sitios web, AI de voz, drone Part 107, impresión, y Google Ads. Servimos a todo Texas Central y Sur, en inglés y español.</p>
-      </div>
-      <div class="footer-col">
-        <h5 data-lang="en">Services</h5>
-        <h5 data-lang="es">Servicios</h5>
-        <ul>
-          <li><a href="#" data-lang="en">Websites</a><a href="#" data-lang="es">Sitios web</a></li>
-          <li><a href="#" data-lang="en">AI voice agent</a><a href="#" data-lang="es">AI de voz</a></li>
-          <li><a href="#" data-lang="en">Drone & video</a><a href="#" data-lang="es">Drone y video</a></li>
-          <li><a href="#" data-lang="en">Logo & brand</a><a href="#" data-lang="es">Logo y marca</a></li>
-          <li><a href="#" data-lang="en">Print & signs</a><a href="#" data-lang="es">Impresión</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5 data-lang="en">Company</h5>
-        <h5 data-lang="es">Empresa</h5>
-        <ul>
-          <li><a href="#" data-lang="en">Work</a><a href="#" data-lang="es">Trabajos</a></li>
-          <li><a href="#" data-lang="en">About</a><a href="#" data-lang="es">Sobre nosotros</a></li>
-          <li><a href="#" data-lang="en">Contact</a><a href="#" data-lang="es">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5 data-lang="en">Visit</h5>
-        <h5 data-lang="es">Visítanos</h5>
-        <p>1412 Austin Ave<br>Waco, TX 76701<br><span data-lang="en">Mon–Fri · 9–5</span><span data-lang="es">Lun–Vie · 9–5</span><br>682.600.7984</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Texas Digital Co.</span>
-      <span>Part 107 FAA Certified · Waco, TX <span class="star">★</span></span>
-    </div>
-  </div>
-</footer>
-
-<script>
-  function setLang(lang) {
-    document.body.classList.toggle('lang-es', lang === 'es');
-    document.documentElement.lang = lang;
-    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-    document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+<!-- SEO: Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Texas Digital Co.",
+  "url":"https://texasdigitalco.com",
+  "telephone":"+1-682-600-7984",
+  "email":"hola@texasdigitalco.com",
+  "address":{"@type":"PostalAddress","addressLocality":"Waco","addressRegion":"TX","addressCountry":"US"},
+  "geo":{"@type":"GeoCoordinates","latitude":31.5493,"longitude":-97.1467},
+  "areaServed":[
+    {"@type":"City","name":"Waco","containedInPlace":{"@type":"State","name":"Texas"}},
+    {"@type":"City","name":"Hewitt"},{"@type":"City","name":"Woodway"},
+    {"@type":"City","name":"Robinson"},{"@type":"City","name":"Bellmead"},
+    {"@type":"City","name":"Lorena"},{"@type":"City","name":"China Spring"},
+    {"@type":"City","name":"McGregor"},{"@type":"City","name":"West"},
+    {"@type":"City","name":"Temple"},{"@type":"City","name":"Killeen"},
+    {"@type":"City","name":"Belton"},{"@type":"City","name":"Copperas Cove"},
+    {"@type":"City","name":"Gatesville"},{"@type":"City","name":"Hillsboro"},
+    {"@type":"City","name":"Marlin"},{"@type":"City","name":"Mexia"},
+    {"@type":"City","name":"Whitney"}
+  ],
+  "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"},
+  "knowsLanguage":["en","es"],
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog","name":"Digital Services",
+    "itemListElement":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Website Design","description":"5-page custom website with hosting, SSL, SEO, and Google Business setup for businesses in Waco, Temple, Killeen, and Central Texas"},"price":"2500","priceCurrency":"USD"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Phone Answering Agent","description":"24/7 AI phone agent in English and Spanish for trade businesses, real estate agents, and local shops"},"price":"299","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","unitText":"month"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Drone Photography and Video","description":"FAA Part 107 certified aerial drone photography and 4K video for real estate, construction, and events in Central Texas"},"price":"200","priceCurrency":"USD"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Logo and Brand Identity Design","description":"Professional logo design, color palette, typography, and business card layout"},"price":"500","priceCurrency":"USD"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Print Design and Delivery","description":"Flyers, business cards, yard signs, truck magnets, and banners designed, printed, and delivered"},"price":"99","priceCurrency":"USD"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Google Ads Management","description":"Google Ads setup, management, and monthly reporting for local businesses"},"price":"499","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","unitText":"month"}}
+    ]
   }
+}
 </script>
 
+<!-- SEO: City service content (visually hidden, accessible to search engines) -->
+<div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+  <h2>Web Design and Digital Marketing Services in Central Texas</h2>
+  <p>Texas Digital Co. provides custom website design, drone photography, AI phone answering agents, logo and brand design, print and sign services, and Google Ads management to businesses across Central Texas. We serve Waco, Hewitt, Woodway, Robinson, Bellmead, Lorena, China Spring, McGregor, West, Temple, Killeen, Belton, Copperas Cove, Gatesville, Hillsboro, Marlin, Mexia, and Whitney.</p>
+  <h3>Website Design in Waco TX</h3><p>Custom website design and development for small businesses in Waco, Texas. Mobile-optimized, SEO-ready websites starting at $2,500. Web design Waco TX.</p>
+  <h3>Drone Photography Temple TX</h3><p>FAA Part 107 certified drone photography and 4K aerial video in Temple, Killeen, Belton, and surrounding areas. Real estate drone photography, construction progress documentation, and event coverage.</p>
+  <h3>Digital Marketing Agency Killeen TX</h3><p>Full-service digital marketing agency serving Killeen, Copperas Cove, and Fort Cavazos area. Google Ads management, SEO, website design, and bilingual marketing services.</p>
+  <h3>AI Phone Answering Service for Texas Businesses</h3><p>AI-powered phone answering agent that handles calls 24/7 in English and Spanish. Perfect for HVAC companies, roofers, plumbers, lawn care, and trade businesses in Central Texas who miss calls while on the job.</p>
+  <h3>Bilingual Marketing Agency Waco</h3><p>Texas Digital Co. is a fully bilingual English-Spanish digital agency in Waco, TX. We create websites, marketing materials, and AI phone agents that work in both languages for the diverse Central Texas market.</p>
+  <h3>Logo Design and Branding Waco TX</h3><p>Professional logo design and brand identity packages for small businesses in Waco, Hewitt, Woodway, and Central Texas. Logo, colors, fonts, and business card design starting at $500.</p>
+  <h3>Print and Sign Services Central Texas</h3><p>Flyer design and printing, business cards, yard signs, truck magnets, and banners for businesses in Waco, Temple, Killeen, and all of Central Texas. Design, print, and delivery included.</p>
+  <h3>Google Ads Management Waco Temple Killeen</h3><p>Google Ads setup and management for local businesses in Waco, Temple, Killeen, Belton, Hewitt, and Central Texas. Monthly reports, lead tracking, and transparent pricing at $499/month.</p>
+  <h3>Real Estate Drone Photography Central Texas</h3><p>Part 107 certified drone pilot providing aerial photography and video for real estate listings in Waco, Temple, Killeen, Hewitt, Woodway, Lorena, China Spring, McGregor, West, Belton, Copperas Cove, Gatesville, Hillsboro, Marlin, Mexia, and Whitney.</p>
+</div>
+
+<script>
+function setLang(l){document.body.classList.toggle('lang-es',l==='es');document.documentElement.lang=l;document.getElementById('langEn').classList.toggle('active',l==='en');document.getElementById('langEs').classList.toggle('active',l==='es')}
+
+// Scroll reveals + activate animations
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');if(x.target.classList.contains('vis'))x.target.classList.add('active');obs.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+// Nav scroll
+window.addEventListener('scroll',()=>{requestAnimationFrame(()=>{document.getElementById('mainNav').classList.toggle('scrolled',scrollY>30)})},{passive:true});
+
+// Mobile
+function openMob(){document.getElementById('mobMenu').classList.add('open');document.body.style.overflow='hidden'}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
+
+// Drone video parallax on scroll
+const vfVideo=document.getElementById('vfVideo');
+const droneVF=document.getElementById('droneVF');
+if(vfVideo&&droneVF){
+  window.addEventListener('scroll',()=>{
+    requestAnimationFrame(()=>{
+      const r=droneVF.getBoundingClientRect();
+      const vh=innerHeight;
+      if(r.top<vh&&r.bottom>0){
+        const progress=(vh-r.top)/(vh+r.height);
+        const x=(progress-.5)*-24;
+        const y=(progress-.5)*-16;
+        vfVideo.style.transform=`translate(${x}px,${y}px)`;
+      }
+    });
+  },{passive:true});
+}
+
+// REC timer
+const recEl=document.getElementById('recTime');
+if(recEl){
+  let sec=42;
+  setInterval(()=>{sec++;if(sec>59)sec=0;recEl.textContent='00:'+String(sec).padStart(2,'0')},1000);
+}
+
+// 3D tilt on visuals
+document.querySelectorAll('.vis-browser,.vis-phone,.vis-graph-wrap,.vis-logo-wrap,.vis-print-wrap,.vis-viewfinder,.cta-card,.hero-poster').forEach(el=>{
+  el.addEventListener('mousemove',e=>{if(innerWidth<1024)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`translateY(-8px) perspective(600px) rotateX(${y*-5}deg) rotateY(${x*5}deg)`});
+  el.addEventListener('mouseleave',()=>{el.style.transform=''});
+});
+</script>
 </body>
 </html>
