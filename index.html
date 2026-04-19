@@ -354,6 +354,28 @@ nav li a:hover{color:var(--txred)}nav li a:hover::after{width:100%}
 .cta-email:hover{color:var(--txred)}
 .cta-hours{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--text-dim);margin-top:16px;padding-top:16px;border-top:1px solid var(--sandstone);text-transform:uppercase}
 
+/* Contact form */
+.contact-form{margin-top:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:12px 14px;font-family:'Inter',sans-serif;font-size:14px;
+  background:var(--limestone);border:1.5px solid var(--sandstone);border-radius:4px;
+  color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--txred);box-shadow:0 0 0 3px rgba(191,58,43,.1);
+}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--sandstone)}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237A7A7A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-submit{width:100%;justify-content:center;padding:16px;font-size:15px;margin-top:4px}
+.form-status{text-align:center;margin-top:12px;font-size:14px;font-weight:600;min-height:24px}
+.form-status.success{color:var(--sage)}
+.form-status.error{color:var(--txred)}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+
 footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
 .ft-inner{max-width:1280px;margin:0 auto}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:28px;border-bottom:1px solid rgba(245,239,228,.12)}
@@ -613,10 +635,59 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA + CONTACT FORM -->
 <section class="cta-sec" id="contact"><div class="cta-inner">
-  <div class="r"><h2 data-lang="en">Ready?<br><em>Let's build it.</em></h2><h2 data-lang="es">¿Listo?<br><em>Vamos.</em></h2><p data-lang="en">Call, text, or email. English or Spanish. All of Central Texas.</p><p data-lang="es">Llama, mensaje, o correo. Inglés o español. Todo Texas Central.</p></div>
-  <div class="cta-card r d2"><span class="cta-card-label mono"><span data-lang="en">Call direct</span><span data-lang="es">Llámanos</span></span><a href="tel:6826007984" class="cta-phone">682.600.7984</a><a href="mailto:hola@texasdigitalco.com" class="cta-email">hola@texasdigitalco.com →</a><div class="cta-hours"><span data-lang="en">Mon–Fri 9–5 · Waco, TX</span><span data-lang="es">Lun–Vie 9–5 · Waco, TX</span></div></div>
+  <div class="r">
+    <h2 data-lang="en">Ready?<br><em>Let's build it.</em></h2><h2 data-lang="es">¿Listo?<br><em>Vamos.</em></h2>
+    <p data-lang="en" style="margin-bottom:28px">Fill out the form or call us directly. We respond to every message within 24 hours — in English or Spanish.</p>
+    <p data-lang="es" style="margin-bottom:28px">Llena el formulario o llámanos. Respondemos cada mensaje en 24 horas — en inglés o español.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+      <a href="tel:6826007984" class="btn btn-gold">682.600.7984</a>
+      <a href="mailto:hola@texasdigitalco.com" style="color:var(--gold);font-size:14px;font-weight:600;text-decoration:none;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">hola@texasdigitalco.com</a>
+    </div>
+  </div>
+  <div class="cta-card r d2">
+    <span class="cta-card-label mono"><span data-lang="en">Send a message</span><span data-lang="es">Envíanos un mensaje</span></span>
+    <form id="contactForm" action="https://formspree.io/f/mbdqkllv" method="POST" class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-name" data-lang="en">Name</label><label for="cf-name" data-lang="es">Nombre</label>
+          <input type="text" id="cf-name" name="name" required placeholder="Jose Torres">
+        </div>
+        <div class="form-group">
+          <label for="cf-phone" data-lang="en">Phone</label><label for="cf-phone" data-lang="es">Teléfono</label>
+          <input type="tel" id="cf-phone" name="phone" required placeholder="254-555-1234">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cf-email" data-lang="en">Email</label><label for="cf-email" data-lang="es">Correo</label>
+        <input type="email" id="cf-email" name="email" placeholder="jose@email.com">
+      </div>
+      <div class="form-group">
+        <label for="cf-service" data-lang="en">What do you need?</label><label for="cf-service" data-lang="es">¿Qué necesitas?</label>
+        <select id="cf-service" name="service">
+          <option value="" data-lang="en">Select a service...</option><option value="" data-lang="es">Elige un servicio...</option>
+          <option value="website">Website / Sitio web</option>
+          <option value="ai-phone">AI Phone Agent / Agente AI</option>
+          <option value="drone">Drone & Video</option>
+          <option value="logo">Logo & Brand / Logo y marca</option>
+          <option value="print">Print & Signs / Impresión</option>
+          <option value="google-ads">Google Ads</option>
+          <option value="package" data-lang="en">Monthly package</option><option value="package" data-lang="es">Paquete mensual</option>
+          <option value="other" data-lang="en">Something else</option><option value="other" data-lang="es">Otra cosa</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cf-msg" data-lang="en">Tell us about your project</label><label for="cf-msg" data-lang="es">Cuéntanos sobre tu proyecto</label>
+        <textarea id="cf-msg" name="message" rows="4" placeholder="" data-placeholder-en="I need a website for my roofing business in Waco..." data-placeholder-es="Necesito un sitio web para mi negocio de techos en Waco..."></textarea>
+      </div>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" class="btn btn-red form-submit" id="formBtn">
+        <span data-lang="en">Send message →</span><span data-lang="es">Enviar mensaje →</span>
+      </button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </div>
 </div></section>
 
 <footer><div class="ft-inner"><div class="ft-grid">
@@ -717,6 +788,47 @@ const recEl=document.getElementById('recTime');
 if(recEl){
   let sec=42;
   setInterval(()=>{sec++;if(sec>59)sec=0;recEl.textContent='00:'+String(sec).padStart(2,'0')},1000);
+}
+
+// Contact form
+const form=document.getElementById('contactForm');
+const formStatus=document.getElementById('formStatus');
+const formBtn=document.getElementById('formBtn');
+if(form){
+  // Set textarea placeholder based on lang
+  function updatePlaceholders(){
+    const ta=document.getElementById('cf-msg');
+    const isEs=document.body.classList.contains('lang-es');
+    ta.placeholder=isEs?ta.dataset.placeholderEs:ta.dataset.placeholderEn;
+  }
+  updatePlaceholders();
+  const origSetLang=setLang;
+  setLang=function(l){origSetLang(l);updatePlaceholders()};
+
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    const isEs=document.body.classList.contains('lang-es');
+    formBtn.disabled=true;
+    formBtn.innerHTML=isEs?'Enviando...':'Sending...';
+    formStatus.textContent='';
+    formStatus.className='form-status';
+    try{
+      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(res.ok){
+        formStatus.textContent=isEs?'✓ ¡Mensaje enviado! Te contactamos en 24 horas.':'✓ Message sent! We\'ll get back to you within 24 hours.';
+        formStatus.className='form-status success';
+        form.reset();
+        updatePlaceholders();
+      }else{
+        throw new Error();
+      }
+    }catch{
+      formStatus.textContent=isEs?'Error al enviar. Llámanos al 682.600.7984':'Failed to send. Call us at 682.600.7984';
+      formStatus.className='form-status error';
+    }
+    formBtn.disabled=false;
+    formBtn.innerHTML=isEs?'Enviar mensaje →':'Send message →';
+  });
 }
 
 // 3D tilt on visuals
