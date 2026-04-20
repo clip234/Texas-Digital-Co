@@ -252,7 +252,7 @@ body.lang-es [data-lang="es"]{display:revert}
   position:absolute;
   top:50%;left:50%;
   transform:translate(-50%,-50%);
-  width:680px;height:680px;
+  width:780px;height:780px;
   pointer-events:none;
 }
 .orbital-wrap .orbit-card{pointer-events:auto}
@@ -280,12 +280,12 @@ body.lang-es [data-lang="es"]{display:revert}
   margin-top:6px;color:var(--text-soft);
 }
 /* positions: 12, 2, 4, 6, 8, 10 o'clock — outside the ring */
-.orbit-pos-1{top:-60px;left:50%;transform:translateX(-50%);animation:floatA1 4s ease-in-out infinite}
-.orbit-pos-2{top:12%;right:-80px;animation:floatB 4.5s ease-in-out infinite}
-.orbit-pos-3{bottom:12%;right:-80px;animation:floatA 5s ease-in-out infinite}
-.orbit-pos-4{bottom:-60px;left:50%;transform:translateX(-50%);animation:floatB4 4s ease-in-out infinite}
-.orbit-pos-5{bottom:12%;left:-80px;animation:floatA 4.8s ease-in-out infinite}
-.orbit-pos-6{top:12%;left:-80px;animation:floatB 5.2s ease-in-out infinite}
+.orbit-pos-1{top:-70px;left:50%;transform:translateX(-50%);animation:floatA1 4s ease-in-out infinite}
+.orbit-pos-2{top:10%;right:-100px;animation:floatB 4.5s ease-in-out infinite}
+.orbit-pos-3{bottom:10%;right:-100px;animation:floatA 5s ease-in-out infinite}
+.orbit-pos-4{bottom:-70px;left:50%;transform:translateX(-50%);animation:floatB4 4s ease-in-out infinite}
+.orbit-pos-5{bottom:10%;left:-100px;animation:floatA 4.8s ease-in-out infinite}
+.orbit-pos-6{top:10%;left:-100px;animation:floatB 5.2s ease-in-out infinite}
 
 @keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
@@ -669,7 +669,7 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
 </div>
 
 <!-- ===================== HERO ===================== -->
-<section class="hero dot-bg" id="hero">
+<section class="hero dot-bg" id="hero" style="overflow:visible">
   <div class="container" style="position:relative">
     <span class="badge badge-copper" data-lang="en">Waco, TX &mdash; Bilingual Agency</span>
     <span class="badge badge-copper" data-lang="es">Waco, TX &mdash; Agencia Biling&uuml;e</span>
