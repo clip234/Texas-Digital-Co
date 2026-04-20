@@ -254,53 +254,45 @@ body.lang-es [data-lang="es"]{display:revert}
   font-size:1.15rem;color:var(--text-soft);max-width:500px;margin:0 auto 40px;
 }
 
-/* Orbital showcase — semicircle below hero text */
+/* Orbital showcase — horizontal line */
 .orbital-wrap{
-  position:relative;
-  width:900px;height:420px;
-  margin:-20px auto 0;
-  pointer-events:none;
-  overflow:visible;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin:48px auto 0;
+  max-width:1100px;
+  flex-wrap:wrap;
 }
-.orbital-wrap .orbit-card{pointer-events:auto}
-.orbital-ring{
-  position:absolute;
-  width:900px;height:900px;
-  top:0;left:0;
-  border:2px dashed var(--border);
-  border-radius:50%;
-  clip-path:inset(0 0 50% 0);
-}
+.orbital-ring{display:none}
 .orbital-center{display:none}
 
-/* Orbiting cards */
+/* Service demo cards */
 .orbit-card{
-  position:absolute;
-  width:160px;
+  width:150px;
   background:var(--card);
   border:var(--border-w) solid var(--border);
   border-radius:var(--radius-sm);
   box-shadow:var(--shadow-sm);
   padding:10px;
   text-align:center;
+  transition:transform 0.3s, box-shadow 0.3s;
 }
+.orbit-card:hover{transform:translateY(-6px);box-shadow:6px 6px 0px var(--border)}
 .orbit-card .orbit-label{
   font-family:var(--font-mono);font-size:0.65rem;font-weight:600;
   text-transform:uppercase;letter-spacing:0.08em;
   margin-top:6px;color:var(--text-soft);
 }
-/* positions: 6 cards along semicircle arc */
-.orbit-pos-1{top:65%;left:-30px;animation:floatA 4s ease-in-out infinite}
-.orbit-pos-2{top:-60px;left:10%;animation:floatB 4.5s ease-in-out infinite}
-.orbit-pos-3{top:-80px;left:50%;transform:translateX(-50%);animation:floatA1 5s ease-in-out infinite}
-.orbit-pos-4{top:-60px;right:10%;left:auto;animation:floatA 4.2s ease-in-out infinite}
-.orbit-pos-5{top:65%;right:-30px;left:auto;animation:floatB 4.8s ease-in-out infinite}
-.orbit-pos-6{top:30%;left:-60px;animation:floatA 5.2s ease-in-out infinite}
+/* float animations for cards */
+.orbit-pos-1{animation:floatA 4s ease-in-out infinite}
+.orbit-pos-2{animation:floatB 4.5s ease-in-out infinite}
+.orbit-pos-3{animation:floatA 5s ease-in-out infinite}
+.orbit-pos-4{animation:floatB 4.2s ease-in-out infinite}
+.orbit-pos-5{animation:floatA 4.8s ease-in-out infinite}
+.orbit-pos-6{animation:floatB 5.2s ease-in-out infinite}
 
-@keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
-@keyframes floatA1{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
-@keyframes floatB4{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+@keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 
 /* Mini card interiors */
 .mini-browser{
@@ -350,8 +342,12 @@ body.lang-es [data-lang="es"]{display:revert}
 .mini-bar:nth-child(5){height:90%;background:var(--copper)}
 
 @media(max-width:900px){
+  .orbital-wrap{gap:12px}
+  .orbit-card{width:130px;padding:8px}
+  .hero{padding:120px 0 60px}
+}
+@media(max-width:600px){
   .orbital-wrap{display:none}
-  .hero{padding:120px 0 60px;min-height:auto}
 }
 
 /* ============ STATS ============ */
@@ -704,7 +700,7 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
 </div>
 
 <!-- ===================== HERO ===================== -->
-<section class="hero dot-bg" id="hero" style="overflow:visible">
+<section class="hero dot-bg" id="hero">
   <div class="container" style="position:relative">
     <span class="badge badge-copper" data-lang="en">Waco, TX &mdash; Bilingual Agency</span>
     <span class="badge badge-copper" data-lang="es">Waco, TX &mdash; Agencia Biling&uuml;e</span>
