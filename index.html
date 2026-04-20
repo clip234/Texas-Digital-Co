@@ -259,16 +259,15 @@ nav.scrolled .nav-inner { padding: 16px 0; }
    HERO
    ======================================== */
 .hero {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 140px 32px 60px;
+  padding: 140px 32px 80px;
   position: relative;
-  overflow: hidden;
 }
-.hero-content { max-width: 900px; margin: 0 auto 0; position: relative; z-index: 2; }
+.hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
 .hero-eyebrow {
   color: var(--copper);
   margin-bottom: 32px;
@@ -1529,7 +1528,14 @@ footer {
       </a>
     </div>
   </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
+<!-- ===== ORBITAL SHOWCASE ===== -->
+<section style="padding:40px 0 80px;overflow:hidden">
   <!-- ORBITAL SERVICES RING -->
   <div class="orbit-wrapper r d2">
     <div class="orbit-ring"></div>
@@ -1633,11 +1639,6 @@ footer {
       <div class="orbit-label">Google Ads</div>
       <div class="orbit-sublabel" data-lang="en">Leads that convert</div><div class="orbit-sublabel" data-lang="es">Clientes que convierten</div>
     </div>
-  </div>
-
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
   </div>
 </section>
 
