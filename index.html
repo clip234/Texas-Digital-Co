@@ -264,10 +264,11 @@ nav.scrolled .nav-inner { padding: 16px 0; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 160px 32px 120px;
+  padding: 120px 32px 80px;
   position: relative;
+  overflow: hidden;
 }
-.hero-content { max-width: 900px; margin: 0 auto; }
+.hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
 .hero-eyebrow {
   color: var(--copper);
   margin-bottom: 32px;
@@ -280,7 +281,7 @@ nav.scrolled .nav-inner { padding: 16px 0; }
 .hero h1 {
   font-family: 'Instrument Serif', serif;
   font-weight: 400;
-  font-size: clamp(48px, 7vw, 96px);
+  font-size: clamp(44px, 6.5vw, 88px);
   line-height: 1.02;
   letter-spacing: -.03em;
   color: var(--dark);
@@ -288,11 +289,163 @@ nav.scrolled .nav-inner { padding: 16px 0; }
 }
 .hero h1 em { font-style: italic; color: var(--copper); }
 .hero-sub {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.7;
   color: var(--text-soft);
-  max-width: 560px;
-  margin: 0 auto 48px;
+  max-width: 520px;
+  margin: 0 auto 40px;
+}
+
+/* ===== ORBITAL RING ===== */
+.orbit-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+}
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--sandstone);
+  border-radius: 50%;
+}
+.orbit-ring::before {
+  content: '';
+  position: absolute;
+  inset: 60px;
+  border: 1px dashed var(--sandstone);
+  border-radius: 50%;
+  opacity: .5;
+}
+/* Central star */
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+}
+.orbit-center svg { width: 64px; height: 64px; filter: drop-shadow(0 4px 12px rgba(198,156,109,.3)); }
+.orbit-center-text {
+  font-family: 'Instrument Serif', serif;
+  font-size: 18px;
+  color: var(--text);
+  margin-top: 8px;
+  letter-spacing: -.02em;
+}
+.orbit-center-text em { font-style: italic; color: var(--copper); }
+
+/* Orbital items — positioned around the circle */
+.orbit-item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: orbitFloat 6s ease-in-out infinite;
+  z-index: 2;
+}
+.orbit-item:nth-child(2) { animation-delay: -1s; }
+.orbit-item:nth-child(3) { animation-delay: -2s; }
+.orbit-item:nth-child(4) { animation-delay: -3s; }
+.orbit-item:nth-child(5) { animation-delay: -4s; }
+.orbit-item:nth-child(6) { animation-delay: -5s; }
+
+@keyframes orbitFloat {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-8px); }
+}
+
+/* Orbit positions — 6 items around circle */
+.orbit-item:nth-child(1) { top: 2%; left: 50%; } /* top center */
+.orbit-item:nth-child(2) { top: 22%; right: 2%; left: auto; } /* top right */
+.orbit-item:nth-child(3) { bottom: 22%; right: 2%; left: auto; top: auto; } /* bottom right */
+.orbit-item:nth-child(4) { bottom: 2%; left: 50%; top: auto; } /* bottom center */
+.orbit-item:nth-child(5) { bottom: 22%; left: 2%; top: auto; } /* bottom left */
+.orbit-item:nth-child(6) { top: 22%; left: 2%; } /* top left */
+
+.orbit-dot {
+  width: 10px; height: 10px;
+  background: var(--copper);
+  border-radius: 50%;
+  margin-bottom: 4px;
+  opacity: .6;
+}
+.orbit-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+.orbit-sublabel {
+  font-size: 12px;
+  color: var(--text-soft);
+  max-width: 120px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Mini interactive demos inside orbit */
+.orbit-mini {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.08);
+  overflow: hidden;
+  transition: transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s;
+  cursor: default;
+}
+.orbit-mini:hover {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.12);
+}
+
+/* Mini browser */
+.mini-browser { width: 200px; }
+.mini-browser-bar { background: var(--sand); padding: 6px 10px; display: flex; align-items: center; gap: 4px; }
+.mini-dot { width: 6px; height: 6px; border-radius: 50%; }
+.mini-dot.r { background: #FF5F57; } .mini-dot.y { background: #FFBD2E; } .mini-dot.g { background: #28CA41; }
+.mini-browser-body { padding: 12px; }
+.mini-browser-nav { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.mini-browser-nav span { font-size: 8px; font-family: 'JetBrains Mono', monospace; color: var(--text-dim); }
+.mini-browser-nav strong { font-family: 'Instrument Serif', serif; font-size: 10px; color: var(--text); }
+.mini-browser-nav strong em { color: var(--copper); font-style: italic; }
+.mini-browser-hero { background: var(--sand); border-radius: 4px; padding: 10px; text-align: center; margin-bottom: 6px; }
+.mini-browser-hero h6 { font-family: 'Instrument Serif', serif; font-size: 11px; margin-bottom: 2px; }
+.mini-browser-hero h6 em { color: var(--copper); font-style: italic; }
+.mini-browser-hero span { font-size: 7px; color: var(--text-dim); }
+.mini-browser-blocks { display: flex; gap: 4px; }
+.mini-browser-blocks div { flex: 1; height: 16px; background: var(--sand); border-radius: 3px; }
+
+/* Mini phone */
+.mini-phone { width: 160px; }
+.mini-phone-top { background: var(--dark); padding: 6px 10px; font-size: 8px; color: var(--copper); font-family: 'JetBrains Mono', monospace; }
+.mini-phone-body { padding: 8px; display: flex; flex-direction: column; gap: 4px; }
+.mini-bub { padding: 5px 8px; border-radius: 8px; font-size: 8px; line-height: 1.3; max-width: 85%; }
+.mini-bub.in { background: var(--sand); color: var(--text-soft); align-self: flex-start; }
+.mini-bub.ai { background: var(--copper); color: #fff; align-self: flex-end; border-radius: 8px 8px 2px 8px; }
+.mini-bub.out { background: var(--dark); color: #4CAF50; align-self: flex-end; font-family: 'JetBrains Mono', monospace; font-size: 7px; border-radius: 8px 8px 2px 8px; }
+
+/* Mini drone */
+.mini-drone { width: 180px; }
+.mini-drone-top { background: var(--dark); padding: 4px 10px; display: flex; justify-content: space-between; font-size: 7px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+.mini-drone-top .rec { color: #FF5F57; }
+.mini-drone-body { position: relative; height: 80px; overflow: hidden; }
+.mini-drone-body video { width: 100%; height: 100%; object-fit: cover; }
+.mini-drone-hud { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.mini-drone-hud::before { content: ''; width: 24px; height: 24px; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; }
+.mini-drone-badge { background: var(--dark); padding: 3px 8px; font-size: 7px; color: var(--copper); font-family: 'JetBrains Mono', monospace; text-align: center; }
+
+@media (max-width: 900px) {
+  .orbit-wrapper { display: none; }
+  .hero { min-height: auto; padding: 120px 24px 60px; }
+}
+@media (min-width: 901px) {
+  .hero { min-height: auto; padding: 120px 32px 40px; }
+  .hero-sub { margin-bottom: 20px; }
 }
 .hero-cta {
   display: inline-flex;
@@ -1363,8 +1516,8 @@ footer {
     </div>
     <h1 data-lang="en" class="r d1">Your business deserves<br>to <em>look the part.</em></h1>
     <h1 data-lang="es" class="r d1">Tu negocio merece<br><em>verse profesional.</em></h1>
-    <p class="hero-sub r d2" data-lang="en">Websites, drone video, AI phone agents, branding, and Google Ads — all from one bilingual studio in Central Texas. Clear pricing. No contracts.</p>
-    <p class="hero-sub r d2" data-lang="es">Sitios web, video con drone, agentes AI, branding, y Google Ads — todo desde un estudio bilingue en Texas Central. Precios claros. Sin contratos.</p>
+    <p class="hero-sub r d2" data-lang="en">Websites, drone video, AI phone agents, branding, print, and Google Ads — all from one bilingual studio in Central Texas.</p>
+    <p class="hero-sub r d2" data-lang="es">Sitios web, video con drone, agentes AI, branding, impresion, y Google Ads — todo desde un estudio bilingue en Texas Central.</p>
     <div class="r d3">
       <a href="#contact" class="hero-cta">
         <span data-lang="en">Start your project</span><span data-lang="es">Inicia tu proyecto</span>
@@ -1372,6 +1525,112 @@ footer {
       </a>
     </div>
   </div>
+
+  <!-- ORBITAL SERVICES RING -->
+  <div class="orbit-wrapper r d2">
+    <div class="orbit-ring"></div>
+
+    <!-- Center: Star logo -->
+    <div class="orbit-center">
+      <svg width="64" height="64" viewBox="0 0 100 100"><polygon fill="#C69C6D" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/><g fill="rgba(0,0,0,0.3)"><polygon points="50,50 50,3 60.58,35.44"/><polygon points="50,50 94.7,35.48 67.12,55.56"/><polygon points="50,50 77.63,88.02 50,68"/><polygon points="50,50 22.37,88.02 32.88,55.56"/><polygon points="50,50 5.3,35.48 39.42,35.44"/></g></svg>
+      <div class="orbit-center-text">Texas <em>Digital</em> Co.</div>
+    </div>
+
+    <!-- 1. WEBSITES — top center (mini browser) -->
+    <div class="orbit-item">
+      <div class="orbit-mini mini-browser">
+        <div class="mini-browser-bar"><div class="mini-dot r"></div><div class="mini-dot y"></div><div class="mini-dot g"></div></div>
+        <div class="mini-browser-body">
+          <div class="mini-browser-nav"><strong>Jose's <em>Yard Care</em></strong><span>Waco, TX</span></div>
+          <div class="mini-browser-hero"><h6>Your yard, <em>our pride.</em></h6><span>Professional lawn care &middot; Free quote</span></div>
+          <div class="mini-browser-blocks"><div></div><div></div><div></div></div>
+        </div>
+      </div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-label" data-lang="en">Web Design</div><div class="orbit-label" data-lang="es">Diseno Web</div>
+      <div class="orbit-sublabel" data-lang="en">Custom built from scratch</div><div class="orbit-sublabel" data-lang="es">Hecho desde cero</div>
+    </div>
+
+    <!-- 2. AI PHONE — top right (mini phone) -->
+    <div class="orbit-item">
+      <div class="orbit-mini mini-phone">
+        <div class="mini-phone-top">AI Assistant</div>
+        <div class="mini-phone-body">
+          <div class="mini-bub in" data-lang="en">"I need a quote for roof repair"</div><div class="mini-bub in" data-lang="es">"Necesito cotizar reparacion de techo"</div>
+          <div class="mini-bub ai" data-lang="en">"Sure! Name and address?"</div><div class="mini-bub ai" data-lang="es">"Claro! Nombre y direccion?"</div>
+          <div class="mini-bub out">New lead: Mike Torres</div>
+        </div>
+      </div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-label" data-lang="en">AI Phone Agent</div><div class="orbit-label" data-lang="es">Agente AI</div>
+      <div class="orbit-sublabel" data-lang="en">24/7 in EN &amp; ES</div><div class="orbit-sublabel" data-lang="es">24/7 en EN y ES</div>
+    </div>
+
+    <!-- 3. DRONE — bottom right (mini viewfinder) -->
+    <div class="orbit-item">
+      <div class="orbit-mini mini-drone">
+        <div class="mini-drone-top"><span>4K &middot; 60fps</span><span class="rec">REC 00:42</span></div>
+        <div class="mini-drone-body">
+          <video autoplay loop muted playsinline src="https://videos.pexels.com/video-files/5031099/5031099-sd_640_360_30fps.mp4"></video>
+          <div class="mini-drone-hud"></div>
+        </div>
+        <div class="mini-drone-badge">★ FAA Part 107 Certified</div>
+      </div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-label" data-lang="en">Drone &amp; Video</div><div class="orbit-label" data-lang="es">Drone y Video</div>
+      <div class="orbit-sublabel" data-lang="en">Aerial 4K certified</div><div class="orbit-sublabel" data-lang="es">4K aereo certificado</div>
+    </div>
+
+    <!-- 4. PRINT — bottom center -->
+    <div class="orbit-item">
+      <div style="display:flex;gap:6px;transform:rotate(-3deg)">
+        <div class="orbit-mini" style="width:60px;padding:8px;text-align:center"><div style="height:3px;background:var(--copper);border-radius:2px;margin-bottom:6px"></div><div style="font-size:7px;font-family:'Instrument Serif',serif;font-weight:700">Torres<br>Roofing</div><div style="height:12px;background:var(--sand);border-radius:2px;margin-top:4px"></div></div>
+        <div class="orbit-mini" style="width:60px;padding:8px;text-align:center;transform:rotate(4deg)"><div style="height:3px;background:var(--dark);border-radius:2px;margin-bottom:6px"></div><div style="font-size:7px;font-family:'Instrument Serif',serif;font-weight:700">Lopez<br>Realty</div><div style="height:12px;background:var(--sand);border-radius:2px;margin-top:4px"></div></div>
+      </div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-label" data-lang="en">Print &amp; Signs</div><div class="orbit-label" data-lang="es">Impresion</div>
+      <div class="orbit-sublabel" data-lang="en">Design, print, deliver</div><div class="orbit-sublabel" data-lang="es">Diseno, impresion, entrega</div>
+    </div>
+
+    <!-- 5. LOGO — bottom left -->
+    <div class="orbit-item">
+      <div class="orbit-mini" style="width:140px;padding:16px;text-align:center">
+        <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:8px">
+          <svg width="20" height="20" viewBox="0 0 100 100"><polygon fill="#C69C6D" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/></svg>
+          <span style="font-family:'Instrument Serif',serif;font-size:13px;font-weight:700">Torres <em style="color:var(--copper);font-style:italic">Roofing</em></span>
+        </div>
+        <div style="display:flex;gap:4px;justify-content:center">
+          <span style="width:16px;height:16px;border-radius:50%;background:var(--copper)"></span>
+          <span style="width:16px;height:16px;border-radius:50%;background:var(--dark)"></span>
+          <span style="width:16px;height:16px;border-radius:50%;background:var(--sand);border:1px solid var(--sandstone)"></span>
+        </div>
+      </div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-label" data-lang="en">Logo &amp; Brand</div><div class="orbit-label" data-lang="es">Logo y Marca</div>
+      <div class="orbit-sublabel" data-lang="en">Professional identity</div><div class="orbit-sublabel" data-lang="es">Identidad profesional</div>
+    </div>
+
+    <!-- 6. GOOGLE ADS — top left -->
+    <div class="orbit-item">
+      <div class="orbit-mini" style="width:160px;padding:12px">
+        <div style="font-size:8px;font-family:'JetBrains Mono',monospace;color:var(--text-dim);margin-bottom:6px" data-lang="en">Monthly leads</div><div style="font-size:8px;font-family:'JetBrains Mono',monospace;color:var(--text-dim);margin-bottom:6px" data-lang="es">Clientes/mes</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:22px;font-weight:700;color:var(--text)">47 <span style="color:var(--copper);font-size:12px">+312%</span></div>
+        <div style="display:flex;gap:3px;align-items:end;height:32px;margin-top:6px">
+          <div style="flex:1;background:var(--sand);border-radius:2px;height:30%"></div>
+          <div style="flex:1;background:var(--sand);border-radius:2px;height:45%"></div>
+          <div style="flex:1;background:var(--sand);border-radius:2px;height:40%"></div>
+          <div style="flex:1;background:var(--copper);border-radius:2px;height:65%"></div>
+          <div style="flex:1;background:var(--sand);border-radius:2px;height:55%"></div>
+          <div style="flex:1;background:var(--copper);border-radius:2px;height:80%"></div>
+          <div style="flex:1;background:var(--copper);border-radius:2px;height:100%"></div>
+        </div>
+      </div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-label">Google Ads</div>
+      <div class="orbit-sublabel" data-lang="en">Leads that convert</div><div class="orbit-sublabel" data-lang="es">Clientes que convierten</div>
+    </div>
+  </div>
+
   <div class="hero-scroll">
     <span>Scroll</span>
     <div class="scroll-line"></div>
