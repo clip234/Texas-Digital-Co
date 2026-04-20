@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Texas Digital Co. — Web Design, Drone Video, AI & Marketing · Waco, TX</title>
-<meta name="description" content="Waco's full-service digital agency. Custom websites, Part 107 drone video, AI phone agents, logo design, print, and Google Ads for businesses in Waco, Temple, Killeen, Hewitt, Woodway, and Central Texas. Bilingual EN/ES. No contracts.">
-<meta name="keywords" content="web design Waco TX, drone photography Waco, digital marketing Waco, website design Temple TX, drone video Killeen, AI phone answering service, logo design Waco, Google Ads management, bilingual marketing agency Texas, Part 107 drone pilot Waco">
+<meta name="description" content="Waco's full-service digital agency. Custom websites, Part 107 drone video, AI automation, logo design, print, and Google Ads for businesses in Waco, Temple, Killeen, Hewitt, Woodway, and Central Texas. Bilingual EN/ES. No contracts.">
+<meta name="keywords" content="web design Waco TX, drone photography Waco, digital marketing Waco, website design Temple TX, drone video Killeen, AI automation integration, logo design Waco, Google Ads management, bilingual marketing agency Texas, Part 107 drone pilot Waco">
 <meta property="og:title" content="Texas Digital Co. — Web Design, Drone, AI & Marketing · Waco, TX">
-<meta property="og:description" content="Custom websites, drone video, AI phone agents, print, and Google Ads for Central Texas businesses. Transparent pricing. Bilingual EN/ES.">
+<meta property="og:description" content="Custom websites, drone video, AI automation, print, and Google Ads for Central Texas businesses. Transparent pricing. Bilingual EN/ES.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://texasdigitalco.com">
 <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@
     "name":"Digital Services",
     "itemListElement":[
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Websites","description":"Professional websites for small businesses"},"price":"299","priceCurrency":"USD"},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Phone Agent","description":"24/7 AI answering service"},"price":"299","priceCurrency":"USD"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Automation","description":"24/7 AI answering service"},"price":"299","priceCurrency":"USD"},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Drone & Video","description":"FAA Part 107 certified aerial photography and video"},"price":"200","priceCurrency":"USD"},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Logo & Brand","description":"Professional logo and brand identity design"},"price":"450","priceCurrency":"USD"},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Print & Signs","description":"Business cards, flyers, yard signs, banners"},"price":"85","priceCurrency":"USD"},
@@ -239,13 +239,10 @@ body.lang-es [data-lang="es"]{display:revert}
 
 /* ============ HERO ============ */
 .hero{
-  padding:200px 0 180px;
+  padding:140px 0 40px;
   text-align:center;
   position:relative;
   overflow:visible;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
 }
 .hero-headline{
   max-width:800px;margin:0 auto 20px;
@@ -257,19 +254,22 @@ body.lang-es [data-lang="es"]{display:revert}
   font-size:1.15rem;color:var(--text-soft);max-width:500px;margin:0 auto 40px;
 }
 
-/* Orbital showcase — wraps AROUND the hero text */
+/* Orbital showcase — semicircle below hero text */
 .orbital-wrap{
-  position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:780px;height:780px;
+  position:relative;
+  width:900px;height:420px;
+  margin:-20px auto 0;
   pointer-events:none;
+  overflow:visible;
 }
 .orbital-wrap .orbit-card{pointer-events:auto}
 .orbital-ring{
-  position:absolute;inset:0;
+  position:absolute;
+  width:900px;height:900px;
+  top:0;left:0;
   border:2px dashed var(--border);
   border-radius:50%;
+  clip-path:inset(0 0 50% 0);
 }
 .orbital-center{display:none}
 
@@ -289,13 +289,13 @@ body.lang-es [data-lang="es"]{display:revert}
   text-transform:uppercase;letter-spacing:0.08em;
   margin-top:6px;color:var(--text-soft);
 }
-/* positions: 12, 2, 4, 6, 8, 10 o'clock — outside the ring */
-.orbit-pos-1{top:-70px;left:50%;transform:translateX(-50%);animation:floatA1 4s ease-in-out infinite}
-.orbit-pos-2{top:10%;right:-100px;animation:floatB 4.5s ease-in-out infinite}
-.orbit-pos-3{bottom:10%;right:-100px;animation:floatA 5s ease-in-out infinite}
-.orbit-pos-4{bottom:-70px;left:50%;transform:translateX(-50%);animation:floatB4 4s ease-in-out infinite}
-.orbit-pos-5{bottom:10%;left:-100px;animation:floatA 4.8s ease-in-out infinite}
-.orbit-pos-6{top:10%;left:-100px;animation:floatB 5.2s ease-in-out infinite}
+/* positions: 6 cards along semicircle arc */
+.orbit-pos-1{top:65%;left:-30px;animation:floatA 4s ease-in-out infinite}
+.orbit-pos-2{top:-60px;left:10%;animation:floatB 4.5s ease-in-out infinite}
+.orbit-pos-3{top:-80px;left:50%;transform:translateX(-50%);animation:floatA1 5s ease-in-out infinite}
+.orbit-pos-4{top:-60px;right:10%;left:auto;animation:floatA 4.2s ease-in-out infinite}
+.orbit-pos-5{top:65%;right:-30px;left:auto;animation:floatB 4.8s ease-in-out infinite}
+.orbit-pos-6{top:30%;left:-60px;animation:floatA 5.2s ease-in-out infinite}
 
 @keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
@@ -393,6 +393,31 @@ body.lang-es [data-lang="es"]{display:revert}
   font-family:var(--font-mono);font-weight:600;font-size:0.85rem;
   padding:8px 14px;background:var(--bg);border-radius:8px;
   border:2px solid var(--border);display:inline-block;
+}
+.service-expand-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:12px;padding:6px 0;
+  font-family:var(--font-mono);font-size:0.75rem;font-weight:600;
+  color:var(--copper);cursor:pointer;border:none;background:none;
+  letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s;
+}
+.service-expand-btn:hover{color:var(--dark)}
+.service-expand-btn svg{width:14px;height:14px;transition:transform 0.3s}
+.service-card.expanded .service-expand-btn svg{transform:rotate(180deg)}
+.service-details{
+  max-height:0;overflow:hidden;transition:max-height 0.4s ease;
+  margin-top:0;
+}
+.service-card.expanded .service-details{max-height:300px;margin-top:12px}
+.service-details ul{
+  list-style:none;display:flex;flex-direction:column;gap:6px;
+  padding:12px 0;border-top:2px dashed var(--border);
+}
+.service-details li{
+  font-size:0.85rem;color:var(--text-soft);display:flex;align-items:center;gap:8px;
+}
+.service-details li::before{
+  content:'✓';font-weight:700;color:var(--copper);font-size:0.9rem;
 }
 .service-card:nth-child(1) .service-accent{background:var(--orange)}
 .service-card:nth-child(1) .service-icon{background:rgba(255,107,53,0.1)}
@@ -724,7 +749,7 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
           <div class="bubble bubble-out">Sure! What service?</div>
           <div class="bubble bubble-in">Lawn care</div>
         </div>
-        <div class="orbit-label">AI Phone</div>
+        <div class="orbit-label">AI Automation</div>
       </div>
 
       <!-- Card 3: Drone — 4 o'clock -->
@@ -780,8 +805,8 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
 <!-- ===================== MARQUEE ===================== -->
 <div class="marquee-strip" aria-hidden="true">
   <div class="marquee-track">
-    <span>Web Design</span><span>Drone Video</span><span>AI Phone Agent</span><span>Logo & Brand</span><span>Print & Signs</span><span>Google Ads</span><span>Bilingual</span><span>No Contracts</span><span>FAA Part 107</span><span>24/7 Service</span>
-    <span>Web Design</span><span>Drone Video</span><span>AI Phone Agent</span><span>Logo & Brand</span><span>Print & Signs</span><span>Google Ads</span><span>Bilingual</span><span>No Contracts</span><span>FAA Part 107</span><span>24/7 Service</span>
+    <span>Web Design</span><span>Drone Video</span><span>AI Automation</span><span>Logo & Brand</span><span>Print & Signs</span><span>Google Ads</span><span>Bilingual</span><span>No Contracts</span><span>FAA Part 107</span><span>24/7 Service</span>
+    <span>Web Design</span><span>Drone Video</span><span>AI Automation</span><span>Logo & Brand</span><span>Print & Signs</span><span>Google Ads</span><span>Bilingual</span><span>No Contracts</span><span>FAA Part 107</span><span>24/7 Service</span>
   </div>
 </div>
 
@@ -841,22 +866,44 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
           <p data-lang="es">Sitios r&aacute;pidos y optimizados para m&oacute;vil que convierten visitantes en clientes. SEO y biling&uuml;es.</p>
           <span class="service-price" data-lang="en">from $299 &middot; +$50/mo</span>
           <span class="service-price" data-lang="es">desde $299 &middot; +$50/mes</span>
+          <button class="service-expand-btn" onclick="this.closest('.service-card').classList.toggle('expanded')"><span data-lang="en">What's included</span><span data-lang="es">Que incluye</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="service-details">
+            <ul>
+              <li data-lang="en">5+ page custom design</li><li data-lang="es">Diseno de 5+ paginas</li>
+              <li data-lang="en">Mobile responsive</li><li data-lang="es">Responsive para movil</li>
+              <li data-lang="en">SEO optimized</li><li data-lang="es">Optimizado para SEO</li>
+              <li data-lang="en">SSL + hosting included</li><li data-lang="es">SSL + hosting incluido</li>
+              <li data-lang="en">Google Business setup</li><li data-lang="es">Configuracion Google Business</li>
+              <li data-lang="en">2 rounds of revisions</li><li data-lang="es">2 rondas de cambios</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <!-- 2. AI Phone Agent -->
+      <!-- 2. AI Automation -->
       <div class="neo-card service-card reveal">
         <div class="service-accent"></div>
         <div class="service-body">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-          <h3 data-lang="en">AI Phone Agent</h3>
-          <h3 data-lang="es">Agente Telef&oacute;nico IA</h3>
-          <p data-lang="en">Never miss a call. AI answers, books appointments, and qualifies leads 24/7 in English and Spanish.</p>
+          <h3 data-lang="en">AI Automation</h3>
+          <h3 data-lang="es">Automatizaci&oacute;n IA</h3>
+          <p data-lang="en">AI phone agents, chatbots, CRM automation, and workflow integration. Automate your business 24/7 in English and Spanish.</p>
           <p data-lang="es">Nunca pierdas una llamada. IA contesta, agenda citas y califica clientes 24/7 en ingl&eacute;s y espa&ntilde;ol.</p>
           <span class="service-price" data-lang="en">from $299/mo &middot; $199 setup</span>
           <span class="service-price" data-lang="es">desde $299/mes &middot; $199 inicio</span>
+          <button class="service-expand-btn" onclick="this.closest('.service-card').classList.toggle('expanded')"><span data-lang="en">What's included</span><span data-lang="es">Que incluye</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="service-details">
+            <ul>
+              <li data-lang="en">AI phone answering 24/7</li><li data-lang="es">Telefono IA 24/7</li>
+              <li data-lang="en">Chatbot for website</li><li data-lang="es">Chatbot para sitio web</li>
+              <li data-lang="en">CRM integration</li><li data-lang="es">Integracion CRM</li>
+              <li data-lang="en">Bilingual EN/ES</li><li data-lang="es">Bilingue EN/ES</li>
+              <li data-lang="en">SMS lead alerts</li><li data-lang="es">Alertas SMS de leads</li>
+              <li data-lang="en">Workflow automation</li><li data-lang="es">Automatizacion de procesos</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -873,6 +920,16 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
           <p data-lang="es">Fotograf&iacute;a y video a&eacute;reo certificado FAA Part 107. Inspecciones, bienes ra&iacute;ces, avance de obra.</p>
           <span class="service-price" data-lang="en">from $200/shoot</span>
           <span class="service-price" data-lang="es">desde $200/sesi&oacute;n</span>
+          <button class="service-expand-btn" onclick="this.closest('.service-card').classList.toggle('expanded')"><span data-lang="en">What's included</span><span data-lang="es">Que incluye</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="service-details">
+            <ul>
+              <li data-lang="en">FAA Part 107 certified</li><li data-lang="es">Certificado FAA Part 107</li>
+              <li data-lang="en">4K aerial photo + video</li><li data-lang="es">Foto + video aereo 4K</li>
+              <li data-lang="en">Professional editing</li><li data-lang="es">Edicion profesional</li>
+              <li data-lang="en">Same-week delivery</li><li data-lang="es">Entrega en la misma semana</li>
+              <li data-lang="en">Photo+video combo $350</li><li data-lang="es">Combo foto+video $350</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -889,6 +946,16 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
           <p data-lang="es">Dise&ntilde;o profesional de logo con kit de marca completo. Colores, fuentes, lineamientos y redes sociales.</p>
           <span class="service-price" data-lang="en">from $450 one-time</span>
           <span class="service-price" data-lang="es">desde $450 &uacute;nico pago</span>
+          <button class="service-expand-btn" onclick="this.closest('.service-card').classList.toggle('expanded')"><span data-lang="en">What's included</span><span data-lang="es">Que incluye</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="service-details">
+            <ul>
+              <li data-lang="en">3 logo concepts</li><li data-lang="es">3 conceptos de logo</li>
+              <li data-lang="en">Color palette + fonts</li><li data-lang="es">Paleta de colores + fuentes</li>
+              <li data-lang="en">Business card design</li><li data-lang="es">Diseno de tarjetas</li>
+              <li data-lang="en">Brand guidelines PDF</li><li data-lang="es">Manual de marca PDF</li>
+              <li data-lang="en">Social media assets</li><li data-lang="es">Assets para redes</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -905,6 +972,16 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
           <p data-lang="es">Tarjetas, volantes, letreros de patio, lonas, rotulaci&oacute;n vehicular. Dise&ntilde;o + impresi&oacute;n, a tu puerta.</p>
           <span class="service-price" data-lang="en">from $85/500 flyers</span>
           <span class="service-price" data-lang="es">desde $85/500 volantes</span>
+          <button class="service-expand-btn" onclick="this.closest('.service-card').classList.toggle('expanded')"><span data-lang="en">What's included</span><span data-lang="es">Que incluye</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="service-details">
+            <ul>
+              <li data-lang="en">Custom design</li><li data-lang="es">Diseno personalizado</li>
+              <li data-lang="en">Professional printing</li><li data-lang="es">Impresion profesional</li>
+              <li data-lang="en">Delivery to your door</li><li data-lang="es">Entrega a domicilio</li>
+              <li data-lang="en">Business cards from $55</li><li data-lang="es">Tarjetas desde $55</li>
+              <li data-lang="en">Yard signs + banners</li><li data-lang="es">Letreros + lonas</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -921,6 +998,16 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
           <p data-lang="es">Campa&ntilde;as segmentadas en Google Ads. Configuraci&oacute;n, gesti&oacute;n, optimizaci&oacute;n e informes incluidos.</p>
           <span class="service-price" data-lang="en">from $249/mo + ad budget</span>
           <span class="service-price" data-lang="es">desde $249/mes + presupuesto</span>
+          <button class="service-expand-btn" onclick="this.closest('.service-card').classList.toggle('expanded')"><span data-lang="en">What's included</span><span data-lang="es">Que incluye</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="service-details">
+            <ul>
+              <li data-lang="en">Campaign setup</li><li data-lang="es">Configuracion de campana</li>
+              <li data-lang="en">Keyword research</li><li data-lang="es">Investigacion de palabras clave</li>
+              <li data-lang="en">Monthly optimization</li><li data-lang="es">Optimizacion mensual</li>
+              <li data-lang="en">Performance reports</li><li data-lang="es">Reportes de rendimiento</li>
+              <li data-lang="en">Lead tracking</li><li data-lang="es">Seguimiento de leads</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1199,7 +1286,7 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
           <option value="" disabled selected data-lang="en">Select a service...</option>
           <option value="" disabled selected data-lang="es" style="display:none">Selecciona un servicio...</option>
           <option value="Custom Website">Custom Website / Sitio Web</option>
-          <option value="AI Phone Agent">AI Phone Agent / Agente IA</option>
+          <option value="AI Automation">AI Automation / Automatizacion IA</option>
           <option value="Drone & Video">Drone & Video / Drones y Video</option>
           <option value="Logo & Brand">Logo & Brand / Logo y Marca</option>
           <option value="Print & Signs">Print & Signs / Impresos</option>
@@ -1235,9 +1322,9 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
 
 <!-- ========== HIDDEN SEO CITY CONTENT ========== -->
 <div style="position:absolute;left:-9999px;overflow:hidden;width:1px;height:1px" aria-hidden="true">
-<h2>Web Design and Digital Marketing in Waco TX</h2><p>Texas Digital Co. provides custom website design, drone photography, AI phone agents, logo design, print services, and Google Ads management for businesses in Waco, Texas and surrounding Central Texas cities including Temple, Killeen, Hewitt, Woodway, Robinson, Bellmead, Lorena, China Spring, McGregor, Gatesville, Copperas Cove, Harker Heights, Belton, Salado, Mexia, Marlin, and Hillsboro.</p>
+<h2>Web Design and Digital Marketing in Waco TX</h2><p>Texas Digital Co. provides custom website design, drone photography, AI automation, logo design, print services, and Google Ads management for businesses in Waco, Texas and surrounding Central Texas cities including Temple, Killeen, Hewitt, Woodway, Robinson, Bellmead, Lorena, China Spring, McGregor, Gatesville, Copperas Cove, Harker Heights, Belton, Salado, Mexia, Marlin, and Hillsboro.</p>
 <h2>Drone Photography and Video Services Waco TX</h2><p>FAA Part 107 certified drone pilot offering aerial photography and videography for roofing inspections, real estate listings, construction progress documentation, and commercial properties in the Waco Texas area.</p>
-<h2>AI Phone Answering Service for Small Businesses</h2><p>24/7 AI-powered phone answering service for small businesses in Central Texas. Bilingual English and Spanish support. Never miss a customer call again.</p>
+<h2>AI Automation Answering Service for Small Businesses</h2><p>24/7 AI-powered phone answering service for small businesses in Central Texas. Bilingual English and Spanish support. Never miss a customer call again.</p>
 <h2>Bilingual Marketing Agency Central Texas</h2><p>Full-service bilingual English and Spanish digital marketing agency serving small businesses, contractors, restaurants, and service providers across Central Texas.</p>
 <h2>Dise&ntilde;o Web y Marketing Digital en Waco TX</h2><p>Texas Digital Co. ofrece dise&ntilde;o de sitios web, fotograf&iacute;a con drones, agentes telef&oacute;nicos IA, dise&ntilde;o de logos, impresos y gesti&oacute;n de Google Ads para negocios en Waco, Temple, Killeen y todo el Centro de Texas. Servicio biling&uuml;e ingl&eacute;s y espa&ntilde;ol.</p>
 </div>
