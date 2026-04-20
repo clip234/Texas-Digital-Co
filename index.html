@@ -448,10 +448,11 @@ body.lang-es option[data-lang="es"]{display:block!important}
 /* ============ INDUSTRIES ============ */
 .industries-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .industry-card{
-  text-align:center;padding:24px 12px;cursor:default;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:28px 12px;cursor:default;gap:10px;
 }
-.industry-card svg{width:32px;height:32px;margin:0 auto 10px;stroke:var(--text);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.industry-card span{font-family:var(--font-head);font-weight:600;font-size:0.82rem}
+.industry-card svg{width:28px;height:28px;display:block;stroke:var(--text);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.industry-card span{font-family:var(--font-head);font-weight:600;font-size:0.85rem;line-height:1.2}
 .industry-card:hover{border-color:var(--copper);box-shadow:4px 4px 0px var(--copper)}
 .industry-card:hover svg{stroke:var(--copper)}
 @media(max-width:900px){.industries-grid{grid-template-columns:repeat(3,1fr)}}
@@ -1197,6 +1198,8 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
           <span class="badge badge-yellow">Tailwind</span>
           <span class="badge badge-copper">API Integrations</span>
         </div>
+        <a href="https://e-mex.net" target="_blank" rel="noopener" class="btn btn-copper" style="margin-top:20px;display:inline-flex;align-items:center;gap:8px" data-lang="en">Visit e-mex.net <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="https://e-mex.net" target="_blank" rel="noopener" class="btn btn-copper" style="margin-top:20px;display:inline-flex;align-items:center;gap:8px" data-lang="es">Ver e-mex.net <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
       </div>
     </div>
   </div>
