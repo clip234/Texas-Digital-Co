@@ -198,14 +198,16 @@ body.lang-es option[data-lang="es"]{display:block!important}
 .nav-links a:hover{color:var(--copper)}
 .nav-right{display:flex;align-items:center;gap:14px}
 .lang-switch{
-  display:inline-flex;align-items:center;gap:0;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
   border:3px solid var(--dark);border-radius:var(--radius-pill);overflow:hidden;
-  font-family:var(--font-mono);font-size:0.75rem;font-weight:700;
+  font-family:var(--font-mono);font-size:0.95rem;font-weight:700;
   cursor:pointer;user-select:none;
   background:var(--dark);color:var(--white);
-  padding:7px 16px;letter-spacing:0.08em;
+  padding:10px 22px;letter-spacing:0.1em;
   transition:all 0.2s;
+  min-width:70px;
 }
+.lang-switch::before{content:'🌐';font-size:1rem}
 .lang-switch:hover{background:var(--copper);border-color:var(--copper)}
 .nav-cta{
   padding:10px 20px;border-radius:var(--radius-pill);
@@ -610,6 +612,40 @@ textarea.form-input{resize:vertical;min-height:120px;font-family:var(--font-body
 .footer-links{display:flex;gap:20px}
 .footer-links a{font-size:0.85rem;transition:color 0.2s}
 .footer-links a:hover{color:var(--copper)}
+
+/* ============ MOBILE OPTIMIZATION ============ */
+@media(max-width:768px){
+  .hero{padding:110px 0 40px}
+  .hero-headline{font-size:clamp(2rem,8vw,3rem);max-width:90%}
+  .hero-sub{font-size:1rem;max-width:90%;padding:0 16px}
+  .section{padding:60px 0}
+  .section-header h2{font-size:clamp(1.6rem,6vw,2.2rem)}
+  .section-header p{font-size:0.9rem}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:12px;padding:40px 0}
+  .stat-card{padding:20px 12px}
+  .stat-card .stat-value{font-size:1.6rem}
+  .service-card .service-body{padding:20px}
+  .service-card h3{font-size:1.1rem}
+  .neo-card{border-radius:12px}
+  .nav-cta span{display:none}
+  .nav-cta{padding:10px 14px}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+  .contact-info{text-align:center}
+  .cities-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px}
+  .work-browser{border-radius:12px}
+  .analyzer-input-group{flex-direction:column}
+  .analyzer-input{border-radius:12px}
+  .analyzer-btn{border-radius:12px;width:100%}
+}
+@media(max-width:480px){
+  .hero{padding:100px 0 30px}
+  .hero-headline{font-size:clamp(1.8rem,9vw,2.4rem)}
+  .stats-grid{gap:8px}
+  .stat-card .stat-value{font-size:1.4rem}
+  .industries-grid{gap:8px}
+  .container{padding:0 16px}
+}
 
 /* ============ DOT PATTERN BG ============ */
 .dot-bg{
