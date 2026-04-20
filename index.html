@@ -395,8 +395,9 @@ nav li a:hover{color:var(--txred)}nav li a:hover::after{width:100%}
 .ind-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:var(--txred)}
 .ind-icon{font-size:32px;margin-bottom:10px}
 .ind-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--text)}
+@media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)!important}.stats-grid{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:768px){.ind-grid{grid-template-columns:repeat(2,1fr)!important}}
-@media(max-width:480px){.ind-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}.ind-card{padding:20px 12px}.ind-icon{font-size:26px}}
+@media(max-width:480px){.ind-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}.ind-card{padding:20px 12px}.ind-icon{font-size:26px}.svc-grid{grid-template-columns:1fr!important}}
 
 /* ===== AREA / PROCESS / CTA / FOOTER ===== */
 .area-sec{background:var(--midnight);color:var(--limestone);padding:110px 32px;position:relative;overflow:hidden}
@@ -529,187 +530,103 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
   <div class="poster-foot" data-lang="en">Design, revisions, delivery included. You own everything.</div><div class="poster-foot" data-lang="es">Diseño, cambios, entrega incluidos. Todo es tuyo.</div>
 </div></div></section>
 
-<!-- ===== SERVICES WITH FLOATING ILLUSTRATIONS ===== -->
-<div class="svc-show" id="services">
-  <div class="sec-header r"><div><div class="sec-eyebrow mono"><span data-lang="en">01 · What we build</span><span data-lang="es">01 · Lo que hacemos</span></div><h2 data-lang="en">See it <em>come to life.</em></h2><h2 data-lang="es">Míralo <em>cobrar vida.</em></h2></div><div class="sec-meta" data-lang="en">6 services<br>All prices visible</div><div class="sec-meta" data-lang="es">6 servicios<br>Precios claros</div></div>
+<!-- ===== STATS BAR ===== -->
+<section style="padding:48px 32px;max-width:1100px;margin:0 auto">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center" class="stats-grid">
+    <div class="r"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--text);letter-spacing:-.02em">6</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="en">Services</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="es">Servicios</div></div>
+    <div class="r d1"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--text);letter-spacing:-.02em">EN/ES</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="en">Bilingual</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="es">Bilingue</div></div>
+    <div class="r d2"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--text);letter-spacing:-.02em">2wk</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="en">Avg. delivery</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="es">Entrega prom.</div></div>
+    <div class="r d3"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--text);letter-spacing:-.02em">$0</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="en">Contracts</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="es">Contratos</div></div>
+  </div>
+</section>
 
-  <!-- WEBSITE -->
-  <div class="svc-block">
-    <div class="svc-info r">
-      <div class="svc-num">01</div>
-      <div class="svc-name" data-lang="en">Custom websites</div><div class="svc-name" data-lang="es">Sitios web a la medida</div>
-      <div class="svc-desc" data-lang="en">Built from scratch — not a template. Works on phones, loads fast, shows up on Google. Your site, your domain, yours forever.</div>
-      <div class="svc-desc" data-lang="es">Hecho desde cero — no una plantilla. Funciona en celular, carga rápido, aparece en Google. Tu sitio, tu dominio, tuyo para siempre.</div>
-      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">5 pages · Hosting · SSL · Google Business · Mobile + SEO</span><span data-lang="es">5 páginas · Hosting · SSL · Google Business · Móvil + SEO</span></div>
-      <div class="svc-price-tag"><span class="svc-price">$299</span><span class="svc-price-sub" data-lang="en">and up · one-time</span><span class="svc-price-sub" data-lang="es">o más · único</span></div>
-      <div class="svc-price-note" data-lang="en">+$50/mo hosting & updates</div><div class="svc-price-note" data-lang="es">+$50/mes hosting y cambios</div>
-      <a href="#contact" class="btn btn-red"><span data-lang="en">Get started</span><span data-lang="es">Empezar</span> →</a>
+<!-- ===== SERVICES — CLEAN GRID ===== -->
+<section style="padding:80px 32px 100px;max-width:1200px;margin:0 auto" id="services">
+  <div style="text-align:center;margin-bottom:56px">
+    <div class="sec-eyebrow mono r" style="text-align:center;margin-bottom:14px"><span data-lang="en">What we do</span><span data-lang="es">Lo que hacemos</span></div>
+    <h2 class="r" style="font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,4.5vw,48px);line-height:1.05;letter-spacing:-.025em;color:var(--text)" data-lang="en">Everything your business needs<br>to <em style="color:var(--txred);font-style:italic;font-weight:500">look professional.</em></h2>
+    <h2 class="r" style="font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,4.5vw,48px);line-height:1.05;letter-spacing:-.025em;color:var(--text)" data-lang="es">Todo lo que tu negocio necesita<br>para <em style="color:var(--txred);font-style:italic;font-weight:500">verse profesional.</em></h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="svc-grid">
+    <!-- Website -->
+    <div class="ind-card r" style="padding:32px 24px;text-align:left">
+      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">Custom Websites</div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Sitios Web</div>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">Built from scratch. Mobile-ready, SEO-optimized, yours forever.</p>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Desde cero. Optimizado para movil, SEO, tuyo para siempre.</p>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$299<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="en">and up</span><span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="es">o mas</span></div>
     </div>
-    <div class="svc-visual vis r d2">
-      <div class="vis-browser">
-        <div class="vis-browser-bar"><div class="vb-dot vb-red"></div><div class="vb-dot vb-yel"></div><div class="vb-dot vb-grn"></div><div class="vis-url"><span class="vis-url-text typing">www.joseyardcare.com</span></div></div>
-        <div class="vis-body">
-          <div class="vis-nav"><span class="vis-nav-brand">Jose's <em>Yard Care</em></span><div class="vis-nav-links"><span>Services</span><span>About</span><span>Contact</span></div></div>
-          <div class="vis-hero"><div class="vis-hero-eye">★ Waco, TX</div><h4>Your yard,<br><em>our pride.</em></h4><p>Professional lawn care, landscaping, and maintenance for Waco and Central Texas.</p><div class="vis-hero-btn">Get a free quote →</div></div>
-          <div class="vis-blocks"><div class="vis-block"></div><div class="vis-block"></div><div class="vis-block"></div></div>
-          <div class="vis-footer"><span>© 2026 Jose's Yard Care</span><span>Waco, TX <span class="star">★</span></span></div>
-        </div>
-      </div>
+    <!-- AI Phone -->
+    <div class="ind-card r d1" style="padding:32px 24px;text-align:left">
+      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">AI Phone Agent</div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Agente AI</div>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">AI answers your phone 24/7 in EN/ES. Never miss a lead again.</p>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">AI contesta tu telefono 24/7 en EN/ES. No pierdas mas clientes.</p>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$299<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:4px">/mo</span></div>
+    </div>
+    <!-- Drone -->
+    <div class="ind-card r d2" style="padding:32px 24px;text-align:left">
+      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">Drone & Video</div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Drone y Video</div>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">FAA Part 107 certified. 4K aerial for real estate, construction, events.</p>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Certificado FAA Part 107. 4K aereo para bienes raices, construccion.</p>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$200<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="en">per shoot</span><span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="es">por sesion</span></div>
+    </div>
+    <!-- Logo -->
+    <div class="ind-card r" style="padding:32px 24px;text-align:left">
+      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">Logo & Brand</div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Logo y Marca</div>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">Logo, colors, fonts, and business cards. Look established, not DIY.</p>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Logo, colores, tipografia, tarjetas. Verse profesional, no casero.</p>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$450<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="en">one-time</span><span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="es">unico</span></div>
+    </div>
+    <!-- Print -->
+    <div class="ind-card r d1" style="padding:32px 24px;text-align:left">
+      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">Print & Signs</div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Impresion</div>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">Flyers, business cards, yard signs, magnets. Designed, printed, delivered.</p>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Flyers, tarjetas, letreros, imanes. Disenamos, imprimimos, entregamos.</p>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$85<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px">/ 500 flyers</span></div>
+    </div>
+    <!-- Google Ads -->
+    <div class="ind-card r d2" style="padding:32px 24px;text-align:left">
+      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px">Google Ads</div>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">We run your ads. Your phone rings with real leads. Monthly reports.</p>
+      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Manejamos tus ads. Tu telefono suena con clientes reales. Reportes mensuales.</p>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$249<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:4px">/mo</span></div>
     </div>
   </div>
-
-  <!-- AI PHONE -->
-  <div class="svc-block flip">
-    <div class="svc-info r">
-      <div class="svc-num">02</div>
-      <div class="svc-name" data-lang="en">AI phone agent</div><div class="svc-name" data-lang="es">Agente AI de teléfono</div>
-      <div class="svc-desc" data-lang="en">An AI answers your business phone 24/7 in English and Spanish. Takes the caller's info, texts it to you. You never miss a job again.</div>
-      <div class="svc-desc" data-lang="es">Un AI contesta tu teléfono 24/7 en inglés y español. Toma los datos del cliente y te los manda. No pierdes más trabajos.</div>
-      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">Custom setup · 500 min/mo · SMS alerts</span><span data-lang="es">Instalación · 500 min/mes · Alertas SMS</span></div>
-      <div class="svc-price-tag"><span class="svc-price">$299</span><span class="svc-price-sub" data-lang="en">per month</span><span class="svc-price-sub" data-lang="es">al mes</span></div>
-      <div class="svc-price-note" data-lang="en">$199 one-time setup</div><div class="svc-price-note" data-lang="es">$199 instalación</div>
-      <a href="#contact" class="btn btn-red"><span data-lang="en">Get started</span><span data-lang="es">Empezar</span> →</a>
-    </div>
-    <div class="svc-visual vis r d2">
-      <div class="vis-phone">
-        <div class="vis-phone-screen">
-          <div class="vis-phone-top"><span>AI Assistant</span></div>
-          <div class="vis-phone-status" data-lang="en">Incoming call...</div><div class="vis-phone-status" data-lang="es">Llamada entrante...</div>
-          <div class="vis-bubbles">
-            <div class="vis-bub incoming" data-lang="en">"Hi, I need a quote for a roof repair on my house."</div><div class="vis-bub incoming" data-lang="es">"Hola, necesito cotización para arreglar mi techo."</div>
-            <div class="vis-bub ai" data-lang="en">"Of course! Can I get your name and address?"</div><div class="vis-bub ai" data-lang="es">"¡Claro! ¿Me da su nombre y dirección?"</div>
-            <div class="vis-bub incoming" data-lang="en">"Mike Torres, 1205 Lake Shore Dr."</div><div class="vis-bub incoming" data-lang="es">"Miguel Torres, 1205 Lake Shore Dr."</div>
-            <div class="vis-bub outgoing" data-lang="en">📱 New lead: Mike Torres, roof repair, 1205 Lake Shore Dr.</div><div class="vis-bub outgoing" data-lang="es">📱 Nuevo cliente: Miguel Torres, techo, 1205 Lake Shore Dr.</div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div style="text-align:center;margin-top:48px" class="r">
+    <a href="#contact" class="btn btn-red" style="padding:16px 32px;font-size:15px"><span data-lang="en">Get a free quote</span><span data-lang="es">Cotiza gratis</span> →</a>
   </div>
+</section>
 
-  <!-- DRONE -->
-  <div class="svc-block">
-    <div class="svc-info r">
-      <div class="svc-num">03</div>
-      <div class="svc-name" data-lang="en">Drone & video</div><div class="svc-name" data-lang="es">Drone y video</div>
-      <div class="svc-desc" data-lang="en">FAA Part 107 certified pilot. 4K aerial photos and video for real estate, construction, events. Legal, insured, delivered fast.</div>
-      <div class="svc-desc" data-lang="es">Piloto certificado FAA Part 107. Fotos y video 4K aéreo para bienes raíces, construcción, eventos. Legal, asegurado, rápido.</div>
-      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">Shoot · Edit · Delivery · Part 107 insured · 4K</span><span data-lang="es">Grabación · Edición · Entrega · Part 107 · 4K</span></div>
-      <div class="svc-price-tag"><span class="svc-price">$200</span><span class="svc-price-sub" data-lang="en">starting · per shoot</span><span class="svc-price-sub" data-lang="es">desde · por sesión</span></div>
-      <div class="svc-price-note" data-lang="en">Photo+video combo $350</div><div class="svc-price-note" data-lang="es">Combo foto+video $350</div>
-      <a href="#contact" class="btn btn-red"><span data-lang="en">Book a shoot</span><span data-lang="es">Agendar sesión</span> →</a>
+<!-- ===== INDUSTRIES ===== -->
+<section style="padding:80px 32px;background:var(--sand)" id="industries">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="sec-eyebrow mono r" style="text-align:center;margin-bottom:14px"><span data-lang="en">Who we serve</span><span data-lang="es">A quien servimos</span></div>
+      <h2 class="r" style="font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:-.025em;color:var(--text)" data-lang="en">Built for businesses <em style="color:var(--txred);font-style:italic;font-weight:500">like yours.</em></h2>
+      <h2 class="r" style="font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:-.025em;color:var(--text)" data-lang="es">Hecho para negocios <em style="color:var(--txred);font-style:italic;font-weight:500">como el tuyo.</em></h2>
     </div>
-    <div class="svc-visual vis r d2">
-      <div class="vis-drone-wrap">
-        <div class="vis-drone-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="26" y="26" width="12" height="12" rx="2" fill="rgba(22,32,51,.1)"/><path d="M26 32H8M38 32h18M32 26V8M32 38v18"/><circle cx="8" cy="32" r="6" fill="var(--limestone)" stroke="var(--midnight)"/><circle cx="56" cy="32" r="6" fill="var(--limestone)" stroke="var(--midnight)"/><circle cx="32" cy="8" r="6" fill="var(--limestone)" stroke="var(--midnight)"/><circle cx="32" cy="56" r="6" fill="var(--limestone)" stroke="var(--midnight)"/></svg></div>
-        <div class="vis-viewfinder" id="droneVF">
-          <div class="vis-vf-top"><span>4K · 60fps</span><div class="vis-vf-rec">REC <span id="recTime">00:42</span></div></div>
-          <div class="vis-vf-body">
-            <video class="vf-video" id="vfVideo" autoplay loop muted playsinline src="https://videos.pexels.com/video-files/5031099/5031099-sd_640_360_30fps.mp4"></video>
-            <div class="vf-hud">
-              <div class="vf-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-              <div class="vf-crosshair"><div class="vf-crosshair-ring"></div></div>
-              <div class="vf-label vf-label-alt" data-lang="en">ALT 120ft</div><div class="vf-label vf-label-alt" data-lang="es">ALT 36m</div>
-              <div class="vf-label vf-label-speed" data-lang="en">SPD 8mph</div><div class="vf-label vf-label-speed" data-lang="es">VEL 13km/h</div>
-              <div class="vf-label vf-label-gps">GPS 31.55°N</div>
-              <div class="vf-label vf-label-bat">BAT 78%</div>
-              <div class="vf-marker vf-m1"></div>
-              <div class="vf-marker vf-m2"></div>
-            </div>
-          </div>
-          <div class="vis-vf-bottom"><div class="vis-vf-badge"><span data-lang="en">★ Part 107 Certified</span><span data-lang="es">★ Part 107 Certificado</span></div><div class="vis-vf-photos"><span data-lang="en">24 photos</span><span data-lang="es">24 fotos</span></div><div class="vis-vf-res">3840×2160</div></div>
-        </div>
-      </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px" class="ind-grid">
+      <div class="ind-card r"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div><div class="ind-name" data-lang="en">Roofing</div><div class="ind-name" data-lang="es">Techos</div></div>
+      <div class="ind-card r d1"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div><div class="ind-name" data-lang="en">Plumbing</div><div class="ind-name" data-lang="es">Plomeria</div></div>
+      <div class="ind-card r d2"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4l2 2"/><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/></svg></div><div class="ind-name">HVAC</div></div>
+      <div class="ind-card r d3"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66L8 17"/><path d="M17 8l4-2-3-3"/><path d="M17 8c-4 0-8.5 2-11.8 5.4"/></svg></div><div class="ind-name" data-lang="en">Landscaping</div><div class="ind-name" data-lang="es">Jardineria</div></div>
+      <div class="ind-card r d4"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="ind-name" data-lang="en">Real Estate</div><div class="ind-name" data-lang="es">Bienes Raices</div></div>
+      <div class="ind-card r"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><div class="ind-name" data-lang="en">Restaurants</div><div class="ind-name" data-lang="es">Restaurantes</div></div>
+      <div class="ind-card r d1"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/><line x1="9" y1="17" x2="15" y2="17"/><path d="M5 6V3h4"/></svg></div><div class="ind-name" data-lang="en">Auto Repair</div><div class="ind-name" data-lang="es">Mecanica</div></div>
+      <div class="ind-card r d2"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="ind-name" data-lang="en">Cleaning</div><div class="ind-name" data-lang="es">Limpieza</div></div>
+      <div class="ind-card r d3"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg></div><div class="ind-name" data-lang="en">Construction</div><div class="ind-name" data-lang="es">Construccion</div></div>
+      <div class="ind-card r d4"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="ind-name" data-lang="en">Electricians</div><div class="ind-name" data-lang="es">Electricistas</div></div>
     </div>
-  </div>
-
-  <!-- LOGO -->
-  <div class="svc-block flip">
-    <div class="svc-info r">
-      <div class="svc-num">04</div>
-      <div class="svc-name" data-lang="en">Logo & brand</div><div class="svc-name" data-lang="es">Logo y marca</div>
-      <div class="svc-desc" data-lang="en">A real logo, color palette, and business card design. Something that makes your business look established, not thrown together.</div>
-      <div class="svc-desc" data-lang="es">Un logo de verdad, colores, y diseño de tarjetas. Algo que haga que tu negocio se vea establecido.</div>
-      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">3 concepts · Revisions · Colors · Fonts · Business card</span><span data-lang="es">3 conceptos · Cambios · Colores · Tipografías · Tarjetas</span></div>
-      <div class="svc-price-tag"><span class="svc-price">$450</span><span class="svc-price-sub" data-lang="en">one-time</span><span class="svc-price-sub" data-lang="es">único pago</span></div>
-      <div class="svc-price-note" data-lang="en">Delivered in 7–10 days</div><div class="svc-price-note" data-lang="es">Entrega en 7–10 días</div>
-      <a href="#contact" class="btn btn-red"><span data-lang="en">Get started</span><span data-lang="es">Empezar</span> →</a>
-    </div>
-    <div class="svc-visual vis r d2">
-      <div class="vis-logo-wrap">
-        <div class="vis-logo-card"><div class="vis-logo-v1"><span class="vis-logo-star"><svg viewBox="0 0 100 100" fill="#C69C6D"><polygon points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/></svg></span>Torres <em>Roofing</em></div><div class="vis-swatch"><span style="background:var(--txred)"></span><span style="background:var(--midnight)"></span><span style="background:var(--gold)"></span><span style="background:var(--limestone)"></span></div></div>
-        <div class="vis-logo-card"><div class="vis-logo-v2"><svg viewBox="0 0 100 100" width="16" height="16" fill="#162033"><polygon points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/></svg>Torres Roofing</div></div>
-        <div class="vis-logo-card vis-logo-v3"><div class="logo-inner"><svg viewBox="0 0 100 100" width="20" height="20" fill="#D4943A"><polygon points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/></svg>Torres Roofing</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PRINT -->
-  <div class="svc-block">
-    <div class="svc-info r">
-      <div class="svc-num">05</div>
-      <div class="svc-name" data-lang="en">Print & signs</div><div class="svc-name" data-lang="es">Impresión y letreros</div>
-      <div class="svc-desc" data-lang="en">Flyers, business cards, yard signs, truck magnets, banners. We design it, print it, deliver it to you.</div>
-      <div class="svc-desc" data-lang="es">Flyers, tarjetas, letreros, imanes, lonas. Diseñamos, imprimimos, te lo entregamos.</div>
-      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">Design · Print · Delivery · 2-day turnaround</span><span data-lang="es">Diseño · Impresión · Entrega · 2 días</span></div>
-      <div class="svc-price-tag"><span class="svc-price">$85</span><span class="svc-price-sub">500 flyers</span></div>
-      <div class="svc-price-note" data-lang="en">Business cards from $55</div><div class="svc-price-note" data-lang="es">Tarjetas desde $55</div>
-      <a href="#contact" class="btn btn-red"><span data-lang="en">Order print</span><span data-lang="es">Pedir impresión</span> →</a>
-    </div>
-    <div class="svc-visual vis r d2">
-      <div class="vis-print-wrap">
-        <div class="vis-flyer"><div class="vis-flyer-top sage"></div><div class="vis-flyer-body"><div class="vis-flyer-title">Ramirez Lawn</div><div class="vis-flyer-sub">Waco, TX · 254.555.1234</div><div class="vis-flyer-box"></div><div class="vis-flyer-cta">Free Estimate →</div></div></div>
-        <div class="vis-flyer"><div class="vis-flyer-top gold"></div><div class="vis-flyer-body"><div class="vis-flyer-title">Lopez Realty</div><div class="vis-flyer-sub">Your Home Experts</div><div class="vis-flyer-box"></div><div class="vis-flyer-cta">View Listings →</div></div></div>
-        <div class="vis-flyer"><div class="vis-flyer-top red"></div><div class="vis-flyer-body"><div class="vis-flyer-title">Torres Roofing</div><div class="vis-flyer-sub">Licensed · Insured · Waco</div><div class="vis-flyer-box"></div><div class="vis-flyer-cta">Call Today →</div></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- GOOGLE ADS -->
-  <div class="svc-block flip">
-    <div class="svc-info r">
-      <div class="svc-num">06</div>
-      <div class="svc-name">Google Ads</div>
-      <div class="svc-desc" data-lang="en">We set up and manage your Google Ads so your phone rings with real leads. Monthly reports — you see exactly where every dollar goes.</div>
-      <div class="svc-desc" data-lang="es">Configuramos y manejamos tus Google Ads para que te lleguen clientes. Reportes mensuales — ves a dónde va cada dólar.</div>
-      <div class="svc-includes"><strong data-lang="en">Includes: </strong><strong data-lang="es">Incluye: </strong><span data-lang="en">Setup · Management · Monthly report · Ad spend separate</span><span data-lang="es">Instalación · Manejo · Reporte mensual · Inversión aparte</span></div>
-      <div class="svc-price-tag"><span class="svc-price">$499</span><span class="svc-price-sub" data-lang="en">per month</span><span class="svc-price-sub" data-lang="es">al mes</span></div>
-      <div class="svc-price-note" data-lang="en">+ your ad budget</div><div class="svc-price-note" data-lang="es">+ tu inversión en ads</div>
-      <a href="#contact" class="btn btn-red"><span data-lang="en">Start ads</span><span data-lang="es">Empezar ads</span> →</a>
-    </div>
-    <div class="svc-visual vis r d2">
-      <div class="vis-graph-wrap">
-        <div class="vis-graph-title" data-lang="en">Monthly leads</div><div class="vis-graph-title" data-lang="es">Clientes mensuales</div>
-        <div class="vis-graph-val">47 <span data-lang="en">↑ 312%</span><span data-lang="es">↑ 312%</span></div>
-        <div class="vis-bars">
-          <div class="vis-bar"></div><div class="vis-bar"></div><div class="vis-bar"></div>
-          <div class="vis-bar active-bar"></div><div class="vis-bar"></div><div class="vis-bar gold-bar"></div>
-          <div class="vis-bar active-bar"></div><div class="vis-bar gold-bar"></div>
-        </div>
-        <div class="vis-bar-labels"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span></div>
-        <div class="vis-graph-footer">
-          <div class="vis-graph-stat"><strong>$12.40</strong><span data-lang="en">Cost/lead</span><span data-lang="es">Costo/cliente</span></div>
-          <div class="vis-graph-stat"><strong>312%</strong><span data-lang="en">Growth</span><span data-lang="es">Crecimiento</span></div>
-          <div class="vis-graph-stat"><strong>4.2×</strong><span>ROI</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- INDUSTRIES -->
-<section class="sec" id="industries" style="padding:80px 0">
-  <div class="sec-header r"><div><div class="sec-eyebrow mono"><span data-lang="en">02 · Industries we serve</span><span data-lang="es">02 · Industrias que servimos</span></div><h2 data-lang="en">Built for businesses<br><em>like yours.</em></h2><h2 data-lang="es">Hecho para negocios<br><em>como el tuyo.</em></h2></div><div class="sec-meta" data-lang="en">10 industries<br>Bilingual service</div><div class="sec-meta" data-lang="es">10 industrias<br>Servicio bilingüe</div></div>
-  <div style="max-width:1100px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px" class="ind-grid">
-    <div class="ind-card r"><div class="ind-icon">🏠</div><div class="ind-name" data-lang="en">Roofing</div><div class="ind-name" data-lang="es">Techos</div></div>
-    <div class="ind-card r d1"><div class="ind-icon">🔧</div><div class="ind-name" data-lang="en">Plumbing</div><div class="ind-name" data-lang="es">Plomería</div></div>
-    <div class="ind-card r d2"><div class="ind-icon">❄️</div><div class="ind-name" data-lang="en">HVAC</div><div class="ind-name" data-lang="es">HVAC</div></div>
-    <div class="ind-card r d3"><div class="ind-icon">🌿</div><div class="ind-name" data-lang="en">Landscaping</div><div class="ind-name" data-lang="es">Jardinería</div></div>
-    <div class="ind-card r d4"><div class="ind-icon">🏡</div><div class="ind-name" data-lang="en">Real Estate</div><div class="ind-name" data-lang="es">Bienes Raíces</div></div>
-    <div class="ind-card r"><div class="ind-icon">🍽️</div><div class="ind-name" data-lang="en">Restaurants</div><div class="ind-name" data-lang="es">Restaurantes</div></div>
-    <div class="ind-card r d1"><div class="ind-icon">🚗</div><div class="ind-name" data-lang="en">Auto Repair</div><div class="ind-name" data-lang="es">Mecánica</div></div>
-    <div class="ind-card r d2"><div class="ind-icon">🧹</div><div class="ind-name" data-lang="en">Cleaning</div><div class="ind-name" data-lang="es">Limpieza</div></div>
-    <div class="ind-card r d3"><div class="ind-icon">🏗️</div><div class="ind-name" data-lang="en">Construction</div><div class="ind-name" data-lang="es">Construcción</div></div>
-    <div class="ind-card r d4"><div class="ind-icon">⚡</div><div class="ind-name" data-lang="en">Electricians</div><div class="ind-name" data-lang="es">Electricistas</div></div>
   </div>
 </section>
 
