@@ -21,688 +21,1598 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G32B97C2SZ');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --midnight:#2D2D2D;--navy:#3A3A3A;--slate:#4A4A4A;
-  --limestone:#FAFAF7;--sand:#F3F0EB;--sandstone:#E4DDD2;
-  --txred:#C69C6D;--txred-dark:#A67E52;
-  --gold:#C69C6D;--gold-light:#D4B08C;
-  --sage:#8B8178;--sage-deep:#6B6058;
-  --text:#2D2D2D;--text-soft:#5A5A5A;--text-dim:#8A8A8A;
+:root {
+  --bg: #FAFAF7;
+  --dark: #1a1a1a;
+  --dark-soft: #2a2a2a;
+  --copper: #C69C6D;
+  --copper-dark: #A67E52;
+  --copper-light: #D4B08C;
+  --sand: #F3F0EB;
+  --sandstone: #E4DDD2;
+  --text: #1a1a1a;
+  --text-soft: #5a5a5a;
+  --text-dim: #8a8a8a;
+  --white: #FAFAF7;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--limestone);color:var(--text);font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.mono{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
 
-/* Lang */
-[data-lang="es"]{display:none}
-body.lang-es [data-lang="en"]{display:none}
-body.lang-es [data-lang="es"]{display:revert}
-body.lang-es span[data-lang="es"]{display:inline}
-body.lang-es div[data-lang="es"],body.lang-es p[data-lang="es"],body.lang-es h1[data-lang="es"],
-body.lang-es h2[data-lang="es"],body.lang-es h3[data-lang="es"],body.lang-es h4[data-lang="es"],
-body.lang-es a[data-lang="es"],body.lang-es li[data-lang="es"]{display:revert}
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
-/* Reveal */
-.r{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
-.r.vis{opacity:1!important;transform:none!important}
-.d1{transition-delay:.15s}.d2{transition-delay:.35s}.d3{transition-delay:.55s}.d4{transition-delay:.75s}
+/* Typography */
+.serif { font-family: 'Instrument Serif', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; }
 
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@keyframes float2{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-@keyframes typing{from{width:0}to{width:100%}}
-@keyframes blink{0%,100%{border-color:var(--txred)}50%{border-color:transparent}}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
-@keyframes slideInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:none}}
-@keyframes growBar{from{height:0}to{height:var(--h)}}
-@keyframes popIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
-@keyframes fanIn{from{opacity:0;transform:rotate(0deg) translateY(10px)}to{opacity:1;transform:rotate(var(--rot)) translateY(0)}}
-@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* Lang toggle */
+[data-lang="es"] { display: none; }
+body.lang-es [data-lang="en"] { display: none; }
+body.lang-es [data-lang="es"] { display: revert; }
+body.lang-es span[data-lang="es"] { display: inline; }
+body.lang-es div[data-lang="es"], body.lang-es p[data-lang="es"],
+body.lang-es h1[data-lang="es"], body.lang-es h2[data-lang="es"],
+body.lang-es h3[data-lang="es"], body.lang-es h4[data-lang="es"],
+body.lang-es a[data-lang="es"], body.lang-es li[data-lang="es"],
+body.lang-es label[data-lang="es"], body.lang-es option[data-lang="es"],
+body.lang-es button[data-lang="es"] { display: revert; }
 
-/* ===== TOP BAR ===== */
-.top-bar{background:var(--midnight);color:var(--limestone);padding:10px 0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;z-index:101;position:relative}
-.top-bar-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.top-bar a{color:var(--gold);text-decoration:none;transition:color .2s}
-.top-bar a:hover{color:#fff}
-.top-bar-left{display:flex;align-items:center;gap:20px}
-.top-dot{color:var(--sage);animation:pulse 2s ease-in-out infinite}
+/* Reveal animations */
+.r {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1);
+}
+.r.vis { opacity: 1 !important; transform: none !important; }
+.d1 { transition-delay: .12s; }
+.d2 { transition-delay: .24s; }
+.d3 { transition-delay: .36s; }
+.d4 { transition-delay: .48s; }
+.d5 { transition-delay: .6s; }
 
-/* ===== NAV ===== */
-nav{background:rgba(250,250,247,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--sandstone);position:sticky;top:0;z-index:100;transition:all .3s}
-nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.06);background:rgba(250,250,247,.97)}
-.nav-inner{max-width:1280px;margin:0 auto;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
-.brand svg{transition:transform .4s cubic-bezier(.16,1,.3,1)}
-.brand:hover svg{transform:rotate(20deg) scale(1.1)}
-.brand-text{font-family:'Fraunces',serif;font-weight:700;font-size:21px;letter-spacing:-.015em}
-.brand-text em{font-style:italic;font-weight:500;color:var(--txred)}
-nav ul{display:flex;gap:28px;list-style:none}
-nav li a{color:var(--text);text-decoration:none;font-size:13px;font-weight:600;transition:color .2s;position:relative}
-nav li a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--txred);transition:width .3s cubic-bezier(.16,1,.3,1)}
-nav li a:hover{color:var(--txred)}nav li a:hover::after{width:100%}
-.nav-right{display:flex;gap:10px;align-items:center}
-.lang-toggle{display:flex;border:1.5px solid var(--sandstone);border-radius:3px;overflow:hidden}
-.lang-btn{background:transparent;border:none;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;padding:7px 12px;cursor:pointer;color:var(--text-dim);transition:all .2s}
-.lang-btn.active{background:var(--midnight);color:var(--limestone)}
-.nav-phone{background:var(--txred);color:#fff;padding:10px 18px;border-radius:3px;text-decoration:none;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px;transition:all .25s cubic-bezier(.16,1,.3,1)}
-.nav-phone:hover{background:var(--txred-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(198,156,109,.3)}
-.nav-phone svg{width:14px;height:14px}
-.mob-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--text)}
-.mob-toggle svg{width:24px;height:24px}
-.mob-menu{display:none;position:fixed;inset:0;background:var(--midnight);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:28px}
-.mob-menu.open{display:flex}
-.mob-menu a{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--limestone);text-decoration:none}
-.mob-menu a:hover{color:var(--gold)}
-.mob-close{position:absolute;top:20px;right:28px;background:none;border:none;color:var(--limestone);cursor:pointer;font-size:36px}
+/* ========================================
+   NAV
+   ======================================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 48px;
+  transition: all .4s cubic-bezier(.16, 1, .3, 1);
+}
+nav.scrolled {
+  background: rgba(250, 250, 247, .92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: padding .4s;
+}
+nav.scrolled .nav-inner { padding: 16px 0; }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--text);
+}
+.brand svg { transition: transform .5s cubic-bezier(.16, 1, .3, 1); }
+.brand:hover svg { transform: rotate(18deg) scale(1.08); }
+.brand-text {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  letter-spacing: -.01em;
+}
+.brand-text em { font-style: italic; color: var(--copper); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  transition: color .25s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--copper);
+  transition: width .35s cubic-bezier(.16, 1, .3, 1);
+}
+.nav-links a:hover { color: var(--copper); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.lang-toggle {
+  display: flex;
+  border: 1.5px solid var(--sandstone);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  padding: 7px 12px;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: all .25s;
+}
+.lang-btn.active { background: var(--dark); color: var(--white); }
+.nav-cta {
+  background: var(--dark);
+  color: var(--white);
+  padding: 10px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .3s cubic-bezier(.16, 1, .3, 1);
+}
+.nav-cta:hover { background: var(--copper); transform: translateY(-2px); }
+.nav-cta svg { width: 14px; height: 14px; }
+
+/* Mobile nav */
+.mob-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--text);
+}
+.mob-toggle svg { width: 24px; height: 24px; }
+.mob-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mob-menu.open { display: flex; }
+.mob-menu a {
+  font-family: 'Instrument Serif', serif;
+  font-size: 36px;
+  color: var(--white);
+  text-decoration: none;
+  transition: color .2s;
+}
+.mob-menu a:hover { color: var(--copper); }
+.mob-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 36px;
+  line-height: 1;
+}
+.mob-lang {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+.mob-lang button {
+  background: transparent;
+  border: 1.5px solid rgba(250,250,247,.2);
+  border-radius: 4px;
+  color: rgba(250,250,247,.5);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.mob-lang button.active { border-color: var(--copper); color: var(--copper); }
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 32px 120px;
+  position: relative;
+}
+.hero-content { max-width: 900px; margin: 0 auto; }
+.hero-eyebrow {
+  color: var(--copper);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--copper); opacity: .4; }
+.hero h1 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -.03em;
+  color: var(--dark);
+  margin-bottom: 32px;
+}
+.hero h1 em { font-style: italic; color: var(--copper); }
+.hero-sub {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  max-width: 560px;
+  margin: 0 auto 48px;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--dark);
+  color: var(--white);
+  padding: 18px 40px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all .35s cubic-bezier(.16, 1, .3, 1);
+  border: none;
+  cursor: pointer;
+}
+.hero-cta:hover { background: var(--copper); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(198,156,109,.25); }
+.hero-cta svg { width: 16px; height: 16px; transition: transform .3s; }
+.hero-cta:hover svg { transform: translateX(4px); }
+.hero-scroll {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .5;
+  animation: fadeInUp 1s 1.5s both;
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--copper), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100% { opacity: .3; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.2); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translate(-50%, 20px); } to { opacity: .5; transform: translate(-50%, 0); } }
+
+/* ========================================
+   STATS (dark section like Euclid)
+   ======================================== */
+.stats-section {
+  background: var(--dark);
+  padding: 100px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(198,156,109,.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 50%, rgba(198,156,109,.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.stats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 400;
+  color: var(--copper);
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(250,250,247,.4);
+  font-weight: 500;
+}
+.stat-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(250,250,247,.08);
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ========================================
+   SERVICES (3x2 grid)
+   ======================================== */
+.services-section {
+  padding: 140px 48px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.section-header {
+  max-width: 600px;
+  margin-bottom: 80px;
+}
+.section-label {
+  color: var(--copper);
+  margin-bottom: 20px;
+}
+.section-title {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  color: var(--dark);
+}
+.section-title em { font-style: italic; color: var(--copper); }
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.svc-card {
+  padding: 40px 32px;
+  border: 1px solid var(--sandstone);
+  border-radius: 8px;
+  background: #fff;
+  transition: all .4s cubic-bezier(.16, 1, .3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--copper);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+}
+.svc-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.06); border-color: transparent; }
+.svc-card:hover::before { transform: scaleX(1); }
+.svc-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.svc-icon svg { width: 24px; height: 24px; stroke: var(--copper); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.svc-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 24px;
+  color: var(--dark);
+  margin-bottom: 8px;
+  letter-spacing: -.01em;
+}
+.svc-desc {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.svc-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--sandstone);
+}
+.svc-price {
+  font-family: 'Instrument Serif', serif;
+  font-size: 28px;
+  color: var(--copper);
+  letter-spacing: -.02em;
+}
+.svc-price-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ========================================
+   INDUSTRIES
+   ======================================== */
+.industries-section {
+  padding: 120px 48px;
+  background: var(--sand);
+}
+.industries-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.industries-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.ind-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.ind-card {
+  background: #fff;
+  border: 1px solid var(--sandstone);
+  border-radius: 8px;
+  padding: 28px 16px;
+  text-align: center;
+  transition: all .3s cubic-bezier(.16, 1, .3, 1);
+  cursor: default;
+}
+.ind-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.06); border-color: var(--copper); }
+.ind-icon { margin-bottom: 12px; }
+.ind-icon svg { width: 28px; height: 28px; stroke: var(--text); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.ind-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 15px;
+  color: var(--text);
+}
+
+/* ========================================
+   PROCESS (horizontal timeline)
+   ======================================== */
+.process-section {
+  padding: 140px 48px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 72px;
+  border-top: 2px solid var(--dark);
+  position: relative;
+}
+.process-grid::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--copper);
+  transition: width 1.5s cubic-bezier(.16, 1, .3, 1);
+}
+.process-grid.vis::after { width: 100%; }
+.step {
+  padding: 32px 28px 0 0;
+  border-right: 1px solid var(--sandstone);
+}
+.step:last-child { border-right: none; }
+.step-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--dark);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Instrument Serif', serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+  transition: all .35s;
+}
+.step:hover .step-num { background: var(--copper); transform: scale(1.1); }
+.step h4 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.step .step-detail {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 8px;
+}
+.step p {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+/* ========================================
+   WORK / PORTFOLIO
+   ======================================== */
+.work-section {
+  padding: 120px 48px;
+  background: var(--sand);
+}
+.work-inner { max-width: 1300px; margin: 0 auto; }
+.work-feature {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.work-browser {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 32px 72px rgba(0,0,0,.08);
+  transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+}
+.work-browser:hover { transform: translateY(-8px); }
+.work-browser-bar {
+  background: var(--sand);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--sandstone);
+}
+.wb-dot { width: 10px; height: 10px; border-radius: 50%; }
+.wb-red { background: #FF5F57; }
+.wb-yel { background: #FFBD2E; }
+.wb-grn { background: #28CA41; }
+.work-feature-info { }
+.work-badge { color: var(--copper); margin-bottom: 20px; }
+.work-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  color: var(--dark);
+  letter-spacing: -.02em;
+  margin-bottom: 8px;
+}
+.work-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+}
+.work-desc {
+  font-size: 16px;
+  color: var(--text-soft);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 480px;
+}
+.work-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.work-tags span {
+  background: #fff;
+  border: 1.5px solid var(--sandstone);
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.work-more {
+  margin-top: 48px;
+  padding: 20px 28px;
+  background: #fff;
+  border: 1.5px dashed var(--sandstone);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--text-soft);
+  text-align: center;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+}
+
+/* ========================================
+   WEBSITE ANALYZER
+   ======================================== */
+.analyzer-sec {
+  background: var(--dark);
+  padding: 140px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.analyzer-sec::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(198,156,109,.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+.analyzer-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.analyzer-header h2 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(32px, 4.5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  margin-bottom: 16px;
+}
+.analyzer-sub {
+  font-size: 16px;
+  color: rgba(250,250,247,.5);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.analyzer-input-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 100px;
+  padding: 8px 8px 8px 24px;
+  gap: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+.analyzer-url {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: transparent;
+}
+.analyzer-url::placeholder { color: var(--sandstone); }
+.analyzer-input-box .btn { white-space: nowrap; border-radius: 100px; }
+.analyzer-hints {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.analyzer-hints span {
+  font-size: 11px;
+  color: rgba(250,250,247,.3);
+  background: rgba(250,250,247,.05);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .04em;
+}
+
+/* Analyzer Progress */
+.analyzer-progress-card {
+  background: rgba(250,250,247,.05);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(250,250,247,.08);
+}
+.analyzer-progress-url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(250,250,247,.4);
+  letter-spacing: .04em;
+  margin-bottom: 16px;
+}
+.analyzer-progress-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.analyzer-progress-sub {
+  font-size: 13px;
+  color: rgba(250,250,247,.4);
+  margin-bottom: 24px;
+}
+.analyzer-bar-wrap {
+  background: rgba(250,250,247,.08);
+  border-radius: 100px;
+  height: 6px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.analyzer-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--copper), var(--copper-light));
+  border-radius: 100px;
+  width: 0%;
+  transition: width .5s;
+}
+.analyzer-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.a-step {
+  font-size: 13px;
+  color: rgba(250,250,247,.25);
+  transition: all .3s;
+}
+.a-step.done { color: rgba(250,250,247,.5); }
+.a-step.active { color: var(--white); font-weight: 600; }
+
+/* Analyzer Results */
+.analyzer-score-card {
+  background: rgba(250,250,247,.05);
+  border-radius: 16px;
+  padding: 44px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(250,250,247,.08);
+  backdrop-filter: blur(16px);
+}
+.analyzer-score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+.analyzer-analyzed-url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(250,250,247,.35);
+  letter-spacing: .04em;
+}
+.analyzer-score-ring-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 16px;
+}
+.analyzer-ring { width: 100%; height: 100%; }
+.score-ring {
+  stroke: var(--copper);
+  stroke-dasharray: 327;
+  stroke-dashoffset: 327;
+  transition: stroke-dashoffset 1.5s cubic-bezier(.16, 1, .3, 1), stroke .3s;
+}
+.score-ring.good { stroke: #5e9e6e; }
+.score-ring.mid { stroke: var(--copper); }
+.score-ring.bad { stroke: #c26356; }
+.analyzer-score-num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-family: 'Instrument Serif', serif;
+  font-size: 52px;
+  color: var(--white);
+}
+.analyzer-score-of {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 40%);
+  font-size: 14px;
+  color: rgba(250,250,247,.35);
+}
+.analyzer-score-label {
+  font-family: 'Instrument Serif', serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.analyzer-score-label.good { color: #5e9e6e; }
+.analyzer-score-label.mid { color: var(--copper); }
+.analyzer-score-label.bad { color: #c26356; }
+.analyzer-score-desc {
+  font-size: 14px;
+  color: rgba(250,250,247,.5);
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.analyzer-breakdown {
+  background: rgba(250,250,247,.05);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(250,250,247,.08);
+}
+.analyzer-cats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.analyzer-cat {
+  background: rgba(250,250,247,.04);
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.analyzer-cat-name { font-size: 14px; color: rgba(250,250,247,.6); }
+.analyzer-cat-score { font-family: 'Instrument Serif', serif; font-size: 22px; }
+.analyzer-cat-score.good { color: #5e9e6e; }
+.analyzer-cat-score.mid { color: var(--copper); }
+.analyzer-cat-score.bad { color: #c26356; }
+.analyzer-cta-box {
+  background: linear-gradient(135deg, var(--copper), var(--copper-dark));
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.analyzer-cta-box h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 26px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.analyzer-cta-box p {
+  font-size: 15px;
+  color: rgba(255,255,255,.8);
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.analyzer-reset {
+  background: none;
+  border: none;
+  color: rgba(250,250,247,.35);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .06em;
+  transition: color .2s;
+  margin-top: 8px;
+}
+.analyzer-reset:hover { color: var(--white); }
+
+/* ========================================
+   SERVICE AREA
+   ======================================== */
+.area-section {
+  background: var(--dark);
+  color: var(--white);
+  padding: 140px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.area-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(198,156,109,.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.area-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.area-header {
+  margin-bottom: 56px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(250,250,247,.1);
+}
+.area-header h2 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  color: var(--white);
+}
+.area-header h2 em { font-style: italic; color: var(--copper); }
+.area-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  align-items: start;
+}
+.area-text p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(250,250,247,.7);
+  margin-bottom: 28px;
+}
+.area-cities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.city {
+  padding: 14px 16px;
+  border: 1px solid rgba(250,250,247,.06);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(250,250,247,.6);
+  transition: all .25s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.city:hover { background: rgba(250,250,247,.04); color: var(--white); }
+.city.home { color: var(--copper); font-weight: 600; border-color: rgba(198,156,109,.2); background: rgba(198,156,109,.05); }
+.city-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(250,250,247,.2); flex-shrink: 0; }
+.city.home .city-dot { background: var(--copper); box-shadow: 0 0 8px rgba(198,156,109,.5); }
+.area-foot {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(250,250,247,.08);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: rgba(250,250,247,.3);
+  text-transform: uppercase;
+}
+
+/* ========================================
+   CONTACT
+   ======================================== */
+.contact-section {
+  padding: 140px 48px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-left h2 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(40px, 5.5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+  margin-bottom: 24px;
+  color: var(--dark);
+}
+.contact-left h2 em { font-style: italic; color: var(--copper); }
+.contact-left > p {
+  font-size: 17px;
+  color: var(--text-soft);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+.contact-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-info-icon svg { width: 20px; height: 20px; stroke: var(--copper); fill: none; stroke-width: 1.6; }
+.contact-info-text a {
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px;
+  color: var(--dark);
+  text-decoration: none;
+  transition: color .2s;
+}
+.contact-info-text a:hover { color: var(--copper); }
+.contact-info-text small {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+/* Contact form card */
+.contact-card {
+  background: #fff;
+  border: 1px solid var(--sandstone);
+  border-radius: 12px;
+  padding: 40px;
+  transition: all .4s cubic-bezier(.16, 1, .3, 1);
+}
+.contact-card:hover { box-shadow: 0 24px 56px rgba(0,0,0,.06); }
+.contact-card-label {
+  color: var(--copper);
+  margin-bottom: 24px;
+  display: block;
+}
+.contact-form { }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--sandstone);
+  border-radius: 6px;
+  color: var(--text);
+  outline: none;
+  transition: border-color .25s, box-shadow .25s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--copper);
+  box-shadow: 0 0 0 3px rgba(198,156,109,.1);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--sandstone); }
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238a8a8a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 16px;
+  font-size: 15px;
+  margin-top: 4px;
+}
+.form-status { text-align: center; margin-top: 12px; font-size: 14px; font-weight: 600; min-height: 24px; }
+.form-status.success { color: #5e9e6e; }
+.form-status.error { color: #c26356; }
 
 /* Buttons */
-.btn{padding:14px 24px;font-size:14px;font-weight:700;text-decoration:none;border-radius:4px;display:inline-flex;align-items:center;gap:10px;border:2px solid transparent;transition:all .3s cubic-bezier(.16,1,.3,1);font-family:inherit;cursor:pointer}
-.btn-red{background:var(--txred);color:#fff;border-color:var(--txred)}
-.btn-red:hover{background:var(--txred-dark);border-color:var(--txred-dark);transform:translateY(-3px);box-shadow:0 8px 24px rgba(198,156,109,.25)}
-.btn-outline{background:transparent;color:var(--midnight);border-color:var(--midnight)}
-.btn-outline:hover{background:var(--midnight);color:var(--limestone);transform:translateY(-3px)}
-.btn-gold{background:var(--gold);color:var(--midnight);border-color:var(--gold)}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 8px 24px rgba(198,156,109,.3)}
-.btn-white{background:#fff;color:var(--midnight);border-color:#fff}
-.btn-white:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.btn {
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid transparent;
+  transition: all .3s cubic-bezier(.16, 1, .3, 1);
+  font-family: inherit;
+  cursor: pointer;
+}
+.btn-primary { background: var(--dark); color: var(--white); border-color: var(--dark); }
+.btn-primary:hover { background: var(--copper); border-color: var(--copper); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(198,156,109,.2); }
+.btn-copper { background: var(--copper); color: #fff; border-color: var(--copper); }
+.btn-copper:hover { background: var(--copper-dark); border-color: var(--copper-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(198,156,109,.25); }
+.btn-outline { background: transparent; color: var(--dark); border-color: var(--sandstone); }
+.btn-outline:hover { border-color: var(--dark); transform: translateY(-2px); }
+.btn-white { background: #fff; color: var(--dark); border-color: #fff; }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+.btn-red { background: var(--copper); color: #fff; border-color: var(--copper); }
+.btn-red:hover { background: var(--copper-dark); border-color: var(--copper-dark); transform: translateY(-2px); }
 
-/* ===== HERO ===== */
-.hero{padding:80px 32px 60px;max-width:1280px;margin:0 auto;position:relative;min-height:88vh;display:flex;align-items:center}
-.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;width:100%}
-.hero-eyebrow{color:var(--txred);margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.hero-eyebrow::before{content:"★";font-size:12px}
-.hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(42px,5.5vw,72px);line-height:1.02;letter-spacing:-.03em;margin-bottom:28px;color:var(--midnight)}
-.hero h1 em{font-style:italic;font-weight:500;color:var(--txred)}
-.hero-lead{font-size:18px;line-height:1.6;color:var(--text-soft);margin-bottom:36px;max-width:540px}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
-.hero-proof{display:flex;gap:32px;flex-wrap:wrap}
-.proof-item{display:flex;gap:10px;align-items:center}
-.proof-item svg{width:22px;height:22px;color:var(--sage);flex-shrink:0}
-.proof-text{font-size:13px;line-height:1.35;color:var(--text-soft);font-weight:500}
-.proof-text strong{color:var(--midnight)}
-
-/* Hero poster */
-.hero-poster{background:var(--midnight);color:var(--limestone);padding:44px;border-radius:8px;position:relative;overflow:hidden;animation:float 6s ease-in-out infinite}
-.hero-poster::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--txred),var(--gold),var(--sage))}
-.poster-label{color:var(--gold);margin-bottom:20px;padding-top:8px}
-.poster-title{font-family:'Fraunces',serif;font-weight:700;font-size:30px;line-height:1.08;letter-spacing:-.02em;margin-bottom:24px}
-.poster-row{display:flex;flex-direction:column;gap:0;padding:20px 0;border-top:1px solid rgba(245,239,228,.12);border-bottom:1px solid rgba(245,239,228,.12);margin-bottom:20px}
-.poster-line{display:flex;justify-content:space-between;align-items:baseline;padding:10px 8px;border-radius:4px;transition:all .2s}
-.poster-line:hover{background:rgba(245,239,228,.06)}
-.poster-svc{font-size:14px;font-weight:500}
-.poster-price{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--gold)}
-.poster-foot{font-size:13px;color:rgba(245,239,228,.6);line-height:1.5}
-
-/* ===== SERVICE SHOWCASE ===== */
-.svc-show{padding:120px 32px;max-width:1280px;margin:0 auto}
-.svc-show .sec-header{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;padding-bottom:24px;margin-bottom:72px;border-bottom:2px solid var(--midnight)}
-.sec-eyebrow{color:var(--txred);margin-bottom:14px}
-.sec h2,.svc-show h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(36px,5vw,56px);line-height:1;letter-spacing:-.025em;color:var(--midnight)}
-.sec h2 em,.svc-show h2 em{font-style:italic;font-weight:500;color:var(--txred)}
-.sec-meta{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.14em;text-align:right;line-height:1.8;text-transform:uppercase}
-
-/* Each service block */
-.svc-block{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:120px}
-.svc-block:last-child{margin-bottom:0}
-.svc-block.flip{direction:rtl}
-.svc-block.flip>*{direction:ltr}
-.svc-info{}
-.svc-num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--txred);margin-bottom:12px}
-.svc-name{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,3.5vw,40px);letter-spacing:-.02em;color:var(--midnight);margin-bottom:12px;line-height:1.05}
-.svc-desc{font-size:16px;color:var(--text-soft);line-height:1.6;margin-bottom:20px;max-width:460px}
-.svc-includes{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--text-dim);line-height:2;text-transform:uppercase;margin-bottom:20px}
-.svc-includes strong{color:var(--sage-deep);font-weight:600}
-.svc-price-tag{display:flex;align-items:baseline;gap:10px;margin-bottom:24px}
-.svc-price{font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--txred);letter-spacing:-.02em}
-.svc-price-sub{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim)}
-.svc-price-note{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--text-dim);margin-top:-12px;margin-bottom:24px}
-
-/* ===== FLOATING ILLUSTRATIONS ===== */
-.svc-visual{position:relative;min-height:380px;display:flex;align-items:center;justify-content:center}
-
-/* -- Website: browser mockup -- */
-.vis-browser{width:100%;max-width:440px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.08);animation:float 6s ease-in-out infinite}
-.vis-browser-bar{background:var(--sand);padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--sandstone)}
-.vb-dot{width:10px;height:10px;border-radius:50%}
-.vb-red{background:#FF5F57}.vb-yel{background:#FFBD2E}.vb-grn{background:#28CA41}
-.vis-url{flex:1;background:var(--limestone);border-radius:4px;padding:6px 12px;margin:0 32px 0 8px;overflow:hidden;position:relative;height:26px}
-.vis-url-text{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sage);white-space:nowrap;position:absolute;left:12px;top:6px}
-.vis-url-text.typing{overflow:hidden;width:0;border-right:2px solid var(--txred);animation:typing 3s steps(22) 1.2s forwards,blink .7s step-end infinite}
-.vis-body{padding:0}
-.vis-nav{background:var(--midnight);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
-.vis-nav-brand{font-family:'Fraunces',serif;font-weight:700;font-size:13px;color:var(--limestone)}
-.vis-nav-brand em{color:var(--txred);font-style:italic;font-weight:500}
-.vis-nav-links{display:flex;gap:12px}
-.vis-nav-links span{font-size:9px;color:rgba(245,239,228,.4);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
-.vis-hero{padding:28px 20px;background:linear-gradient(135deg,var(--limestone),var(--sand))}
-.vis-hero-eye{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--txred);margin-bottom:8px}
-.vis-hero h4{font-family:'Fraunces',serif;font-weight:700;font-size:20px;line-height:1.05;letter-spacing:-.015em;color:var(--midnight);margin-bottom:8px}
-.vis-hero h4 em{font-style:italic;color:var(--txred);font-weight:500}
-.vis-hero p{font-size:11px;color:var(--text-soft);line-height:1.4;margin-bottom:12px}
-.vis-hero-btn{display:inline-block;background:var(--txred);color:#fff;padding:6px 14px;border-radius:3px;font-size:10px;font-weight:700}
-.vis-blocks{padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.vis-block{background:var(--sand);border-radius:4px;height:48px}
-.vis-footer{background:var(--midnight);padding:10px 20px;display:flex;justify-content:space-between}
-.vis-footer span{font-size:8px;color:rgba(245,239,228,.35);font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
-.vis-footer .star{color:var(--gold)}
-/* Animate blocks in */
-.vis.active .vis-hero-eye{animation:slideUp .6s .5s both}
-.vis.active .vis-hero h4{animation:slideUp .6s .8s both}
-.vis.active .vis-hero p{animation:slideUp .6s 1.1s both}
-.vis.active .vis-hero-btn{animation:popIn .5s 1.4s both}
-.vis.active .vis-block:nth-child(1){animation:slideUp .5s 1.7s both}
-.vis.active .vis-block:nth-child(2){animation:slideUp .5s 1.9s both}
-.vis.active .vis-block:nth-child(3){animation:slideUp .5s 2.1s both}
-
-/* -- AI Phone: phone mockup -- */
-.vis-phone{width:220px;background:var(--midnight);border-radius:24px;padding:12px;box-shadow:0 24px 64px rgba(22,32,51,.15);animation:float 7s ease-in-out infinite}
-.vis-phone-screen{background:#fff;border-radius:16px;overflow:hidden;padding:16px}
-.vis-phone-top{text-align:center;margin-bottom:12px}
-.vis-phone-top span{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim)}
-.vis-phone-status{font-family:'Fraunces',serif;font-weight:700;font-size:13px;color:var(--midnight);text-align:center;margin-bottom:12px}
-.vis-bubbles{display:flex;flex-direction:column;gap:8px}
-.vis-bub{padding:8px 12px;border-radius:12px;font-size:11px;line-height:1.35;max-width:85%}
-.vis-bub.incoming{background:var(--sand);color:var(--text);border-bottom-left-radius:4px;align-self:flex-start}
-.vis-bub.outgoing{background:var(--txred);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
-.vis-bub.ai{background:var(--sage);color:#fff;border-bottom-left-radius:4px;align-self:flex-start}
-.vis.active .vis-bub:nth-child(1){animation:slideUp .5s .6s both}
-.vis.active .vis-bub:nth-child(2){animation:slideUp .5s 1.4s both}
-.vis.active .vis-bub:nth-child(3){animation:slideUp .5s 2.2s both}
-.vis.active .vis-bub:nth-child(4){animation:slideUp .5s 3s both}
-.vis-typing{font-size:10px;color:var(--text-dim);padding:4px 0;animation:pulse 1s ease-in-out infinite}
-
-/* -- Drone: viewfinder -- */
-.vis-drone-wrap{position:relative;width:100%;max-width:460px}
-.vis-drone-icon{position:absolute;top:-28px;left:50%;transform:translateX(-50%);z-index:2;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 12px 24px rgba(0,0,0,.2))}
-.vis-drone-icon svg{width:72px;height:72px;color:var(--midnight)}
-.vis-viewfinder{background:var(--midnight);border-radius:14px;overflow:hidden;box-shadow:0 32px 72px rgba(22,32,51,.18);margin-top:36px;animation:float2 7s ease-in-out infinite}
-.vis-vf-top{background:rgba(0,0,0,.4);padding:10px 18px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
-.vis-vf-top span{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase}
-.vis-vf-rec{display:flex;align-items:center;gap:6px;color:#FF4444;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.06em}
-.vis-vf-rec::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF4444;animation:pulse 1.2s ease-in-out infinite}
-.vis-vf-body{aspect-ratio:16/10;position:relative;overflow:hidden;background:#1a1a1a}
-/* Real drone video */
-.vf-video{position:absolute;inset:-10%;width:120%;height:120%;object-fit:cover;transition:transform .15s linear}
-/* HUD overlay */
-.vf-hud{position:absolute;inset:0;z-index:1;pointer-events:none}
-.vf-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr)}
-.vf-grid>div{border:1px solid rgba(255,255,255,.12)}
-.vf-crosshair{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px}
-.vf-crosshair::before,.vf-crosshair::after{content:"";position:absolute;background:rgba(255,255,255,.5)}
-.vf-crosshair::before{width:1px;height:100%;left:50%}
-.vf-crosshair::after{height:1px;width:100%;top:50%}
-.vf-crosshair-ring{width:48px;height:48px;border:2px solid rgba(255,255,255,.45);border-radius:50%}
-/* HUD labels */
-.vf-label{position:absolute;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(0,0,0,.35);padding:3px 7px;border-radius:3px;backdrop-filter:blur(4px)}
-.vf-label-alt{top:12px;left:14px}.vf-label-speed{top:12px;right:14px}.vf-label-gps{bottom:12px;left:14px}.vf-label-bat{bottom:12px;right:14px}
-.vis.active .vf-label{animation:popIn .5s both}
-.vis.active .vf-label-alt{animation-delay:.8s}.vis.active .vf-label-speed{animation-delay:1.2s}
-.vis.active .vf-label-gps{animation-delay:1.6s}.vis.active .vf-label-bat{animation-delay:2s}
-/* Photo markers */
-.vf-marker{position:absolute;width:28px;height:28px;border:2px solid rgba(255,255,255,.8);border-radius:4px;display:flex;align-items:center;justify-content:center}
-.vf-marker::after{content:"📍";font-size:12px}
-.vf-m1{top:35%;left:22%}.vf-m2{bottom:30%;right:22%}
-.vis.active .vf-marker{animation:popIn .5s both}
-.vis.active .vf-m1{animation-delay:2.4s}.vis.active .vf-m2{animation-delay:2.8s}
-/* Bottom bar */
-.vis-vf-bottom{padding:12px 18px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.2)}
-.vis-vf-badge{background:var(--sage);color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;padding:5px 10px;border-radius:4px;text-transform:uppercase;font-weight:600}
-.vis-vf-res{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,239,228,.6);letter-spacing:.06em}
-.vis-vf-photos{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(245,239,228,.5);letter-spacing:.06em;display:flex;align-items:center;gap:6px}
-.vis-vf-photos::before{content:"";width:14px;height:10px;border:1.5px solid rgba(245,239,228,.5);border-radius:2px}
-
-/* -- Logo: creation -- */
-.vis-logo-wrap{width:100%;max-width:360px;display:flex;flex-direction:column;gap:16px;animation:float 7s ease-in-out infinite}
-.vis-logo-card{background:#fff;border-radius:10px;padding:28px;box-shadow:0 16px 48px rgba(22,32,51,.08);text-align:center;transition:all .3s}
-.vis-logo-card:hover{transform:scale(1.03);box-shadow:0 20px 56px rgba(22,32,51,.12)}
-.vis-logo-v1{display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--midnight)}
-.vis-logo-v1 em{color:var(--txred);font-style:italic;font-weight:500}
-.vis-logo-v2{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:14px;letter-spacing:.25em;text-transform:uppercase;color:var(--midnight);display:flex;align-items:center;justify-content:center;gap:8px}
-.vis-logo-v3{background:var(--midnight);border-radius:10px;padding:28px}
-.vis-logo-v3 .logo-inner{display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Fraunces',serif;font-weight:700;font-size:22px;color:var(--gold)}
-.vis-logo-star svg{width:20px;height:20px}
-.vis-swatch{display:flex;gap:8px;justify-content:center;margin-top:12px}
-.vis-swatch span{width:24px;height:24px;border-radius:50%;border:2px solid var(--sandstone)}
-.vis.active .vis-logo-card:nth-child(1){animation:slideUp .6s .5s both}
-.vis.active .vis-logo-card:nth-child(2){animation:slideUp .6s 1s both}
-.vis.active .vis-logo-card:nth-child(3){animation:slideUp .6s 1.5s both}
-
-/* -- Print: flyer stack -- */
-.vis-print-wrap{position:relative;width:280px;height:370px;animation:float 7s ease-in-out infinite}
-.vis-flyer{position:absolute;width:240px;background:#fff;border-radius:8px;box-shadow:0 12px 40px rgba(22,32,51,.1);overflow:hidden;transition:all .4s}
-.vis-flyer:nth-child(1){top:20px;left:10px;transform:rotate(-4deg);z-index:1}
-.vis-flyer:nth-child(2){top:10px;left:30px;transform:rotate(2deg);z-index:2}
-.vis-flyer:nth-child(3){top:0;left:20px;transform:rotate(-1deg);z-index:3}
-.vis.active .vis-flyer:nth-child(1){animation:fanIn .7s .5s both;--rot:-4deg}
-.vis.active .vis-flyer:nth-child(2){animation:fanIn .7s .9s both;--rot:2deg}
-.vis.active .vis-flyer:nth-child(3){animation:fanIn .7s 1.3s both;--rot:-1deg}
-.vis-flyer-top{height:6px}
-.vis-flyer-top.red{background:var(--txred)}.vis-flyer-top.gold{background:var(--gold)}.vis-flyer-top.sage{background:var(--sage)}
-.vis-flyer-body{padding:20px;text-align:center}
-.vis-flyer-title{font-family:'Fraunces',serif;font-weight:700;font-size:16px;color:var(--midnight);margin-bottom:6px}
-.vis-flyer-sub{font-size:10px;color:var(--text-dim);margin-bottom:10px}
-.vis-flyer-box{background:var(--sand);height:40px;border-radius:4px;margin-bottom:10px}
-.vis-flyer-cta{background:var(--txred);color:#fff;font-size:9px;font-weight:700;padding:6px 14px;border-radius:3px;display:inline-block}
-
-/* -- Ads: graph -- */
-.vis-graph-wrap{width:100%;max-width:400px;background:#fff;border-radius:12px;padding:28px;box-shadow:0 24px 64px rgba(22,32,51,.1);animation:float 7s ease-in-out infinite}
-.vis-graph-title{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px}
-.vis-graph-val{font-family:'Fraunces',serif;font-weight:700;font-size:28px;color:var(--midnight);margin-bottom:16px}
-.vis-graph-val span{color:var(--sage);font-size:13px;font-weight:500;margin-left:6px}
-.vis-bars{display:flex;align-items:flex-end;gap:8px;height:120px;padding-top:8px}
-.vis-bar{flex:1;border-radius:4px 4px 0 0;background:var(--sand);position:relative}
-.vis-bar.active-bar{background:var(--txred)}
-.vis-bar.gold-bar{background:var(--gold)}
-.vis.active .vis-bar{animation:growBar .7s cubic-bezier(.16,1,.3,1) both}
-.vis.active .vis-bar:nth-child(1){--h:35%;height:35%;animation-delay:.5s}
-.vis.active .vis-bar:nth-child(2){--h:50%;height:50%;animation-delay:.7s}
-.vis.active .vis-bar:nth-child(3){--h:40%;height:40%;animation-delay:.9s}
-.vis.active .vis-bar:nth-child(4){--h:65%;height:65%;animation-delay:1.1s}
-.vis.active .vis-bar:nth-child(5){--h:55%;height:55%;animation-delay:1.3s}
-.vis.active .vis-bar:nth-child(6){--h:80%;height:80%;animation-delay:1.5s}
-.vis.active .vis-bar:nth-child(7){--h:70%;height:70%;animation-delay:1.7s}
-.vis.active .vis-bar:nth-child(8){--h:95%;height:95%;animation-delay:1.9s}
-.vis-bar-labels{display:flex;gap:8px;margin-top:8px}
-.vis-bar-labels span{flex:1;text-align:center;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--text-dim);letter-spacing:.05em}
-.vis-graph-footer{display:flex;justify-content:space-between;margin-top:16px;padding-top:12px;border-top:1px solid var(--sandstone)}
-.vis-graph-stat{text-align:center}
-.vis-graph-stat strong{display:block;font-family:'Fraunces',serif;font-size:18px;color:var(--midnight)}
-.vis-graph-stat span{font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
-
-/* ===== WEBSITE ANALYZER ===== */
-.analyzer-sec{background:var(--midnight);padding:120px 32px;position:relative;overflow:hidden}
-.analyzer-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1}
-.analyzer-header h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,4.5vw,52px);line-height:1.05;letter-spacing:-.025em;margin-bottom:16px}
-.analyzer-sub{font-size:16px;color:rgba(245,239,228,.6);max-width:520px;margin:0 auto 36px}
-.analyzer-input-box{display:flex;align-items:center;background:#fff;border-radius:8px;padding:8px 8px 8px 20px;gap:12px;box-shadow:0 16px 48px rgba(0,0,0,.2)}
-.analyzer-url{flex:1;border:none;outline:none;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);background:transparent}
-.analyzer-url::placeholder{color:var(--sandstone)}
-.analyzer-input-box .btn{white-space:nowrap;padding:14px 24px}
-.analyzer-hints{display:flex;gap:16px;justify-content:center;margin-top:20px;flex-wrap:wrap}
-.analyzer-hints span{font-size:12px;color:rgba(245,239,228,.35);background:rgba(245,239,228,.06);padding:6px 14px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
-
-/* Progress */
-.analyzer-progress-card{background:rgba(245,239,228,.06);border-radius:12px;padding:36px;max-width:520px;margin:0 auto;text-align:left;backdrop-filter:blur(12px);border:1px solid rgba(245,239,228,.1)}
-.analyzer-progress-url{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(245,239,228,.5);letter-spacing:.04em;margin-bottom:16px}
-.analyzer-progress-title{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--limestone);margin-bottom:4px}
-.analyzer-progress-sub{font-size:13px;color:rgba(245,239,228,.5);margin-bottom:20px}
-.analyzer-bar-wrap{background:rgba(245,239,228,.1);border-radius:6px;height:8px;overflow:hidden;margin-bottom:24px}
-.analyzer-bar{height:100%;background:linear-gradient(90deg,var(--txred),var(--gold));border-radius:6px;width:0%;transition:width .5s}
-.analyzer-steps{display:flex;flex-direction:column;gap:10px}
-.a-step{font-size:13px;color:rgba(245,239,228,.3);transition:all .3s}
-.a-step.done{color:var(--sage)}
-.a-step.active{color:var(--limestone);font-weight:600}
-
-/* Results */
-.analyzer-score-card{background:rgba(245,239,228,.06);border-radius:12px;padding:40px;margin-bottom:24px;border:1px solid rgba(245,239,228,.1);backdrop-filter:blur(12px)}
-.analyzer-score-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
-.analyzer-analyzed-url{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(245,239,228,.4);letter-spacing:.04em}
-.analyzer-score-ring-wrap{position:relative;width:160px;height:160px;margin:0 auto 16px}
-.analyzer-ring{width:100%;height:100%}
-.score-ring{stroke:var(--txred);stroke-dasharray:327;stroke-dashoffset:327;transition:stroke-dashoffset 1.5s cubic-bezier(.16,1,.3,1),stroke .3s}
-.score-ring.good{stroke:var(--sage)}
-.score-ring.mid{stroke:var(--gold)}
-.score-ring.bad{stroke:var(--txred)}
-.analyzer-score-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);font-family:'Fraunces',serif;font-weight:700;font-size:48px;color:var(--limestone)}
-.analyzer-score-of{position:absolute;top:50%;left:50%;transform:translate(-50%,40%);font-size:14px;color:rgba(245,239,228,.4)}
-.analyzer-score-label{font-family:'Fraunces',serif;font-weight:700;font-size:22px;margin-bottom:8px;text-align:center}
-.analyzer-score-label.good{color:var(--sage)}
-.analyzer-score-label.mid{color:var(--gold)}
-.analyzer-score-label.bad{color:var(--txred)}
-.analyzer-score-desc{font-size:14px;color:rgba(245,239,228,.6);text-align:center;max-width:400px;margin:0 auto}
-.analyzer-breakdown{background:rgba(245,239,228,.06);border-radius:12px;padding:28px;margin-bottom:24px;border:1px solid rgba(245,239,228,.1)}
-.analyzer-cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.analyzer-cat{background:rgba(245,239,228,.04);border-radius:8px;padding:16px;display:flex;justify-content:space-between;align-items:center}
-.analyzer-cat-name{font-size:14px;color:rgba(245,239,228,.7)}
-.analyzer-cat-score{font-family:'Fraunces',serif;font-weight:700;font-size:20px}
-.analyzer-cat-score.good{color:var(--sage)}
-.analyzer-cat-score.mid{color:var(--gold)}
-.analyzer-cat-score.bad{color:var(--txred)}
-.analyzer-cta-box{background:linear-gradient(135deg,var(--txred),var(--txred-dark));border-radius:12px;padding:36px;margin-bottom:24px;text-align:center}
-.analyzer-cta-box h3{font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--limestone);margin-bottom:8px}
-.analyzer-cta-box p{font-size:14px;color:rgba(255,255,255,.8);max-width:400px;margin:0 auto}
-.analyzer-reset{background:none;border:none;color:rgba(245,239,228,.4);font-size:13px;cursor:pointer;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;transition:color .2s;margin-top:8px}
-.analyzer-reset:hover{color:var(--limestone)}
-@media(max-width:600px){
-  .analyzer-input-box{flex-direction:column;padding:16px}
-  .analyzer-input-box .btn{width:100%;justify-content:center}
-  .analyzer-cats{grid-template-columns:1fr}
-  .analyzer-sec{padding:80px 20px}
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+  background: var(--dark);
+  color: var(--white);
+  padding: 72px 48px 32px;
+}
+.ft-inner { max-width: 1200px; margin: 0 auto; }
+.ft-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(250,250,247,.08);
+}
+.ft-brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.ft-brand-text {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+}
+.ft-brand-text em { font-style: italic; color: var(--copper); }
+.ft-desc {
+  font-size: 14px;
+  color: rgba(250,250,247,.5);
+  line-height: 1.6;
+  max-width: 320px;
+}
+.ft-col h5 {
+  color: var(--copper);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.ft-col ul { list-style: none; }
+.ft-col li { margin-bottom: 8px; }
+.ft-col a {
+  color: rgba(250,250,247,.6);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .2s;
+}
+.ft-col a:hover { color: var(--copper); }
+.ft-col p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(250,250,247,.5);
+}
+.ft-bottom {
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(250,250,247,.3);
 }
 
-/* ===== WORK / PORTFOLIO ===== */
-.work-feature{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
-.work-feature-visual{position:relative}
-.work-browser{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 64px rgba(22,32,51,.12)}
-.work-browser-bar{background:var(--sand);padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--sandstone)}
-.work-feature-info{}
-.work-feature-badge{color:var(--txred);margin-bottom:16px}
-.work-feature-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,4vw,48px);color:var(--midnight);letter-spacing:-.02em;margin-bottom:6px}
-.work-feature-sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:20px}
-.work-feature-desc{font-size:16px;color:var(--text-soft);line-height:1.6;margin-bottom:24px;max-width:480px}
-.work-feature-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-.work-feature-tags span{background:var(--sand);border:1.5px solid var(--sandstone);border-radius:4px;padding:6px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);font-weight:500}
-.work-more{margin-top:40px;padding:18px 24px;background:var(--sand);border:1.5px dashed var(--sandstone);border-radius:6px;font-size:14px;color:var(--text-soft);text-align:center;font-family:'Fraunces',serif;font-style:italic}
-@media(max-width:1024px){.work-feature{grid-template-columns:1fr;gap:40px}}
-
-/* ===== INDUSTRIES ===== */
-.ind-card{background:#fff;border:1.5px solid var(--sandstone);border-radius:8px;padding:28px 16px;text-align:center;transition:all .3s cubic-bezier(.16,1,.3,1)}
-.ind-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:var(--txred)}
-.ind-icon{font-size:32px;margin-bottom:10px}
-.ind-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--text)}
-@media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)!important}.stats-grid{grid-template-columns:repeat(2,1fr)!important}}
-@media(max-width:768px){.ind-grid{grid-template-columns:repeat(2,1fr)!important}}
-@media(max-width:480px){.ind-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}.ind-card{padding:20px 12px}.ind-icon{font-size:26px}.svc-grid{grid-template-columns:1fr!important}}
-
-/* ===== AREA / PROCESS / CTA / FOOTER ===== */
-.area-sec{background:var(--midnight);color:var(--limestone);padding:110px 32px;position:relative;overflow:hidden}
-.area-sec::before{content:"★";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:500px;opacity:.02;color:var(--gold)}
-.area-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
-.area-hdr{margin-bottom:48px;padding-bottom:24px;border-bottom:2px solid rgba(245,239,228,.15)}
-.area-hdr h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(36px,5vw,56px);line-height:1;letter-spacing:-.025em;color:var(--limestone)}
-.area-hdr h2 em{font-style:italic;font-weight:500;color:var(--gold)}
-.area-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}
-.area-text p{font-size:17px;line-height:1.65;color:rgba(245,239,228,.8);margin-bottom:24px}
-.area-cities{display:grid;grid-template-columns:repeat(3,1fr)}
-.city{padding:14px 16px;border:1px solid rgba(245,239,228,.08);font-size:14px;font-weight:500;color:rgba(245,239,228,.7);transition:all .25s;display:flex;align-items:center;gap:8px}
-.city:hover{background:rgba(245,239,228,.05);color:#fff}
-.city.home{color:var(--gold);font-weight:700;border-color:rgba(212,148,58,.25);background:rgba(212,148,58,.06)}
-.city-dot{width:5px;height:5px;border-radius:50%;background:rgba(245,239,228,.25)}
-.city.home .city-dot{background:var(--gold);box-shadow:0 0 8px rgba(212,148,58,.5);animation:pulse 2s ease-in-out infinite}
-.area-foot{margin-top:32px;padding-top:20px;border-top:1px solid rgba(245,239,228,.1);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(245,239,228,.4);text-transform:uppercase}
-
-.sec{padding:110px 32px;max-width:1280px;margin:0 auto}
-.sec-header{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;padding-bottom:24px;margin-bottom:56px;border-bottom:2px solid var(--midnight)}
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--midnight);margin-top:48px}
-.step{padding:28px 20px 0 0;border-right:1px solid var(--sandstone);transition:all .3s}
-.step:last-child{border-right:none}
-.step:hover{padding-left:8px}
-.step-n{width:48px;height:48px;background:var(--txred);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:18px;transition:all .3s}
-.step:hover .step-n{transform:scale(1.1);background:var(--midnight)}
-.step h4{font-family:'Fraunces',serif;font-size:18px;font-weight:700;margin-bottom:8px;color:var(--midnight)}
-.step p{font-size:13px;color:var(--text-soft);line-height:1.5}
-
-.cta-sec{background:var(--midnight);color:#fff;padding:110px 32px;position:relative;overflow:hidden}
-.cta-sec::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 25%,rgba(198,156,109,.15) 0%,transparent 60%);pointer-events:none}
-.cta-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;position:relative;z-index:1}
-.cta-sec h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(40px,5.5vw,64px);line-height:1;letter-spacing:-.025em;margin-bottom:20px}
-.cta-sec h2 em{font-style:italic;font-weight:500;color:var(--gold)}
-.cta-inner>div>p{font-size:17px;max-width:420px;line-height:1.55;opacity:.9}
-.cta-card{background:var(--limestone);color:var(--text);border-radius:10px;padding:36px;transition:all .4s cubic-bezier(.16,1,.3,1)}
-.cta-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.2)}
-.cta-card-label{color:var(--txred);margin-bottom:14px;display:block}
-.cta-phone{font-family:'Fraunces',serif;font-weight:700;font-size:32px;color:var(--midnight);text-decoration:none;display:block;margin-bottom:14px;transition:color .2s}
-.cta-phone:hover{color:var(--txred)}
-.cta-email{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--text);text-decoration:none;display:flex;gap:8px;align-items:center;font-weight:500;transition:color .2s}
-.cta-email:hover{color:var(--txred)}
-.cta-hours{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--text-dim);margin-top:16px;padding-top:16px;border-top:1px solid var(--sandstone);text-transform:uppercase}
-
-/* Contact form */
-.contact-form{margin-top:20px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.form-group{margin-bottom:14px}
-.form-group label{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px;font-weight:600}
-.form-group input,.form-group select,.form-group textarea{
-  width:100%;padding:12px 14px;font-family:'Inter',sans-serif;font-size:14px;
-  background:var(--limestone);border:1.5px solid var(--sandstone);border-radius:4px;
-  color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .mob-toggle { display: block; }
+  .hero { padding: 140px 24px 100px; min-height: auto; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .stat-divider { display: none; }
+  .services-section, .process-section, .contact-section { padding: 100px 24px; }
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .ind-grid { grid-template-columns: repeat(3, 1fr); }
+  .process-grid { grid-template-columns: 1fr; }
+  .step { border-right: none; border-bottom: 1px solid var(--sandstone); padding-bottom: 24px; margin-bottom: 24px; padding-right: 0; }
+  .work-feature { grid-template-columns: 1fr; gap: 48px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .area-grid { grid-template-columns: 1fr; gap: 40px; }
+  .area-cities { grid-template-columns: repeat(2, 1fr); }
+  .ft-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .stats-section, .area-section, .industries-section, .work-section { padding: 100px 24px; }
+  .analyzer-sec { padding: 100px 24px; }
 }
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
-  border-color:var(--txred);box-shadow:0 0 0 3px rgba(191,58,43,.1);
+@media (max-width: 640px) {
+  .hero h1 { font-size: clamp(36px, 10vw, 56px); }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .ind-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .ind-card { padding: 20px 12px; }
+  .form-row { grid-template-columns: 1fr; }
+  .area-cities { grid-template-columns: 1fr 1fr; }
+  .ft-grid { grid-template-columns: 1fr; }
+  .analyzer-input-box { flex-direction: column; padding: 16px; border-radius: 16px; }
+  .analyzer-input-box .btn { width: 100%; justify-content: center; border-radius: 100px; }
+  .analyzer-cats { grid-template-columns: 1fr; }
+  .nav-cta span { display: none; }
+  .contact-card { padding: 28px 20px; }
 }
-.form-group input::placeholder,.form-group textarea::placeholder{color:var(--sandstone)}
-.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237A7A7A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
-.form-group textarea{resize:vertical;min-height:100px}
-.form-submit{width:100%;justify-content:center;padding:16px;font-size:15px;margin-top:4px}
-.form-status{text-align:center;margin-top:12px;font-size:14px;font-weight:600;min-height:24px}
-.form-status.success{color:var(--sage)}
-.form-status.error{color:var(--txred)}
-@media(max-width:600px){.form-row{grid-template-columns:1fr}}
-
-footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
-.ft-inner{max-width:1280px;margin:0 auto}
-.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:28px;border-bottom:1px solid rgba(245,239,228,.12)}
-.ft-brand{display:flex;gap:12px;align-items:center;margin-bottom:14px}
-.ft-brand-text{font-family:'Fraunces',serif;font-weight:700;font-size:20px}
-.ft-brand-text em{font-style:italic;font-weight:500;color:var(--gold)}
-.ft-desc{font-size:13px;color:rgba(245,239,228,.6);line-height:1.55;max-width:300px}
-.ft-col h5{color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
-.ft-col ul{list-style:none}.ft-col li{margin-bottom:7px}
-.ft-col a{color:var(--limestone);text-decoration:none;font-size:13px;transition:color .2s}
-.ft-col a:hover{color:var(--gold)}
-.ft-col p{font-size:12px;line-height:1.6;color:rgba(245,239,228,.6)}
-.ft-bottom{padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,239,228,.4)}
-.ft-bottom .star{color:var(--gold)}
-
-@media(max-width:1024px){
-  .svc-block,.svc-block.flip{grid-template-columns:1fr;gap:40px;direction:ltr}
-  .hero-grid,.cta-inner,.area-grid,.ft-grid{grid-template-columns:1fr}
-  .sec-header,.svc-show .sec-header{grid-template-columns:1fr}
-  .proc-grid{grid-template-columns:1fr}
-  .step{border-right:none;border-bottom:1px solid var(--sandstone);padding-bottom:20px;margin-bottom:20px}
-  nav ul{display:none}.mob-toggle{display:block}
-  .top-bar-left span:not(:first-child){display:none}
-  .area-cities{grid-template-columns:repeat(2,1fr)}
-  .hero{min-height:auto;padding:48px 20px 40px}
-  .svc-show{padding:80px 20px}
-  .sec,.area-sec,.cta-sec{padding:80px 20px}
-  .svc-visual{min-height:300px}
-}
-@media(max-width:600px){.area-cities{grid-template-columns:1fr 1fr}.hero-proof{flex-direction:column;gap:14px}.nav-phone span{display:none}.vis-browser{max-width:100%}}
 </style>
 </head>
 <body>
 
-<div class="mob-menu" id="mobMenu"><button class="mob-close" onclick="closeMob()">&times;</button><a href="#services" onclick="closeMob()"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a><a href="#process" onclick="closeMob()"><span data-lang="en">How It Works</span><span data-lang="es">Proceso</span></a><a href="#score" onclick="closeMob()"><span data-lang="en">Free Score</span><span data-lang="es">Análisis</span></a><a href="#contact" onclick="closeMob()"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></div>
-
-<div class="top-bar"><div class="top-bar-inner"><div class="top-bar-left"><span><span class="top-dot">●</span> <span data-lang="en">Open 24/7</span><span data-lang="es">Abierto 24/7</span></span><span>Waco, TX</span><span><span data-lang="en">FAA Part 107 Certified</span><span data-lang="es">FAA Part 107</span></span></div><div><a href="tel:6826007984">★ 682.600.7984</a></div></div></div>
-
-<nav id="mainNav"><div class="nav-inner"><a href="#" class="brand"><svg width="32" height="32" viewBox="0 0 100 100"><polygon fill="#C69C6D" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/><g fill="rgba(0,0,0,0.3)"><polygon points="50,50 50,3 60.58,35.44"/><polygon points="50,50 94.7,35.48 67.12,55.56"/><polygon points="50,50 77.63,88.02 50,68"/><polygon points="50,50 22.37,88.02 32.88,55.56"/><polygon points="50,50 5.3,35.48 39.42,35.44"/></g></svg><span class="brand-text">Texas <em>Digital</em> Co.</span></a><ul><li><a href="#services"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a></li><li><a href="#process"><span data-lang="en">How It Works</span><span data-lang="es">Proceso</span></a></li><li><a href="#score"><span data-lang="en">Free Score</span><span data-lang="es">Análisis</span></a></li><li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li></ul><div class="nav-right"><div class="lang-toggle"><button class="lang-btn active" id="langEn" onclick="setLang('en')">EN</button><button class="lang-btn" id="langEs" onclick="setLang('es')">ES</button></div><a href="tel:6826007984" class="nav-phone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.1 15.1 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg><span>682.600.7984</span></a><button class="mob-toggle" onclick="openMob()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav>
-
-<!-- HERO -->
-<section class="hero"><div class="hero-grid"><div>
-  <div class="hero-eyebrow mono r"><span data-lang="en">Full-service digital · Waco, Texas</span><span data-lang="es">Agencia digital · Waco, Texas</span></div>
-  <h1 data-lang="en" class="r d1">Your business<br>deserves to<br><em>look the part.</em></h1>
-  <h1 data-lang="es" class="r d1">Tu negocio<br>merece<br><em>verse profesional.</em></h1>
-  <p class="hero-lead r d2" data-lang="en">Websites, aerial drone video, AI phone agents, print, and Google Ads — all from one shop in Waco. Clear prices, no contracts, bilingual.</p>
-  <p class="hero-lead r d2" data-lang="es">Sitios web, video con drone, agentes AI, impresión, y Google Ads — todo desde Waco. Precios claros, sin contratos, bilingüe.</p>
-  <div class="hero-ctas r d3"><a href="#services" class="btn btn-red"><span data-lang="en">See what we build</span><span data-lang="es">Ve lo que hacemos</span> →</a><a href="tel:6826007984" class="btn btn-outline"><span data-lang="en">Call now</span><span data-lang="es">Llamar</span></a></div>
-  <div class="hero-proof r d4">
-    <div class="proof-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><div class="proof-text"><strong>Part 107</strong><br><span data-lang="en">FAA certified</span><span data-lang="es">Certificado FAA</span></div></div>
-    <div class="proof-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><div class="proof-text"><strong>EN / ES</strong><br><span data-lang="en">Bilingual</span><span data-lang="es">Bilingüe</span></div></div>
-    <div class="proof-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="proof-text"><strong><span data-lang="en">2 weeks</span><span data-lang="es">2 semanas</span></strong><br><span data-lang="en">Avg. delivery</span><span data-lang="es">Entrega promedio</span></div></div>
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMob()">&times;</button>
+  <a href="#services" onclick="closeMob()"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a>
+  <a href="#process" onclick="closeMob()"><span data-lang="en">Process</span><span data-lang="es">Proceso</span></a>
+  <a href="#score" onclick="closeMob()"><span data-lang="en">Free Score</span><span data-lang="es">Analisis</span></a>
+  <a href="#contact" onclick="closeMob()"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a>
+  <div class="mob-lang">
+    <button class="active" id="mobLangEn" onclick="setLang('en')">EN</button>
+    <button id="mobLangEs" onclick="setLang('es')">ES</button>
   </div>
 </div>
-<div class="hero-poster r d2">
-  <div class="poster-label mono"><span data-lang="en">★ Real prices — no surprises ★</span><span data-lang="es">★ Precios reales — sin sorpresas ★</span></div>
-  <div class="poster-title" data-lang="en">No contracts.<br>No hidden fees.</div><div class="poster-title" data-lang="es">Sin contratos.<br>Sin costos ocultos.</div>
-  <div class="poster-row">
-    <div class="poster-line"><span class="poster-svc" data-lang="en">Website</span><span class="poster-svc" data-lang="es">Sitio web</span><span class="poster-price">from $299</span></div>
-    <div class="poster-line"><span class="poster-svc" data-lang="en">Drone shoot</span><span class="poster-svc" data-lang="es">Drone</span><span class="poster-price">from $200</span></div>
-    <div class="poster-line"><span class="poster-svc" data-lang="en">AI phone agent</span><span class="poster-svc" data-lang="es">Agente AI</span><span class="poster-price">$299/mo</span></div>
-    <div class="poster-line"><span class="poster-svc">500 flyers</span><span class="poster-price">$85</span></div>
-  </div>
-  <div class="poster-foot" data-lang="en">Design, revisions, delivery included. You own everything.</div><div class="poster-foot" data-lang="es">Diseño, cambios, entrega incluidos. Todo es tuyo.</div>
-</div></div></section>
 
-<!-- ===== STATS BAR ===== -->
-<section style="padding:48px 32px;max-width:1100px;margin:0 auto">
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center" class="stats-grid">
-    <div class="r"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--text);letter-spacing:-.02em">6</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="en">Services</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="es">Servicios</div></div>
-    <div class="r d1"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--text);letter-spacing:-.02em">EN/ES</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="en">Bilingual</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="es">Bilingue</div></div>
-    <div class="r d2"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--text);letter-spacing:-.02em">2wk</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="en">Avg. delivery</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="es">Entrega prom.</div></div>
-    <div class="r d3"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;color:var(--text);letter-spacing:-.02em">$0</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="en">Contracts</div><div class="mono" style="color:var(--text-dim);margin-top:4px" data-lang="es">Contratos</div></div>
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <svg width="32" height="32" viewBox="0 0 100 100"><polygon fill="#C69C6D" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/><g fill="rgba(0,0,0,0.3)"><polygon points="50,50 50,3 60.58,35.44"/><polygon points="50,50 94.7,35.48 67.12,55.56"/><polygon points="50,50 77.63,88.02 50,68"/><polygon points="50,50 22.37,88.02 32.88,55.56"/><polygon points="50,50 5.3,35.48 39.42,35.44"/></g></svg>
+      <span class="brand-text">Texas <em>Digital</em> Co.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a></li>
+      <li><a href="#process"><span data-lang="en">Process</span><span data-lang="es">Proceso</span></a></li>
+      <li><a href="#score"><span data-lang="en">Free Score</span><span data-lang="es">Analisis</span></a></li>
+      <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="langEn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="langEs" onclick="setLang('es')">ES</button>
+      </div>
+      <a href="tel:6826007984" class="nav-cta">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.1 15.1 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+        <span>682.600.7984</span>
+      </a>
+      <button class="mob-toggle" onclick="openMob()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow mono r">
+      <span data-lang="en">Waco, Texas &middot; Open 24/7</span>
+      <span data-lang="es">Waco, Texas &middot; Abierto 24/7</span>
+    </div>
+    <h1 data-lang="en" class="r d1">Your business deserves<br>to <em>look the part.</em></h1>
+    <h1 data-lang="es" class="r d1">Tu negocio merece<br><em>verse profesional.</em></h1>
+    <p class="hero-sub r d2" data-lang="en">Websites, drone video, AI phone agents, branding, and Google Ads — all from one bilingual studio in Central Texas. Clear pricing. No contracts.</p>
+    <p class="hero-sub r d2" data-lang="es">Sitios web, video con drone, agentes AI, branding, y Google Ads — todo desde un estudio bilingue en Texas Central. Precios claros. Sin contratos.</p>
+    <div class="r d3">
+      <a href="#contact" class="hero-cta">
+        <span data-lang="en">Start your project</span><span data-lang="es">Inicia tu proyecto</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
-<!-- ===== SERVICES — CLEAN GRID ===== -->
-<section style="padding:80px 32px 100px;max-width:1200px;margin:0 auto" id="services">
-  <div style="text-align:center;margin-bottom:56px">
-    <div class="sec-eyebrow mono r" style="text-align:center;margin-bottom:14px"><span data-lang="en">What we do</span><span data-lang="es">Lo que hacemos</span></div>
-    <h2 class="r" style="font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,4.5vw,48px);line-height:1.05;letter-spacing:-.025em;color:var(--text)" data-lang="en">Everything your business needs<br>to <em style="color:var(--txred);font-style:italic;font-weight:500">look professional.</em></h2>
-    <h2 class="r" style="font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,4.5vw,48px);line-height:1.05;letter-spacing:-.025em;color:var(--text)" data-lang="es">Todo lo que tu negocio necesita<br>para <em style="color:var(--txred);font-style:italic;font-weight:500">verse profesional.</em></h2>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="svc-grid">
-    <!-- Website -->
-    <div class="ind-card r" style="padding:32px 24px;text-align:left">
-      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">Custom Websites</div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Sitios Web</div>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">Built from scratch. Mobile-ready, SEO-optimized, yours forever.</p>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Desde cero. Optimizado para movil, SEO, tuyo para siempre.</p>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$299<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="en">and up</span><span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="es">o mas</span></div>
+<!-- ===== STATS ===== -->
+<section class="stats-section">
+  <div class="stats-inner">
+    <div class="stat-item r">
+      <div class="stat-num">6</div>
+      <div class="stat-label"><span data-lang="en">Services under one roof</span><span data-lang="es">Servicios bajo un techo</span></div>
     </div>
-    <!-- AI Phone -->
-    <div class="ind-card r d1" style="padding:32px 24px;text-align:left">
-      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">AI Phone Agent</div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Agente AI</div>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">AI answers your phone 24/7 in EN/ES. Never miss a lead again.</p>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">AI contesta tu telefono 24/7 en EN/ES. No pierdas mas clientes.</p>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$299<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:4px">/mo</span></div>
+    <div class="stat-item r d1">
+      <div class="stat-num">18+</div>
+      <div class="stat-label"><span data-lang="en">Cities served</span><span data-lang="es">Ciudades cubiertas</span></div>
     </div>
-    <!-- Drone -->
-    <div class="ind-card r d2" style="padding:32px 24px;text-align:left">
-      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">Drone & Video</div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Drone y Video</div>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">FAA Part 107 certified. 4K aerial for real estate, construction, events.</p>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Certificado FAA Part 107. 4K aereo para bienes raices, construccion.</p>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$200<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="en">per shoot</span><span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="es">por sesion</span></div>
+    <div class="stat-item r d2">
+      <div class="stat-num">2wk</div>
+      <div class="stat-label"><span data-lang="en">Average delivery</span><span data-lang="es">Entrega promedio</span></div>
     </div>
-    <!-- Logo -->
-    <div class="ind-card r" style="padding:32px 24px;text-align:left">
-      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">Logo & Brand</div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Logo y Marca</div>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">Logo, colors, fonts, and business cards. Look established, not DIY.</p>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Logo, colores, tipografia, tarjetas. Verse profesional, no casero.</p>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$450<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="en">one-time</span><span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px" data-lang="es">unico</span></div>
-    </div>
-    <!-- Print -->
-    <div class="ind-card r d1" style="padding:32px 24px;text-align:left">
-      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="en">Print & Signs</div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px" data-lang="es">Impresion</div>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">Flyers, business cards, yard signs, magnets. Designed, printed, delivered.</p>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Flyers, tarjetas, letreros, imanes. Disenamos, imprimimos, entregamos.</p>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$85<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:6px">/ 500 flyers</span></div>
-    </div>
-    <!-- Google Ads -->
-    <div class="ind-card r d2" style="padding:32px 24px;text-align:left">
-      <div style="width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--txred)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--text);margin-bottom:6px">Google Ads</div>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="en">We run your ads. Your phone rings with real leads. Monthly reports.</p>
-      <p style="font-size:14px;color:var(--text-soft);line-height:1.55;margin-bottom:16px" data-lang="es">Manejamos tus ads. Tu telefono suena con clientes reales. Reportes mensuales.</p>
-      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:var(--txred)">$249<span style="font-size:13px;font-weight:400;color:var(--text-dim);margin-left:4px">/mo</span></div>
+    <div class="stat-item r d3">
+      <div class="stat-num">$0</div>
+      <div class="stat-label"><span data-lang="en">Contracts required</span><span data-lang="es">Contratos requeridos</span></div>
     </div>
   </div>
-  <div style="text-align:center;margin-top:48px" class="r">
-    <a href="#contact" class="btn btn-red" style="padding:16px 32px;font-size:15px"><span data-lang="en">Get a free quote</span><span data-lang="es">Cotiza gratis</span> →</a>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services-section" id="services">
+  <div class="section-header r">
+    <div class="section-label mono"><span data-lang="en">What we do</span><span data-lang="es">Lo que hacemos</span></div>
+    <h2 class="section-title" data-lang="en">Everything your business needs<br>to <em>look professional.</em></h2>
+    <h2 class="section-title" data-lang="es">Todo lo que tu negocio necesita<br>para <em>verse profesional.</em></h2>
+  </div>
+
+  <div class="svc-grid">
+    <!-- 1. Custom Websites -->
+    <div class="svc-card r">
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="svc-name" data-lang="en">Custom Websites</div>
+      <div class="svc-name" data-lang="es">Sitios Web</div>
+      <p class="svc-desc" data-lang="en">Built from scratch. Mobile-optimized, SEO-ready, Google Business setup included. Yours forever.</p>
+      <p class="svc-desc" data-lang="es">Desde cero. Optimizado para movil, listo para SEO, Google Business incluido. Tuyo para siempre.</p>
+      <div class="svc-price-row">
+        <span class="svc-price">$299</span>
+        <span class="svc-price-note"><span data-lang="en">and up &middot; +$50/mo hosting</span><span data-lang="es">o mas &middot; +$50/mes hosting</span></span>
+      </div>
+    </div>
+    <!-- 2. AI Phone Agent -->
+    <div class="svc-card r d1">
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="svc-name" data-lang="en">AI Phone Agent</div>
+      <div class="svc-name" data-lang="es">Agente AI</div>
+      <p class="svc-desc" data-lang="en">AI answers your phone 24/7 in English and Spanish. Never miss a lead again.</p>
+      <p class="svc-desc" data-lang="es">AI contesta tu telefono 24/7 en ingles y espanol. No pierdas mas clientes.</p>
+      <div class="svc-price-row">
+        <span class="svc-price">$299</span>
+        <span class="svc-price-note"><span data-lang="en">/mo &middot; $199 setup</span><span data-lang="es">/mes &middot; $199 instalacion</span></span>
+      </div>
+    </div>
+    <!-- 3. Drone & Video -->
+    <div class="svc-card r d2">
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <div class="svc-name" data-lang="en">Drone & Video</div>
+      <div class="svc-name" data-lang="es">Drone y Video</div>
+      <p class="svc-desc" data-lang="en">FAA Part 107 certified. 4K aerial for real estate, construction, events. Combo photo+video available.</p>
+      <p class="svc-desc" data-lang="es">Certificado FAA Part 107. 4K aereo para bienes raices, construccion, eventos.</p>
+      <div class="svc-price-row">
+        <span class="svc-price">$200</span>
+        <span class="svc-price-note"><span data-lang="en">/shoot &middot; combo $350</span><span data-lang="es">/sesion &middot; combo $350</span></span>
+      </div>
+    </div>
+    <!-- 4. Logo & Brand -->
+    <div class="svc-card r">
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <div class="svc-name" data-lang="en">Logo & Brand</div>
+      <div class="svc-name" data-lang="es">Logo y Marca</div>
+      <p class="svc-desc" data-lang="en">Logo, colors, fonts, and business cards. Look established, not DIY.</p>
+      <p class="svc-desc" data-lang="es">Logo, colores, tipografia, tarjetas. Verse profesional, no casero.</p>
+      <div class="svc-price-row">
+        <span class="svc-price">$450</span>
+        <span class="svc-price-note"><span data-lang="en">one-time</span><span data-lang="es">unico pago</span></span>
+      </div>
+    </div>
+    <!-- 5. Print & Signs -->
+    <div class="svc-card r d1">
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
+      <div class="svc-name" data-lang="en">Print & Signs</div>
+      <div class="svc-name" data-lang="es">Impresion y Letreros</div>
+      <p class="svc-desc" data-lang="en">Flyers, business cards, yard signs, magnets. Designed, printed, delivered.</p>
+      <p class="svc-desc" data-lang="es">Flyers, tarjetas, letreros, imanes. Disenamos, imprimimos, entregamos.</p>
+      <div class="svc-price-row">
+        <span class="svc-price">$85</span>
+        <span class="svc-price-note">/ 500 flyers</span>
+      </div>
+    </div>
+    <!-- 6. Google Ads -->
+    <div class="svc-card r d2">
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="svc-name">Google Ads</div>
+      <p class="svc-desc" data-lang="en">We run your ads. Your phone rings with real leads. Monthly reports included.</p>
+      <p class="svc-desc" data-lang="es">Manejamos tus anuncios. Tu telefono suena con clientes reales. Reportes mensuales.</p>
+      <div class="svc-price-row">
+        <span class="svc-price">$249</span>
+        <span class="svc-price-note"><span data-lang="en">/mo + ad budget</span><span data-lang="es">/mes + presupuesto ads</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:56px" class="r">
+    <a href="#contact" class="btn btn-primary" style="padding:16px 36px;border-radius:100px;font-size:15px">
+      <span data-lang="en">Get a free quote</span><span data-lang="es">Cotiza gratis</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
   </div>
 </section>
 
 <!-- ===== INDUSTRIES ===== -->
-<section style="padding:80px 32px;background:var(--sand)" id="industries">
-  <div style="max-width:1100px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:48px">
-      <div class="sec-eyebrow mono r" style="text-align:center;margin-bottom:14px"><span data-lang="en">Who we serve</span><span data-lang="es">A quien servimos</span></div>
-      <h2 class="r" style="font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:-.025em;color:var(--text)" data-lang="en">Built for businesses <em style="color:var(--txred);font-style:italic;font-weight:500">like yours.</em></h2>
-      <h2 class="r" style="font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:-.025em;color:var(--text)" data-lang="es">Hecho para negocios <em style="color:var(--txred);font-style:italic;font-weight:500">como el tuyo.</em></h2>
+<section class="industries-section" id="industries">
+  <div class="industries-inner">
+    <div class="industries-header">
+      <div class="section-label mono r" style="text-align:center;margin-bottom:20px"><span data-lang="en">Who we serve</span><span data-lang="es">A quien servimos</span></div>
+      <h2 class="section-title r" style="text-align:center" data-lang="en">Built for businesses <em>like yours.</em></h2>
+      <h2 class="section-title r" style="text-align:center" data-lang="es">Hecho para negocios <em>como el tuyo.</em></h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px" class="ind-grid">
-      <div class="ind-card r"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div><div class="ind-name" data-lang="en">Roofing</div><div class="ind-name" data-lang="es">Techos</div></div>
-      <div class="ind-card r d1"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div><div class="ind-name" data-lang="en">Plumbing</div><div class="ind-name" data-lang="es">Plomeria</div></div>
-      <div class="ind-card r d2"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4l2 2"/><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/></svg></div><div class="ind-name">HVAC</div></div>
-      <div class="ind-card r d3"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66L8 17"/><path d="M17 8l4-2-3-3"/><path d="M17 8c-4 0-8.5 2-11.8 5.4"/></svg></div><div class="ind-name" data-lang="en">Landscaping</div><div class="ind-name" data-lang="es">Jardineria</div></div>
-      <div class="ind-card r d4"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="ind-name" data-lang="en">Real Estate</div><div class="ind-name" data-lang="es">Bienes Raices</div></div>
-      <div class="ind-card r"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><div class="ind-name" data-lang="en">Restaurants</div><div class="ind-name" data-lang="es">Restaurantes</div></div>
-      <div class="ind-card r d1"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/><line x1="9" y1="17" x2="15" y2="17"/><path d="M5 6V3h4"/></svg></div><div class="ind-name" data-lang="en">Auto Repair</div><div class="ind-name" data-lang="es">Mecanica</div></div>
-      <div class="ind-card r d2"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="ind-name" data-lang="en">Cleaning</div><div class="ind-name" data-lang="es">Limpieza</div></div>
-      <div class="ind-card r d3"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg></div><div class="ind-name" data-lang="en">Construction</div><div class="ind-name" data-lang="es">Construccion</div></div>
-      <div class="ind-card r d4"><div class="ind-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="ind-name" data-lang="en">Electricians</div><div class="ind-name" data-lang="es">Electricistas</div></div>
+    <div class="ind-grid">
+      <div class="ind-card r"><div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div><div class="ind-name" data-lang="en">Roofing</div><div class="ind-name" data-lang="es">Techos</div></div>
+      <div class="ind-card r d1"><div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div><div class="ind-name" data-lang="en">Plumbing</div><div class="ind-name" data-lang="es">Plomeria</div></div>
+      <div class="ind-card r d2"><div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M8 16l-4-4 4-4"/><path d="M16 8l4 4-4 4"/><line x1="4" y1="12" x2="20" y2="12"/></svg></div><div class="ind-name">HVAC</div></div>
+      <div class="ind-card r d3"><div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66L8 17"/><path d="M17 8l4-2-3-3"/><path d="M17 8c-4 0-8.5 2-11.8 5.4"/></svg></div><div class="ind-name" data-lang="en">Landscaping</div><div class="ind-name" data-lang="es">Jardineria</div></div>
+      <div class="ind-card r d4"><div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="ind-name" data-lang="en">Real Estate</div><div class="ind-name" data-lang="es">Bienes Raices</div></div>
+      <div class="ind-card r"><div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><div class="ind-name" data-lang="en">Restaurants</div><div class="ind-name" data-lang="es">Restaurantes</div></div>
+      <div class="ind-card r d1"><div class="ind-icon"><svg viewBox="0 0 24 24"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/><line x1="9" y1="17" x2="15" y2="17"/><path d="M5 6V3h4"/></svg></div><div class="ind-name" data-lang="en">Auto Repair</div><div class="ind-name" data-lang="es">Mecanica</div></div>
+      <div class="ind-card r d2"><div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="ind-name" data-lang="en">Cleaning</div><div class="ind-name" data-lang="es">Limpieza</div></div>
+      <div class="ind-card r d3"><div class="ind-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg></div><div class="ind-name" data-lang="en">Construction</div><div class="ind-name" data-lang="es">Construccion</div></div>
+      <div class="ind-card r d4"><div class="ind-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="ind-name" data-lang="en">Electricians</div><div class="ind-name" data-lang="es">Electricistas</div></div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="sec" id="process">
-  <div class="sec-header r"><div><div class="sec-eyebrow mono"><span data-lang="en">03 · How it works</span><span data-lang="es">03 · Proceso</span></div><h2 data-lang="en">Four steps.<br><em>Two weeks.</em></h2><h2 data-lang="es">Cuatro pasos.<br><em>Dos semanas.</em></h2></div><div class="sec-meta" data-lang="en">Fixed prices<br>No hourly billing</div><div class="sec-meta" data-lang="es">Precios fijos<br>Sin cobro por hora</div></div>
-  <div class="proc-grid">
-    <div class="step r"><div class="step-n">1</div><h4 data-lang="en">Call us</h4><h4 data-lang="es">Llámanos</h4><p data-lang="en">15-minute call. What you need, what it costs. No pitch.</p><p data-lang="es">Llamada de 15 min. Qué necesitas, cuánto cuesta. Sin presión.</p></div>
-    <div class="step r d1"><div class="step-n">2</div><h4 data-lang="en">Fixed quote</h4><h4 data-lang="es">Cotización fija</h4><p data-lang="en">Written quote within 24 hrs. One price, one deadline.</p><p data-lang="es">Cotización en 24 hrs. Un precio, una fecha.</p></div>
-    <div class="step r d2"><div class="step-n">3</div><h4 data-lang="en">We build</h4><h4 data-lang="es">Construimos</h4><p data-lang="en">Preview in 5–7 days. Two rounds of edits included.</p><p data-lang="es">Vista previa en 5–7 días. Dos rondas de cambios.</p></div>
-    <div class="step r d3"><div class="step-n">4</div><h4 data-lang="en">You launch</h4><h4 data-lang="es">Lanzas</h4><p data-lang="en">Live in 2 weeks. 30-min training. Yours forever.</p><p data-lang="es">En línea en 2 semanas. 30 min training. Tuyo siempre.</p></div>
+<!-- ===== PROCESS ===== -->
+<section class="process-section" id="process">
+  <div class="section-header r">
+    <div class="section-label mono"><span data-lang="en">How it works</span><span data-lang="es">Proceso</span></div>
+    <h2 class="section-title" data-lang="en">Four steps. <em>Two weeks.</em></h2>
+    <h2 class="section-title" data-lang="es">Cuatro pasos. <em>Dos semanas.</em></h2>
+  </div>
+  <div class="process-grid r">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4 data-lang="en">Call us</h4><h4 data-lang="es">Llamanos</h4>
+      <div class="step-detail" data-lang="en">15 minutes</div><div class="step-detail" data-lang="es">15 minutos</div>
+      <p data-lang="en">Quick call. What you need, what it costs. No pitch, no pressure.</p>
+      <p data-lang="es">Llamada rapida. Que necesitas, cuanto cuesta. Sin presion.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4 data-lang="en">Fixed quote</h4><h4 data-lang="es">Cotizacion fija</h4>
+      <div class="step-detail" data-lang="en">Within 24 hours</div><div class="step-detail" data-lang="es">En 24 horas</div>
+      <p data-lang="en">Written quote. One price, one deadline. No hourly billing.</p>
+      <p data-lang="es">Cotizacion por escrito. Un precio, una fecha. Sin cobro por hora.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4 data-lang="en">We build</h4><h4 data-lang="es">Construimos</h4>
+      <div class="step-detail" data-lang="en">5-7 day preview</div><div class="step-detail" data-lang="es">Vista previa 5-7 dias</div>
+      <p data-lang="en">Preview in 5-7 days. Two rounds of revisions included.</p>
+      <p data-lang="es">Vista previa en 5-7 dias. Dos rondas de cambios incluidas.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4 data-lang="en">You launch</h4><h4 data-lang="es">Lanzas</h4>
+      <div class="step-detail" data-lang="en">2 weeks total</div><div class="step-detail" data-lang="es">2 semanas total</div>
+      <p data-lang="en">Live in two weeks. 30-min training call. Yours forever.</p>
+      <p data-lang="es">En linea en dos semanas. Llamada de entrenamiento. Tuyo para siempre.</p>
+    </div>
   </div>
 </section>
 
-<!-- WORK / PORTFOLIO -->
-<section class="sec" id="work">
-  <div class="sec-header r"><div><div class="sec-eyebrow mono"><span data-lang="en">04 · Real work</span><span data-lang="es">04 · Trabajo real</span></div><h2 data-lang="en">Built by us.<br><em>See the proof.</em></h2><h2 data-lang="es">Hecho por nosotros.<br><em>Mira la prueba.</em></h2></div><div class="sec-meta" data-lang="en">Real clients<br>Real results</div><div class="sec-meta" data-lang="es">Clientes reales<br>Resultados reales</div></div>
-
-  <!-- E-Mex Featured Project -->
-  <div class="work-feature r">
-    <div class="work-feature-visual">
-      <div class="work-browser" style="animation:float 7s ease-in-out infinite">
-        <div class="work-browser-bar"><div class="vb-dot vb-red"></div><div class="vb-dot vb-yel"></div><div class="vb-dot vb-grn"></div><span style="flex:1;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.05em">e-mex.net</span></div>
-        <div style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:32px 24px;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
-          <div style="font-family:'Fraunces',serif;font-weight:700;font-size:28px;color:#fff;margin-bottom:8px">E-<span style="color:#e94560">Mex</span></div>
-          <div style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:16px;font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase">Envía más, paga menos</div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
-            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);font-size:10px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">DHL</span>
-            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);font-size:10px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">FedEx</span>
-            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);font-size:10px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">Estafeta</span>
-            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);font-size:10px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">UPS</span>
+<!-- ===== WORK / PORTFOLIO ===== -->
+<section class="work-section" id="work">
+  <div class="work-inner">
+    <div class="section-header r" style="margin-bottom:64px">
+      <div class="section-label mono"><span data-lang="en">Real work</span><span data-lang="es">Trabajo real</span></div>
+      <h2 class="section-title" data-lang="en">Built by us. <em>See the proof.</em></h2>
+      <h2 class="section-title" data-lang="es">Hecho por nosotros. <em>Mira la prueba.</em></h2>
+    </div>
+    <div class="work-feature r">
+      <div>
+        <div class="work-browser">
+          <div class="work-browser-bar"><div class="wb-dot wb-red"></div><div class="wb-dot wb-yel"></div><div class="wb-dot wb-grn"></div><span style="flex:1;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.05em">e-mex.net</span></div>
+          <div style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:36px 28px;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+            <div style="font-family:'Instrument Serif',serif;font-size:32px;color:#fff;margin-bottom:8px">E-<span style="color:#e94560">Mex</span></div>
+            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:20px;font-family:'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase">Envia mas, paga menos</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+              <span style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:10px;padding:5px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em">DHL</span>
+              <span style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:10px;padding:5px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em">FedEx</span>
+              <span style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:10px;padding:5px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em">Estafeta</span>
+              <span style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:10px;padding:5px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em">UPS</span>
+            </div>
+          </div>
+          <div style="padding:18px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+            <div style="background:var(--sand);border-radius:8px;padding:14px;text-align:center"><div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--dark)">7</div><div style="font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Carriers</div></div>
+            <div style="background:var(--sand);border-radius:8px;padding:14px;text-align:center"><div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--dark)">40%</div><div style="font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Savings</div></div>
+            <div style="background:var(--sand);border-radius:8px;padding:14px;text-align:center"><div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--dark)">60s</div><div style="font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Labels</div></div>
           </div>
         </div>
-        <div style="padding:16px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-          <div style="background:var(--sand);border-radius:6px;padding:12px;text-align:center"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:18px;color:var(--midnight)">7</div><div style="font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Carriers</div></div>
-          <div style="background:var(--sand);border-radius:6px;padding:12px;text-align:center"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:18px;color:var(--midnight)">40%</div><div style="font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Savings</div></div>
-          <div style="background:var(--sand);border-radius:6px;padding:12px;text-align:center"><div style="font-family:'Fraunces',serif;font-weight:700;font-size:18px;color:var(--midnight)">60s</div><div style="font-size:9px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Labels</div></div>
+      </div>
+      <div class="work-feature-info">
+        <div class="work-badge mono" data-lang="en">Featured project</div>
+        <div class="work-badge mono" data-lang="es">Proyecto destacado</div>
+        <h3 class="work-title">E-Mex</h3>
+        <div class="work-sub" data-lang="en">Shipping platform &middot; Mexico</div>
+        <div class="work-sub" data-lang="es">Plataforma de envios &middot; Mexico</div>
+        <p class="work-desc" data-lang="en">Full brand and platform build for a Mexican shipping company. Logo, brand identity, website, and a custom dashboard where users compare rates across 7 carriers and generate labels in 60 seconds.</p>
+        <p class="work-desc" data-lang="es">Marca completa y plataforma para empresa de envios mexicana. Logo, identidad de marca, sitio web, y dashboard donde usuarios comparan tarifas de 7 carriers y generan guias en 60 segundos.</p>
+        <div class="work-tags">
+          <span data-lang="en">Brand & Logo</span><span data-lang="es">Marca y Logo</span>
+          <span data-lang="en">Website</span><span data-lang="es">Sitio Web</span>
+          <span data-lang="en">Dashboard</span><span data-lang="es">Dashboard</span>
+          <span data-lang="en">Full Build</span><span data-lang="es">Desarrollo</span>
         </div>
+        <a href="https://e-mex.net" target="_blank" rel="noopener" class="btn btn-copper" data-lang="en">Visit e-mex.net &rarr;</a>
+        <a href="https://e-mex.net" target="_blank" rel="noopener" class="btn btn-copper" data-lang="es">Ver e-mex.net &rarr;</a>
       </div>
     </div>
-    <div class="work-feature-info">
-      <div class="work-feature-badge mono" data-lang="en">★ Featured project</div>
-      <div class="work-feature-badge mono" data-lang="es">★ Proyecto destacado</div>
-      <h3 class="work-feature-title">E-Mex</h3>
-      <div class="work-feature-sub" data-lang="en">Shipping platform · Mexico</div>
-      <div class="work-feature-sub" data-lang="es">Plataforma de envíos · México</div>
-      <p class="work-feature-desc" data-lang="en">Full brand and platform build for a Mexican shipping company. Logo, brand identity, website design, and a custom dashboard where users compare rates across DHL, FedEx, Estafeta, UPS, and 3 other carriers — then generate shipping labels in 60 seconds.</p>
-      <p class="work-feature-desc" data-lang="es">Marca completa y plataforma para una empresa de envíos mexicana. Logo, identidad de marca, diseño web, y un dashboard donde los usuarios comparan tarifas de DHL, FedEx, Estafeta, UPS, y 3 carriers más — y generan guías en 60 segundos.</p>
-      <div class="work-feature-tags">
-        <span data-lang="en">Brand & Logo</span><span data-lang="es">Marca y Logo</span>
-        <span data-lang="en">Website Design</span><span data-lang="es">Diseño Web</span>
-        <span data-lang="en">Dashboard</span><span data-lang="es">Dashboard</span>
-        <span data-lang="en">Full Build</span><span data-lang="es">Desarrollo Completo</span>
-      </div>
-      <a href="https://e-mex.net" target="_blank" rel="noopener" class="btn btn-red" data-lang="en">Visit e-mex.net →</a>
-      <a href="https://e-mex.net" target="_blank" rel="noopener" class="btn btn-red" data-lang="es">Ver e-mex.net →</a>
-    </div>
-  </div>
-
-  <div class="work-more r" data-lang="en">
-    <strong>★</strong> More projects coming soon. <a href="#contact" style="color:var(--txred);font-weight:700;text-decoration:none">Yours could be next →</a>
-  </div>
-  <div class="work-more r" data-lang="es">
-    <strong>★</strong> Más proyectos próximamente. <a href="#contact" style="color:var(--txred);font-weight:700;text-decoration:none">El tuyo puede ser el siguiente →</a>
+    <div class="work-more r" data-lang="en">More projects coming soon. <a href="#contact" style="color:var(--copper);font-weight:700;text-decoration:none">Yours could be next &rarr;</a></div>
+    <div class="work-more r" data-lang="es">Mas proyectos proximamente. <a href="#contact" style="color:var(--copper);font-weight:700;text-decoration:none">El tuyo puede ser el siguiente &rarr;</a></div>
   </div>
 </section>
 
-<!-- WEBSITE ANALYZER -->
+<!-- ===== WEBSITE ANALYZER ===== -->
 <section class="analyzer-sec" id="score">
   <div class="analyzer-inner">
     <div class="analyzer-header r">
-      <div class="sec-eyebrow mono" style="color:var(--gold)"><span data-lang="en">★ Free website score ★</span><span data-lang="es">★ Análisis gratis ★</span></div>
-      <h2 style="color:var(--limestone)" data-lang="en">See how well your website is<br><em style="color:var(--gold)">turning visitors into customers.</em></h2>
-      <h2 style="color:var(--limestone)" data-lang="es">Mira qué tan bien tu sitio<br><em style="color:var(--gold)">convierte visitantes en clientes.</em></h2>
+      <div class="section-label mono" style="color:var(--copper);text-align:center;margin-bottom:20px"><span data-lang="en">Free website score</span><span data-lang="es">Analisis gratis</span></div>
+      <h2 style="color:var(--white)" data-lang="en">See how well your website<br><em style="color:var(--copper)">converts visitors into customers.</em></h2>
+      <h2 style="color:var(--white)" data-lang="es">Mira que tan bien tu sitio<br><em style="color:var(--copper)">convierte visitantes en clientes.</em></h2>
       <p class="analyzer-sub" data-lang="en">Enter your website URL and we'll analyze its performance, mobile experience, SEO, and more — in seconds.</p>
-      <p class="analyzer-sub" data-lang="es">Escribe la URL de tu sitio y analizamos su rendimiento, experiencia móvil, SEO, y más — en segundos.</p>
+      <p class="analyzer-sub" data-lang="es">Escribe la URL de tu sitio y analizamos su rendimiento, experiencia movil, SEO, y mas — en segundos.</p>
     </div>
 
     <!-- Input -->
@@ -710,45 +1620,45 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
       <div class="analyzer-input-box">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-dim)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input type="url" id="scoreUrl" class="analyzer-url" placeholder="Enter your website URL" required>
-        <button class="btn btn-red" id="scoreBtn" onclick="runAnalysis()"><span data-lang="en">Analyze →</span><span data-lang="es">Analizar →</span></button>
+        <button class="btn btn-copper" id="scoreBtn" onclick="runAnalysis()" style="border-radius:100px"><span data-lang="en">Analyze &rarr;</span><span data-lang="es">Analizar &rarr;</span></button>
       </div>
       <div class="analyzer-hints">
-        <span data-lang="en">How fast does my site load?</span><span data-lang="es">¿Qué tan rápido carga mi sitio?</span>
-        <span data-lang="en">Is my site mobile-friendly?</span><span data-lang="es">¿Es móvil mi sitio?</span>
-        <span data-lang="en">Can Google find my business?</span><span data-lang="es">¿Me encuentra Google?</span>
+        <span data-lang="en">How fast does my site load?</span><span data-lang="es">Que tan rapido carga mi sitio?</span>
+        <span data-lang="en">Is my site mobile-friendly?</span><span data-lang="es">Es movil mi sitio?</span>
+        <span data-lang="en">Can Google find my business?</span><span data-lang="es">Me encuentra Google?</span>
       </div>
     </div>
 
-    <!-- Progress (hidden by default) -->
+    <!-- Progress -->
     <div class="analyzer-progress" id="analyzerProgress" style="display:none">
       <div class="analyzer-progress-card r">
         <div class="analyzer-progress-url" id="progressUrl">yoursite.com</div>
         <div class="analyzer-progress-title" data-lang="en">Analyzing your website</div>
         <div class="analyzer-progress-title" data-lang="es">Analizando tu sitio</div>
         <div class="analyzer-progress-sub" data-lang="en">Checking performance signals...</div>
-        <div class="analyzer-progress-sub" data-lang="es">Revisando señales de rendimiento...</div>
+        <div class="analyzer-progress-sub" data-lang="es">Revisando senales de rendimiento...</div>
         <div class="analyzer-bar-wrap"><div class="analyzer-bar" id="progressBar"></div></div>
         <div class="analyzer-steps" id="analyzerSteps">
-          <div class="a-step done" data-lang="en">✓ Scanning page structure</div><div class="a-step done" data-lang="es">✓ Escaneando estructura</div>
-          <div class="a-step active" data-lang="en">⟳ Testing mobile experience</div><div class="a-step active" data-lang="es">⟳ Probando experiencia móvil</div>
-          <div class="a-step" data-lang="en">○ Checking SEO signals</div><div class="a-step" data-lang="es">○ Revisando SEO</div>
-          <div class="a-step" data-lang="en">○ Measuring load speed</div><div class="a-step" data-lang="es">○ Midiendo velocidad</div>
-          <div class="a-step" data-lang="en">○ Calculating your score</div><div class="a-step" data-lang="es">○ Calculando tu puntaje</div>
+          <div class="a-step done" data-lang="en">&#10003; Scanning page structure</div><div class="a-step done" data-lang="es">&#10003; Escaneando estructura</div>
+          <div class="a-step active" data-lang="en">&#10227; Testing mobile experience</div><div class="a-step active" data-lang="es">&#10227; Probando experiencia movil</div>
+          <div class="a-step" data-lang="en">&#9675; Checking SEO signals</div><div class="a-step" data-lang="es">&#9675; Revisando SEO</div>
+          <div class="a-step" data-lang="en">&#9675; Measuring load speed</div><div class="a-step" data-lang="es">&#9675; Midiendo velocidad</div>
+          <div class="a-step" data-lang="en">&#9675; Calculating your score</div><div class="a-step" data-lang="es">&#9675; Calculando tu puntaje</div>
         </div>
       </div>
     </div>
 
-    <!-- Results (hidden by default) -->
+    <!-- Results -->
     <div class="analyzer-results" id="analyzerResults" style="display:none">
       <div class="analyzer-score-card r">
         <div class="analyzer-score-header">
-          <span class="mono" style="color:var(--gold)" data-lang="en">Score Report</span>
-          <span class="mono" style="color:var(--gold)" data-lang="es">Reporte</span>
+          <span class="mono" style="color:var(--copper)" data-lang="en">Score Report</span>
+          <span class="mono" style="color:var(--copper)" data-lang="es">Reporte</span>
           <span class="analyzer-analyzed-url" id="resultUrl"></span>
         </div>
         <div class="analyzer-score-ring-wrap">
           <svg class="analyzer-ring" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(245,239,228,.1)" stroke-width="8"/>
+            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(250,250,247,.08)" stroke-width="8"/>
             <circle cx="60" cy="60" r="52" fill="none" stroke-width="8" stroke-linecap="round" id="scoreRing" class="score-ring" transform="rotate(-90 60 60)"/>
           </svg>
           <div class="analyzer-score-num" id="scoreNum">0</div>
@@ -759,103 +1669,189 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
       </div>
 
       <div class="analyzer-breakdown r d1">
-        <div class="mono" style="color:var(--gold);margin-bottom:16px" data-lang="en">Score breakdown</div>
-        <div class="mono" style="color:var(--gold);margin-bottom:16px" data-lang="es">Desglose</div>
+        <div class="mono" style="color:var(--copper);margin-bottom:16px" data-lang="en">Score breakdown</div>
+        <div class="mono" style="color:var(--copper);margin-bottom:16px" data-lang="es">Desglose</div>
         <div class="analyzer-cats" id="scoreCats"></div>
       </div>
 
       <div class="analyzer-cta-box r d2">
-        <h3 data-lang="en">Want us to fix this?</h3><h3 data-lang="es">¿Quieres que lo arreglemos?</h3>
+        <h3 data-lang="en">Want us to fix this?</h3><h3 data-lang="es">Quieres que lo arreglemos?</h3>
         <p data-lang="en">We'll rebuild your site from scratch — faster, mobile-optimized, and built to convert. Starting at $299.</p>
-        <p data-lang="es">Reconstruimos tu sitio desde cero — más rápido, optimizado para móvil, y hecho para convertir. Desde $299.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
-          <a href="#contact" class="btn btn-red"><span data-lang="en">Get a free quote →</span><span data-lang="es">Pide cotización gratis →</span></a>
-          <a href="tel:6826007984" class="btn btn-outline" style="border-color:rgba(245,239,228,.3);color:var(--limestone)">682.600.7984</a>
+        <p data-lang="es">Reconstruimos tu sitio desde cero — mas rapido, optimizado para movil, y hecho para convertir. Desde $299.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;justify-content:center">
+          <a href="#contact" class="btn btn-white"><span data-lang="en">Get a free quote &rarr;</span><span data-lang="es">Pide cotizacion gratis &rarr;</span></a>
+          <a href="tel:6826007984" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff">682.600.7984</a>
         </div>
       </div>
 
-      <button class="analyzer-reset" onclick="resetAnalyzer()" data-lang="en">← Analyze another site</button>
-      <button class="analyzer-reset" onclick="resetAnalyzer()" data-lang="es">← Analizar otro sitio</button>
+      <button class="analyzer-reset" onclick="resetAnalyzer()" data-lang="en">&larr; Analyze another site</button>
+      <button class="analyzer-reset" onclick="resetAnalyzer()" data-lang="es">&larr; Analizar otro sitio</button>
     </div>
   </div>
 </section>
 
-<!-- SERVICE AREA -->
-<section class="area-sec" id="area"><div class="area-inner">
-  <div class="area-hdr r"><div class="mono" style="color:var(--gold);margin-bottom:14px"><span data-lang="en">★ Service area</span><span data-lang="es">★ Cobertura</span></div><h2 data-lang="en">Central Texas.<br><em>Your backyard.</em></h2><h2 data-lang="es">Texas Central.<br><em>Tu territorio.</em></h2></div>
-  <div class="area-grid"><div class="area-text r"><p data-lang="en">Based in Waco. We show up for drone shoots, deliver prints, and build websites for every city within an hour.</p><p data-lang="es">Con base en Waco. Vamos para drone, entregamos impresiones, y hacemos sitios web para cada ciudad a una hora.</p><a href="tel:6826007984" class="btn btn-white" data-lang="en">Call now →</a><a href="tel:6826007984" class="btn btn-white" data-lang="es">Llámanos →</a></div>
-  <div class="r d2"><div class="area-cities">
-    <div class="city home"><span class="city-dot"></span>Waco</div><div class="city"><span class="city-dot"></span>Hewitt</div><div class="city"><span class="city-dot"></span>Woodway</div>
-    <div class="city"><span class="city-dot"></span>Robinson</div><div class="city"><span class="city-dot"></span>Bellmead</div><div class="city"><span class="city-dot"></span>Lorena</div>
-    <div class="city"><span class="city-dot"></span>China Spring</div><div class="city"><span class="city-dot"></span>McGregor</div><div class="city"><span class="city-dot"></span>West</div>
-    <div class="city"><span class="city-dot"></span>Temple</div><div class="city"><span class="city-dot"></span>Killeen</div><div class="city"><span class="city-dot"></span>Belton</div>
-    <div class="city"><span class="city-dot"></span>Copperas Cove</div><div class="city"><span class="city-dot"></span>Gatesville</div><div class="city"><span class="city-dot"></span>Hillsboro</div>
-    <div class="city"><span class="city-dot"></span>Marlin</div><div class="city"><span class="city-dot"></span>Mexia</div><div class="city"><span class="city-dot"></span>Whitney</div>
-  </div></div></div>
-  <div class="area-foot r"><span data-lang="en">Don't see your city? Call — we probably cover it. ★</span><span data-lang="es">¿No ves tu ciudad? Llama. ★</span></div>
-</div></section>
+<!-- ===== SERVICE AREA ===== -->
+<section class="area-section" id="area">
+  <div class="area-inner">
+    <div class="area-header r">
+      <div class="section-label mono" style="color:var(--copper);margin-bottom:20px"><span data-lang="en">Service area</span><span data-lang="es">Cobertura</span></div>
+      <h2 data-lang="en">Central Texas.<br><em>Your backyard.</em></h2>
+      <h2 data-lang="es">Texas Central.<br><em>Tu territorio.</em></h2>
+    </div>
+    <div class="area-grid">
+      <div class="area-text r">
+        <p data-lang="en">Based in Waco. We show up for drone shoots, deliver prints, and build websites for every city within an hour.</p>
+        <p data-lang="es">Con base en Waco. Vamos para drone, entregamos impresiones, y hacemos sitios web para cada ciudad a una hora.</p>
+        <a href="tel:6826007984" class="btn btn-white" data-lang="en">Call now &rarr;</a>
+        <a href="tel:6826007984" class="btn btn-white" data-lang="es">Llamanos &rarr;</a>
+      </div>
+      <div class="r d2">
+        <div class="area-cities">
+          <div class="city home"><span class="city-dot"></span>Waco</div>
+          <div class="city"><span class="city-dot"></span>Hewitt</div>
+          <div class="city"><span class="city-dot"></span>Woodway</div>
+          <div class="city"><span class="city-dot"></span>Robinson</div>
+          <div class="city"><span class="city-dot"></span>Bellmead</div>
+          <div class="city"><span class="city-dot"></span>Lorena</div>
+          <div class="city"><span class="city-dot"></span>China Spring</div>
+          <div class="city"><span class="city-dot"></span>McGregor</div>
+          <div class="city"><span class="city-dot"></span>West</div>
+          <div class="city"><span class="city-dot"></span>Temple</div>
+          <div class="city"><span class="city-dot"></span>Killeen</div>
+          <div class="city"><span class="city-dot"></span>Belton</div>
+          <div class="city"><span class="city-dot"></span>Copperas Cove</div>
+          <div class="city"><span class="city-dot"></span>Gatesville</div>
+          <div class="city"><span class="city-dot"></span>Hillsboro</div>
+          <div class="city"><span class="city-dot"></span>Marlin</div>
+          <div class="city"><span class="city-dot"></span>Mexia</div>
+          <div class="city"><span class="city-dot"></span>Whitney</div>
+        </div>
+      </div>
+    </div>
+    <div class="area-foot r"><span data-lang="en">Don't see your city? Call — we probably cover it.</span><span data-lang="es">No ves tu ciudad? Llama — probablemente la cubrimos.</span></div>
+  </div>
+</section>
 
-<!-- CTA + CONTACT FORM -->
-<section class="cta-sec" id="contact"><div class="cta-inner">
-  <div class="r">
-    <h2 data-lang="en">Ready?<br><em>Let's build it.</em></h2><h2 data-lang="es">¿Listo?<br><em>Vamos.</em></h2>
-    <p data-lang="en" style="margin-bottom:28px">Fill out the form or call us directly. We respond to every message within 24 hours — in English or Spanish.</p>
-    <p data-lang="es" style="margin-bottom:28px">Llena el formulario o llámanos. Respondemos cada mensaje en 24 horas — en inglés o español.</p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-      <a href="tel:6826007984" class="btn btn-gold">682.600.7984</a>
-      <a href="mailto:clio@texasdigitalco.com" style="color:var(--gold);font-size:14px;font-weight:600;text-decoration:none;font-family:'JetBrains Mono',monospace;letter-spacing:.05em">clio@texasdigitalco.com</a>
+<!-- ===== CONTACT ===== -->
+<section class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div class="contact-left r">
+      <h2 data-lang="en">Ready?<br><em>Let's build it.</em></h2>
+      <h2 data-lang="es">Listo?<br><em>Vamos.</em></h2>
+      <p data-lang="en">Fill out the form or call us directly. We respond to every message within 24 hours — in English or Spanish.</p>
+      <p data-lang="es">Llena el formulario o llamanos. Respondemos cada mensaje en 24 horas — en ingles o espanol.</p>
+      <div class="contact-info-row">
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="contact-info-text">
+            <a href="tel:6826007984">682.600.7984</a>
+            <small><span data-lang="en">Open 24/7 &middot; No contracts</span><span data-lang="es">Abierto 24/7 &middot; Sin contratos</span></small>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="contact-info-text">
+            <a href="mailto:clio@texasdigitalco.com">clio@texasdigitalco.com</a>
+            <small>Waco, TX</small>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="contact-info-text">
+            <a href="#area" style="font-size:18px"><span data-lang="en">FAA Part 107 Certified</span><span data-lang="es">Certificado FAA Part 107</span></a>
+            <small><span data-lang="en">Licensed drone pilot</span><span data-lang="es">Piloto de drone con licencia</span></small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-card r d2">
+      <span class="contact-card-label mono"><span data-lang="en">Send a message</span><span data-lang="es">Envianos un mensaje</span></span>
+      <form id="contactForm" action="https://formspree.io/f/mbdqkllv" method="POST" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name" data-lang="en">Name</label><label for="cf-name" data-lang="es">Nombre</label>
+            <input type="text" id="cf-name" name="name" required placeholder="Jose Torres">
+          </div>
+          <div class="form-group">
+            <label for="cf-phone" data-lang="en">Phone</label><label for="cf-phone" data-lang="es">Telefono</label>
+            <input type="tel" id="cf-phone" name="phone" required placeholder="254-555-1234">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-email" data-lang="en">Email</label><label for="cf-email" data-lang="es">Correo</label>
+          <input type="email" id="cf-email" name="email" placeholder="jose@email.com">
+        </div>
+        <div class="form-group">
+          <label for="cf-service" data-lang="en">What do you need?</label><label for="cf-service" data-lang="es">Que necesitas?</label>
+          <select id="cf-service" name="service">
+            <option value="" data-lang="en">Select a service...</option><option value="" data-lang="es">Elige un servicio...</option>
+            <option value="website">Website / Sitio web</option>
+            <option value="ai-phone">AI Phone Agent / Agente AI</option>
+            <option value="drone">Drone & Video</option>
+            <option value="logo">Logo & Brand / Logo y marca</option>
+            <option value="print">Print & Signs / Impresion</option>
+            <option value="google-ads">Google Ads</option>
+            <option value="package" data-lang="en">Monthly package</option><option value="package" data-lang="es">Paquete mensual</option>
+            <option value="other" data-lang="en">Something else</option><option value="other" data-lang="es">Otra cosa</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cf-msg" data-lang="en">Tell us about your project</label><label for="cf-msg" data-lang="es">Cuentanos sobre tu proyecto</label>
+          <textarea id="cf-msg" name="message" rows="4" placeholder="" data-placeholder-en="I need a website for my roofing business in Waco..." data-placeholder-es="Necesito un sitio web para mi negocio de techos en Waco..."></textarea>
+        </div>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn btn-copper form-submit" id="formBtn">
+          <span data-lang="en">Send message &rarr;</span><span data-lang="es">Enviar mensaje &rarr;</span>
+        </button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
     </div>
   </div>
-  <div class="cta-card r d2">
-    <span class="cta-card-label mono"><span data-lang="en">Send a message</span><span data-lang="es">Envíanos un mensaje</span></span>
-    <form id="contactForm" action="https://formspree.io/f/mbdqkllv" method="POST" class="contact-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="cf-name" data-lang="en">Name</label><label for="cf-name" data-lang="es">Nombre</label>
-          <input type="text" id="cf-name" name="name" required placeholder="Jose Torres">
-        </div>
-        <div class="form-group">
-          <label for="cf-phone" data-lang="en">Phone</label><label for="cf-phone" data-lang="es">Teléfono</label>
-          <input type="tel" id="cf-phone" name="phone" required placeholder="254-555-1234">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="cf-email" data-lang="en">Email</label><label for="cf-email" data-lang="es">Correo</label>
-        <input type="email" id="cf-email" name="email" placeholder="jose@email.com">
-      </div>
-      <div class="form-group">
-        <label for="cf-service" data-lang="en">What do you need?</label><label for="cf-service" data-lang="es">¿Qué necesitas?</label>
-        <select id="cf-service" name="service">
-          <option value="" data-lang="en">Select a service...</option><option value="" data-lang="es">Elige un servicio...</option>
-          <option value="website">Website / Sitio web</option>
-          <option value="ai-phone">AI Phone Agent / Agente AI</option>
-          <option value="drone">Drone & Video</option>
-          <option value="logo">Logo & Brand / Logo y marca</option>
-          <option value="print">Print & Signs / Impresión</option>
-          <option value="google-ads">Google Ads</option>
-          <option value="package" data-lang="en">Monthly package</option><option value="package" data-lang="es">Paquete mensual</option>
-          <option value="other" data-lang="en">Something else</option><option value="other" data-lang="es">Otra cosa</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="cf-msg" data-lang="en">Tell us about your project</label><label for="cf-msg" data-lang="es">Cuéntanos sobre tu proyecto</label>
-        <textarea id="cf-msg" name="message" rows="4" placeholder="" data-placeholder-en="I need a website for my roofing business in Waco..." data-placeholder-es="Necesito un sitio web para mi negocio de techos en Waco..."></textarea>
-      </div>
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <button type="submit" class="btn btn-red form-submit" id="formBtn">
-        <span data-lang="en">Send message →</span><span data-lang="es">Enviar mensaje →</span>
-      </button>
-      <div class="form-status" id="formStatus"></div>
-    </form>
-  </div>
-</div></section>
+</section>
 
-<footer><div class="ft-inner"><div class="ft-grid">
-  <div><div class="ft-brand"><svg width="28" height="28" viewBox="0 0 100 100"><polygon fill="#D4943A" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/><g fill="rgba(0,0,0,0.3)"><polygon points="50,50 50,3 60.58,35.44"/><polygon points="50,50 94.7,35.48 67.12,55.56"/><polygon points="50,50 77.63,88.02 50,68"/><polygon points="50,50 22.37,88.02 32.88,55.56"/><polygon points="50,50 5.3,35.48 39.42,35.44"/></g></svg><span class="ft-brand-text">Texas <em>Digital</em> Co.</span></div><p class="ft-desc" data-lang="en">Full-service digital shop in Waco, TX. EN/ES.</p><p class="ft-desc" data-lang="es">Agencia digital en Waco, TX. EN/ES.</p></div>
-  <div class="ft-col"><h5 data-lang="en">Services</h5><h5 data-lang="es">Servicios</h5><ul><li><a href="#services">Websites</a></li><li><a href="#services">AI Phone</a></li><li><a href="#services">Drone</a></li><li><a href="#services">Logo</a></li><li><a href="#services">Print</a></li><li><a href="#services">Google Ads</a></li></ul></div>
-  <div class="ft-col"><h5 data-lang="en">Company</h5><h5 data-lang="es">Empresa</h5><ul><li><a href="#area" data-lang="en">Service Area</a><a href="#area" data-lang="es">Cobertura</a></li><li><a href="#process" data-lang="en">Process</a><a href="#process" data-lang="es">Proceso</a></li><li><a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="es">Contacto</a></li></ul></div>
-  <div class="ft-col"><h5 data-lang="en">Contact</h5><h5 data-lang="es">Contacto</h5><p>Waco, TX<br><span data-lang="en">Open 24/7</span><span data-lang="es">Abierto 24/7</span><br><a href="tel:6826007984" style="color:var(--gold)">682.600.7984</a></p></div>
-</div><div class="ft-bottom"><span>© 2026 Texas Digital Co.</span><span>FAA Part 107 · Waco, TX <span class="star">★</span></span></div></div></footer>
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand">
+          <svg width="28" height="28" viewBox="0 0 100 100"><polygon fill="#C69C6D" points="50,3 60.58,35.44 94.7,35.48 67.12,55.56 77.63,88.02 50,68 22.37,88.02 32.88,55.56 5.3,35.48 39.42,35.44"/><g fill="rgba(0,0,0,0.3)"><polygon points="50,50 50,3 60.58,35.44"/><polygon points="50,50 94.7,35.48 67.12,55.56"/><polygon points="50,50 77.63,88.02 50,68"/><polygon points="50,50 22.37,88.02 32.88,55.56"/><polygon points="50,50 5.3,35.48 39.42,35.44"/></g></svg>
+          <span class="ft-brand-text">Texas <em>Digital</em> Co.</span>
+        </div>
+        <p class="ft-desc" data-lang="en">Full-service digital studio in Waco, TX. Bilingual EN/ES. No contracts, clear pricing, real results.</p>
+        <p class="ft-desc" data-lang="es">Estudio digital en Waco, TX. Bilingue EN/ES. Sin contratos, precios claros, resultados reales.</p>
+      </div>
+      <div class="ft-col">
+        <h5 data-lang="en">Services</h5><h5 data-lang="es">Servicios</h5>
+        <ul>
+          <li><a href="#services">Websites</a></li>
+          <li><a href="#services">AI Phone</a></li>
+          <li><a href="#services">Drone</a></li>
+          <li><a href="#services">Logo</a></li>
+          <li><a href="#services">Print</a></li>
+          <li><a href="#services">Google Ads</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5 data-lang="en">Company</h5><h5 data-lang="es">Empresa</h5>
+        <ul>
+          <li><a href="#area" data-lang="en">Service Area</a><a href="#area" data-lang="es">Cobertura</a></li>
+          <li><a href="#process" data-lang="en">Process</a><a href="#process" data-lang="es">Proceso</a></li>
+          <li><a href="#score" data-lang="en">Free Score</a><a href="#score" data-lang="es">Analisis</a></li>
+          <li><a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="es">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5 data-lang="en">Contact</h5><h5 data-lang="es">Contacto</h5>
+        <p>Waco, TX<br><span data-lang="en">Open 24/7</span><span data-lang="es">Abierto 24/7</span><br><a href="tel:6826007984" style="color:var(--copper)">682.600.7984</a><br><a href="mailto:clio@texasdigitalco.com" style="color:var(--copper);font-size:11px">clio@texasdigitalco.com</a></p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>&copy; 2026 Texas Digital Co.</span>
+      <span>FAA Part 107 &middot; Waco, TX</span>
+    </div>
+  </div>
+</footer>
 
 <!-- SEO: Structured Data -->
 <script type="application/ld+json">
@@ -890,7 +1886,7 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Drone Photography and Video","description":"FAA Part 107 certified aerial drone photography and 4K video for real estate, construction, and events in Central Texas"},"price":"200","priceCurrency":"USD"},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Logo and Brand Identity Design","description":"Professional logo design, color palette, typography, and business card layout"},"price":"450","priceCurrency":"USD"},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Print Design and Delivery","description":"Flyers, business cards, yard signs, truck magnets, and banners designed, printed, and delivered"},"price":"85","priceCurrency":"USD"},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Google Ads Management","description":"Google Ads setup, management, and monthly reporting for local businesses"},"price":"499","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","unitText":"month"}}
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Google Ads Management","description":"Google Ads setup, management, and monthly reporting for local businesses"},"price":"249","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","unitText":"month"}}
     ]
   }
 }
@@ -907,208 +1903,205 @@ footer{background:var(--midnight);color:var(--limestone);padding:48px 32px 24px}
   <h3>Bilingual Marketing Agency Waco</h3><p>Texas Digital Co. is a fully bilingual English-Spanish digital agency in Waco, TX. We create websites, marketing materials, and AI phone agents that work in both languages for the diverse Central Texas market.</p>
   <h3>Logo Design and Branding Waco TX</h3><p>Professional logo design and brand identity packages for small businesses in Waco, Hewitt, Woodway, and Central Texas. Logo, colors, fonts, and business card design starting at $450.</p>
   <h3>Print and Sign Services Central Texas</h3><p>Flyer design and printing, business cards, yard signs, truck magnets, and banners for businesses in Waco, Temple, Killeen, and all of Central Texas. Design, print, and delivery included.</p>
-  <h3>Google Ads Management Waco Temple Killeen</h3><p>Google Ads setup and management for local businesses in Waco, Temple, Killeen, Belton, Hewitt, and Central Texas. Monthly reports, lead tracking, and transparent pricing at $499/month.</p>
+  <h3>Google Ads Management Waco Temple Killeen</h3><p>Google Ads setup and management for local businesses in Waco, Temple, Killeen, Belton, Hewitt, and Central Texas. Monthly reports, lead tracking, and transparent pricing at $249/month.</p>
   <h3>Real Estate Drone Photography Central Texas</h3><p>Part 107 certified drone pilot providing aerial photography and video for real estate listings in Waco, Temple, Killeen, Hewitt, Woodway, Lorena, China Spring, McGregor, West, Belton, Copperas Cove, Gatesville, Hillsboro, Marlin, Mexia, and Whitney.</p>
 </div>
 
 <script>
-function setLang(l){document.body.classList.toggle('lang-es',l==='es');document.documentElement.lang=l;document.getElementById('langEn').classList.toggle('active',l==='en');document.getElementById('langEs').classList.toggle('active',l==='es')}
-
-// Scroll reveals + activate animations
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');if(x.target.classList.contains('vis'))x.target.classList.add('active');obs.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
-document.querySelectorAll('.r').forEach(el=>obs.observe(el));
-
-// Nav scroll
-window.addEventListener('scroll',()=>{requestAnimationFrame(()=>{document.getElementById('mainNav').classList.toggle('scrolled',scrollY>30)})},{passive:true});
-
-// Mobile
-function openMob(){document.getElementById('mobMenu').classList.add('open');document.body.style.overflow='hidden'}
-function closeMob(){document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
-
-// Drone video parallax on scroll
-const vfVideo=document.getElementById('vfVideo');
-const droneVF=document.getElementById('droneVF');
-if(vfVideo&&droneVF){
-  window.addEventListener('scroll',()=>{
-    requestAnimationFrame(()=>{
-      const r=droneVF.getBoundingClientRect();
-      const vh=innerHeight;
-      if(r.top<vh&&r.bottom>0){
-        const progress=(vh-r.top)/(vh+r.height);
-        const x=(progress-.5)*-24;
-        const y=(progress-.5)*-16;
-        vfVideo.style.transform=`translate(${x}px,${y}px)`;
-      }
-    });
-  },{passive:true});
+// Language toggle
+function setLang(l) {
+  document.body.classList.toggle('lang-es', l === 'es');
+  document.documentElement.lang = l;
+  document.getElementById('langEn').classList.toggle('active', l === 'en');
+  document.getElementById('langEs').classList.toggle('active', l === 'es');
+  // Mobile lang buttons
+  const mEn = document.getElementById('mobLangEn');
+  const mEs = document.getElementById('mobLangEs');
+  if (mEn) mEn.classList.toggle('active', l === 'en');
+  if (mEs) mEs.classList.toggle('active', l === 'es');
 }
 
-// REC timer
-const recEl=document.getElementById('recTime');
-if(recEl){
-  let sec=42;
-  setInterval(()=>{sec++;if(sec>59)sec=0;recEl.textContent='00:'+String(sec).padStart(2,'0')},1000);
-}
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('vis');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: .1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(() => {
+    document.getElementById('mainNav').classList.toggle('scrolled', scrollY > 30);
+  });
+}, { passive: true });
+
+// Mobile menu
+function openMob() { document.getElementById('mobMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMob() { document.getElementById('mobMenu').classList.remove('open'); document.body.style.overflow = ''; }
 
 // Website Analyzer
-async function runAnalysis(){
-  const input=document.getElementById('scoreUrl');
-  let url=input.value.trim();
-  if(!url)return input.focus();
-  if(!url.startsWith('http'))url='https://'+url;
+async function runAnalysis() {
+  const input = document.getElementById('scoreUrl');
+  let url = input.value.trim();
+  if (!url) return input.focus();
+  if (!url.startsWith('http')) url = 'https://' + url;
 
-  const isEs=document.body.classList.contains('lang-es');
-  document.getElementById('analyzerInput').style.display='none';
-  document.getElementById('analyzerResults').style.display='none';
-  const prog=document.getElementById('analyzerProgress');
-  prog.style.display='block';
-  document.getElementById('progressUrl').textContent=url.replace(/^https?:\/\//,'');
+  const isEs = document.body.classList.contains('lang-es');
+  document.getElementById('analyzerInput').style.display = 'none';
+  document.getElementById('analyzerResults').style.display = 'none';
+  const prog = document.getElementById('analyzerProgress');
+  prog.style.display = 'block';
+  document.getElementById('progressUrl').textContent = url.replace(/^https?:\/\//, '');
 
-  const bar=document.getElementById('progressBar');
-  const steps=document.querySelectorAll('#analyzerSteps .a-step');
-  const visSteps=[...steps].filter(s=>{const l=s.dataset.lang;return !l||(isEs?l==='es':l==='en')});
+  const bar = document.getElementById('progressBar');
+  const steps = document.querySelectorAll('#analyzerSteps .a-step');
+  const visSteps = [...steps].filter(s => { const l = s.dataset.lang; return !l || (isEs ? l === 'es' : l === 'en'); });
 
-  // Animate progress
-  let pct=0;
-  const pInt=setInterval(()=>{pct=Math.min(pct+Math.random()*8,90);bar.style.width=pct+'%'},400);
-  let stepIdx=0;
-  const sInt=setInterval(()=>{
-    if(stepIdx<visSteps.length){
-      visSteps.forEach((s,i)=>{s.className='a-step'+(i<stepIdx?' done':i===stepIdx?' active':'')});
+  let pct = 0;
+  const pInt = setInterval(() => { pct = Math.min(pct + Math.random() * 8, 90); bar.style.width = pct + '%'; }, 400);
+  let stepIdx = 0;
+  const sInt = setInterval(() => {
+    if (stepIdx < visSteps.length) {
+      visSteps.forEach((s, i) => { s.className = 'a-step' + (i < stepIdx ? ' done' : i === stepIdx ? ' active' : ''); });
       stepIdx++;
     }
-  },1200);
+  }, 1200);
 
-  try{
-    const res=await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&category=PERFORMANCE&category=ACCESSIBILITY&category=SEO&category=BEST_PRACTICES&strategy=MOBILE`);
-    clearInterval(pInt);clearInterval(sInt);
-    bar.style.width='100%';
-    visSteps.forEach(s=>s.className='a-step done');
+  try {
+    const res = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&category=PERFORMANCE&category=ACCESSIBILITY&category=SEO&category=BEST_PRACTICES&strategy=MOBILE`);
+    clearInterval(pInt); clearInterval(sInt);
+    bar.style.width = '100%';
+    visSteps.forEach(s => s.className = 'a-step done');
 
-    if(!res.ok)throw new Error('API error');
-    const data=await res.json();
-    const cats=data.lighthouseResult.categories;
-    const perf=Math.round((cats.performance?.score||0)*100);
-    const acc=Math.round((cats.accessibility?.score||0)*100);
-    const seo=Math.round((cats.seo?.score||0)*100);
-    const bp=Math.round((cats['best-practices']?.score||0)*100);
-    const overall=Math.round((perf+acc+seo+bp)/4);
+    if (!res.ok) throw new Error('API error');
+    const data = await res.json();
+    const cats = data.lighthouseResult.categories;
+    const perf = Math.round((cats.performance?.score || 0) * 100);
+    const acc = Math.round((cats.accessibility?.score || 0) * 100);
+    const seo = Math.round((cats.seo?.score || 0) * 100);
+    const bp = Math.round((cats['best-practices']?.score || 0) * 100);
+    const overall = Math.round((perf + acc + seo + bp) / 4);
 
-    setTimeout(()=>{
-      prog.style.display='none';
-      showResults(url,overall,perf,acc,seo,bp,isEs);
-    },600);
-  }catch(e){
-    clearInterval(pInt);clearInterval(sInt);
-    bar.style.width='100%';
-    setTimeout(()=>{
-      prog.style.display='none';
-      // Fallback: show generic results if API fails
-      showResults(url,55,45,65,50,60,isEs);
-    },600);
+    setTimeout(() => {
+      prog.style.display = 'none';
+      showResults(url, overall, perf, acc, seo, bp, isEs);
+    }, 600);
+  } catch (e) {
+    clearInterval(pInt); clearInterval(sInt);
+    bar.style.width = '100%';
+    setTimeout(() => {
+      prog.style.display = 'none';
+      showResults(url, 55, 45, 65, 50, 60, isEs);
+    }, 600);
   }
 }
 
-function showResults(url,overall,perf,acc,seo,bp,isEs){
-  const results=document.getElementById('analyzerResults');
-  results.style.display='block';
-  document.getElementById('resultUrl').textContent=url.replace(/^https?:\/\//,'');
+function showResults(url, overall, perf, acc, seo, bp, isEs) {
+  const results = document.getElementById('analyzerResults');
+  results.style.display = 'block';
+  document.getElementById('resultUrl').textContent = url.replace(/^https?:\/\//, '');
 
-  // Animate score ring
-  const ring=document.getElementById('scoreRing');
-  const circ=327;
-  const offset=circ-(circ*overall/100);
-  const cls=overall>=80?'good':overall>=50?'mid':'bad';
-  ring.className='score-ring '+cls;
-  setTimeout(()=>{ring.style.strokeDashoffset=offset},100);
+  const ring = document.getElementById('scoreRing');
+  const circ = 327;
+  const offset = circ - (circ * overall / 100);
+  const cls = overall >= 80 ? 'good' : overall >= 50 ? 'mid' : 'bad';
+  ring.className = 'score-ring ' + cls;
+  setTimeout(() => { ring.style.strokeDashoffset = offset; }, 100);
 
-  // Animate number
-  const numEl=document.getElementById('scoreNum');
-  let cur=0;
-  const inc=Math.max(1,Math.floor(overall/40));
-  const cInt=setInterval(()=>{cur+=inc;if(cur>=overall){cur=overall;clearInterval(cInt)}numEl.textContent=cur},30);
+  const numEl = document.getElementById('scoreNum');
+  let cur = 0;
+  const inc = Math.max(1, Math.floor(overall / 40));
+  const cInt = setInterval(() => { cur += inc; if (cur >= overall) { cur = overall; clearInterval(cInt); } numEl.textContent = cur; }, 30);
 
-  // Label
-  const label=document.getElementById('scoreLabel');
-  const labels={good:isEs?'Buen rendimiento':'Good Performance',mid:isEs?'Necesita mejoras':'Needs Improvement',bad:isEs?'Rendimiento bajo':'Poor Performance'};
-  const descs={
-    good:isEs?'Tu sitio tiene buenas bases pero siempre hay espacio para mejorar la velocidad y conversión.':'Your site has a solid foundation but there\'s always room to improve speed and conversion.',
-    mid:isEs?'Tu sitio tiene una base decente pero le faltan elementos clave que convertirían más visitantes en clientes.':'Your site has a decent foundation but is missing key elements that would convert more visitors into customers.',
-    bad:isEs?'Tu sitio tiene problemas serios que están costándote clientes. Necesita una reconstrucción.':'Your site has serious issues that are costing you customers. It needs a rebuild.'
+  const label = document.getElementById('scoreLabel');
+  const labels = { good: isEs ? 'Buen rendimiento' : 'Good Performance', mid: isEs ? 'Necesita mejoras' : 'Needs Improvement', bad: isEs ? 'Rendimiento bajo' : 'Poor Performance' };
+  const descs = {
+    good: isEs ? 'Tu sitio tiene buenas bases pero siempre hay espacio para mejorar la velocidad y conversion.' : 'Your site has a solid foundation but there\'s always room to improve speed and conversion.',
+    mid: isEs ? 'Tu sitio tiene una base decente pero le faltan elementos clave que convertirian mas visitantes en clientes.' : 'Your site has a decent foundation but is missing key elements that would convert more visitors into customers.',
+    bad: isEs ? 'Tu sitio tiene problemas serios que estan costandote clientes. Necesita una reconstruccion.' : 'Your site has serious issues that are costing you customers. It needs a rebuild.'
   };
-  label.textContent=labels[cls];label.className='analyzer-score-label '+cls;
-  document.getElementById('scoreDesc').textContent=descs[cls];
+  label.textContent = labels[cls]; label.className = 'analyzer-score-label ' + cls;
+  document.getElementById('scoreDesc').textContent = descs[cls];
 
-  // Categories
-  const catsEl=document.getElementById('scoreCats');
-  const catData=[
-    {name:isEs?'Rendimiento':'Performance',score:perf},
-    {name:isEs?'Accesibilidad':'Accessibility',score:acc},
-    {name:'SEO',score:seo},
-    {name:isEs?'Buenas prácticas':'Best Practices',score:bp}
+  const catsEl = document.getElementById('scoreCats');
+  const catData = [
+    { name: isEs ? 'Rendimiento' : 'Performance', score: perf },
+    { name: isEs ? 'Accesibilidad' : 'Accessibility', score: acc },
+    { name: 'SEO', score: seo },
+    { name: isEs ? 'Buenas practicas' : 'Best Practices', score: bp }
   ];
-  catsEl.innerHTML=catData.map(c=>{
-    const cc=c.score>=80?'good':c.score>=50?'mid':'bad';
+  catsEl.innerHTML = catData.map(c => {
+    const cc = c.score >= 80 ? 'good' : c.score >= 50 ? 'mid' : 'bad';
     return `<div class="analyzer-cat"><span class="analyzer-cat-name">${c.name}</span><span class="analyzer-cat-score ${cc}">${c.score}/100</span></div>`;
   }).join('');
 
-  results.querySelectorAll('.r').forEach(el=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');o.unobserve(x.target)}})},{threshold:.1});o.observe(el)});
-}
-
-function resetAnalyzer(){
-  document.getElementById('analyzerResults').style.display='none';
-  document.getElementById('analyzerProgress').style.display='none';
-  document.getElementById('analyzerInput').style.display='block';
-  document.getElementById('scoreUrl').value='';
-  document.getElementById('scoreRing').style.strokeDashoffset=327;
-  document.getElementById('progressBar').style.width='0%';
-}
-
-// Contact form
-const form=document.getElementById('contactForm');
-const formStatus=document.getElementById('formStatus');
-const formBtn=document.getElementById('formBtn');
-if(form){
-  // Set textarea placeholder based on lang
-  function updatePlaceholders(){
-    const ta=document.getElementById('cf-msg');
-    const isEs=document.body.classList.contains('lang-es');
-    ta.placeholder=isEs?ta.dataset.placeholderEs:ta.dataset.placeholderEn;
-  }
-  updatePlaceholders();
-  const origSetLang=setLang;
-  setLang=function(l){origSetLang(l);updatePlaceholders()};
-
-  form.addEventListener('submit',async(e)=>{
-    e.preventDefault();
-    const isEs=document.body.classList.contains('lang-es');
-    formBtn.disabled=true;
-    formBtn.innerHTML=isEs?'Enviando...':'Sending...';
-    formStatus.textContent='';
-    formStatus.className='form-status';
-    try{
-      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(res.ok){
-        formStatus.textContent=isEs?'✓ ¡Mensaje enviado! Te contactamos en 24 horas.':'✓ Message sent! We\'ll get back to you within 24 hours.';
-        formStatus.className='form-status success';
-        form.reset();
-        updatePlaceholders();
-      }else{
-        throw new Error();
-      }
-    }catch{
-      formStatus.textContent=isEs?'Error al enviar. Llámanos al 682.600.7984':'Failed to send. Call us at 682.600.7984';
-      formStatus.className='form-status error';
-    }
-    formBtn.disabled=false;
-    formBtn.innerHTML=isEs?'Enviar mensaje →':'Send message →';
+  results.querySelectorAll('.r').forEach(el => {
+    const o = new IntersectionObserver(e => { e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('vis'); o.unobserve(x.target); } }); }, { threshold: .1 });
+    o.observe(el);
   });
 }
 
-// 3D tilt on visuals
-document.querySelectorAll('.vis-browser,.vis-phone,.vis-graph-wrap,.vis-logo-wrap,.vis-print-wrap,.vis-viewfinder,.cta-card,.hero-poster').forEach(el=>{
-  el.addEventListener('mousemove',e=>{if(innerWidth<1024)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`translateY(-8px) perspective(600px) rotateX(${y*-5}deg) rotateY(${x*5}deg)`});
-  el.addEventListener('mouseleave',()=>{el.style.transform=''});
+function resetAnalyzer() {
+  document.getElementById('analyzerResults').style.display = 'none';
+  document.getElementById('analyzerProgress').style.display = 'none';
+  document.getElementById('analyzerInput').style.display = 'block';
+  document.getElementById('scoreUrl').value = '';
+  document.getElementById('scoreRing').style.strokeDashoffset = 327;
+  document.getElementById('progressBar').style.width = '0%';
+}
+
+// Contact form
+const form = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+const formBtn = document.getElementById('formBtn');
+if (form) {
+  function updatePlaceholders() {
+    const ta = document.getElementById('cf-msg');
+    const isEs = document.body.classList.contains('lang-es');
+    ta.placeholder = isEs ? ta.dataset.placeholderEs : ta.dataset.placeholderEn;
+  }
+  updatePlaceholders();
+  const origSetLang = setLang;
+  setLang = function(l) { origSetLang(l); updatePlaceholders(); };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const isEs = document.body.classList.contains('lang-es');
+    formBtn.disabled = true;
+    formBtn.innerHTML = isEs ? 'Enviando...' : 'Sending...';
+    formStatus.textContent = '';
+    formStatus.className = 'form-status';
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        formStatus.textContent = isEs ? '&#10003; Mensaje enviado! Te contactamos en 24 horas.' : '&#10003; Message sent! We\'ll get back to you within 24 hours.';
+        formStatus.className = 'form-status success';
+        form.reset();
+        updatePlaceholders();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      formStatus.textContent = isEs ? 'Error al enviar. Llamanos al 682.600.7984' : 'Failed to send. Call us at 682.600.7984';
+      formStatus.className = 'form-status error';
+    }
+    formBtn.disabled = false;
+    formBtn.innerHTML = isEs ? 'Enviar mensaje &rarr;' : 'Send message &rarr;';
+  });
+}
+
+// Subtle parallax on hero (mouse-based)
+document.addEventListener('mousemove', (e) => {
+  if (innerWidth < 1024) return;
+  const hero = document.querySelector('.hero-content');
+  if (!hero) return;
+  const x = (e.clientX / innerWidth - .5) * 8;
+  const y = (e.clientY / innerHeight - .5) * 8;
+  hero.style.transform = `translate(${x}px, ${y}px)`;
 });
 </script>
 </body>
