@@ -1,0 +1,71 @@
+{%- extends "layouts/base.njk" -%}
+{%- from "partials/icons.njk" import icon -%}
+
+{% block content %}
+{%- set t = ui[lang] -%}
+{%- set w = work[lang] -%}
+{%- set bookUrl = "/es/agendar/" if lang == "es" else "/book/" -%}
+
+<section class="hero">
+  <div class="container container-narrow">
+    <span class="eyebrow">{{ w.eyebrow }}</span>
+    <h1 style="margin-top:14px">{{ w.h1 }}</h1>
+    <p class="lede" style="margin-top:20px;max-width:52ch">{{ w.lede }}</p>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container">
+    {%- for p in work.projects %}
+    {%- set pl = p[lang] %}
+    <article class="card work-card reveal" style="margin-bottom:28px">
+      <div class="work-media">
+        {%- if p.image %}
+        <img src="{{ p.image }}" width="1440" height="900" alt="{{ pl.name }} — {{ pl.kicker }}">
+        {%- else %}
+        <div class="browser-fallback" style="height:100%">
+          <span class="eyebrow">{{ p.domain }}</span>
+          <p style="font-family:var(--serif);font-size:2rem;font-weight:600">{{ pl.name }}</p>
+          <p class="muted" style="font-size:.9rem">{{ pl.kicker }}</p>
+        </div>
+        {%- endif %}
+      </div>
+      <div class="work-body">
+        <span class="eyebrow">{{ pl.kicker }}</span>
+        <h2 style="margin:10px 0 14px">{{ pl.name }}</h2>
+        <p class="muted">{{ pl.detail }}</p>
+        <ul class="checklist" style="margin-top:22px">
+          {%- for pt in pl.points %}
+          <li>{{ icon("check", 17) }} <span>{{ pt }}</span></li>
+          {%- endfor %}
+        </ul>
+        <div class="work-tags">
+          {%- for tag in p.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </div>
+        <p style="margin-top:24px">
+          <a class="btn btn-secondary" href="{{ p.url }}" target="_blank" rel="noopener">{{ pl.visit }}</a>
+        </p>
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container container-narrow">
+    <h2>{{ w.honestH }}</h2>
+    <p class="muted" style="margin-top:14px;max-width:66ch">{{ w.honestP }}</p>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container container-narrow" style="text-align:center">
+    <h2>{{ 'Que el tuyo sea el siguiente.' if lang == 'es' else 'Make yours the next one.' }}</h2>
+    <p class="muted" style="margin-top:14px">{{ 'Quince minutos, sin venta.' if lang == 'es' else 'Fifteen minutes, no pitch.' }}</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn btn-onDark btn-lg" href="{{ bookUrl }}">{{ t.book }}</a>
+      <a class="btn btn-ghostDark btn-lg" href="{{ site.phoneHref }}">{{ icon("phone", 17) }} {{ site.phone }}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

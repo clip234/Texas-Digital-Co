@@ -1,0 +1,46 @@
+{
+  "en": {
+    "metaTitle": "Book a 15-Minute Call — Texas Digital Co., Waco TX",
+    "metaDesc": "Pick a time for a free 15-minute call with Texas Digital Co. in Waco, Texas. No pitch — we tell you what your project needs, what it costs, and whether it is worth doing.",
+    "eyebrow": "Booking",
+    "h1": "Pick a time. Fifteen minutes.",
+    "lede": "No pitch and no deck. You describe what the business does and where it is stuck; we tell you whether we can help, roughly what it costs, and how long it takes.",
+    "expectH": "What happens on the call",
+    "expect": [
+      "You talk first. We ask questions until we understand the actual problem.",
+      "We give you a real number, or a real range if the job needs scoping.",
+      "If we are not the right fit, we say so and point you somewhere better.",
+      "Nothing is charged and nothing is signed on this call."
+    ],
+    "prefH": "Prefer not to book?",
+    "prefP": "Call or text the number below any time, or send the form and we reply the same day.",
+    "calH": "Available times",
+    "calWait": "Loading the calendar…",
+    "calFallH": "Calendar not loading?",
+    "calFallP": "Call or text 682.600.7984, or use the form below. Either one reaches the same person.",
+    "formH": "Send a message instead",
+    "formP": "Answered the same day. We never sell or share your details."
+  },
+  "es": {
+    "metaTitle": "Agenda una llamada de 15 minutos — Texas Digital Co., Waco TX",
+    "metaDesc": "Escoge una hora para una llamada gratis de 15 minutos con Texas Digital Co. en Waco, Texas. Sin venta — te decimos qué necesita tu proyecto, cuánto cuesta y si vale la pena hacerlo.",
+    "eyebrow": "Agenda",
+    "h1": "Escoge una hora. Quince minutos.",
+    "lede": "Sin venta y sin presentación. Nos cuentas qué hace el negocio y dónde está atorado; te decimos si podemos ayudar, cuánto cuesta más o menos y cuánto tarda.",
+    "expectH": "Qué pasa en la llamada",
+    "expect": [
+      "Hablas tú primero. Preguntamos hasta entender el problema real.",
+      "Te damos un número real, o un rango real si el trabajo necesita revisarse.",
+      "Si no somos lo que necesitas, te lo decimos y te mandamos a algo mejor.",
+      "No se cobra nada y no se firma nada en esta llamada."
+    ],
+    "prefH": "¿Prefieres no agendar?",
+    "prefP": "Llama o manda mensaje al número de abajo cuando quieras, o manda el formulario y te contestamos el mismo día.",
+    "calH": "Horarios disponibles",
+    "calWait": "Cargando el calendario…",
+    "calFallH": "¿No carga el calendario?",
+    "calFallP": "Llama o manda mensaje al 682.600.7984, o usa el formulario de abajo. Los dos llegan a la misma persona.",
+    "formH": "Mejor manda un mensaje",
+    "formP": "Contestamos el mismo día. Nunca vendemos ni compartimos tus datos."
+  }
+}

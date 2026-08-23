@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {
+      "id": "emex",
+      "url": "https://e-mex.net",
+      "domain": "e-mex.net",
+      "image": "",
+      "tags": ["Next.js", "Supabase", "Multi-carrier API", "Bilingual UI"],
+      "en": {
+        "kicker": "Shipping platform",
+        "name": "E-Mex",
+        "summary": "A full shipping platform, not a brochure site. Customers enter a route and get live rates from several carriers, in English or Spanish, on the phone they are holding.",
+        "detail": "E-Mex needed the quoting work that was happening over WhatsApp and phone calls to happen on a screen instead. We built a Next.js front end on a Supabase back end, wired it to multiple carrier APIs so rates come back in real time, and built the interface bilingual from the first screen rather than bolting Spanish on at the end. It went from nothing to a working product customers could use in a matter of weeks.",
+        "points": [
+          "Live multi-carrier rate quoting instead of manual lookups",
+          "Bilingual interface designed in both languages from the start",
+          "Supabase back end — accounts, quotes, and history in one place",
+          "Built and shipped to a usable MVP in weeks, not quarters"
+        ],
+        "visit": "Open e-mex.net"
+      },
+      "es": {
+        "kicker": "Plataforma de envíos",
+        "name": "E-Mex",
+        "summary": "Una plataforma de envíos completa, no un sitio de folleto. El cliente mete una ruta y recibe tarifas en vivo de varias paqueterías, en español o inglés, desde el celular que trae en la mano.",
+        "detail": "E-Mex necesitaba que la cotización que pasaba por WhatsApp y llamadas pasara en una pantalla. Construimos un front end en Next.js sobre un back end de Supabase, lo conectamos a varias APIs de paqueterías para que las tarifas regresen en tiempo real, y armamos la interfaz bilingüe desde la primera pantalla en vez de pegarle el español al final. Pasó de cero a un producto funcional que los clientes podían usar en cuestión de semanas.",
+        "points": [
+          "Cotización en vivo de varias paqueterías en vez de búsquedas manuales",
+          "Interfaz bilingüe diseñada en los dos idiomas desde el inicio",
+          "Back end en Supabase — cuentas, cotizaciones e historial en un solo lugar",
+          "Construido y lanzado a un MVP usable en semanas, no en trimestres"
+        ],
+        "visit": "Abrir e-mex.net"
+      }
+    }
+  ],
+  "en": {
+    "metaTitle": "Our Work — Texas Digital Co., Waco TX",
+    "metaDesc": "Finished, live work from Texas Digital Co. in Waco, Texas. Real projects you can open and use, not mockups.",
+    "eyebrow": "Work",
+    "h1": "Work you can open and use.",
+    "lede": "We are a new shop, so this page is short and everything on it is real. No mockups, no concept pieces, no client logos we do not have permission to show.",
+    "honestH": "Why this page is short",
+    "honestP": "Texas Digital Co. is taking on its first clients. Rather than fill this page with stock mockups or invented case studies, we show the work that actually exists and is live on the internet right now. That list will grow. Until it does, the terms are what protect you: a fixed written price, no contract, and full ownership of everything we build for you."
+  },
+  "es": {
+    "metaTitle": "Proyectos — Texas Digital Co., Waco TX",
+    "metaDesc": "Trabajo terminado y en línea de Texas Digital Co. en Waco, Texas. Proyectos reales que puedes abrir y usar, no maquetas.",
+    "eyebrow": "Proyectos",
+    "h1": "Trabajo que puedes abrir y usar.",
+    "lede": "Somos un taller nuevo, así que esta página es corta y todo lo que está aquí es real. Sin maquetas, sin piezas de concepto, sin logos de clientes que no tenemos permiso de mostrar.",
+    "honestH": "Por qué esta página es corta",
+    "honestP": "Texas Digital Co. está tomando sus primeros clientes. En vez de llenar esta página con maquetas de banco de imágenes o casos inventados, mostramos el trabajo que sí existe y está en línea ahora mismo. Esa lista va a crecer. Mientras tanto, lo que te protege son las condiciones: precio fijo por escrito, sin contrato, y propiedad completa de todo lo que construimos para ti."
+  }
+}

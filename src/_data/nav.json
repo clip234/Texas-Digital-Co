@@ -1,0 +1,14 @@
+{
+  "en": [
+    { "label": "Services", "url": "/#services" },
+    { "label": "Work", "url": "/work/" },
+    { "label": "Pricing", "url": "/#pricing" },
+    { "label": "Process", "url": "/#process" }
+  ],
+  "es": [
+    { "label": "Servicios", "url": "/es/#services" },
+    { "label": "Proyectos", "url": "/es/proyectos/" },
+    { "label": "Precios", "url": "/es/#pricing" },
+    { "label": "Proceso", "url": "/es/#process" }
+  ]
+}

@@ -1,0 +1,20 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for p in collections.all %}
+{%- if p.url and not p.data.noindex and p.url != "/sitemap.xml" %}
+  <url>
+    <loc>{{ site.url }}{{ p.url }}</loc>
+    {%- if p.data.altUrl %}
+    <xhtml:link rel="alternate" hreflang="{{ p.data.lang }}" href="{{ site.url }}{{ p.url }}"/>
+    <xhtml:link rel="alternate" hreflang="{{ 'en' if p.data.lang == 'es' else 'es' }}" href="{{ site.url }}{{ p.data.altUrl }}"/>
+    {%- endif %}
+    <changefreq>{{ "weekly" if p.url == "/" or p.url == "/es/" else "monthly" }}</changefreq>
+    <priority>{{ "1.0" if p.url == "/" else ("0.9" if p.url == "/es/" else "0.7") }}</priority>
+  </url>
+{%- endif %}
+{%- endfor %}
+</urlset>

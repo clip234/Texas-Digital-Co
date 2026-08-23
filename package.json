@@ -1,0 +1,14 @@
+{
+  "name": "texas-digital-co",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Texas Digital Co. — Waco, TX digital agency",
+  "scripts": {
+    "dev": "eleventy --serve --port=8080",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "type": "module"
+}

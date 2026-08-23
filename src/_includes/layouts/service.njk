@@ -1,0 +1,113 @@
+{%- extends "layouts/base.njk" -%}
+{%- from "partials/icons.njk" import icon -%}
+
+{% block content %}
+{%- set t = ui[lang] -%}
+{%- set sl = service[lang] -%}
+{%- set servicesBase = "/es/servicios/" if lang == "es" else "/services/" -%}
+{%- set bookUrl = "/es/agendar/" if lang == "es" else "/book/" -%}
+{%- set homeUrl = "/es/" if lang == "es" else "/" -%}
+
+<section class="hero">
+  <div class="container container-narrow">
+    <p class="eyebrow"><a href="{{ homeUrl }}#services">{{ t.servicesLabel }}</a></p>
+    <h1 style="margin-top:14px">{{ sl.name }}</h1>
+    <p class="lede" style="margin-top:20px;max-width:44ch">{{ sl.tagline }}</p>
+
+    <p style="margin-top:26px;font-family:var(--serif);font-size:1.5rem;font-weight:600">
+      {{ t.startingAt }} {{ sl.price }}
+      <small class="pricing-note">{{ sl.priceNote }}</small>
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="{{ bookUrl }}">{{ t.book }}</a>
+      <a class="btn btn-secondary btn-lg" href="{{ site.phoneHref }}">{{ icon("phone", 17) }} {{ site.phone }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container container-narrow">
+    <div class="rule"></div>
+    <div class="prose" style="margin-top:34px">
+      <p class="lede">{{ sl.intro }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container container-narrow">
+    <div class="section-head">
+      <span class="eyebrow">{{ t.whatsIncluded }}</span>
+      <h2>{{ sl.name }} — {{ sl.price }}</h2>
+    </div>
+    <div class="card" style="padding:clamp(22px,3vw,34px)">
+      <ul class="checklist">
+        {%- for item in sl.includes %}
+        <li>{{ icon("check", 17) }} <span>{{ item }}</span></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow prose">
+    {%- for sec in sl.sections %}
+    <div class="reveal" style="margin-bottom:40px">
+      <h2 style="margin-bottom:12px">{{ sec.h }}</h2>
+      <p class="muted">{{ sec.p }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section-tight section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ t.allServices }}</span>
+      <h2>{{ 'Lo demás que hacemos' if lang == 'es' else 'The rest of what we do' }}</h2>
+    </div>
+    <div class="grid grid-3">
+      {%- for s in services %}{% if s.slug != service.slug %}
+      {%- set o = s[lang] %}
+      <a class="card card-link service-card" href="{{ servicesBase }}{{ s.slugEs if lang == 'es' else s.slug }}/">
+        <span class="service-icon">{{ icon(s.icon, 21) }}</span>
+        <h3>{{ o.name }}</h3>
+        <p>{{ o.tagline }}</p>
+        <span class="service-meta">
+          <span class="service-price">{{ o.price }}<small>{{ o.priceNote }}</small></span>
+          <span class="link-arrow">{{ t.learnMore }} {{ icon("arrow", 15) }}</span>
+        </span>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container container-narrow" style="text-align:center">
+    <h2>{{ 'Hablemos de tu caso.' if lang == 'es' else "Let's talk about your case." }}</h2>
+    <p class="muted" style="margin-top:14px">{{ 'Quince minutos. Te decimos si esto te sirve y cuánto costaría en tu situación.' if lang == 'es' else 'Fifteen minutes. We tell you whether this is worth it for you and what it would cost in your situation.' }}</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn btn-onDark btn-lg" href="{{ bookUrl }}">{{ t.book }}</a>
+      <a class="btn btn-ghostDark btn-lg" href="{{ site.phoneHref }}">{{ icon("phone", 17) }} {{ site.phone }}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ service[lang].name | dump | safe }},
+  "description": {{ service[lang].metaDesc | dump | safe }},
+  "serviceType": {{ service[lang].name | dump | safe }},
+  "url": "{{ site.url }}{{ page.url }}",
+  "provider": { "@type": "ProfessionalService", "@id": "{{ site.url }}/#business", "name": "{{ site.name }}" },
+  "areaServed": [{% for c in site.areaServed %}{ "@type": "City", "name": "{{ c }}, TX" }{{ "," if not loop.last }}{% endfor %}]
+}
+</script>
+{% endblock %}

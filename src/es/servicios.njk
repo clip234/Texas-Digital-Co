@@ -1,0 +1,15 @@
+---
+layout: layouts/service.njk
+lang: es
+pagination:
+  data: services
+  size: 1
+  alias: service
+  addAllPagesToCollections: true
+eleventyComputed:
+  permalink: "/es/servicios/{{ service.slugEs }}/"
+  altUrl: "/services/{{ service.slug }}/"
+  title: "{{ service.es.metaTitle }}"
+  metaTitle: "{{ service.es.metaTitle }}"
+  metaDesc: "{{ service.es.metaDesc }}"
+---

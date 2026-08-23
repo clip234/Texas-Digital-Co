@@ -1,0 +1,175 @@
+{%- extends "layouts/base.njk" -%}
+{%- from "partials/icons.njk" import icon -%}
+
+{% block content %}
+{%- set t = ui[lang] -%}
+{%- set b = book[lang] -%}
+
+<section class="hero" style="padding-bottom:0">
+  <div class="container container-narrow">
+    <span class="eyebrow">{{ b.eyebrow }}</span>
+    <h1 style="margin-top:14px">{{ b.h1 }}</h1>
+    <p class="lede" style="margin-top:20px;max-width:52ch">{{ b.lede }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container booking-grid">
+
+    <aside>
+      <h2 style="font-size:1.25rem">{{ b.expectH }}</h2>
+      <ul class="checklist" style="margin-top:18px">
+        {%- for e in b.expect %}
+        <li>{{ icon("check", 17) }} <span>{{ e }}</span></li>
+        {%- endfor %}
+      </ul>
+
+      <div class="rule" style="margin:30px 0 6px"></div>
+
+      <h2 style="font-size:1.25rem;margin-top:24px">{{ b.prefH }}</h2>
+      <p class="muted" style="margin-top:10px;font-size:.95rem">{{ b.prefP }}</p>
+
+      <div style="margin-top:18px">
+        <a class="contact-line" href="{{ site.phoneHref }}">
+          {{ icon("phone", 19) }}
+          <span><span class="label">{{ t.call }}</span><br><span class="value">{{ site.phone }}</span></span>
+        </a>
+        <a class="contact-line" href="mailto:{{ site.email }}">
+          {{ icon("mail", 19) }}
+          <span><span class="label">Email</span><br><span class="value">{{ site.email }}</span></span>
+        </a>
+        <div class="contact-line">
+          {{ icon("clock", 19) }}
+          <span><span class="label">{{ 'Horario' if lang == 'es' else 'Hours' }}</span><br><span class="value">{{ t.hours }}</span></span>
+        </div>
+        <div class="contact-line" style="border-bottom:0">
+          {{ icon("pin", 19) }}
+          <span><span class="label">{{ 'Ubicación' if lang == 'es' else 'Location' }}</span><br><span class="value">{{ t.basedIn }}</span></span>
+        </div>
+      </div>
+    </aside>
+
+    <div>
+      <h2 style="font-size:1.25rem;margin-bottom:16px">{{ b.calH }}</h2>
+      <div class="cal-frame" id="calFrame">
+        <div class="cal-fallback" id="calFallback">
+          <p class="muted" id="calWait">{{ b.calWait }}</p>
+          <div id="calError" hidden>
+            <h3>{{ b.calFallH }}</h3>
+            <p class="muted" style="margin-top:10px">{{ b.calFallP }}</p>
+            <p style="margin-top:18px"><a class="btn btn-primary" href="{{ site.phoneHref }}">{{ icon("phone", 17) }} {{ site.phone }}</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rule" style="margin:44px 0 0"></div>
+
+      <h2 style="font-size:1.25rem;margin-top:36px">{{ b.formH }}</h2>
+      <p class="muted" style="margin-top:8px;font-size:.95rem">{{ b.formP }}</p>
+
+      <form id="contactForm" class="card" style="padding:clamp(20px,3vw,28px);margin-top:20px"
+            action="{{ site.formspree }}" method="POST"
+            data-sending="{{ t.formSending }}" data-ok="{{ t.formOk }}" data-err="{{ t.formErr }}">
+        <input type="hidden" name="_subject" value="New enquiry — texasdigitalco.com ({{ lang }})">
+        <input type="hidden" name="lang" value="{{ lang }}">
+        <p class="hp"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+
+        <div class="grid grid-2" style="gap:0 18px">
+          <div class="field">
+            <label for="f-name">{{ t.formName }}</label>
+            <input class="input" id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">{{ t.formEmail }}</label>
+            <input class="input" id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-phone">{{ t.formPhone }} <span class="hint">{{ t.formPhoneHint }}</span></label>
+          <input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+
+        <div class="field">
+          <label for="f-service">{{ t.formService }}</label>
+          <select class="input" id="f-service" name="service" required>
+            <option value="">{{ t.formServicePick }}</option>
+            {%- for s in services %}
+            <option value="{{ s[lang].name }}">{{ s[lang].name }} — {{ s[lang].price }}</option>
+            {%- endfor %}
+            <option value="{{ 'Otro' if lang == 'es' else 'Something else' }}">{{ 'Otro' if lang == 'es' else 'Something else' }}</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-message">{{ t.formMessage }} <span class="hint">{{ t.formMessageHint }}</span></label>
+          <textarea class="input" id="f-message" name="message" rows="4"></textarea>
+        </div>
+
+        <button class="btn btn-primary btn-lg btn-block" type="submit">{{ t.formSubmit }}</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function (C, A, L) {
+  var p = function (a, ar) { a.q.push(ar); };
+  var d = C.document;
+  C.Cal = C.Cal || function () {
+    var cal = C.Cal, ar = arguments;
+    if (!cal.loaded) {
+      cal.ns = {}; cal.q = cal.q || [];
+      d.head.appendChild(d.createElement("script")).src = A;
+      cal.loaded = true;
+    }
+    if (ar[0] === L) {
+      var api = function () { p(api, arguments); };
+      var namespace = ar[1];
+      api.q = api.q || [];
+      if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); }
+      else p(cal, ar);
+      return;
+    }
+    p(cal, ar);
+  };
+})(window, "https://app.cal.com/embed/embed.js", "init");
+
+Cal("init", { origin: "https://app.cal.com" });
+Cal("inline", {
+  elementOrSelector: "#calFrame",
+  calLink: {{ site.calLink | dump | safe }},
+  layout: "month_view"
+});
+Cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+
+// If the embed never renders, surface a route that actually works.
+(function () {
+  var frame = document.getElementById("calFrame");
+  var wait = document.getElementById("calWait");
+  var err = document.getElementById("calError");
+  var fallback = document.getElementById("calFallback");
+  var done = false;
+
+  function loaded() {
+    if (done) return;
+    done = true;
+    if (fallback && fallback.parentNode) fallback.parentNode.removeChild(fallback);
+  }
+  var obs = new MutationObserver(function () {
+    if (frame.querySelector("iframe")) loaded();
+  });
+  obs.observe(frame, { childList: true, subtree: true });
+
+  setTimeout(function () {
+    if (done) return;
+    obs.disconnect();
+    if (wait) wait.hidden = true;
+    if (err) err.hidden = false;
+  }, 8000);
+})();
+</script>
+{% endblock %}
