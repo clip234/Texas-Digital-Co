@@ -1,285 +1,241 @@
-{%- extends "layouts/base.njk" -%}
-{%- from "partials/icons.njk" import icon -%}
+{% extends "layouts/base.njk" %}
+{%- set h = home[lang] -%}
+{%- set p = work.projects[0] -%}
+{%- set pd = p[lang] -%}
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "@id":"{{ site.url }}/#org",
+  "name":"Texas Digital Co.",
+  "url":"{{ site.url }}",
+  "email":"{{ site.email }}",
+  "description":"{{ h.metaDesc }}",
+  "knowsLanguage":["en","es"],
+  "makesOffer":[{% for s in services %}{
+    "@type":"Offer",
+    "itemOffered":{"@type":"Service","name":"{{ s[lang].name }}","description":"{{ s[lang].tagline }}"}
+  }{{ "," if not loop.last }}{% endfor %}]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[{% for f in h.faqs %}{
+    "@type":"Question","name":{{ f.q | dump | safe }},
+    "acceptedAnswer":{"@type":"Answer","text":{{ f.a | dump | safe }}}
+  }{{ "," if not loop.last }}{% endfor %}]
+}
+</script>
+{% endblock %}
 
 {% block content %}
-{%- set t = ui[lang] -%}
-{%- set h = home[lang] -%}
-{%- set w = work[lang] -%}
-{%- set p = work.projects[0] -%}
-{%- set pl = p[lang] -%}
-{%- set servicesBase = "/es/servicios/" if lang == "es" else "/services/" -%}
-{%- set bookUrl = "/es/agendar/" if lang == "es" else "/book/" -%}
-{%- set workUrl = "/es/proyectos/" if lang == "es" else "/work/" -%}
 
-<!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="eyebrow">{{ icon("pin", 15) }} {{ h.eyebrow }}</span>
-      <h1>{{ h.h1 }}</h1>
-      <p class="lede hero-lede">{{ h.lede }}</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="{{ bookUrl }}">{{ t.book }}</a>
-        <a class="btn btn-secondary btn-lg" href="{{ site.phoneHref }}">{{ icon("phone", 17) }} {{ site.phone }}</a>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">{{ h.eyebrow }}</span>
+        <h1>{{ h.h1 }}</h1>
+        <p class="lede">{{ h.lede }}</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="{{ startUrl }}">{{ t.book }}</a>
+          <a class="btn btn--outline-light" href="#services">{{ t.allServices }}</a>
+        </div>
       </div>
-      <ul class="hero-facts stack">
+      <ul class="hero-facts">
         {%- for f in h.facts %}
-        <li class="hero-fact">{{ icon(f.icon, 16) }} {{ f.text | safe }}</li>
+        <li class="hero-fact">{{ icon("check") }}<span>{{ f.text }}</span></li>
         {%- endfor %}
       </ul>
-    </div>
-
-    <div class="hero-visual">
-      <div class="browser">
-        <div class="browser-bar">
-          <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
-          <span class="browser-url">{{ p.domain }}</span>
-        </div>
-        {%- if p.image %}
-        <img src="{{ p.image }}" width="1440" height="900" alt="{{ pl.name }} — {{ pl.kicker }}">
-        {%- else %}
-        <div class="browser-fallback">
-          <span class="eyebrow">{{ pl.kicker }}</span>
-          <p style="font-family:var(--serif);font-size:1.5rem;font-weight:600">{{ pl.name }}</p>
-          <p class="muted" style="max-width:34ch;font-size:.92rem">{{ pl.summary }}</p>
-          <p style="margin-top:6px"><a class="link-arrow" href="{{ p.url }}" target="_blank" rel="noopener">{{ pl.visit }} {{ icon("arrow", 15) }}</a></p>
-        </div>
-        {%- endif %}
-      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="section section-alt" id="services">
+<section class="section" id="services">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">{{ h.servicesEyebrow }}</span>
-      <h2>{{ h.servicesH2 }}</h2>
-      <p class="muted">{{ h.servicesP }}</p>
+    <div class="sec-head sec-head--split reveal">
+      <div>
+        <span class="eyebrow">{{ h.servicesEyebrow }}</span>
+        <h2>{{ h.servicesH2 }}</h2>
+      </div>
+      <p>{{ h.servicesP }}</p>
     </div>
 
-    <div class="grid grid-3">
+    <div class="index reveal">
       {%- for s in services %}
-      {%- set sl = s[lang] %}
-      <a class="card card-link service-card reveal" href="{{ servicesBase }}{{ s.slugEs if lang == 'es' else s.slug }}/">
-        <span class="service-icon">{{ icon(s.icon, 21) }}</span>
-        <h3>{{ sl.name }}</h3>
-        <p>{{ sl.tagline }}</p>
-        <span class="service-meta">
-          <span class="service-price">{{ sl.price }}<small>{{ sl.priceNote }}</small></span>
-          <span class="link-arrow">{{ t.learnMore }} {{ icon("arrow", 15) }}</span>
-        </span>
+      {%- set d = s[lang] %}
+      <a class="index-row" href="{{ '/es/servicios/' + s.slugEs + '/' if lang == 'es' else '/services/' + s.slug + '/' }}">
+        <span class="index-num">{{ "0" + (loop.index | string) }}</span>
+        <span class="index-name">{{ d.name }}</span>
+        <span class="index-desc">{{ d.tagline }}</span>
+        <span class="index-price">{{ d.price }}<small>{{ d.priceNote }}</small></span>
+        <span class="index-arrow">{{ icon("arrow") }}</span>
       </a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<!-- ============ HOW WE WORK ============ -->
-<section class="section" id="terms">
+<section class="section section--dark" id="terms">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="sec-head reveal">
       <span class="eyebrow">{{ h.whyEyebrow }}</span>
       <h2>{{ h.whyH2 }}</h2>
     </div>
-    <div class="grid grid-2">
-      {%- for item in h.why %}
-      <div class="card reveal" style="padding:28px">
-        <h3 style="margin-bottom:10px">{{ item.h }}</h3>
-        <p class="muted">{{ item.p }}</p>
+    <div class="terms reveal">
+      {%- for w in h.why %}
+      <div class="term">
+        <span class="term-num">{{ "0" + (loop.index | string) }}</span>
+        <h3>{{ w.h }}</h3>
+        <p>{{ w.p }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<!-- ============ WORK ============ -->
-<section class="section section-alt" id="work">
+<section class="section section--wash">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">{{ w.eyebrow }}</span>
-      <h2>{{ w.h1 }}</h2>
-      <p class="muted">{{ w.lede }}</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow">{{ 'Proyectos' if lang == 'es' else 'Work' }}</span>
+      <h2>{{ 'Trabajo que puedes abrir ahora mismo.' if lang == 'es' else 'Work you can open right now.' }}</h2>
     </div>
 
-    <article class="card work-card reveal">
-      <div class="work-media">
+    <article class="project reveal">
+      <div class="project-media">
         {%- if p.image %}
-        <img src="{{ p.image }}" width="1440" height="900" alt="{{ pl.name }} — {{ pl.kicker }}">
+        <img src="{{ p.image }}" alt="{{ pd.name }}" loading="lazy" width="1200" height="750">
         {%- else %}
-        <div class="browser-fallback" style="height:100%">
-          <span class="eyebrow">{{ p.domain }}</span>
-          <p style="font-family:var(--serif);font-size:2rem;font-weight:600">{{ pl.name }}</p>
-          <p class="muted" style="font-size:.9rem">{{ pl.kicker }}</p>
+        <div class="project-fallback">
+          <span class="pf-kick">{{ pd.kicker }}</span>
+          <span class="pf-dom">{{ p.domain }}</span>
+          <span class="pf-live"><span class="pf-dot"></span>{{ 'En vivo' if lang == 'es' else 'Live' }}</span>
         </div>
         {%- endif %}
       </div>
-      <div class="work-body">
-        <span class="eyebrow">{{ pl.kicker }}</span>
-        <h3 style="margin:10px 0 12px">{{ pl.name }}</h3>
-        <p class="muted">{{ pl.summary }}</p>
-        <div class="work-tags">
+      <div>
+        <span class="project-kicker">{{ pd.kicker }}</span>
+        <h2>{{ pd.name }}</h2>
+        <p class="project-summary">{{ pd.summary }}</p>
+        <div class="tags">
           {%- for tag in p.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
         </div>
-        <p style="margin-top:24px;display:flex;gap:18px;flex-wrap:wrap">
-          <a class="btn btn-secondary" href="{{ p.url }}" target="_blank" rel="noopener">{{ pl.visit }}</a>
-          <a class="link-arrow" href="{{ workUrl }}" style="align-self:center">{{ 'Ver el detalle' if lang == 'es' else 'Read the detail' }} {{ icon("arrow", 15) }}</a>
-        </p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="{{ p.url }}" target="_blank" rel="noopener">{{ pd.visit }}</a>
+          <a class="btn btn--ghost" href="{{ workUrl }}">{{ t.seeWork }}</a>
+        </div>
       </div>
     </article>
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
 <section class="section" id="process">
-  <div class="container container-narrow">
-    <div class="section-head reveal">
-      <span class="eyebrow">{{ h.processEyebrow }}</span>
-      <h2>{{ h.processH2 }}</h2>
-    </div>
-    {%- for step in h.process %}
-    <div class="step reveal">
-      <span class="step-num">{{ "0" + (loop.index | string) }}</span>
-      <div>
-        <h3>{{ step.h }}</h3>
-        <p>{{ step.p }}</p>
-      </div>
-    </div>
-    {%- endfor %}
-  </div>
-</section>
-
-<!-- ============ PRICING ============ -->
-<section class="section section-alt" id="pricing">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">{{ h.pricingEyebrow }}</span>
-      <h2>{{ h.pricingH2 }}</h2>
-      <p class="muted">{{ h.pricingP }}</p>
-    </div>
-    <div class="card reveal" style="padding:clamp(20px,3vw,32px)">
-      <div class="pricing-wrap">
-        <table class="pricing-table">
-          <caption>{{ h.pricingCaption }}</caption>
-          <thead>
-            <tr>
-              <th scope="col">{{ h.thService }}</th>
-              <th scope="col">{{ h.thWhat }}</th>
-              <th scope="col">{{ h.thPrice }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {%- for s in services %}
-            {%- set sl = s[lang] %}
-            <tr>
-              <td><a href="{{ servicesBase }}{{ s.slugEs if lang == 'es' else s.slug }}/">{{ sl.name }}</a></td>
-              <td class="muted">{{ sl.tagline }}</td>
-              <td>{{ sl.price }}<small class="pricing-note">{{ sl.priceNote }}</small></td>
-            </tr>
-            {%- endfor %}
-          </tbody>
-        </table>
+    <div class="sec-head sec-head--split reveal">
+      <div>
+        <span class="eyebrow">{{ h.processEyebrow }}</span>
+        <h2>{{ h.processH2 }}</h2>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="section" id="faq">
-  <div class="container container-narrow">
-    <div class="section-head reveal">
-      <span class="eyebrow">{{ h.faqEyebrow }}</span>
-      <h2>{{ h.faqH2 }}</h2>
+    <div class="steps reveal">
+      {%- for st in h.process %}
+      <div class="step">
+        <span class="step-num">{{ "0" + (loop.index | string) }}</span>
+        <h3>{{ st.h }}</h3>
+        <p>{{ st.p }}</p>
+      </div>
+      {%- endfor %}
     </div>
-    {%- for f in h.faqs %}
-    <details class="faq-item reveal">
-      <summary>{{ f.q }}</summary>
-      <div class="faq-body"><p>{{ f.a }}</p></div>
-    </details>
-    {%- endfor %}
   </div>
 </section>
 
-<!-- ============ ANALYZER ============ -->
-<section class="section section-dark" id="check">
-  <div class="container container-narrow">
-    <span class="eyebrow">{{ h.analyzer.eyebrow }}</span>
-    <h2 style="margin-top:12px">{{ h.analyzer.h2 }}</h2>
-    <p class="muted" style="margin-top:14px;max-width:62ch">{{ h.analyzer.p }}</p>
+<section class="section section--wash" id="pricing">
+  <div class="container">
+    <div class="sec-head sec-head--split reveal">
+      <div>
+        <span class="eyebrow">{{ h.pricingEyebrow }}</span>
+        <h2>{{ h.pricingH2 }}</h2>
+      </div>
+      <p>{{ h.pricingP }}</p>
+    </div>
 
-    <form class="analyzer-form" id="psiForm" novalidate
+    <div class="table-scroll reveal">
+      <table class="price-table">
+        <thead>
+          <tr><th scope="col">{{ h.thService }}</th><th scope="col">{{ h.thWhat }}</th><th scope="col" class="col-price">{{ h.thPrice }}</th></tr>
+        </thead>
+        <tbody>
+          {%- for s in services %}
+          {%- set d = s[lang] %}
+          <tr>
+            <th scope="row"><a href="{{ '/es/servicios/' + s.slugEs + '/' if lang == 'es' else '/services/' + s.slug + '/' }}">{{ d.name }}</a></th>
+            <td>{{ d.tagline }}</td>
+            <td class="col-price">{{ d.price }}<small>{{ d.priceNote }}</small></td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="price-cap">{{ h.pricingCaption }}</p>
+  </div>
+</section>
+
+<section class="section section--dark" id="check">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">{{ h.analyzer.eyebrow }}</span>
+      <h2>{{ h.analyzer.h2 }}</h2>
+      <p>{{ h.analyzer.p }}</p>
+    </div>
+
+    <form class="analyzer-form reveal" id="psiForm"
           data-running="{{ h.analyzer.running }}"
           data-invalid="{{ h.analyzer.invalid }}"
           data-failed="{{ h.analyzer.failed }}"
           data-resultfor="{{ h.analyzer.resultFor }}"
-          data-labels='{{ h.analyzer.cats | dump | safe }}'>
-      <div class="field">
-        <label for="psiUrl">{{ h.analyzer.label }}</label>
-        <input class="input" id="psiUrl" name="url" type="text" inputmode="url"
-               autocomplete="url" placeholder="{{ h.analyzer.placeholder }}" required>
-      </div>
-      <button class="btn btn-onDark btn-lg" type="submit" id="psiSubmit"
-              style="align-self:flex-end">{{ h.analyzer.button }}</button>
+          data-labels="{{ h.analyzer.cats | dump | escape }}">
+      <label class="hp" for="psiUrl">{{ h.analyzer.label }}</label>
+      <input class="input" type="text" id="psiUrl" name="psiUrl" inputmode="url" autocomplete="url"
+             placeholder="{{ h.analyzer.placeholder }}" aria-label="{{ h.analyzer.label }}">
+      <button class="btn btn--light" type="submit" id="psiSubmit">{{ h.analyzer.button }}</button>
     </form>
-
     <p class="analyzer-status" id="psiStatus" role="status" aria-live="polite"></p>
     <div class="score-grid" id="psiResults" hidden></div>
     <p class="analyzer-note">{{ h.analyzer.disclaimer }}</p>
   </div>
 </section>
 
-<!-- ============ CITIES ============ -->
-<section class="section section-tight section-alt">
+<section class="section" id="faq">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">{{ h.citiesEyebrow }}</span>
-      <h2>{{ h.citiesH2 }}</h2>
-      <p class="muted">{{ h.citiesP }}</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow">{{ h.faqEyebrow }}</span>
+      <h2>{{ h.faqH2 }}</h2>
     </div>
-    <ul class="city-list reveal">
-      {%- for c in site.areaServed %}<li class="city-chip">{{ c }}</li>{% endfor %}
-    </ul>
+    <div class="faq reveal">
+      {%- for f in h.faqs %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>{{ f.q }}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {%- endfor %}
+    </div>
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section class="section section-dark">
-  <div class="container container-narrow" style="text-align:center">
+<section class="section section--dark">
+  <div class="container cta reveal">
+    <span class="eyebrow">{{ t.bookShort }}</span>
     <h2>{{ h.ctaH2 }}</h2>
-    <p class="muted" style="margin-top:14px">{{ h.ctaP }}</p>
-    <div class="hero-actions" style="justify-content:center">
-      <a class="btn btn-onDark btn-lg" href="{{ bookUrl }}">{{ t.book }}</a>
-      <a class="btn btn-ghostDark btn-lg" href="{{ site.phoneHref }}">{{ icon("phone", 17) }} {{ site.phone }}</a>
+    <p>{{ h.ctaP }}</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="{{ startUrl }}">{{ t.book }}</a>
+      <a class="btn btn--outline-light" href="mailto:{{ site.email }}">{{ site.email }}</a>
     </div>
   </div>
 </section>
-{% endblock %}
 
-{% block head %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfessionalService",
-      "@id": "{{ site.url }}/#business",
-      "name": "{{ site.name }}",
-      "url": "{{ site.url }}/",
-      "telephone": "{{ site.phone }}",
-      "email": "{{ site.email }}",
-      "priceRange": "$$",
-      "address": { "@type": "PostalAddress", "addressLocality": "{{ site.city }}", "addressRegion": "{{ site.region }}", "addressCountry": "US" },
-      "geo": { "@type": "GeoCoordinates", "latitude": {{ site.lat }}, "longitude": {{ site.lng }} },
-      "areaServed": [{% for c in site.areaServed %}{ "@type": "City", "name": "{{ c }}, TX" }{{ "," if not loop.last }}{% endfor %}],
-      "availableLanguage": ["en", "es"]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "{{ site.url }}{{ page.url }}#faq",
-      "mainEntity": [{% for f in home[lang].faqs %}{ "@type": "Question", "name": {{ f.q | dump | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | dump | safe }} } }{{ "," if not loop.last }}{% endfor %}]
-    }
-  ]
-}
-</script>
 {% endblock %}

@@ -1,15 +1,8 @@
 {
   "name": "Texas Digital Co.",
   "url": "https://www.texasdigitalco.com",
-  "phone": "682.600.7984",
-  "phoneHref": "tel:+16826007984",
   "email": "hello@texasdigitalco.com",
   "formspree": "https://formspree.io/f/mbdqkllv",
-  "calLink": "texasdigitalco/15min",
-  "ga": "G-G32B97C2SZ",
-  "city": "Waco",
-  "region": "TX",
-  "lat": 31.5493,
-  "lng": -97.1467,
-  "areaServed": ["Waco","Temple","Killeen","Hewitt","Woodway","Robinson","Bellmead","Lorena","China Spring","McGregor","Gatesville","Copperas Cove","Harker Heights","Belton","Salado","Mexia","Marlin","Hillsboro"]
+  "calLink": "",
+  "ga": "G-G32B97C2SZ"
 }

@@ -1,0 +1,54 @@
+{
+  "en": {
+    "metaTitle": "Start a Project | Texas Digital Co.",
+    "metaDesc": "Send a project brief and get a written quote back the same day. Fixed price, no contract, and no call required at any point.",
+    "eyebrow": "Start",
+    "h1": "Send the project. Get a price today.",
+    "lede": "Five minutes on this form replaces a discovery call. Tell us what the business does and what you need, and a written quote with a fixed price lands in your inbox the same day.",
+    "formH": "Project brief",
+    "formP": "We reply the same day. We never sell or share your details.",
+    "stepsH": "What happens next",
+    "steps": [
+      "You get a reply the same day, in writing, from a real person who read the brief.",
+      "If the job is clear, that reply is the quote: scope, fixed price, and a start date.",
+      "If something is missing, we ask by email rather than pulling you into a meeting.",
+      "Nothing is charged and nothing is signed until you reply yes to a written number."
+    ],
+    "emailH": "Rather just email?",
+    "emailP": "Write to us directly and it reaches the same inbox as the form.",
+    "callH": "Prefer to talk it through?",
+    "callP": "A call is optional at every stage, never required. If you would rather explain it out loud, pick a time below.",
+    "calWait": "Loading the calendar",
+    "calFallH": "Calendar not loading?",
+    "calFallP": "Use the form above or email us directly. Both reach the same place.",
+    "callNoCalP": "Say so in the project brief and we will send you a time that works. There is no phone tree, no sales call, and no obligation to take one. Most projects go start to finish without a single meeting.",
+    "askH": "Ask for a time",
+    "askP": "Add a line to the brief saying you want to talk, or write to us, and we will send back a couple of slots the same day. Video or phone, whichever you prefer."
+  },
+  "es": {
+    "metaTitle": "Empezar un Proyecto | Texas Digital Co.",
+    "metaDesc": "Manda tu proyecto y recibe una cotización por escrito el mismo día. Precio fijo, sin contrato, y sin necesidad de llamada en ningún momento.",
+    "eyebrow": "Empezar",
+    "h1": "Manda el proyecto. Recibe un precio hoy.",
+    "lede": "Cinco minutos en este formulario reemplazan una llamada de diagnóstico. Cuéntanos qué hace el negocio y qué necesitas, y una cotización escrita con precio fijo llega a tu correo el mismo día.",
+    "formH": "Cuéntanos del proyecto",
+    "formP": "Contestamos el mismo día. Nunca vendemos ni compartimos tus datos.",
+    "stepsH": "Qué sigue",
+    "steps": [
+      "Recibes respuesta el mismo día, por escrito, de una persona real que leyó lo que mandaste.",
+      "Si el trabajo está claro, esa respuesta es la cotización: alcance, precio fijo y fecha de inicio.",
+      "Si falta algo, lo preguntamos por correo en vez de meterte a una junta.",
+      "No se cobra nada ni se firma nada hasta que contestas que sí a un número por escrito."
+    ],
+    "emailH": "¿Mejor por correo?",
+    "emailP": "Escríbenos directo y llega al mismo buzón que el formulario.",
+    "callH": "¿Prefieres platicarlo?",
+    "callP": "La llamada es opcional en cada etapa, nunca obligatoria. Si prefieres explicarlo en voz alta, escoge una hora abajo.",
+    "calWait": "Cargando el calendario",
+    "calFallH": "¿No carga el calendario?",
+    "calFallP": "Usa el formulario de arriba o escríbenos directo. Los dos llegan al mismo lugar.",
+    "callNoCalP": "Dilo en el formulario y te mandamos un horario que funcione. No hay menús telefónicos, no hay llamada de ventas y no es obligatorio. La mayoría de los proyectos se terminan sin una sola reunión.",
+    "askH": "Pide una hora",
+    "askP": "Agrega una línea al formulario diciendo que quieres platicar, o escríbenos, y te mandamos un par de horarios el mismo día. Video o llamada, como prefieras."
+  }
+}

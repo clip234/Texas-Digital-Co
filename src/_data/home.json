@@ -1,37 +1,33 @@
 {
   "en": {
-    "metaTitle": "Texas Digital Co. — Websites, Drone, AI & Print in Waco, TX",
-    "metaDesc": "A Waco, Texas digital shop. Websites from $299, FAA-certified drone work, AI phone and text answering, branding and print. Fixed prices, no contracts, English and Spanish.",
-    "eyebrow": "Waco, Texas",
-    "h1": "The digital work your business needs, done by people who pick up the phone.",
-    "lede": "Websites, drone footage, AI answering, branding and print — for Central Texas businesses that would rather talk to a person than open a support ticket.",
+    "metaTitle": "Texas Digital Co. | Websites, AI Automation & Google Ads",
+    "metaDesc": "Websites from $299, AI phone answering from $299/mo, logo and brand work, and Google Ads management. Fixed prices, no contracts, and you own everything. Every project can run entirely by email.",
+    "eyebrow": "Digital studio",
+    "h1": "The website your business should already have.",
+    "lede": "Fast, mobile-first sites. AI that answers the phone at 2am. Ad campaigns aimed at people close enough to actually buy. Fixed prices published on this page, no contracts, and you own everything we build.",
     "facts": [
       {
-        "icon": "pin",
-        "text": "Based in Waco — we come to you"
+        "icon": "check",
+        "text": "Fixed price, quoted in writing before anything starts"
       },
       {
-        "icon": "globe",
-        "text": "English &amp; Spanish, done properly"
+        "icon": "check",
+        "text": "No contracts on monthly work, cancel by email"
       },
       {
-        "icon": "shield",
-        "text": "FAA Part 107 certified pilot"
-      },
-      {
-        "icon": "tag",
-        "text": "Fixed prices. No contracts."
+        "icon": "check",
+        "text": "Domain, files, and accounts registered in your name"
       }
     ],
-    "servicesEyebrow": "What we do",
-    "servicesH2": "Six things, done well.",
-    "servicesP": "Every price below is the real starting price — not a lead-in number that changes after the first call.",
-    "whyEyebrow": "How we work",
-    "whyH2": "Straight terms, in writing, before anything starts.",
+    "servicesEyebrow": "Services",
+    "servicesH2": "Four things, done properly.",
+    "servicesP": "Prices are on the page. You can decide whether we are worth talking to before you send us anything.",
+    "whyEyebrow": "Terms",
+    "whyH2": "The part most agencies leave vague.",
     "why": [
       {
         "h": "You own everything",
-        "p": "Domain, files, accounts, ad data — all of it is registered in your name and stays yours. If you ever leave, you leave with the whole thing, and we help you move it."
+        "p": "Domain, files, accounts, ad data. All of it is registered in your name and stays yours. If you ever leave, you leave with the whole thing, and we help you move it."
       },
       {
         "h": "One fixed quote",
@@ -42,85 +38,78 @@
         "p": "Monthly work is month to month. Cancel with an email. We would rather keep you because the work is good than because you signed something."
       },
       {
-        "h": "We say no when it is the right answer",
+        "h": "We say no when that is the answer",
         "p": "If Google Ads would waste your money, we say so. If a $299 site does what you need and the $900 one does not, we build the $299 one."
       }
     ],
-    "processEyebrow": "The process",
-    "processH2": "Four steps. Two weeks, typically.",
+    "processEyebrow": "Process",
+    "processH2": "From first message to launch, without a single meeting.",
     "process": [
       {
-        "h": "A 15-minute call",
-        "p": "You tell us what the business does and where it is stuck. We tell you whether we can help, roughly what it costs, and how long it takes. If we are not the right fit, we say that on this call."
+        "h": "Send a brief",
+        "p": "Fill in the form on this site. It takes about five minutes and asks the things we would otherwise ask on a call: what the business does, what you need, and roughly what you want to spend."
       },
       {
-        "h": "A written quote",
-        "p": "One page: scope, fixed price, timeline, what we need from you. Nothing starts until you say go. No deposit is taken before you have that page."
+        "h": "Get a written quote",
+        "p": "One page in your inbox, usually the same day: scope, fixed price, timeline, and what we need from you. Nothing starts until you reply yes. No deposit is taken before you have that page."
       },
       {
         "h": "We build it",
-        "p": "You get progress you can look at, not status updates. Two rounds of revisions are included, and we do not count small fixes as a round."
+        "p": "Progress arrives as a link you can open on your phone and comment on directly. Two rounds of revisions are included, and small fixes do not count as a round."
       },
       {
         "h": "Launch and after",
-        "p": "We hand over every login, walk you through it, and stay reachable. Text changes and photo swaps on hosted sites are part of the monthly, not an invoice."
+        "p": "Every login is handed to you in writing. Text changes and photo swaps on hosted sites are part of the monthly, not an invoice. If you would rather talk any of this through, ask and we will find a time, it is just never required."
       }
     ],
     "pricingEyebrow": "Pricing",
-    "pricingH2": "What things cost.",
-    "pricingP": "Starting prices for the most common version of each job. A written quote for your specific job comes before any work.",
-    "pricingCaption": "Prices are starting points and hold for standard scope. Anything larger gets quoted before it starts — never after.",
+    "pricingH2": "Everything we charge, on one screen.",
+    "pricingP": "These are real starting prices, not a range that doubles once you get a quote. Bigger projects cost more, and the quote says exactly why.",
+    "pricingCaption": "Prices in USD. Monthly services are month to month with no contract.",
     "thService": "Service",
-    "thWhat": "What that gets you",
+    "thWhat": "What you get",
     "thPrice": "Starting at",
     "faqEyebrow": "Questions",
-    "faqH2": "The things people ask first.",
+    "faqH2": "Answered before you have to ask.",
     "faqs": [
       {
-        "q": "How new is this company?",
-        "a": "New. Texas Digital Co. is a small Waco shop taking on its first clients, and we would rather say that plainly than pad this page with logos and reviews that do not exist yet. What we can show you is finished work — the E-Mex shipping platform is live and you can open it right now — and terms that protect you if we get something wrong: fixed price, no contract, you own everything."
+        "q": "Do we ever have to get on a call?",
+        "a": "No. Briefs, quotes, drafts, revisions, invoices, and handover all run by email, and every one of them is designed to work that way rather than tolerated. If you would rather talk, ask for a time and we will send one back the same day, but nothing about the process depends on it."
       },
       {
         "q": "Why is $299 so much less than other quotes?",
-        "a": "Because there is no agency overhead in it. No account manager, no office lease, no sales team taking a cut. The same person who quotes the job builds it. That is also why we cap how many projects run at once."
+        "a": "Because there is no sales team, no account manager, and no office to pay for. Agencies charging $5,000 for a five-page site are not spending that on the build. The site you get is custom, hand-built, and fast. What you are not paying for is the overhead."
       },
       {
         "q": "What if I already have a website?",
-        "a": "Then we start by telling you honestly whether it needs replacing. Plenty of sites need a speed fix, a mobile pass, and a Google Business Profile — not a rebuild. That is a much smaller invoice and we will say so."
+        "a": "Send us the address. If it works and just needs to be faster or easier to find, we will tell you that and quote the fix instead of a rebuild. If it is built on something that cannot be saved, we will say that too, and explain why."
       },
       {
         "q": "Do you actually speak Spanish?",
-        "a": "Yes. Calls, quotes, and the finished site or print job can all be in Spanish. This site has a real Spanish version at its own address — not a translate button — because that is what we build for clients too."
-      },
-      {
-        "q": "Can you fly a drone over my property or job site?",
-        "a": "Yes, under an FAA Part 107 certificate. Waco Regional and Fort Cavazos sit inside controlled airspace, so some locations need a LAANC authorization before we launch. We check the airspace before quoting and tell you if a site is restricted."
+        "a": "Yes. Spanish pages are written, not machine-translated, and they are real pages with their own addresses so people can share them and Google can index them. This site is built exactly that way."
       },
       {
         "q": "How do I pay?",
-        "a": "Card, bank transfer, or check. Build work is half up front and half at launch. Monthly work is billed monthly and you can stop it any month."
+        "a": "Half up front, half at launch, on projects. Monthly services bill on the first. Invoices arrive by email with a card or bank transfer link, so you never have to hand payment details to a person."
       },
       {
         "q": "How fast can you start?",
-        "a": "Usually within a week of the quote being approved. If we are full, we tell you the real date instead of taking the job and sitting on it."
+        "a": "Usually within a few days of you approving the quote. Most small-business sites go live about a week after we have your photos and content. Getting the content together is almost always the longest part."
       }
     ],
-    "citiesEyebrow": "Service area",
-    "citiesH2": "We drive to you.",
-    "citiesP": "Waco and the surrounding Central Texas towns. Drone work needs us on site; everything else can be done remotely if that suits you better.",
-    "ctaH2": "Tell us what you are trying to fix.",
-    "ctaP": "Fifteen minutes, no pitch. Worst case you get an honest answer about whether this is worth paying for.",
+    "ctaH2": "Send us the project.",
+    "ctaP": "Five minutes on the form, a written quote back today, and a fixed price before anything starts.",
     "analyzer": {
       "eyebrow": "Free check",
       "h2": "See what Google actually thinks of your site.",
-      "p": "This runs Google’s own PageSpeed Insights on your site and shows you the four scores it returns — unedited. We do not adjust them, and if the check fails you get an error message, not a made-up number.",
+      "p": "This runs Google's own PageSpeed Insights on your site and shows you the four scores it returns, unedited. We do not adjust them, and if the check fails you get an error message, not a made-up number.",
       "label": "Your website address",
       "placeholder": "yourbusiness.com",
       "button": "Run the check",
-      "running": "Asking Google… this takes about 20 seconds.",
+      "running": "Asking Google. This takes about 20 seconds.",
       "invalid": "That does not look like a web address. Try something like yourbusiness.com.",
-      "failed": "Google’s API did not return a result. That usually means the site is unreachable, or the free API is rate-limited right now. Call or text 682.600.7984 and we will run it manually.",
-      "disclaimer": "Scores come straight from Google’s PageSpeed Insights API, mobile strategy. They are one signal, not a verdict on your business.",
+      "failed": "Google's API did not return a result. That usually means the site is unreachable, or the free API is rate-limited right now. Email hello@texasdigitalco.com and we will run it manually.",
+      "disclaimer": "Scores come straight from Google's PageSpeed Insights API, mobile strategy. They are one signal, not a verdict on your business.",
       "cats": {
         "performance": "Performance",
         "accessibility": "Accessibility",
@@ -131,134 +120,123 @@
     }
   },
   "es": {
-    "metaTitle": "Texas Digital Co. — Sitios web, drone, IA e impresos en Waco, TX",
-    "metaDesc": "Taller digital en Waco, Texas. Sitios web desde $299, drone con licencia FAA, contestación con IA por teléfono y texto, marca e impresos. Precios fijos, sin contratos, en español e inglés.",
-    "eyebrow": "Waco, Texas",
-    "h1": "El trabajo digital que tu negocio necesita, hecho por gente que contesta el teléfono.",
-    "lede": "Sitios web, video con drone, contestación con IA, marca e impresos — para negocios del Centro de Texas que prefieren hablar con una persona que abrir un ticket de soporte.",
+    "metaTitle": "Texas Digital Co. | Sitios Web, Automatización IA y Google Ads",
+    "metaDesc": "Sitios web desde $299, contestador con IA desde $299/mes, diseño de logo y marca, y gestión de Google Ads. Precios fijos, sin contratos, y todo es tuyo. Cada proyecto se puede manejar completamente por correo.",
+    "eyebrow": "Estudio digital",
+    "h1": "El sitio web que tu negocio ya debería tener.",
+    "lede": "Sitios rápidos, hechos primero para móvil. IA que contesta el teléfono a las 2 de la mañana. Campañas apuntadas a gente lo suficientemente cerca para comprar. Precios fijos publicados en esta página, sin contratos, y todo lo que construimos es tuyo.",
     "facts": [
       {
-        "icon": "pin",
-        "text": "Con base en Waco — vamos a ti"
+        "icon": "check",
+        "text": "Precio fijo, cotizado por escrito antes de empezar"
       },
       {
-        "icon": "globe",
-        "text": "Español e inglés, bien hechos"
+        "icon": "check",
+        "text": "Sin contratos en el trabajo mensual, cancela por correo"
       },
       {
-        "icon": "shield",
-        "text": "Piloto certificado FAA Part 107"
-      },
-      {
-        "icon": "tag",
-        "text": "Precios fijos. Sin contratos."
+        "icon": "check",
+        "text": "Dominio, archivos y cuentas registrados a tu nombre"
       }
     ],
-    "servicesEyebrow": "Qué hacemos",
-    "servicesH2": "Seis cosas, bien hechas.",
-    "servicesP": "Cada precio de abajo es el precio real de inicio — no un número gancho que cambia después de la primera llamada.",
-    "whyEyebrow": "Cómo trabajamos",
-    "whyH2": "Condiciones claras, por escrito, antes de empezar.",
+    "servicesEyebrow": "Servicios",
+    "servicesH2": "Cuatro cosas, bien hechas.",
+    "servicesP": "Los precios están en la página. Puedes decidir si vale la pena hablarnos antes de mandarnos nada.",
+    "whyEyebrow": "Condiciones",
+    "whyH2": "La parte que la mayoría de las agencias deja vaga.",
     "why": [
       {
         "h": "Todo es tuyo",
-        "p": "Dominio, archivos, cuentas, datos de anuncios — todo queda registrado a tu nombre y sigue siendo tuyo. Si te vas, te vas con todo, y te ayudamos a moverlo."
+        "p": "Dominio, archivos, cuentas, datos de anuncios. Todo se registra a tu nombre y sigue siendo tuyo. Si algún día te vas, te vas con todo, y te ayudamos a moverlo."
       },
       {
         "h": "Una cotización fija",
-        "p": "Tienes el número antes de que empiece el trabajo. No se mueve a menos que pidas algo fuera de lo acordado, y entonces apruebas el número nuevo primero."
+        "p": "Recibes el número antes de que empiece el trabajo. No se mueve a menos que pidas algo fuera de lo acordado, y entonces apruebas el número nuevo primero."
       },
       {
-        "h": "Sin contratos, sin amarres",
-        "p": "El trabajo mensual es mes a mes. Cancelas con un correo. Preferimos quedarnos porque el trabajo es bueno, no porque firmaste algo."
+        "h": "Sin contratos ni amarres",
+        "p": "El trabajo mensual es mes con mes. Cancelas con un correo. Preferimos quedarnos contigo porque el trabajo es bueno, no porque firmaste algo."
       },
       {
         "h": "Decimos que no cuando esa es la respuesta",
-        "p": "Si Google Ads va a desperdiciar tu dinero, te lo decimos. Si un sitio de $299 hace lo que necesitas y el de $900 no, hacemos el de $299."
+        "p": "Si Google Ads va a desperdiciar tu dinero, te lo decimos. Si un sitio de $299 hace lo que necesitas y el de $900 no, construimos el de $299."
       }
     ],
-    "processEyebrow": "El proceso",
-    "processH2": "Cuatro pasos. Dos semanas, normalmente.",
+    "processEyebrow": "Proceso",
+    "processH2": "Del primer mensaje al lanzamiento, sin una sola junta.",
     "process": [
       {
-        "h": "Una llamada de 15 minutos",
-        "p": "Nos cuentas qué hace el negocio y dónde está atorado. Te decimos si podemos ayudar, cuánto cuesta más o menos y cuánto tarda. Si no somos lo que necesitas, te lo decimos en esa llamada."
+        "h": "Manda tu proyecto",
+        "p": "Llenas el formulario de este sitio. Toma como cinco minutos y pregunta lo que de otro modo preguntaríamos en una llamada: qué hace el negocio, qué necesitas y más o menos cuánto quieres gastar."
       },
       {
-        "h": "Una cotización escrita",
-        "p": "Una página: alcance, precio fijo, tiempo, y qué necesitamos de ti. Nada empieza hasta que digas que sí. No se cobra nada antes de que tengas esa página."
+        "h": "Recibe una cotización escrita",
+        "p": "Una página en tu correo, normalmente el mismo día: alcance, precio fijo, tiempos y qué necesitamos de ti. Nada empieza hasta que contestas que sí. No se toma ningún anticipo antes de que tengas esa página."
       },
       {
         "h": "Lo construimos",
-        "p": "Ves avances que puedes revisar, no reportes de estado. Van incluidas dos rondas de cambios, y los ajustes chicos no cuentan como ronda."
+        "p": "El avance llega como un enlace que puedes abrir en tu teléfono y comentar directamente. Dos rondas de cambios van incluidas, y los arreglos pequeños no cuentan como ronda."
       },
       {
         "h": "Lanzamiento y después",
-        "p": "Te entregamos cada acceso, te lo explicamos, y seguimos disponibles. Cambios de texto y fotos en sitios con hosting van incluidos en el mensual, no en una factura aparte."
+        "p": "Cada acceso se te entrega por escrito. Los cambios de texto y de fotos en sitios con hosting van dentro de la mensualidad, no en una factura. Si prefieres platicar cualquiera de estos pasos, pídelo y buscamos una hora, solo que nunca es obligatorio."
       }
     ],
     "pricingEyebrow": "Precios",
-    "pricingH2": "Cuánto cuesta cada cosa.",
-    "pricingP": "Precios de inicio para la versión más común de cada trabajo. La cotización escrita para tu caso va antes de cualquier trabajo.",
-    "pricingCaption": "Los precios son punto de partida y aplican para alcance estándar. Cualquier cosa más grande se cotiza antes de empezar — nunca después.",
+    "pricingH2": "Todo lo que cobramos, en una sola pantalla.",
+    "pricingP": "Estos son precios de arranque reales, no un rango que se duplica cuando pides cotización. Los proyectos más grandes cuestan más, y la cotización dice exactamente por qué.",
+    "pricingCaption": "Precios en dólares. Los servicios mensuales son mes con mes, sin contrato.",
     "thService": "Servicio",
-    "thWhat": "Qué incluye",
+    "thWhat": "Qué recibes",
     "thPrice": "Desde",
     "faqEyebrow": "Preguntas",
-    "faqH2": "Lo que preguntan primero.",
+    "faqH2": "Contestadas antes de que tengas que preguntar.",
     "faqs": [
       {
-        "q": "¿Qué tan nueva es esta empresa?",
-        "a": "Nueva. Texas Digital Co. es un taller pequeño en Waco tomando sus primeros clientes, y preferimos decirlo directo en vez de llenar esta página con logos y reseñas que todavía no existen. Lo que sí podemos enseñarte es trabajo terminado — la plataforma de envíos E-Mex está en línea y la puedes abrir ahora mismo — y condiciones que te protegen si nos equivocamos: precio fijo, sin contrato, todo es tuyo."
+        "q": "¿Alguna vez hay que subirse a una llamada?",
+        "a": "No. Las solicitudes, cotizaciones, borradores, cambios, facturas y la entrega final se manejan por correo, y cada uno está diseñado para funcionar así, no apenas tolerado. Si prefieres hablar, pide una hora y te la mandamos el mismo día, pero nada del proceso depende de eso."
       },
       {
         "q": "¿Por qué $299 es mucho menos que otras cotizaciones?",
-        "a": "Porque no trae los gastos de una agencia adentro. No hay ejecutivo de cuenta, ni renta de oficina, ni vendedor llevándose una parte. La misma persona que cotiza el trabajo lo construye. Por eso también limitamos cuántos proyectos corren a la vez."
+        "a": "Porque no hay equipo de ventas, ni ejecutivo de cuenta, ni oficina que pagar. Las agencias que cobran $5,000 por un sitio de cinco páginas no están gastando eso en construirlo. El sitio que recibes es personalizado, hecho a mano y rápido. Lo que no estás pagando es el sobrecosto."
       },
       {
-        "q": "¿Y si ya tengo sitio web?",
-        "a": "Entonces empezamos diciéndote honestamente si hay que reemplazarlo. Muchos sitios solo necesitan arreglo de velocidad, una revisión para celular y su Perfil de Negocio de Google — no un sitio nuevo. Eso es una factura mucho más chica y te lo vamos a decir."
+        "q": "¿Y si ya tengo un sitio web?",
+        "a": "Mándanos la dirección. Si funciona y solo necesita ser más rápido o más fácil de encontrar, te lo decimos y cotizamos el arreglo en lugar de rehacerlo. Si está hecho sobre algo que no se puede salvar, también te lo decimos y te explicamos por qué."
       },
       {
         "q": "¿De verdad hablan español?",
-        "a": "Sí. Las llamadas, las cotizaciones y el sitio o los impresos terminados pueden ser todos en español. Este sitio tiene una versión real en español con su propia dirección — no un botón de traducir — porque es lo que también construimos para los clientes."
-      },
-      {
-        "q": "¿Pueden volar un drone sobre mi propiedad u obra?",
-        "a": "Sí, con certificado FAA Part 107. El aeropuerto de Waco y Fort Cavazos están en espacio aéreo controlado, así que algunos lugares necesitan autorización LAANC antes de despegar. Revisamos el espacio aéreo antes de cotizar y te avisamos si el lugar está restringido."
+        "a": "Sí. Las páginas en español están escritas, no traducidas por máquina, y son páginas reales con sus propias direcciones para que la gente las comparta y Google las indexe. Este sitio está hecho exactamente así."
       },
       {
         "q": "¿Cómo se paga?",
-        "a": "Tarjeta, transferencia o cheque. El trabajo de construcción es mitad al inicio y mitad al lanzar. El trabajo mensual se cobra mes a mes y lo puedes parar cualquier mes."
+        "a": "Mitad al inicio y mitad al lanzamiento en los proyectos. Los servicios mensuales se cobran el primero. Las facturas llegan por correo con un enlace de tarjeta o transferencia, así que nunca tienes que darle datos de pago a una persona."
       },
       {
         "q": "¿Qué tan rápido pueden empezar?",
-        "a": "Normalmente dentro de una semana de aprobada la cotización. Si estamos llenos, te damos la fecha real en vez de tomar el trabajo y dejarlo parado."
+        "a": "Normalmente a los pocos días de que apruebas la cotización. La mayoría de los sitios salen en vivo como una semana después de que tenemos tus fotos y contenido. Juntar el contenido casi siempre es la parte más larga."
       }
     ],
-    "citiesEyebrow": "Área de servicio",
-    "citiesH2": "Vamos hasta ti.",
-    "citiesP": "Waco y los pueblos del Centro de Texas alrededor. El drone requiere que estemos en el lugar; lo demás se puede hacer a distancia si te acomoda más.",
-    "ctaH2": "Cuéntanos qué estás tratando de arreglar.",
-    "ctaP": "Quince minutos, sin venta. En el peor caso te llevas una respuesta honesta sobre si vale la pena pagar por esto.",
+    "ctaH2": "Mándanos el proyecto.",
+    "ctaP": "Cinco minutos en el formulario, una cotización escrita de regreso hoy, y un precio fijo antes de que empiece nada.",
     "analyzer": {
       "eyebrow": "Revisión gratis",
-      "h2": "Mira qué opina Google de tu sitio, de verdad.",
-      "p": "Esto corre el PageSpeed Insights de Google sobre tu sitio y te muestra las cuatro calificaciones que regresa — sin editar. No las ajustamos, y si la revisión falla te sale un mensaje de error, no un número inventado.",
+      "h2": "Mira qué opina Google de tu sitio.",
+      "p": "Esto corre el propio PageSpeed Insights de Google sobre tu sitio y te muestra los cuatro puntajes que regresa, sin editar. No los ajustamos, y si la revisión falla recibes un mensaje de error, no un número inventado.",
       "label": "La dirección de tu sitio",
       "placeholder": "tunegocio.com",
       "button": "Correr la revisión",
-      "running": "Preguntando a Google… tarda unos 20 segundos.",
-      "invalid": "Eso no parece una dirección web. Prueba algo como tunegocio.com.",
-      "failed": "La API de Google no regresó resultado. Normalmente es porque el sitio no responde, o porque la API gratuita está limitada en este momento. Llama o manda mensaje al 682.600.7984 y la corremos a mano.",
-      "disclaimer": "Las calificaciones vienen directo de la API de PageSpeed Insights de Google, en estrategia móvil. Son una señal, no un veredicto sobre tu negocio.",
+      "running": "Preguntándole a Google. Esto tarda como 20 segundos.",
+      "invalid": "Eso no parece una dirección web. Intenta algo como tunegocio.com.",
+      "failed": "La API de Google no regresó resultado. Normalmente eso significa que el sitio no está accesible, o que la API gratuita está limitada en este momento. Escríbenos a hello@texasdigitalco.com y la corremos a mano.",
+      "disclaimer": "Los puntajes vienen directo de la API de PageSpeed Insights de Google, estrategia móvil. Son una señal, no un veredicto sobre tu negocio.",
       "cats": {
         "performance": "Rendimiento",
         "accessibility": "Accesibilidad",
         "best-practices": "Buenas prácticas",
         "seo": "SEO"
       },
-      "resultFor": "Resultados de"
+      "resultFor": "Resultados para"
     }
   }
 }

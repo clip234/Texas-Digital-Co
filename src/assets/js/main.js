@@ -34,7 +34,7 @@
     });
   }
 
-  /* Scroll reveal — content is visible by default if this never runs */
+  /* Scroll reveal. Content is visible by default if this never runs. */
   var reveals = document.querySelectorAll(".reveal");
   if (reveals.length) {
     if (!("IntersectionObserver" in window)) {

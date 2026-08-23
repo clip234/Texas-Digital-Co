@@ -1,0 +1,180 @@
+{% extends "layouts/base.njk" %}
+{%- set b = start[lang] -%}
+{%- set budgets = ["Menos de $500","$500 a $1,500","$1,500 a $5,000","Más de $5,000"] if lang == "es" else ["Under $500","$500 to $1,500","$1,500 to $5,000","Over $5,000"] -%}
+
+{% block content %}
+
+<section class="page-head">
+  <div class="container">
+    <span class="eyebrow">{{ b.eyebrow }}</span>
+    <h1>{{ b.h1 }}</h1>
+    <p class="lede">{{ b.lede }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+
+    <aside class="split-aside reveal">
+      <h2 class="h-md" style="margin-bottom:20px">{{ b.stepsH }}</h2>
+      <ol class="numbered">
+        {%- for s in b.steps %}<li><span>{{ s }}</span></li>{% endfor %}
+      </ol>
+
+      <h2 class="h-md" style="margin:38px 0 10px">{{ b.emailH }}</h2>
+      <p style="color:var(--grey);font-size:.9375rem">{{ b.emailP }}</p>
+      <p style="margin-top:16px"><a class="link-arrow" href="mailto:{{ site.email }}">{{ icon("mail", 17) }} {{ site.email }}</a></p>
+    </aside>
+
+    <div class="reveal">
+      <div class="panel">
+        <h2 class="h-md">{{ b.formH }}</h2>
+        <p style="color:var(--grey);font-size:.9375rem;margin-top:8px;margin-bottom:26px">{{ b.formP }}</p>
+
+        <form id="contactForm" class="form" action="{{ site.formspree }}" method="POST"
+              data-sending="{{ t.formSending }}" data-ok="{{ t.formOk }}" data-err="{{ t.formErr }}">
+          <input type="hidden" name="_subject" value="Project brief via texasdigitalco.com ({{ lang }})">
+          <input type="hidden" name="lang" value="{{ lang }}">
+          <p class="hp"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+
+          <div class="field-row">
+            <div class="field">
+              <label class="label" for="f-name">{{ t.formName }}</label>
+              <input class="input" id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label class="label" for="f-email">{{ t.formEmail }}</label>
+              <input class="input" id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="f-business">{{ t.formBusiness }} <span>{{ t.formBusinessHint }}</span></label>
+            <input class="input" id="f-business" name="business" type="text" autocomplete="organization">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label class="label" for="f-service">{{ t.formService }}</label>
+              <select class="select" id="f-service" name="service" required>
+                <option value="">{{ t.formServicePick }}</option>
+                {%- for s in services %}
+                <option value="{{ s[lang].name }}">{{ s[lang].name }} ({{ s[lang].price }})</option>
+                {%- endfor %}
+                <option value="{{ 'Otro' if lang == 'es' else 'Something else' }}">{{ 'Otro' if lang == 'es' else 'Something else' }}</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="label" for="f-budget">{{ t.formBudget }}</label>
+              <select class="select" id="f-budget" name="budget">
+                <option value="">{{ t.formBudgetPick }}</option>
+                {%- for bg in budgets %}<option value="{{ bg }}">{{ bg }}</option>{% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="f-message">{{ t.formMessage }} <span>{{ t.formMessageHint }}</span></label>
+            <textarea class="textarea" id="f-message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button class="btn btn--primary btn--block" type="submit">{{ t.formSubmit }}</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--wash section--tight" id="call">
+  <div class="container">
+    <div class="sec-head sec-head--split reveal">
+      <div>
+        <span class="eyebrow eyebrow--muted">{{ 'Opcional' if lang == 'es' else 'Optional' }}</span>
+        <h2 class="h-md" style="font-size:1.75rem">{{ b.callH }}</h2>
+      </div>
+      <p>{{ b.callP if site.calLink else b.callNoCalP }}</p>
+    </div>
+
+    {% if site.calLink %}
+    <div class="cal-wrap" id="calFrame">
+      <div class="cal-loading" id="calFallback">
+        <span id="calWait"><span class="spinner" aria-hidden="true"></span></span>
+        <div id="calError" hidden style="text-align:center;padding:30px">
+          <h3>{{ b.calFallH }}</h3>
+          <p style="margin-top:10px;color:var(--grey);font-size:.9375rem">{{ b.calFallP }}</p>
+          <p style="margin-top:20px"><a class="btn btn--ghost btn--sm" href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="panel">
+      <h3>{{ b.askH }}</h3>
+      <p style="margin-top:10px;color:var(--grey);font-size:.9375rem;max-width:60ch">{{ b.askP }}</p>
+      <div class="btn-row" style="margin-top:24px">
+        <a class="btn btn--ghost" href="mailto:{{ site.email }}">{{ icon("mail", 17) }} {{ site.email }}</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+{% if site.calLink %}
+<script>
+(function (C, A, L) {
+  var p = function (a, ar) { a.q.push(ar); };
+  var d = C.document;
+  C.Cal = C.Cal || function () {
+    var cal = C.Cal, ar = arguments;
+    if (!cal.loaded) {
+      cal.ns = {}; cal.q = cal.q || [];
+      d.head.appendChild(d.createElement("script")).src = A;
+      cal.loaded = true;
+    }
+    if (ar[0] === L) {
+      var api = function () { p(api, arguments); };
+      var namespace = ar[1];
+      api.q = api.q || [];
+      if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); }
+      else p(cal, ar);
+      return;
+    }
+    p(cal, ar);
+  };
+})(window, "https://app.cal.com/embed/embed.js", "init");
+
+Cal("init", { origin: "https://app.cal.com" });
+Cal("inline", { elementOrSelector: "#calFrame", calLink: {{ site.calLink | dump | safe }}, layout: "month_view" });
+Cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+
+/* If the embed never renders, surface a route that actually works. */
+(function () {
+  var frame = document.getElementById("calFrame");
+  var wait = document.getElementById("calWait");
+  var err = document.getElementById("calError");
+  var fallback = document.getElementById("calFallback");
+  var done = false;
+
+  function loaded() {
+    if (done) return;
+    done = true;
+    if (fallback && fallback.parentNode) fallback.parentNode.removeChild(fallback);
+  }
+  var obs = new MutationObserver(function () {
+    if (frame.querySelector("iframe")) loaded();
+  });
+  obs.observe(frame, { childList: true, subtree: true });
+
+  setTimeout(function () {
+    if (done) return;
+    obs.disconnect();
+    if (wait) wait.hidden = true;
+    if (err) err.hidden = false;
+  }, 8000);
+})();
+</script>
+{% endif %}
+{% endblock %}

@@ -2,7 +2,7 @@
 {%- set t = ui[lang] -%}
 {%- set navItems = nav[lang] -%}
 {%- set homeUrl = "/es/" if lang == "es" else "/" -%}
-{%- set bookUrl = "/es/agendar/" if lang == "es" else "/book/" -%}
+{%- set startUrl = "/es/empezar/" if lang == "es" else "/start/" -%}
 {%- set workUrl = "/es/proyectos/" if lang == "es" else "/work/" -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}" class="no-js">
@@ -23,15 +23,13 @@
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:locale" content="{{ 'es_MX' if lang == 'es' else 'en_US' }}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="geo.region" content="US-TX">
-<meta name="geo.placename" content="{{ site.city }}">
 
 {% if noindex %}<meta name="robots" content="noindex,follow">{% endif %}
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/css/style.css">
 <script>document.documentElement.classList.remove('no-js');</script>
 {% block head %}{% endblock %}
@@ -41,10 +39,7 @@
 
 <header class="header" id="header">
   <div class="container header-inner">
-    <a class="brand" href="{{ homeUrl }}">
-      <span style="color:var(--accent)">{{ icon("star", 22) }}</span>
-      <span>Texas Digital Co.</span>
-    </a>
+    <a class="brand" href="{{ homeUrl }}">{{ icon("star", 21) }}<span>Texas Digital Co.</span></a>
 
     <nav class="nav" aria-label="{{ 'Principal' if lang == 'es' else 'Primary' }}">
       {%- for item in navItems %}
@@ -53,9 +48,8 @@
     </nav>
 
     <div class="header-actions">
-      {% if altUrl %}<a class="lang-link" href="{{ altUrl }}" lang="{{ 'en' if lang == 'es' else 'es' }}" aria-label="{{ t.langSwitchAria }}">{{ icon("globe") }} {{ t.langSwitch }}</a>{% endif %}
-      <a class="header-phone" href="{{ site.phoneHref }}">{{ site.phone }}</a>
-      <a class="btn btn-primary" href="{{ bookUrl }}">{{ t.bookShort }}</a>
+      {% if altUrl %}<a class="lang-link" href="{{ altUrl }}" lang="{{ 'en' if lang == 'es' else 'es' }}" aria-label="{{ t.langSwitchAria }}">{{ icon("globe", 15) }} {{ t.langSwitch }}</a>{% endif %}
+      <a class="btn btn--primary btn--sm" href="{{ startUrl }}">{{ t.bookShort }}</a>
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="{{ 'Menú' if lang == 'es' else 'Menu' }}"><span></span></button>
     </div>
   </div>
@@ -66,9 +60,9 @@
       <a class="mobile-nav-item" href="{{ item.url }}">{{ item.label }}</a>
       {%- endfor %}
       <div class="mobile-nav-footer">
-        <a class="btn btn-primary btn-block" href="{{ bookUrl }}">{{ t.book }}</a>
-        <a class="btn btn-secondary btn-block" href="{{ site.phoneHref }}">{{ icon("phone", 17) }} {{ site.phone }}</a>
-        {% if altUrl %}<a class="btn btn-secondary btn-block" href="{{ altUrl }}" lang="{{ 'en' if lang == 'es' else 'es' }}">{{ icon("globe") }} {{ t.langSwitch }}</a>{% endif %}
+        <a class="btn btn--primary btn--block" href="{{ startUrl }}">{{ t.book }}</a>
+        <a class="btn btn--ghost btn--block" href="mailto:{{ site.email }}">{{ site.email }}</a>
+        {% if altUrl %}<a class="btn btn--ghost btn--block" href="{{ altUrl }}" lang="{{ 'en' if lang == 'es' else 'es' }}">{{ icon("globe", 15) }} {{ t.langSwitch }}</a>{% endif %}
       </div>
     </div>
   </div>
@@ -82,13 +76,11 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">
-          <span style="color:#E8A87C">{{ icon("star", 20) }}</span> Texas Digital Co.
-        </div>
-        <p style="max-width:34ch;font-size:.93rem">
-          {% if lang == "es" %}Sitios web, drone, IA e impresos para negocios del Centro de Texas. Con base en Waco.{% else %}Websites, drone, AI, and print for Central Texas businesses. Based in Waco.{% endif %}
+        <div class="footer-brand">{{ icon("star", 19) }} Texas Digital Co.</div>
+        <p style="max-width:36ch">
+          {% if lang == "es" %}Sitios web, automatización con IA, marca y Google Ads para negocios pequeños.{% else %}Websites, AI automation, branding, and Google Ads for small businesses.{% endif %}
         </p>
-        <p style="margin-top:16px;font-size:.88rem">{{ t.hours }}</p>
+        <p style="margin-top:16px;font-size:.8125rem;color:#6F6F6F">{{ t.hours }}</p>
       </div>
 
       <div>
@@ -106,31 +98,25 @@
           <li><a href="{{ workUrl }}">{{ 'Proyectos' if lang == 'es' else 'Work' }}</a></li>
           <li><a href="{{ homeUrl }}#process">{{ 'Proceso' if lang == 'es' else 'Process' }}</a></li>
           <li><a href="{{ homeUrl }}#pricing">{{ 'Precios' if lang == 'es' else 'Pricing' }}</a></li>
-          <li><a href="{{ bookUrl }}">{{ t.bookShort }}</a></li>
+          <li><a href="{{ homeUrl }}#faq">{{ 'Preguntas' if lang == 'es' else 'Questions' }}</a></li>
         </ul>
       </div>
 
       <div>
         <h4>{{ t.contactLabel }}</h4>
         <ul>
-          <li><a href="{{ site.phoneHref }}">{{ site.phone }}</a></li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          <li>{{ t.basedIn }}</li>
+          <li><a href="{{ startUrl }}">{{ t.bookShort }}</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
       <span>&copy; {{ year }} Texas Digital Co. {{ t.rights }}</span>
-      <span>{% if lang == "es" %}Piloto certificado FAA Part 107{% else %}FAA Part 107 certified remote pilot{% endif %}</span>
+      <span>{% if lang == "es" %}Cada proyecto se puede manejar completamente por correo.{% else %}Every project can run entirely by email.{% endif %}</span>
     </div>
   </div>
 </footer>
-
-<div class="sticky-cta">
-  <a class="btn btn-secondary" href="{{ site.phoneHref }}">{{ icon("phone", 17) }} {{ t.call }}</a>
-  <a class="btn btn-primary" href="{{ bookUrl }}">{{ t.bookShort }}</a>
-</div>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga }}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","{{ site.ga }}");</script>

@@ -5,7 +5,12 @@
       "url": "https://e-mex.net",
       "domain": "e-mex.net",
       "image": "",
-      "tags": ["Next.js", "Supabase", "Multi-carrier API", "Bilingual UI"],
+      "tags": [
+        "Next.js",
+        "Supabase",
+        "Multi-carrier API",
+        "Bilingual UI"
+      ],
       "en": {
         "kicker": "Shipping platform",
         "name": "E-Mex",
@@ -14,7 +19,7 @@
         "points": [
           "Live multi-carrier rate quoting instead of manual lookups",
           "Bilingual interface designed in both languages from the start",
-          "Supabase back end — accounts, quotes, and history in one place",
+          "Supabase back end holding accounts, quotes, and history in one place",
           "Built and shipped to a usable MVP in weeks, not quarters"
         ],
         "visit": "Open e-mex.net"
@@ -27,7 +32,7 @@
         "points": [
           "Cotización en vivo de varias paqueterías en vez de búsquedas manuales",
           "Interfaz bilingüe diseñada en los dos idiomas desde el inicio",
-          "Back end en Supabase — cuentas, cotizaciones e historial en un solo lugar",
+          "Back end en Supabase con cuentas, cotizaciones e historial en un solo lugar",
           "Construido y lanzado a un MVP usable en semanas, no en trimestres"
         ],
         "visit": "Abrir e-mex.net"
@@ -35,21 +40,17 @@
     }
   ],
   "en": {
-    "metaTitle": "Our Work — Texas Digital Co., Waco TX",
-    "metaDesc": "Finished, live work from Texas Digital Co. in Waco, Texas. Real projects you can open and use, not mockups.",
+    "metaTitle": "Our Work | Texas Digital Co.",
+    "metaDesc": "Finished, live work from Texas Digital Co. Real projects you can open and use, not mockups.",
     "eyebrow": "Work",
     "h1": "Work you can open and use.",
-    "lede": "We are a new shop, so this page is short and everything on it is real. No mockups, no concept pieces, no client logos we do not have permission to show.",
-    "honestH": "Why this page is short",
-    "honestP": "Texas Digital Co. is taking on its first clients. Rather than fill this page with stock mockups or invented case studies, we show the work that actually exists and is live on the internet right now. That list will grow. Until it does, the terms are what protect you: a fixed written price, no contract, and full ownership of everything we build for you."
+    "lede": "Everything on this page is live on the internet right now. No mockups, no concept pieces, no client logos we do not have permission to show."
   },
   "es": {
-    "metaTitle": "Proyectos — Texas Digital Co., Waco TX",
-    "metaDesc": "Trabajo terminado y en línea de Texas Digital Co. en Waco, Texas. Proyectos reales que puedes abrir y usar, no maquetas.",
+    "metaTitle": "Proyectos | Texas Digital Co.",
+    "metaDesc": "Trabajo terminado y en línea de Texas Digital Co. Proyectos reales que puedes abrir y usar, no maquetas.",
     "eyebrow": "Proyectos",
     "h1": "Trabajo que puedes abrir y usar.",
-    "lede": "Somos un taller nuevo, así que esta página es corta y todo lo que está aquí es real. Sin maquetas, sin piezas de concepto, sin logos de clientes que no tenemos permiso de mostrar.",
-    "honestH": "Por qué esta página es corta",
-    "honestP": "Texas Digital Co. está tomando sus primeros clientes. En vez de llenar esta página con maquetas de banco de imágenes o casos inventados, mostramos el trabajo que sí existe y está en línea ahora mismo. Esa lista va a crecer. Mientras tanto, lo que te protege son las condiciones: precio fijo por escrito, sin contrato, y propiedad completa de todo lo que construimos para ti."
+    "lede": "Todo lo que está en esta página está en línea ahora mismo. Sin maquetas, sin piezas de concepto, sin logos de clientes que no tenemos permiso de mostrar."
   }
 }

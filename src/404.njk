@@ -3,37 +3,35 @@ layout: layouts/base.njk
 permalink: /404.html
 lang: en
 noindex: true
-title: "Page not found — Texas Digital Co."
-metaTitle: "Page not found — Texas Digital Co."
-metaDesc: "That page doesn't exist. Here's everything Texas Digital Co. does, one click away."
+title: "Page not found | Texas Digital Co."
+metaTitle: "Page not found | Texas Digital Co."
+metaDesc: "That page does not exist. Here is everything Texas Digital Co. does, one click away."
 ---
 {%- from "partials/icons.njk" import icon -%}
 
-<section class="hero">
-  <div class="container container-narrow" style="text-align:center">
+<section class="notfound">
+  <div class="container">
     <span class="eyebrow">404</span>
     <h1 style="margin-top:14px">{{ ui.en.notFound }}</h1>
-    <p class="lede" style="margin-top:18px">{{ ui.en.notFoundBody }}</p>
-    <p class="muted" style="margin-top:10px" lang="es">{{ ui.es.notFoundBody }}</p>
-    <div class="hero-actions" style="justify-content:center">
-      <a class="btn btn-primary btn-lg" href="/">{{ ui.en.backHome }}</a>
-      <a class="btn btn-secondary btn-lg" href="/es/" lang="es">{{ ui.es.backHome }}</a>
+    <p class="lede" style="margin:18px auto 0;max-width:56ch">{{ ui.en.notFoundBody }}</p>
+    <p style="margin-top:10px;color:var(--grey-mid);font-size:.9375rem" lang="es">{{ ui.es.notFoundBody }}</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="/">{{ ui.en.backHome }}</a>
+      <a class="btn btn--ghost" href="/es/" lang="es">{{ ui.es.backHome }}</a>
     </div>
   </div>
 </section>
 
-<section class="section section-tight section-alt">
+<section class="section section--wash section--tight">
   <div class="container">
-    <div class="grid grid-3">
+    <div class="index">
       {%- for s in services %}
-      <a class="card card-link service-card" href="/services/{{ s.slug }}/">
-        <span class="service-icon">{{ icon(s.icon, 21) }}</span>
-        <h3>{{ s.en.name }}</h3>
-        <p>{{ s.en.tagline }}</p>
-        <span class="service-meta">
-          <span class="service-price">{{ s.en.price }}<small>{{ s.en.priceNote }}</small></span>
-          <span class="link-arrow">{{ ui.en.learnMore }} {{ icon("arrow", 15) }}</span>
-        </span>
+      <a class="index-row" href="/services/{{ s.slug }}/">
+        <span class="index-num">{{ "0" + (loop.index | string) }}</span>
+        <span class="index-name">{{ s.en.name }}</span>
+        <span class="index-desc">{{ s.en.tagline }}</span>
+        <span class="index-price">{{ s.en.price }}</span>
+        <span class="index-arrow">{{ icon("arrow", 16) }}</span>
       </a>
       {%- endfor %}
     </div>
